@@ -1,0 +1,7 @@
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Data\bin\Debug\Data.dll
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Data\bin\Debug\Data.pdb
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Data\bin\Debug\Entity.dll
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Data\bin\Debug\Entity.pdb
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Data\obj\Debug\Data.dll
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Data\obj\Debug\Data.pdb

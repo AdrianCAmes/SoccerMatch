@@ -1,0 +1,9 @@
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Service\bin\Debug\Service.dll
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Service\bin\Debug\Service.pdb
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Service\bin\Debug\Data.dll
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Service\bin\Debug\Entity.dll
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Service\bin\Debug\Data.pdb
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Service\bin\Debug\Entity.pdb
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Service\obj\Debug\Service.dll
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Service\obj\Debug\Service.pdb

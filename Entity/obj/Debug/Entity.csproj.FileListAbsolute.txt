@@ -1,0 +1,5 @@
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Entity\bin\Debug\Entity.dll
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Entity\bin\Debug\Entity.pdb
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Entity\obj\Debug\Entity.dll
+D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Entity\obj\Debug\Entity.pdb
