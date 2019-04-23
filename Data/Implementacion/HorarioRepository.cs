@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-<<<<<<< HEAD
+using System.Threading.Tasks
 using Entity;
 
 namespace Data.Implementacion
@@ -34,12 +33,5 @@ namespace Data.Implementacion
         {
             throw new NotImplementedException();
         }
-=======
-
-namespace Data.Implementacion
-{
-    class HorarioRepository
-    {
->>>>>>> 11c070a4f10d3d96a535d04d5dc7912274e18fad
     }
 }

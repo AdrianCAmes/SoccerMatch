@@ -11,10 +11,10 @@ namespace Entity
     {
         [DisplayName("Calle")]
         [Required(ErrorMessage ="Por favor, ingrese una calle: ")]
-        private int CCalle { get; set; }
+        public Calle CCalle { get; set; }
 
         [DisplayName("Direccion")]
         [Required(ErrorMessage = "Por favor, ingrese una direccion")]
-        private string TDireccion { get; set; }
+        public string TDireccion { get; set; }
     }
 }
