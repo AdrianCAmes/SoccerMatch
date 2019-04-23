@@ -144,7 +144,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("insert into Administrador values (@CAdministrador)", con);
+                    var query = new SqlCommand("insert into Administrador", con);
 
                     query.Parameters.AddWithValue("@CAdministrador", t.CUsuario);
 
@@ -163,7 +163,25 @@ namespace Data.Implementacion
 
         public bool Update(Administrador t)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                {
+                    con.Open();
+                    var query = new SqlCommand("update Administrador ");
+
+                    
+
+                    rpta = true;
+                }
+            } catch (Exception e)
+            {
+                throw;
+            }
+
+            return rpta;
         }
     } 
 }
