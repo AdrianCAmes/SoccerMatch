@@ -10,14 +10,14 @@ namespace Entity
     public class Horario
     {
         [DisplayName("Código de Horario")]
-        private int CHorario { get; set; }
+        public int CHorario { get; set; }
 
         [Required(ErrorMessage = "Porfavor, ingrese una hora de inicio: ")]
         [DisplayName("Hora de Inicio")]
-        private DateTime DHoraInicial { get; set; }
+        public DateTime DHoraInicial { get; set; }
 
         [Required(ErrorMessage = "Porfavor, ingrese una hora de fin: ")]
         [DisplayName("Hora de Fin")]
-        private DateTime DHoraFinal { get; set; }
+        public DateTime DHoraFinal { get; set; }
     }
 }

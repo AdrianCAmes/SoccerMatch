@@ -11,15 +11,15 @@ namespace Entity
     public class Distrito
     {
         [DisplayName("Codigo del Distrito")]
-        private int CDistrito { get; set; }
+        public int CDistrito { get; set; }
 
         [Required(ErrorMessage = "Porfavor, ingrese un distrito: ")]
         [DisplayName("Nombre del Distrito")]
-        private string NDistrito { get; set; }
+        public string NDistrito { get; set; }
 
         [Required(ErrorMessage ="Porfavor, seleccione una ciudad: ")]
         [DisplayName("Ciudad")]
-        private Ciudad  CCiudad { get; set; }
+        public Ciudad  CCiudad { get; set; }
         
     }
 }
