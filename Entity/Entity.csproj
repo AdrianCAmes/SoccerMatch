@@ -41,18 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.cs" />
     <Compile Include="Alquiler.cs" />
-    <Compile Include="Banco.cs" />
     <Compile Include="Calle.cs" />
     <Compile Include="Cancha.cs" />
     <Compile Include="Ciudad.cs" />
     <Compile Include="Departamento.cs" />
+    <Compile Include="DetalleParticipante.cs" />
     <Compile Include="Dia.cs" />
     <Compile Include="Distrito.cs" />
     <Compile Include="Grupo.cs" />
     <Compile Include="Horario.cs" />
+    <Compile Include="Jugador.cs" />
+    <Compile Include="Participante.cs" />
     <Compile Include="Propietario.cs" />
-    <Compile Include="Tarjeta.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario_Grupo.cs" />

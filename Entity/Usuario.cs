@@ -22,7 +22,6 @@ namespace Entity
         [DisplayName("Ingresar un numero de telefono")]
         public string NTelefono { get; set; }
 
-        public int NumTarjeta { get; set; }
     
     }
 }

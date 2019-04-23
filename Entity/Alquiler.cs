@@ -11,15 +11,18 @@ namespace Entity
     {
        int CAlquiler { get; set; }
         [Required(ErrorMessage = "Porfavor, seleccionar grupo")]
-        [DisplayName("Seleccionar grupo")]
+        [DisplayName("Grupo")]
         Grupo CGrupo { get; set; }
         [Required(ErrorMessage = "Porfavor, ingresar fecha de alquiler")]
-        [DisplayName("Ingresar fecha de alquiler")]
+        [DisplayName("Fecha de alquiler")]
         string DFechaAlquiler { get; set; }
         int Num_Horas { get; set; }
         int MDescuento { get; set; }
         [Required(ErrorMessage = "Porfavor, seleccionar una cancha")]
-        [DisplayName("Seleccionar una cancha")]
+        [DisplayName("Cancha")]
         Cancha CCancha { get; set; }
+        [Required(ErrorMessage ="Por favor, ingrese el horario")]
+        [DisplayName("Horario")]
+        Horario CHorario { get; set; }
     }
 }
