@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Entity;
 namespace Data
 {
-    class IPropietarioRepository
+    public interface IPropietarioRepository:ICrudRepository<Propietario>
     {
     }
 }
