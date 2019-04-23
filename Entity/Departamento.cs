@@ -11,10 +11,10 @@ namespace Entity
     public class Departamento
     {
         [DisplayName("Código del Departamento")]
-        private int CDepartamento { get; set; }
+        public int CDepartamento { get; set; }
 
         [Required(ErrorMessage ="Porfavor, ingrese el nombre de departamento: ")]
         [DisplayName("Nombre del Departamento")]
-        private string NDepartamento { get; set; }
+        public string NDepartamento { get; set; }
     }
 }

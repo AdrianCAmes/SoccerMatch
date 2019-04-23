@@ -11,14 +11,14 @@ namespace Entity
     public class Calle
     {
         [DisplayName("Código de Calle")]
-        private int CCalle { get; set; }
+        public int CCalle { get; set; }
 
         [Required(ErrorMessage ="Porfavor, ingrese el nombre de calle: ")]
         [DisplayName("Nombre de Calle")]
-        private string NCalle { get; set; }
+        public string NCalle { get; set; }
 
         [Required(ErrorMessage = "Porfavor, seleccione un distrito: ")]
         [DisplayName("Distrito")]
-        private Distrito CDistrito { get; set; }
+        public Distrito CDistrito { get; set; }
     }
 }

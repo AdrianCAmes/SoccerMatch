@@ -10,15 +10,15 @@ namespace Entity
     public class Participante
     {
         [DisplayName("Código de Participante")]
-        private int CParticipante { get; set; }
+        public int CParticipante { get; set; }
 
         [DisplayName("Jugador")]
         [Required(ErrorMessage ="Por favor, ingrese el jugador")]
-        private Jugador CJugador { get; set; }
+        public Jugador CJugador { get; set; }
 
         [DisplayName("Grupo")]
         [Required(ErrorMessage ="Por favor, ingrese el grupo")]
-        private Grupo CGrupo { get; set; }
+        public Grupo CGrupo { get; set; }
 
     }
 }

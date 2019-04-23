@@ -11,15 +11,15 @@ namespace Entity
    public  class Ciudad
     {
         [DisplayName("Código de la Ciudad")]
-        private int CCiudad { get; set; }
+        public int CCiudad { get; set; }
 
         [Required(ErrorMessage = "Porfavor, ingrese un nombre de ciudad: ")]
         [DisplayName("Nombre de la Ciudad")]
-        private  string NCiudad { get; set; }
+        public string NCiudad { get; set; }
 
         [Required(ErrorMessage ="Porfavor, seleccione un departamento: ")]
         [DisplayName("Departamento")]
-        private Departamento CDepartamento { get; set; }
+        public Departamento CDepartamento { get; set; }
    
     }
 }
