@@ -41,7 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAdministradorRepository.cs" />
+    <Compile Include="IAlquilerRepository.cs" />
+    <Compile Include="ICalleRepository.cs" />
+    <Compile Include="ICanchaRepository.cs" />
+    <Compile Include="ICiudadRepository.cs" />
     <Compile Include="ICrudRepository.cs" />
+    <Compile Include="IDepartamentoRepository.cs" />
+    <Compile Include="IDetalleParticipanteRepository.cs" />
+    <Compile Include="IDistritoRepository.cs" />
+    <Compile Include="IGrupoRepository.cs" />
+    <Compile Include="IHorarioRepository.cs" />
+    <Compile Include="IJugadorRepository.cs" />
+    <Compile Include="IParticipanteRepository.cs" />
+    <Compile Include="IPropietarioRepository.cs" />
+    <Compile Include="IUsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
