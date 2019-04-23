@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{83869254-517C-4031-8834-22E89BF7CC5B}</ProjectGuid>
+    <ProjectGuid>{AF8501D6-DBA5-4BDF-A05A-37B77D4366D9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Service</RootNamespace>
-    <AssemblyName>Service</AssemblyName>
+    <RootNamespace>Business</RootNamespace>
+    <AssemblyName>Business</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,25 +40,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="IBancoService.cs" />
+    <Compile Include="IAdministradorService.cs" />
+    <Compile Include="IAlquilerService.cs" />
+    <Compile Include="ICalleService.cs" />
+    <Compile Include="ICanchaService.cs" />
+    <Compile Include="ICiudadService.cs" />
     <Compile Include="ICrudService.cs" />
-    <Compile Include="Implementacion\BancoService.cs" />
+    <Compile Include="IDepartamentoService.cs" />
+    <Compile Include="IDetalleParticipanteService.cs" />
+    <Compile Include="IDistritoService.cs" />
+    <Compile Include="IGrupoService.cs" />
+    <Compile Include="IHorarioService.cs" />
+    <Compile Include="IJugadorService.cs" />
+    <Compile Include="Implementacion\AdministradorService.cs" />
+    <Compile Include="Implementacion\AlquilerService.cs" />
+    <Compile Include="Implementacion\CalleService.cs" />
+    <Compile Include="Implementacion\CanchaService.cs" />
+    <Compile Include="Implementacion\CiudadService.cs" />
+    <Compile Include="Implementacion\DepartamentoService.cs" />
+    <Compile Include="Implementacion\DetalleParticipanteService.cs" />
+    <Compile Include="Implementacion\DistritoService.cs" />
+    <Compile Include="Implementacion\GrupoService.cs" />
+    <Compile Include="Implementacion\HorarioService.cs" />
+    <Compile Include="Implementacion\JugadorService.cs" />
+    <Compile Include="Implementacion\ParticipanteService.cs" />
+    <Compile Include="Implementacion\PropietarioService.cs" />
+    <Compile Include="Implementacion\UsuarioService.cs" />
+    <Compile Include="IParticipanteService.cs" />
+    <Compile Include="IPropietarioService.cs" />
+    <Compile Include="IUsuarioService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Data\Data.csproj">
-      <Project>{f99a04de-d7b9-44e5-a04e-08fd07840b0a}</Project>
-      <Name>Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Entity\Entity.csproj">
-      <Project>{2f2afd7f-22dd-4b8e-92e4-32c8651d2434}</Project>
-      <Name>Entity</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
