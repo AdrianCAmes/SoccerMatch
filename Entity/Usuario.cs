@@ -10,17 +10,19 @@ namespace Entity
 {
     public class Usuario
     {
-        public long CDNI { get; set; }
-        [Required(ErrorMessage ="Porfavor, ingresar un nombre de usuario")]
-    [DisplayName("Ingresar un nombre de usuario")]
-        public string NUsuario { get; set; }
-        public int CCalle { get; set; }
-        [Required(ErrorMessage = "Porfavor, ingresar una direccion")]
-        [DisplayName("Ingresar una direccion")]
-        public string TDireccion { get; set; }
-        [Required(ErrorMessage = "Porfavor, ingresar un numero de telefono")]
-        [DisplayName("Ingresar un numero de telefono")]
-        public string NTelefono { get; set; }
+        protected int CUsuario { get; set; }
+
+        [Required(ErrorMessage = "Porfavor, ingrese el DNI del usuario")]
+        [DisplayName("DNI")]
+        protected long CDNI { get; set; }
+
+        [Required(ErrorMessage ="Porfavor, ingrese un nombre de usuario")]
+        [DisplayName("Nombre de Usuario")]
+        protected string NUsuario { get; set; }
+
+        [Required(ErrorMessage = "Porfavor, ingrese un numero de telefono")]
+        [DisplayName("Numero de Telefono")]
+        protected long NumTelefono { get; set; }
 
     
     }

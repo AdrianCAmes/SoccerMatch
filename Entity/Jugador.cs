@@ -7,14 +7,14 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 namespace Entity
 {
-    public class Jugador
+    public class Jugador : Usuario
     {
-        public int CJugador { get; set; }
         [DisplayName("Calle")]
-        [Required(ErrorMessage ="Por favor, Ingrese la calle")]
-        public int CCalle { get; set; }
+        [Required(ErrorMessage ="Por favor, ingrese una calle: ")]
+        private int CCalle { get; set; }
+
         [DisplayName("Direccion")]
-        [Required(ErrorMessage = "Por favor, Ingrese la direccion")]
-        public string TDireccion { get; set; }
+        [Required(ErrorMessage = "Por favor, ingrese una direccion")]
+        private string TDireccion { get; set; }
     }
 }

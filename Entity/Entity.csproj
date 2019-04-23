@@ -48,7 +48,6 @@
     <Compile Include="Ciudad.cs" />
     <Compile Include="Departamento.cs" />
     <Compile Include="DetalleParticipante.cs" />
-    <Compile Include="Dia.cs" />
     <Compile Include="Distrito.cs" />
     <Compile Include="Grupo.cs" />
     <Compile Include="Horario.cs" />
@@ -57,7 +56,6 @@
     <Compile Include="Propietario.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuario_Grupo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,12 +10,15 @@ namespace Entity
 {
     public class Calle
     {
-        public  int CCalle { get; set; }
-        [Required(ErrorMessage ="Porfavor, ingresar el nombre de calle")]
-        [DisplayName("Ingresar nombre de calle")]
-        public string NCalle { get; set; }
-        [Required(ErrorMessage = "Porfavor, seleccionar un distrito")]
-        [DisplayName("Seleccionar un distrito")]
-        public Distrito CDistrito { get; set; }
+        [DisplayName("Código de Calle")]
+        private int CCalle { get; set; }
+
+        [Required(ErrorMessage ="Porfavor, ingrese el nombre de calle: ")]
+        [DisplayName("Nombre de Calle")]
+        private string NCalle { get; set; }
+
+        [Required(ErrorMessage = "Porfavor, seleccione un distrito: ")]
+        [DisplayName("Distrito")]
+        private Distrito CDistrito { get; set; }
     }
 }

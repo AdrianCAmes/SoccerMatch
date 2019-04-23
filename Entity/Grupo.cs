@@ -10,20 +10,26 @@ namespace Entity
 {
   public class Grupo
     {
+        [DisplayName("Código de Grupo")]
+        private int CGrupo { get; set; }
 
-        public int CGrupo { get; set; }
-        [Required(ErrorMessage ="Porfavor, ingresar nombre de grupo")]
-        [DisplayName("Ingresar nombre de grupo")]
-        public string NGrupo { get; set; }
-        [DisplayName("Ingresar descripcion")]
-        public string TDescripcion { get; set; }
-        public int NumParticipantes { get; set; }
-        [Required(ErrorMessage = "Porfavor, ingresar una fecha de juego")]
-        [DisplayName("Ingresar una fecha de juego")]
-        public string DFechaJuego { get; set; }
-        [Required(ErrorMessage = "Porfavor, seleccionar un distrito")]
-        [DisplayName("Seleccionar un distrito")]
-        public Distrito CDistrito { get; set; }
+        [Required(ErrorMessage ="Porfavor, ingrese el nombre del grupo: ")]
+        [DisplayName("Nombre de Grupo")]
+        private string NGrupo { get; set; }
+
+        [Required(ErrorMessage = "Porfavor, ingrese la descripcion del grupo: ")]
+        [DisplayName("Descripcion")]
+        private string TDescripcion { get; set; }
+
+        private int NumParticipantes { get; set; }
+
+        [Required(ErrorMessage = "Porfavor, ingrese una fecha de juego: ")]
+        [DisplayName("Fecha de Juego")]
+        private DateTime DFechaJuego { get; set; }
+
+        [Required(ErrorMessage = "Porfavor, seleccion un distrito: ")]
+        [DisplayName("Distrito")]
+        private Distrito CDistrito { get; set; }
 
 }
 }

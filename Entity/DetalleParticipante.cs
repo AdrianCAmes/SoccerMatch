@@ -9,18 +9,23 @@ namespace Entity
 {
     public class DetalleParticipante
     {
-        public int CDetalleParticipante { get; set; }
-        [DisplayName("Codigo del alquiler")]
-        [Required(ErrorMessage="Por favor, Ingrese el codigo del alquiler")]
-        public Alquiler CAlquiler { get; set; }
-        [DisplayName("Codigo del participante")]
-        [Required(ErrorMessage ="Por favor ingrese el codigo del participante")]
-        public Participante CParticipante { get; set; }
+        [DisplayName("Código del Detalle")]
+        private int CDetalleParticipante { get; set; }
+
+        [Required(ErrorMessage="Por favor, ingrese el codigo del alquiler: ")]
+        [DisplayName("Alquiler")]
+        private Alquiler CAlquiler { get; set; }
+
+        [Required(ErrorMessage ="Por favor, ingrese el codigo del participante: ")]
+        [DisplayName("Participante")]
+        private Participante CParticipante { get; set; }
+
+        [Required(ErrorMessage = "Por favor, ingrese la cuota: ")]
         [DisplayName("Cuota")]
-        [Required(ErrorMessage = "Por favor, Ingrese la cuota")]
-        public float MCuota { get; set; }
-        [DisplayName("Estado de pago")]
-        [Required(ErrorMessage ="Por favor, Ingrese el estado del pago")]
-        public bool FPartePagada { get; set; }
+        private float MCuota { get; set; }
+
+        [Required(ErrorMessage ="Por favor, ingrese el estado del pago: ")]
+        [DisplayName("Estado de Pago")]
+        private bool FPartePagada { get; set; }
     }
 }

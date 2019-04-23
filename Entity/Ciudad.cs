@@ -10,13 +10,16 @@ namespace Entity
 {
    public  class Ciudad
     {
-        public int CCiudad { get; set; }
-        [Required(ErrorMessage = "Porfavor, ingrese un nombre de ciudad")]
-        [DisplayName("Ingresar nombre de ciudad")]
-        public  string NCiudad { get; set; }
-        [Required(ErrorMessage ="Porfavor, seleccione un departamento")]
-        [DisplayName("Seleccionar departamento")]
-        public Departamento CDepartamento { get; set; }
+        [DisplayName("Código de la Ciudad")]
+        private int CCiudad { get; set; }
+
+        [Required(ErrorMessage = "Porfavor, ingrese un nombre de ciudad: ")]
+        [DisplayName("Nombre de la Ciudad")]
+        private  string NCiudad { get; set; }
+
+        [Required(ErrorMessage ="Porfavor, seleccione un departamento: ")]
+        [DisplayName("Departamento")]
+        private Departamento CDepartamento { get; set; }
    
     }
 }

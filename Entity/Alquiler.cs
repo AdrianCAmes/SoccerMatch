@@ -9,20 +9,31 @@ namespace Entity
 {
     public class Alquiler
     {
-       int CAlquiler { get; set; }
-        [Required(ErrorMessage = "Porfavor, seleccionar grupo")]
+        [DisplayName("Código del Alquiler")]
+        private int CAlquiler { get; set; }
+
+        [Required(ErrorMessage = "Porfavor, seleccione grupo: ")]
         [DisplayName("Grupo")]
-        Grupo CGrupo { get; set; }
-        [Required(ErrorMessage = "Porfavor, ingresar fecha de alquiler")]
-        [DisplayName("Fecha de alquiler")]
-        string DFechaAlquiler { get; set; }
-        int Num_Horas { get; set; }
-        int MDescuento { get; set; }
-        [Required(ErrorMessage = "Porfavor, seleccionar una cancha")]
+        private Grupo CGrupo { get; set; }
+
+        [Required(ErrorMessage = "Porfavor, seleccione una cancha: ")]
         [DisplayName("Cancha")]
-        Cancha CCancha { get; set; }
-        [Required(ErrorMessage ="Por favor, ingrese el horario")]
+        private Cancha CCancha { get; set; }
+
+        [DisplayName("Horas")]
+        private int NumHoras { get; set; }
+
+        [DisplayName("Descuento")]
+        private float MDescuento { get; set; }
+
+        [DisplayName("Total")]
+        private float MTotal { get; set; }
+        
+        [DisplayName("Pagado")]
+        private bool FPagado { get; set; }
+       
+        [Required(ErrorMessage ="Por favor, ingrese el horario: ")]
         [DisplayName("Horario")]
-        Horario CHorario { get; set; }
+        private Horario CHorario { get; set; }
     }
 }

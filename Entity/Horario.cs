@@ -9,18 +9,15 @@ namespace Entity
 {
     public class Horario
     {
-        public int CHorario { get; set; }
-        [Required(ErrorMessage = "Porfavor, ingrese una hora de iniciacion")]
-        [DisplayName("Ingrese una hora de iniciacion")]
-        public string DHoraInicial { get; set; }
-        [Required(ErrorMessage = "Porfavor, ingrese una hora de finalizacion")]
-        [DisplayName("Ingrese una hora de finalizacion")]
-        public string DHoraFinal { get; set; }
-        [Required(ErrorMessage = "Porfavor, seleccione un dia")]
-        [DisplayName("Seleccione un dia")]
-        public Dia CDia { get; set; }
-        [Required(ErrorMessage = "Porfavor, ingrese un nombre para la cancha")]
-        [DisplayName("Ingresar un nombre para la cancha")]
-        public Cancha CCancha { get; set; }
+        [DisplayName("Código de Horario")]
+        private int CHorario { get; set; }
+
+        [Required(ErrorMessage = "Porfavor, ingrese una hora de inicio: ")]
+        [DisplayName("Hora de Inicio")]
+        private DateTime DHoraInicial { get; set; }
+
+        [Required(ErrorMessage = "Porfavor, ingrese una hora de fin: ")]
+        [DisplayName("Hora de Fin")]
+        private DateTime DHoraFinal { get; set; }
     }
 }

@@ -7,8 +7,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 namespace Entity
 {
-    public class Administrador
+    public class Administrador : Jugador
     {
-        public int CAdministrador { get; set; } 
     }
 }
