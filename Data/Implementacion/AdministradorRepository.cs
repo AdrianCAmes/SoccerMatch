@@ -142,15 +142,10 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-<<<<<<< HEAD
                     var query = new SqlCommand("insert into Administrador", con);
-                    
-=======
-                    var query = new SqlCommand("insert into Administrador values (@CAdministrador)", con);
 
                     query.Parameters.AddWithValue("@CAdministrador", t.CUsuario);
 
->>>>>>> 57da2cc030fcdf8fc6603e78e2dea27f4b219486
                     query.ExecuteNonQuery();
 
                     rpta = true;
