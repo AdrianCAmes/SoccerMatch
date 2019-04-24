@@ -67,7 +67,7 @@ namespace Data.Implementacion
 
         public Departamento FindById(int? id)
         {
-            Departamento departamento = null);
+            Departamento departamento = null;
 
             try
             {
