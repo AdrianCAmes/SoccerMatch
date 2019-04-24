@@ -45,8 +45,10 @@ namespace Data.Implementacion
                     {
                         var usuario = new Jugador();
                         var calle = new Calle();
+                        var distrito = new Distrito();
                         calle.CCalle = Convert.ToInt32(dr["CCalle"]);
                         calle.NCalle = dr["NCalle"].ToString();
+                        calle.CDistrito = distrito;
                         calle.CDistrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
                         usuario.CUsuario = Convert.ToInt32(dr["CUsuario"]);
                         usuario.CDNI = Convert.ToInt32(dr["CDNI"]);
