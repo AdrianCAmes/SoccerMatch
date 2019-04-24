@@ -155,7 +155,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("insert into Administrador", con);
+                    var query = new SqlCommand("insert into Administrador values (@CAdministrador)", con);
 
                     query.Parameters.AddWithValue("@CAdministrador", t.CUsuario);
                     query.ExecuteNonQuery();
