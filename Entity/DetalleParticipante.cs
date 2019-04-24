@@ -22,7 +22,7 @@ namespace Entity
 
         [Required(ErrorMessage = "Por favor, ingrese la cuota: ")]
         [DisplayName("Cuota")]
-        public decimal MCuota { get; set; }
+        public Decimal MCuota { get; set; }
 
         [Required(ErrorMessage ="Por favor, ingrese el estado del pago: ")]
         [DisplayName("Estado de Pago")]

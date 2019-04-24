@@ -28,7 +28,6 @@ namespace Entity
         public int NumHoras { get; set; }
 
         [DisplayName("Descuento")]
-       
         public Decimal MDescuento { get; set; }
 
         [DisplayName("Total")]

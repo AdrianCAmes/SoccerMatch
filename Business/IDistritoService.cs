@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Business
 {
-    public interface IDistritoService :  : ICrudService<Distrito>
+    public interface IDistritoService : ICrudService<Distrito>
     {
     }
 }
