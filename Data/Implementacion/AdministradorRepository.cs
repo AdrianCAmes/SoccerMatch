@@ -38,7 +38,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("a.CAdministrador, u.NUsuario, u.CDNI, u.NumTelefono, j.TDireccion, c.CCalle, c.NCalle," +
+                    var query = new SqlCommand("select a.CAdministrador, u.NUsuario, u.CDNI, u.NumTelefono, j.TDireccion, c.CCalle, c.NCalle," +
                                                 "d.CDistrito, d.NDistrito, ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento" +
                                                 "from Administrador a, Jugador j, Usuario u, Calle c, Distrito d, Ciudad ci, Departamento de" +
                                                 "where a.CAdministrador = j.CJugador and j.CJugador = u.CUsuario and c.CCalle = j.CCalle and" +
@@ -98,7 +98,7 @@ namespace Data.Implementacion
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
-                    var query = new SqlCommand("a.CAdministrador, u.NUsuario, u.CDNI, u.NumTelefono, j.TDireccion, c.CCalle," + 
+                    var query = new SqlCommand("select a.CAdministrador, u.NUsuario, u.CDNI, u.NumTelefono, j.TDireccion, c.CCalle," + 
                                                 "c.NCalle,  d.CDistrito, d.NDistrito, ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento" +
                                                 "from Administrador a, Jugador j, Usuario u, Calle c, Distrito d, Ciudad ci, Departamento de" +
                                                 "where a.CAdministrador = '" + id + "' and j.CJugador ='" + id + "' and u.CUsuario '" + id + "' and" +
