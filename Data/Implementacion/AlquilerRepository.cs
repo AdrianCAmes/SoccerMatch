@@ -118,6 +118,8 @@ namespace Data.Implementacion
                         alquiler.MDescuento = Convert.ToDecimal(dr["MDescuento"]);
                         alquiler.MTotal = Convert.ToDecimal(dr["MTotal"]);
                         alquiler.FPagado = Convert.ToBoolean(dr["FPagado"]);
+
+                        alquileres.Add(alquiler);
                     }
                 }
             }
@@ -164,7 +166,7 @@ namespace Data.Implementacion
                 using (var con=new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("insert into Alquiler values(@CGrupo,@CCancha,@NumHoras,@MDescuento,@MTotal,@FPagado,@CHorario)",con);
+                    var cmd = new SqlCommand("insert into Alquiler values(@CGrupo,@CCancha,@NumHoras,@MDescuento,@MTotal,@FPagado)",con);
                     cmd.Parameters.AddWithValue("@CGrupo", t.CGrupo.CGrupo);
                     cmd.Parameters.AddWithValue("@CCancha", t.CCancha.CCancha);
                     cmd.Parameters.AddWithValue("@NumHoras", t.NumHoras);
@@ -190,7 +192,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("update Alquiler set CGrupo=@cgrupo,CCancha=@ccancha,NumHoras=@numhoras,MDescuento=@mdescuento,MTotal=@mtotal,FPagado=@fpagado,CHorario=@chorario",con);
+                    var cmd = new SqlCommand("update Alquiler set CGrupo=@cgrupo,CCancha=@ccancha,NumHoras=@numhoras,MDescuento=@mdescuento,MTotal=@mtotal,FPagado=@fpagado",con);
                     cmd.Parameters.AddWithValue("@cgrupo", t.CGrupo.CGrupo);
                     cmd.Parameters.AddWithValue("@ccancha", t.CCancha.CCancha);
                     cmd.Parameters.AddWithValue("@numhoras", t.NumHoras);
