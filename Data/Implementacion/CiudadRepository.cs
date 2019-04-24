@@ -82,7 +82,7 @@ namespace Data.Implementacion
 
                     var query = new SqlCommand("select ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento" +
                                                "from Ciudad ci, Departamento de" +
-                                               "where ci.CCiudad = '" + id + "' and ci.CDepartamento = ci.CDepartamento", con);
+                                               "where ci.CCiudad = '" + id + "' and ci.CDepartamento = de.CDepartamento", con);
 
                     using (var dr = query.ExecuteReader())
                     {

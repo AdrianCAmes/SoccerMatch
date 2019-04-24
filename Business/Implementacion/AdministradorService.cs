@@ -9,29 +9,34 @@ namespace Business.Implementacion
 {
     public class AdministradorService : IAdministradorService
     {
+        private IAdministradorService objAdministradorService = new AdministradorService();
+        private ICalleService objCalleService = new CalleService();
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return objAdministradorService.Delete(id);
         }
 
         public List<Administrador> FindAll()
         {
-            throw new NotImplementedException();
+            return objAdministradorService.FindAll();
         }
 
         public Administrador FindById(int? id)
         {
-            throw new NotImplementedException();
+            return objAdministradorService.FindById(id);
         }
 
         public bool Insertar(Administrador t)
         {
-            throw new NotImplementedException();
+            Calle calle = objCalleService.FindById(t.CCalle.CCalle);
+            t.CCalle = calle;
+
+            return objAdministradorService.Insertar(t);
         }
 
         public bool Update(Administrador t)
         {
-            throw new NotImplementedException();
+            return objAdministradorService.Update(t);
         }
     }
 }

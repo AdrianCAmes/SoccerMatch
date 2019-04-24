@@ -9,29 +9,37 @@ namespace Business.Implementacion
 {
     public class AlquilerService : IAlquilerService
     {
+        private IAlquilerService objAlquilerService = new AlquilerService();
+        private IGrupoService objGrupoService = new GrupoService();
+        private ICanchaService objCanchaService = new CanchaService();
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return objAlquilerService.Delete(id);
         }
 
         public List<Alquiler> FindAll()
         {
-            throw new NotImplementedException();
+            return objAlquilerService.FindAll();
         }
 
         public Alquiler FindById(int? id)
         {
-            throw new NotImplementedException();
+            return objAlquilerService.FindById(id);
         }
 
         public bool Insertar(Alquiler t)
         {
-            throw new NotImplementedException();
+            Grupo grupo = objGrupoService.FindById(t.CGrupo.CGrupo);
+            t.CGrupo = grupo;
+            Cancha cancha = objCanchaService.FindById(t.CCancha.CCancha);
+            t.CCancha = cancha;
+
+            return objAlquilerService.Insertar(t);
         }
 
         public bool Update(Alquiler t)
         {
-            throw new NotImplementedException();
+            return objAlquilerService.Update(t);
         }
     }
 }
