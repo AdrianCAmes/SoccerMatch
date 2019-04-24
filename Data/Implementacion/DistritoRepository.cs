@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Data.Implementacion
 {
@@ -16,7 +18,28 @@ namespace Data.Implementacion
 
         public List<Distrito> FindAll()
         {
-            throw new NotImplementedException();
+            List<Distrito> lstaDistrito = new List<Distrito>();
+            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
+            {
+                con.Open();
+                var query = new SqlCommand("select d.NDistrito 'NDistrito',c.NCiudad 'NCiudad' from Distrito d join Ciudad c on c.CCiudad = d.CCiudad", con);
+                using (var dr = query.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        Distrito objDistrito = new Distrito();
+                        Ciudad objCiudad = new Ciudad();
+
+                        objCiudad.NCiudad = dr["NCiudad"].ToString();
+                        objDistrito.NDistrito = dr["NDistrito"].ToString();
+                        objDistrito.CCiudad = objCiudad;
+                        lstaDistrito.Add(objDistrito);
+                    }
+                }
+
+            }
+            return lstaDistrito;
+
         }
 
         public Distrito FindById(int? id)
