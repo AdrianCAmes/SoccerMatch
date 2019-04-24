@@ -54,7 +54,6 @@ namespace Data.Implementacion
                         alquiler.MDescuento = Convert.ToInt32(dr["MDescuento"]);
                         alquiler.MTotal = Convert.ToInt32(dr["MTotal"]);
                         alquiler.FPagado = Convert.ToBoolean(dr["FPagado"]);
-                        alquiler.CHorario.CHorario = Convert.ToInt32(dr["CHorario"]);
                         alquileres.Add(alquiler);
                     }
                 }
@@ -84,7 +83,6 @@ namespace Data.Implementacion
                         alquiler.MDescuento = Convert.ToInt32(dr["MDescuento"]);
                         alquiler.MTotal = Convert.ToInt32(dr["MTotal"]);
                         alquiler.FPagado = Convert.ToBoolean(dr["FPagado"]);
-                        alquiler.CHorario.CHorario = Convert.ToInt32(dr["CHorario"]);
                     }
                 }
             }
@@ -103,14 +101,13 @@ namespace Data.Implementacion
                 using (var con=new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("insert into Alquiler values(@CGrupo,@CCancha,@NumHoras,@MDescuento,@MTotal,@FPagado,@CHorario)",con);
+                    var cmd = new SqlCommand("insert into Alquiler values(@CGrupo,@CCancha,@NumHoras,@MDescuento,@MTotal,@FPagado)",con);
                     cmd.Parameters.AddWithValue("@CGrupo", t.CGrupo.CGrupo);
                     cmd.Parameters.AddWithValue("@CCancha", t.CCancha.CCancha);
                     cmd.Parameters.AddWithValue("@NumHoras", t.NumHoras);
                     cmd.Parameters.AddWithValue("@MDescuento", t.MDescuento);
                     cmd.Parameters.AddWithValue("@MTotal", t.MTotal);
                     cmd.Parameters.AddWithValue("@FPagado", t.FPagado);
-                    cmd.Parameters.AddWithValue("@CHorario", t.CHorario.CHorario);
                     cmd.ExecuteNonQuery();
                     rpta = true;
                 }
@@ -130,14 +127,13 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("update Alquiler set CGrupo=@cgrupo,CCancha=@ccancha,NumHoras=@numhoras,MDescuento=@mdescuento,MTotal=@mtotal,FPagado=@fpagado,CHorario=@chorario",con);
+                    var cmd = new SqlCommand("update Alquiler set CGrupo=@cgrupo,CCancha=@ccancha,NumHoras=@numhoras,MDescuento=@mdescuento,MTotal=@mtotal,FPagado=@fpagado",con);
                     cmd.Parameters.AddWithValue("@cgrupo", t.CGrupo.CGrupo);
                     cmd.Parameters.AddWithValue("@ccancha", t.CCancha.CCancha);
                     cmd.Parameters.AddWithValue("@numhoras", t.NumHoras);
                     cmd.Parameters.AddWithValue("@mdescuento", t.MDescuento);
                     cmd.Parameters.AddWithValue("@mtotal", t.MTotal);
                     cmd.Parameters.AddWithValue("@fpagado", t.FPagado);
-                    cmd.Parameters.AddWithValue("@chorario", t.CHorario.CHorario);
                     cmd.ExecuteNonQuery();
                     rpta = true;
                 }
