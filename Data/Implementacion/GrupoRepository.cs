@@ -120,7 +120,25 @@ namespace Data.Implementacion
 
         public bool Update(Grupo t)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+            try
+            {
+                var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
+                con.Open();
+                var cmd = new SqlCommand("update set Equipo NGrupo=@ngrupo,TDescripcion=@tdescripcion,NumParticipantes=@numparticipantes,DFechaJuego=@dfechajuego,CDistrito=@cdistrito", con);
+                cmd.Parameters.AddWithValue("@NGrupo", t.NGrupo);
+                cmd.Parameters.AddWithValue("@TDescripcion", t.TDescripcion);
+                cmd.Parameters.AddWithValue("@NumParticipantes", t.NumParticipantes);
+                cmd.Parameters.AddWithValue("@DFechaJuego", t.DFechaJuego);
+                cmd.Parameters.AddWithValue("@CDistrito", t.CDistrito);
+                cmd.ExecuteNonQuery();
+                rpta = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return rpta;
         }
     }
 }
