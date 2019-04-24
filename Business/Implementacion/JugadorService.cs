@@ -9,29 +9,37 @@ namespace Business.Implementacion
 {
     public class JugadorService : IJugadorService
     {
+        private IJugadorService objJugadorService = new JugadorService();
+        private IUsuarioService objUsuarioService = new UsuarioService();
+        private ICalleService objCalleService = new CalleService();
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return objJugadorService.Delete(id);
         }
 
         public List<Jugador> FindAll()
         {
-            throw new NotImplementedException();
+            return objJugadorService.FindAll();
         }
 
         public Jugador FindById(int? id)
         {
-            throw new NotImplementedException();
+            return objJugadorService.FindById(id);
         }
 
         public bool Insertar(Jugador t)
         {
-            throw new NotImplementedException();
+            Usuario usuario = objJugadorService.FindById(t.CUsuario);
+            t.CUsuario = usuario.CUsuario;
+            Calle calle = objCalleService.FindById(t.CCalle.CCalle);
+            t.CCalle = calle;
+
+            return objJugadorService.Insertar(t);
         }
 
         public bool Update(Jugador t)
         {
-            throw new NotImplementedException();
+            return objJugadorService.Update(t);
         }
     }
 }

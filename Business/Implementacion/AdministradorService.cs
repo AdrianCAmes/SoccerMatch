@@ -10,7 +10,7 @@ namespace Business.Implementacion
     public class AdministradorService : IAdministradorService
     {
         private IAdministradorService objAdministradorService = new AdministradorService();
-        private ICalleService objCalleService = new CalleService();
+        private IJugadorService objJugadorService = new JugadorService();
         public bool Delete(int id)
         {
             return objAdministradorService.Delete(id);
@@ -28,8 +28,8 @@ namespace Business.Implementacion
 
         public bool Insertar(Administrador t)
         {
-            Calle calle = objCalleService.FindById(t.CCalle.CCalle);
-            t.CCalle = calle;
+            Jugador jugador = objJugadorService.FindById(t.CUsuario);
+            t.CUsuario = jugador.CUsuario;
 
             return objAdministradorService.Insertar(t);
         }

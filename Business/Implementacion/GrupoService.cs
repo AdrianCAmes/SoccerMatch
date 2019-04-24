@@ -9,29 +9,34 @@ namespace Business.Implementacion
 {
     public class GrupoService : IGrupoService
     {
+        private IGrupoService objGrupoService = new GrupoService();
+        private IDistritoService objDistritoService = new DistritoService();
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return objGrupoService.Delete(id);
         }
 
         public List<Grupo> FindAll()
         {
-            throw new NotImplementedException();
+            return objGrupoService.FindAll();
         }
 
         public Grupo FindById(int? id)
         {
-            throw new NotImplementedException();
+            return objGrupoService.FindById(id);
         }
 
         public bool Insertar(Grupo t)
         {
-            throw new NotImplementedException();
+            Distrito distrito = objDistritoService.FindById(t.CDistrito.CDistrito);
+            t.CDistrito = distrito;
+
+            return objGrupoService.Insertar(t);
         }
 
         public bool Update(Grupo t)
         {
-            throw new NotImplementedException();
+            return objGrupoService.Update(t);
         }
     }
 }

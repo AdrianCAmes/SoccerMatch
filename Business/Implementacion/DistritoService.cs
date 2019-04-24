@@ -14,7 +14,7 @@ namespace Business.Implementacion
         private ICiudadRepository objCiudadRep = new CiudadRepository();
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return objDistritoRep.Delete(id);
         }
 
         public List<Distrito> FindAll()
@@ -23,19 +23,21 @@ namespace Business.Implementacion
         }
 
         public Distrito FindById(int? id)
-        {    
-           
-            throw new NotImplementedException();
+        {
+            return objDistritoRep.FindById(id);
         }
 
         public bool Insertar(Distrito t)
         {
+            Ciudad ciudad = objCiudadRep.FindById(t.CCiudad.CCiudad);
+            t.CCiudad = ciudad;
+
             return objDistritoRep.Insertar(t);
         }
 
         public bool Update(Distrito t)
         {
-            throw new NotImplementedException();
+            return objDistritoRep.Update(t);
         }
     }
 }
