@@ -28,16 +28,7 @@ namespace Entity
         public int NumHoras { get; set; }
 
         [DisplayName("Descuento")]
-<<<<<<< HEAD
-        public decimal MDescuento { get; set; }
 
-        [DisplayName("Total")]
-        public decimal MTotal { get; set; }
-        
-        [DisplayName("Pagado")]
-        public bool FPagado { get; set; }
-       
-=======
         public Decimal MDescuento { get; set; }
 
         [DisplayName("Total")]
@@ -45,6 +36,5 @@ namespace Entity
         
         [DisplayName("Pagado")]
         public bool FPagado { get; set; }
->>>>>>> 7c45f2bf669ff8612233ffb72e1bad5527d65f8d
     }
 }
