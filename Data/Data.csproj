@@ -51,7 +51,6 @@
     <Compile Include="IDetalleParticipanteRepository.cs" />
     <Compile Include="IDistritoRepository.cs" />
     <Compile Include="IGrupoRepository.cs" />
-    <Compile Include="IHorarioRepository.cs" />
     <Compile Include="IJugadorRepository.cs" />
     <Compile Include="Implementacion\AdministradorRepository.cs" />
     <Compile Include="Implementacion\AlquilerRepository.cs" />
@@ -62,7 +61,6 @@
     <Compile Include="Implementacion\DetalleParticipanteRepository.cs" />
     <Compile Include="Implementacion\DistritoRepository.cs" />
     <Compile Include="Implementacion\GrupoRepository.cs" />
-    <Compile Include="Implementacion\HorarioRepository.cs" />
     <Compile Include="Implementacion\JugadorRepository.cs" />
     <Compile Include="Implementacion\ParticipanteRepository.cs" />
     <Compile Include="Implementacion\PropietarioRepository.cs" />

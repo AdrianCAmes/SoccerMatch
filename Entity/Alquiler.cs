@@ -21,6 +21,9 @@ namespace Entity
         public Cancha CCancha { get; set; }
 
         [DisplayName("Horas")]
+        public DateTime DHoraInicio { get; set; }
+
+        [DisplayName("Horas")]
         public int NumHoras { get; set; }
 
         [DisplayName("Descuento")]

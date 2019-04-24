@@ -44,6 +44,10 @@ namespace Data.Implementacion
                     while (dr.Read())
                     {
                         Alquiler alquiler = new Alquiler();
+                        Grupo grupo = new Grupo();
+                        Cancha cancha = new Cancha();
+
+
                         alquiler.CGrupo.CGrupo = Convert.ToInt32(dr["CGrupo"]);
                         alquiler.CCancha.CCancha = Convert.ToInt32(dr["CCancha"]);
                         alquiler.NumHoras = Convert.ToInt32(dr["NumHoras"]);
