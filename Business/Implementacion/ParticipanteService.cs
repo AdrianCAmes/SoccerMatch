@@ -4,34 +4,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using Data;
+using Data.Implementacion;
 
 namespace Business.Implementacion
 {
     public class ParticipanteService : IParticipanteService
     {
+        IParticipanteRepository objParticipanteRepository = new ParticipanteRepository();
+        IJugadorRepository objJugadorRepository = new JugadorRepository();
+        IGrupoRepository objGrupoRepository = new GrupoRepository();
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return objParticipanteRepository.Delete(id);
         }
 
         public List<Participante> FindAll()
         {
-            throw new NotImplementedException();
+            return objParticipanteRepository.FindAll();
         }
 
         public Participante FindById(int? id)
         {
-            throw new NotImplementedException();
+            return objParticipanteRepository.FindById(id);
         }
 
         public bool Insertar(Participante t)
         {
-            throw new NotImplementedException();
+            Jugador jugador = objJugadorRepository.FindById(t.CJugador.CUsuario);
+            t.CJugador = jugador;
+            Grupo grupo = objGrupoRepository.FindById(t.CGrupo.CGrupo);
+            t.CGrupo = grupo;
+
+            return objParticipanteRepository.Insertar(t);
         }
 
         public bool Update(Participante t)
         {
-            throw new NotImplementedException();
+            return objParticipanteRepository.Update(t);
         }
     }
 }

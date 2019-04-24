@@ -4,34 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using Data;
+using Data.Implementacion;
 
 namespace Business.Implementacion
 {
     public class PropietarioService : IPropietarioService
     {
+        private IPropietarioRepository objPropietarioRepository = new PropietarioRepository();
+        private IUsuarioRepository objUsuarioRepository = new UsuarioRepository();
+
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return objPropietarioRepository.Delete(id);
         }
 
         public List<Propietario> FindAll()
         {
-            throw new NotImplementedException();
+            return objPropietarioRepository.FindAll();
         }
 
         public Propietario FindById(int? id)
         {
-            throw new NotImplementedException();
+            return objPropietarioRepository.FindById(id);
         }
 
         public bool Insertar(Propietario t)
         {
-            throw new NotImplementedException();
+            Usuario usuario = objUsuarioRepository.FindById(t.CUsuario);
+            t.CUsuario = usuario.CUsuario;
+
+            return objPropietarioRepository.Insertar(t);
         }
 
         public bool Update(Propietario t)
         {
-            throw new NotImplementedException();
+            return objPropietarioRepository.Update(t);
         }
     }
 }
