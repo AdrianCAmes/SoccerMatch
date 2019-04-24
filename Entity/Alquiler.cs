@@ -27,16 +27,13 @@ namespace Entity
         public int NumHoras { get; set; }
 
         [DisplayName("Descuento")]
-        public float MDescuento { get; set; }
+        public decimal MDescuento { get; set; }
 
         [DisplayName("Total")]
-        public float MTotal { get; set; }
+        public decimal MTotal { get; set; }
         
         [DisplayName("Pagado")]
         public bool FPagado { get; set; }
        
-        [Required(ErrorMessage ="Por favor, ingrese el horario: ")]
-        [DisplayName("Horario")]
-        public Horario CHorario { get; set; }
     }
 }
