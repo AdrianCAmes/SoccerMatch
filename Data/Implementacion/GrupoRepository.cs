@@ -42,8 +42,8 @@ namespace Data.Implementacion
                 {
                     var grupo = new Grupo();
                     var distrito = new Distrito();
-                    grupo.CGrupo = Convert.ToInt32(dr["CGrupo"]);
-                    grupo.NGrupo = Convert.ToString(dr["NGrupo"]);
+                    grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
+                    grupo.NGrupo = Convert.ToString(dr["NEquipo"]);
                     grupo.TDescripcion = Convert.ToString(dr["TDescripcion"]);
                     grupo.NumParticipantes = Convert.ToInt32(dr["NumParticipantes"]);
                     grupo.DFechaJuego = Convert.ToDateTime(dr["DFechaJuego"]);

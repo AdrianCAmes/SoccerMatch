@@ -13,7 +13,7 @@ namespace Business.Implementacion
         private IUsuarioRepository objUsuarioRepositorio = new UsuarioRepository();
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return objUsuarioRepositorio.Delete(id);
         }
 
         public List<Usuario> FindAll()
@@ -23,17 +23,17 @@ namespace Business.Implementacion
 
         public Usuario FindById(int? id)
         {
-            throw new NotImplementedException();
+            return objUsuarioRepositorio.FindById(id);
         }
 
         public bool Insertar(Usuario t)
         {
-            throw new NotImplementedException();
+            return objUsuarioRepositorio.Insertar(t);
         }
 
         public bool Update(Usuario t)
         {
-            throw new NotImplementedException();
+            return objUsuarioRepositorio.Update(t);
         }
     }
 }

@@ -12,6 +12,7 @@ D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Data.dll
 D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Data.pdb
 D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Entity.dll
 D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Entity.pdb
+<<<<<<< HEAD
 C:\UPC\2019-I\Aplicaciones Web\TP\Data\bin\Debug\Data.dll
 C:\UPC\2019-I\Aplicaciones Web\TP\Data\bin\Debug\Data.pdb
 C:\UPC\2019-I\Aplicaciones Web\TP\Data\bin\Debug\Entity.dll
@@ -19,3 +20,14 @@ C:\UPC\2019-I\Aplicaciones Web\TP\Data\bin\Debug\Entity.pdb
 C:\UPC\2019-I\Aplicaciones Web\TP\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\UPC\2019-I\Aplicaciones Web\TP\Data\obj\Debug\Data.dll
 C:\UPC\2019-I\Aplicaciones Web\TP\Data\obj\Debug\Data.pdb
+=======
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.dll
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.pdb
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\bin\Debug\Data.dll
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\bin\Debug\Data.pdb
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\bin\Debug\Entity.dll
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\bin\Debug\Entity.pdb
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.csproj.CopyComplete
+>>>>>>> 08f01f9bde55f2513f749f2e229a169af4b51bae

@@ -50,9 +50,9 @@ namespace Data.Implementacion
                     jugador.NUsuario = Convert.ToString(dr["NUsuario"]);
                     jugador.TDireccion = Convert.ToString(dr["TDireccion"]);
                     grupo.CDistrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
-                    grupo.CGrupo = Convert.ToInt32(dr["CGrupo"]);
+                    grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
                     grupo.DFechaJuego = Convert.ToDateTime(dr["DFechaJuego"]);
-                    grupo.NGrupo = Convert.ToString(dr["NGrupo"]);
+                    grupo.NGrupo = Convert.ToString(dr["NEquipo"]);
                     grupo.NumParticipantes = Convert.ToInt32(dr["NumParticipantes"]);
                     grupo.TDescripcion = Convert.ToString(dr["TDescripcion"]);
                     participante.CJugador = jugador;
@@ -87,9 +87,9 @@ namespace Data.Implementacion
                     jugador.NUsuario = Convert.ToString(dr["NUsuario"]);
                     jugador.TDireccion = Convert.ToString(dr["TDireccion"]);
                     grupo.CDistrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
-                    grupo.CGrupo = Convert.ToInt32(dr["CGrupo"]);
+                    grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
                     grupo.DFechaJuego = Convert.ToDateTime(dr["DFechaJuego"]);
-                    grupo.NGrupo = Convert.ToString(dr["NGrupo"]);
+                    grupo.NGrupo = Convert.ToString(dr["NEquipo"]);
                     grupo.NumParticipantes = Convert.ToInt32(dr["NumParticipantes"]);
                     grupo.TDescripcion = Convert.ToString(dr["TDescripcion"]);
                     participante.CJugador = jugador;
