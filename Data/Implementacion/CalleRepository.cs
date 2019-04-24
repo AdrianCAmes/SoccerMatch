@@ -19,7 +19,7 @@ namespace Data.Implementacion
                 using(var con=new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("delete from Calle where id='" + id + "'", con);
+                    var cmd = new SqlCommand("delete from Calle where CCalle='" + id + "'", con);
                     cmd.ExecuteNonQuery();
                     rpta = true;
                 }
