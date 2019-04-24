@@ -30,7 +30,7 @@ namespace Business.Implementacion
 
         public bool Insertar(Distrito t)
         {
-            throw new NotImplementedException();
+            return objDistritoRep.Insertar(t);
         }
 
         public bool Update(Distrito t)

@@ -95,12 +95,9 @@ namespace Data.Implementacion
 
                     var query = new SqlCommand("insert into distrito values (@NDistrito,@CCiudad)", con);
 
-                    query.Parameters.AddWithValue("@name", t.Name);
-                    query.Parameters.AddWithValue("@email", t.Email);
-                    query.Parameters.AddWithValue("@contactno", t.ContactNo);
-                    query.Parameters.AddWithValue("@date", t.Date);
-                    query.Parameters.AddWithValue("@address", t.Address);
-                    query.Parameters.AddWithValue("@departmentid", t.DepartmentCode.Id);
+                    query.Parameters.AddWithValue("@NDistrito", t.NDistrito);
+                    query.Parameters.AddWithValue("@CCiudad", t.CCiudad);
+                   
 
                     query.ExecuteNonQuery();
                     rpta = true;
@@ -117,7 +114,28 @@ namespace Data.Implementacion
 
         public bool Update(Distrito t)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                {
+                    var query = new SqlCommand("update Distrito set NDistrito =@ndistrito, CCiudad =@cciudad where CDistrito =@id", con);
+                    query.Parameters.AddWithValue("@id", t.CDistrito);
+                    query.Parameters.AddWithValue("@cciudad", t.CCiudad.CCiudad);
+                    query.Parameters.AddWithValue("@ndistrito", t.NDistrito);
+                    query.ExecuteNonQuery();
+
+                    rpta = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return rpta;
         }
+    }
     }
 }
