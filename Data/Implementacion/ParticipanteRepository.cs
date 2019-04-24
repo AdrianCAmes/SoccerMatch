@@ -34,30 +34,35 @@ namespace Data.Implementacion
             List<Participante> participantes = new List<Participante>();
             try
             {
-                var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
-                var cmd = new SqlCommand("select p.CParticipante,p.CJugador,p.CEquipo,j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e where p.CParticipante = p.CJugador and p.CEquipo = e.CEquipo");
-                var dr = cmd.ExecuteReader();
-                while (dr.Read())
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
-                    var participante = new Participante();
-                    var jugador = new Jugador();
-                    var grupo = new Grupo();
-                    participante.CParticipante = Convert.ToInt32(dr["CParticipante"]);
-                    jugador.CCalle.CCalle = Convert.ToInt32(dr["CCalle"]);
-                    jugador.CDNI = Convert.ToInt32(dr["CDNI"]);
-                    jugador.CUsuario = Convert.ToInt32(dr["CUsuario"]);
-                    jugador.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
-                    jugador.NUsuario = Convert.ToString(dr["NUsuario"]);
-                    jugador.TDireccion = Convert.ToString(dr["TDireccion"]);
-                    grupo.CDistrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
-                    grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
-                    grupo.DFechaJuego = Convert.ToDateTime(dr["DFechaJuego"]);
-                    grupo.NGrupo = Convert.ToString(dr["NEquipo"]);
-                    grupo.NumParticipantes = Convert.ToInt32(dr["NumParticipantes"]);
-                    grupo.TDescripcion = Convert.ToString(dr["TDescripcion"]);
-                    participante.CJugador = jugador;
-                    participante.CGrupo = grupo;
-                    participantes.Add(participante);
+                    con.Open();
+                    var cmd = new SqlCommand("select p.CParticipante,p.CJugador,p.CEquipo,j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e where p.CParticipante = p.CJugador and p.CEquipo = e.CEquipo");
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            var participante = new Participante();
+                            var jugador = new Jugador();
+                            var grupo = new Grupo();
+                            participante.CParticipante = Convert.ToInt32(dr["CParticipante"]);
+                            jugador.CCalle.CCalle = Convert.ToInt32(dr["CCalle"]);
+                            jugador.CDNI = Convert.ToInt32(dr["CDNI"]);
+                            jugador.CUsuario = Convert.ToInt32(dr["CUsuario"]);
+                            jugador.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
+                            jugador.NUsuario = Convert.ToString(dr["NUsuario"]);
+                            jugador.TDireccion = Convert.ToString(dr["TDireccion"]);
+                            grupo.CDistrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
+                            grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
+                            grupo.DFechaJuego = Convert.ToDateTime(dr["DFechaJuego"]);
+                            grupo.NGrupo = Convert.ToString(dr["NEquipo"]);
+                            grupo.NumParticipantes = Convert.ToInt32(dr["NumParticipantes"]);
+                            grupo.TDescripcion = Convert.ToString(dr["TDescripcion"]);
+                            participante.CJugador = jugador;
+                            participante.CGrupo = grupo;
+                            participantes.Add(participante);
+                        }
+                    }
                 }
             }
             catch(Exception ex)

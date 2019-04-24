@@ -36,24 +36,27 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("select e.CEquipo,e.NEquipo,e.TDescripcion,e.NumParticipantes,e.DFechaJuego,e.CDistrito,d.CCiudad,d.CDistrito,d.NDistrito from Equipo e, Distrito d where e.CDistrito = d.CDistrito", con);
-                var dr = cmd.ExecuteReader();
-                while (dr.Read())
+                var cmd = new SqlCommand("select e.CEquipo,e.NEquipo,e.TDescripcion,e.NumParticipantes,e.DFechaJuego,e.CDistrito,d.CCiudad,d.NDistrito from Equipo e, Distrito d where e.CDistrito = d.CDistrito", con);
+                using (var dr = cmd.ExecuteReader())
                 {
-                    var grupo = new Grupo();
-                    var distrito = new Distrito();
-                    grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
-                    grupo.NGrupo = Convert.ToString(dr["NEquipo"]);
-                    grupo.TDescripcion = Convert.ToString(dr["TDescripcion"]);
-                    grupo.NumParticipantes = Convert.ToInt32(dr["NumParticipantes"]);
-                    grupo.DFechaJuego = Convert.ToDateTime(dr["DFechaJuego"]);
-                    distrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
-                    distrito.CCiudad.CCiudad = Convert.ToInt32(dr["CCiudad"]);
-                    distrito.NDistrito = Convert.ToString(dr["NDistrito"]);
-                    distrito.CCiudad.CCiudad = Convert.ToInt32(dr["CCiudad"]);
-                    grupo.CDistrito = distrito;
-                    grupos.Add(grupo);
+                    while (dr.Read())
+                    {
+                        var grupo = new Grupo();
+                        var distrito = new Distrito();
+                        var ciudad = new Ciudad();
+                        grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
+                        grupo.NGrupo = Convert.ToString(dr["NEquipo"]);
+                        grupo.TDescripcion = Convert.ToString(dr["TDescripcion"]);
+                        grupo.NumParticipantes = Convert.ToInt32(dr["NumParticipantes"]);
+                        grupo.DFechaJuego = Convert.ToDateTime(dr["DFechaJuego"]);
+                        distrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
+                        ciudad.CCiudad = Convert.ToInt32(dr["CCiudad"]);
+                        distrito.CCiudad = ciudad;
+                        distrito.NDistrito = Convert.ToString(dr["NDistrito"]);
+                        grupo.CDistrito = distrito;
+                        grupos.Add(grupo);
 
+                    }
                 }
             }
             catch(Exception ex)

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Entity.Cancha>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CCancha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NCancha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TDireccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MPrecioHora)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CCancha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NCancha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TDireccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MPrecioHora)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
