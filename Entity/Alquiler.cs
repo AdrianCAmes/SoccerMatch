@@ -20,13 +20,15 @@ namespace Entity
         [DisplayName("Cancha")]
         public Cancha CCancha { get; set; }
 
-        [DisplayName("Horas")]
+        [Required(ErrorMessage = "Porfavor, seleccione una hora de inicio: ")]
+        [DisplayName("Hora de Incio")]
         public DateTime DHoraInicio { get; set; }
 
         [DisplayName("Horas")]
         public int NumHoras { get; set; }
 
         [DisplayName("Descuento")]
+<<<<<<< HEAD
         public decimal MDescuento { get; set; }
 
         [DisplayName("Total")]
@@ -35,5 +37,14 @@ namespace Entity
         [DisplayName("Pagado")]
         public bool FPagado { get; set; }
        
+=======
+        public Decimal MDescuento { get; set; }
+
+        [DisplayName("Total")]
+        public Decimal MTotal { get; set; }
+        
+        [DisplayName("Pagado")]
+        public bool FPagado { get; set; }
+>>>>>>> 7c45f2bf669ff8612233ffb72e1bad5527d65f8d
     }
 }

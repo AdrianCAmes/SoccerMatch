@@ -50,7 +50,6 @@
     <Compile Include="IDetalleParticipanteService.cs" />
     <Compile Include="IDistritoService.cs" />
     <Compile Include="IGrupoService.cs" />
-    <Compile Include="IHorarioService.cs" />
     <Compile Include="IJugadorService.cs" />
     <Compile Include="Implementacion\AdministradorService.cs" />
     <Compile Include="Implementacion\AlquilerService.cs" />
@@ -61,7 +60,6 @@
     <Compile Include="Implementacion\DetalleParticipanteService.cs" />
     <Compile Include="Implementacion\DistritoService.cs" />
     <Compile Include="Implementacion\GrupoService.cs" />
-    <Compile Include="Implementacion\HorarioService.cs" />
     <Compile Include="Implementacion\JugadorService.cs" />
     <Compile Include="Implementacion\ParticipanteService.cs" />
     <Compile Include="Implementacion\PropietarioService.cs" />
