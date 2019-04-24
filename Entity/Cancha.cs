@@ -33,6 +33,5 @@ namespace Entity
 
         public Decimal MPrecioHora { get; set; }
 
-       
 }
 }
