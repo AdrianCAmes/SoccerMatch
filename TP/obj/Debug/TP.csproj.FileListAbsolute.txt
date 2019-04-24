@@ -86,3 +86,6 @@ D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP
 D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\TP\bin\Entity.pdb
 D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\TP\bin\Service.pdb
 D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\TP\bin\Data.pdb
+D:\TRABAJO_PARCIAL_WEB\TP\obj\Debug\TP.csprojResolveAssemblyReference.cache
+D:\TRABAJO_PARCIAL_WEB\TP\obj\Debug\TP.dll
+D:\TRABAJO_PARCIAL_WEB\TP\obj\Debug\TP.pdb
