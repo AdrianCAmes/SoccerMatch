@@ -9,29 +9,37 @@ namespace Business.Implementacion
 {
     public class DetalleParticipanteService : IDetalleParticipanteService
     {
+        private IDetalleParticipanteService objDetalleParticipante = new DetalleParticipanteService();
+        private IParticipanteService objParticipante = new ParticipanteService();
+        private IAlquilerService objAlquiler = new AlquilerService();
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return objDetalleParticipante.Delete(id);
         }
 
         public List<DetalleParticipante> FindAll()
         {
-            throw new NotImplementedException();
+            return objDetalleParticipante.FindAll();
         }
 
         public DetalleParticipante FindById(int? id)
         {
-            throw new NotImplementedException();
+            return objDetalleParticipante.FindById(id);
         }
 
         public bool Insertar(DetalleParticipante t)
         {
-            throw new NotImplementedException();
+            Participante participante = objParticipante.FindById(t.CParticipante.CParticipante);
+            t.CParticipante = participante;
+            Alquiler alquiler = objAlquiler.FindById(t.CAlquiler.CAlquiler);
+            t.CAlquiler = alquiler;
+
+            return objDetalleParticipante.Insertar(t);
         }
 
         public bool Update(DetalleParticipante t)
         {
-            throw new NotImplementedException();
+            return objDetalleParticipante.Update(t);
         }
     }
 }

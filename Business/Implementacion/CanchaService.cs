@@ -9,29 +9,37 @@ namespace Business.Implementacion
 {
     public class CanchaService : ICanchaService
     {
+        private ICanchaService objCanchaService = new CanchaService();
+        private IPropietarioService objPropietarioService = new PropietarioService();
+        private ICalleService objCalleService = new CalleService();
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return objCanchaService.Delete(id);
         }
 
         public List<Cancha> FindAll()
         {
-            throw new NotImplementedException();
+            return objCanchaService.FindAll();
         }
 
         public Cancha FindById(int? id)
         {
-            throw new NotImplementedException();
+            return objCanchaService.FindById(id);
         }
 
         public bool Insertar(Cancha t)
         {
-            throw new NotImplementedException();
+            Propietario propietario = objPropietarioService.FindById(t.CPropietario.CUsuario);
+            t.CPropietario = propietario;
+            Calle calle = objCalleService.FindById(t.CCalle.CCalle);
+            t.CCalle = calle;
+
+            return objCanchaService.Insertar(t);
         }
 
         public bool Update(Cancha t)
         {
-            throw new NotImplementedException();
+            return objCanchaService.Update(t);
         }
     }
 }

@@ -9,29 +9,30 @@ namespace Business.Implementacion
 {
     public class DepartamentoService : IDepartamentoService
     {
+        private IDepartamentoService objDepartamentoService = new DepartamentoService();
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return objDepartamentoService.Delete(id);
         }
 
         public List<Departamento> FindAll()
         {
-            throw new NotImplementedException();
+            return objDepartamentoService.FindAll();
         }
 
         public Departamento FindById(int? id)
         {
-            throw new NotImplementedException();
+            return objDepartamentoService.FindById(id);
         }
 
         public bool Insertar(Departamento t)
         {
-            throw new NotImplementedException();
+            return objDepartamentoService.Insertar(t);
         }
 
         public bool Update(Departamento t)
         {
-            throw new NotImplementedException();
+            return objDepartamentoService.Update(t);
         }
     }
 }
