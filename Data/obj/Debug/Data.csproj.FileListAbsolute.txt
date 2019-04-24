@@ -5,3 +5,10 @@ D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP
 D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Data\obj\Debug\Data.dll
 D:\Descargas y archivos\Documentos\Visual Studio 2015\Projects\APRENDIENDO_C#\TP\Data\obj\Debug\Data.pdb
+D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.dll
+D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.pdb
+D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Data.dll
+D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Data.pdb
+D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Entity.dll
+D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Entity.pdb

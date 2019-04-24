@@ -72,8 +72,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{f99a04de-d7b9-44e5-a04e-08fd07840b0a}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
-      <Project>{2F2AFD7F-22DD-4B8E-92E4-32C8651D2434}</Project>
+      <Project>{2f2afd7f-22dd-4b8e-92e4-32c8651d2434}</Project>
       <Name>Entity</Name>
     </ProjectReference>
   </ItemGroup>

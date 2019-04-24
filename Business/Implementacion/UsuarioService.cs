@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Data;
+using Data.Implementacion;
 using Entity;
-
 namespace Business.Implementacion
 {
     public class UsuarioService : IUsuarioService
     {
+        private IUsuarioRepository objUsuarioRepositorio = new UsuarioRepository();
         public bool Delete(int id)
         {
             throw new NotImplementedException();
@@ -16,7 +18,7 @@ namespace Business.Implementacion
 
         public List<Usuario> FindAll()
         {
-            throw new NotImplementedException();
+            return objUsuarioRepositorio.FindAll();
         }
 
         public Usuario FindById(int? id)

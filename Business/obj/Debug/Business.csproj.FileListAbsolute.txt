@@ -1,0 +1,9 @@
+D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Business.dll
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Business.pdb
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Entity.dll
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Entity.pdb
+D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.dll
+D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.pdb
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Data.dll
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Data.pdb

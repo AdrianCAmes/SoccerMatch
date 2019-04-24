@@ -27,17 +27,19 @@ namespace Data.Implementacion
                     var query = new SqlCommand("select u.cusuario, u.cdni, u.nusuario,u.numtelefono from usuario u",con);
                     using (var dr = query.ExecuteReader())
                     {
-                        Usuario usuario_temp = new Usuario();
-                        usuario_temp.CUsuario = Convert.ToInt16(dr["cusuario"]);
-                        usuario_temp.CDNI = Convert.ToInt32(dr["cdni"]);
-                        usuario_temp.NUsuario = dr["nusuario"].ToString();
-                        usuario_temp.NumTelefono = Convert.ToInt32(dr["numtelefono"]);
-                        Lsta_usuarios.Add(usuario_temp);
-
+                        while (dr.Read())
+                        {
+                            Usuario usuario_temp = new Usuario();
+                            usuario_temp.CUsuario = Convert.ToInt16(dr["cusuario"]);
+                            usuario_temp.CDNI = Convert.ToInt32(dr["cdni"]);
+                            usuario_temp.NUsuario = dr["nusuario"].ToString();
+                            usuario_temp.NumTelefono = Convert.ToInt32(dr["numtelefono"]);
+                            Lsta_usuarios.Add(usuario_temp);
+                        }
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
