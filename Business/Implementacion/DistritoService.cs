@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
-
+using Data;
+using Data.Implementacion;
 namespace Business.Implementacion
 {
     public class DistritoService : IDistritoService
     {
+        private IDistritoRepository objDistritoRep = new DistritoRepository();
+        private ICiudadRepository objCiudadRep = new CiudadRepository();
         public bool Delete(int id)
         {
             throw new NotImplementedException();
@@ -16,11 +19,15 @@ namespace Business.Implementacion
 
         public List<Distrito> FindAll()
         {
-            throw new NotImplementedException();
+            return objDistritoRep.FindAll();
         }
 
         public Distrito FindById(int? id)
         {
+            //Ciudad department = objCiudadRep.FindById(t.DepartmentCode.Id);
+            //t.DepartmentCode = department;
+            //return studentRepository.Insert(t);
+            //return objDistritoRep.FindAll();
             throw new NotImplementedException();
         }
 
