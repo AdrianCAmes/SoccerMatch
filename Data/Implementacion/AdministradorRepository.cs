@@ -13,7 +13,20 @@ namespace Data.Implementacion
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+            try
+            {
+                using (var con=new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString())) {
+                    con.Open();
+                    var cmd = new SqlCommand("delete from Administrador where id='" + id + "'", con);
+                    cmd.ExecuteNonQuery();
+                    rpta = true;
+                }
+            }
+            catch (Exception ex){
+                throw ex;
+            }
+            return rpta;
         }
 
         public List<Administrador> FindAll()
@@ -145,7 +158,6 @@ namespace Data.Implementacion
                     var query = new SqlCommand("insert into Administrador", con);
 
                     query.Parameters.AddWithValue("@CAdministrador", t.CUsuario);
-
                     query.ExecuteNonQuery();
 
                     rpta = true;
@@ -168,15 +180,13 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("update Administrador ");
-
-                    
-
+                    var query = new SqlCommand("update Administrador set CAdministrador=@id ");
+                    query.Parameters.AddWithValue("@id", t.CUsuario);                
                     rpta = true;
                 }
-            } catch (Exception e)
+            } catch (Exception ex )
             {
-                throw;
+                throw ex;
             }
 
             return rpta;
