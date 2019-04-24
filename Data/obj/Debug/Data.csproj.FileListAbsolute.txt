@@ -12,3 +12,12 @@ D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Data.dll
 D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Data.pdb
 D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Entity.dll
 D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Entity.pdb
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.dll
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.pdb
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\bin\Debug\Data.dll
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\bin\Debug\Data.pdb
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\bin\Debug\Entity.dll
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\bin\Debug\Entity.pdb
+C:\Users\Usuario\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.csproj.CopyComplete
