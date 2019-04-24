@@ -13,7 +13,20 @@ namespace Data.Implementacion
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+            try
+            {
+                var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
+                con.Open();
+                var cmd = new SqlCommand("delete from Distrito where CDistrito='" + id + "'", con);
+                cmd.ExecuteNonQuery();
+                rpta = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return rpta;
         }
 
         public List<Distrito> FindAll()
@@ -44,12 +57,62 @@ namespace Data.Implementacion
 
         public Distrito FindById(int? id)
         {
-            throw new NotImplementedException();
+            Distrito distrito_temp= null;
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
+                {
+                    con.Open();
+                    var query = new SqlCommand("select d.CDistrito,d.NDistrito,d.CCiudad from distrito d where d.CDistrito=2", con);
+                    using (var dr = query.ExecuteReader())
+                    {
+                        Ciudad objCiudad = new Ciudad();
+                        query.Parameters.AddWithValue("@id", id);
+                        distrito_temp = new Distrito();
+                        distrito_temp.CDistrito = Convert.ToInt32(dr["CDistrito"]);
+                        distrito_temp.NDistrito = dr["NDistrito"].ToString();
+
+                        objCiudad.CCiudad = Convert.ToInt32(dr["CCiudad"]);
+                        distrito_temp.CCiudad = objCiudad;
+                    }
+                }
+                return distrito_temp;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public bool Insertar(Distrito t)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["university"].ToString()))
+                {
+                    con.Open();
+
+                    var query = new SqlCommand("insert into distrito values (@NDistrito,@CCiudad)", con);
+
+                    query.Parameters.AddWithValue("@name", t.Name);
+                    query.Parameters.AddWithValue("@email", t.Email);
+                    query.Parameters.AddWithValue("@contactno", t.ContactNo);
+                    query.Parameters.AddWithValue("@date", t.Date);
+                    query.Parameters.AddWithValue("@address", t.Address);
+                    query.Parameters.AddWithValue("@departmentid", t.DepartmentCode.Id);
+
+                    query.ExecuteNonQuery();
+                    rpta = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+
+            return rpta;
         }
 
         public bool Update(Distrito t)
