@@ -20,7 +20,7 @@ namespace Data.Implementacion
                 using(var con=new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("delete from Propietario where id='" + id + "'", con);
+                    var cmd = new SqlCommand("delete from Propietario where CPropietario='" + id + "'", con);
                     cmd.ExecuteNonQuery();
                     rpta = true;
                 }
