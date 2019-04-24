@@ -13,7 +13,20 @@ namespace Data.Implementacion
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+            try
+            {
+                var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
+                con.Open();
+                var cmd = new SqlCommand("delete from Usuario where CUsuario='" + id + "'", con);
+                cmd.ExecuteNonQuery();
+                rpta = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return rpta;
         }
 
         public List<Usuario> FindAll()
@@ -99,7 +112,31 @@ namespace Data.Implementacion
 
         public bool Update(Usuario t)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                {
+                    con.Open();
+
+                    var query = new SqlCommand("update Usuario set CUsuario=@cusuario,CDNI=@cdni,NUsuario=@nusuario,NumTelefono=@numtelefono", con);
+
+                    query.Parameters.AddWithValue("@cusuario", t.CUsuario);
+                    query.Parameters.AddWithValue("@cdni", t.CDNI);
+                    query.Parameters.AddWithValue("@nusuario", t.NUsuario);
+                    query.Parameters.AddWithValue("@numtelefono", t.NumTelefono);
+
+                    query.ExecuteNonQuery();
+
+                    rpta = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return rpta;
         }
     }
 }
