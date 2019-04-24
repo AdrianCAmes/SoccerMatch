@@ -75,7 +75,7 @@ namespace Data.Implementacion
             try
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
-                var cmd = new SqlCommand("select p.CParticipante,p.CJugador,p.CEquipo,j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e where p.CParticipante='"+id+"'"+" p.CParticipante = p.CJugador and p.CEquipo = e.CEquipo");
+                var cmd = new SqlCommand("select p.CParticipante,p.CJugador,p.CEquipo,j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e where p.CParticipante='"+id+"' and "+" p.CParticipante = p.CJugador and p.CEquipo = e.CEquipo");
                 var dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
