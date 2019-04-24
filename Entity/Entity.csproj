@@ -50,7 +50,6 @@
     <Compile Include="DetalleParticipante.cs" />
     <Compile Include="Distrito.cs" />
     <Compile Include="Grupo.cs" />
-    <Compile Include="Horario.cs" />
     <Compile Include="Jugador.cs" />
     <Compile Include="Participante.cs" />
     <Compile Include="Propietario.cs" />

@@ -30,7 +30,9 @@ namespace Entity
 
         [Required(ErrorMessage = "Porfavor, ingrese un precio por hora: ")]
         [DisplayName("Precio x Hora")]
-        public float MPrecioHora { get; set; }
+
+        public Decimal MPrecioHora { get; set; }
+
        
 }
 }
