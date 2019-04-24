@@ -132,7 +132,7 @@ namespace Data.Implementacion
 
         public Alquiler FindById(int? id)
         {
-            Alquiler alquiler = new Alquiler(); 
+            Alquiler alquiler = null; 
             try
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))

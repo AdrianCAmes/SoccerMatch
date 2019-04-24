@@ -33,12 +33,101 @@ namespace Data.Implementacion
 
         public List<Calle> FindAll()
         {
-            throw new NotImplementedException();
+            var calles = new List<Calle>();
+
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                {
+                    con.Open();
+
+                    var query = new SqlCommand("select c.CCalle, c.NCalle, d.CDistrito, d.NDistrito, ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento" +
+                                               "from Calle c, Distrito d, Ciudad ci, Departamento de", con);
+
+                    using (var dr = query.ExecuteReader())
+                    {
+                        while(dr.Read())
+                        {
+                            var calle = new Calle();
+                            var distrito = new Distrito();
+                            var ciudad = new Ciudad();
+                            var departamento = new Departamento();
+
+                            departamento.CDepartamento = Convert.ToInt32(dr["CDepartamento"]);
+                            departamento.NDepartamento = dr["NDepartamento"].ToString();
+
+                            ciudad.CCiudad = Convert.ToInt32(dr["CCiudad"]);
+                            ciudad.NCiudad = dr["NCiudad"].ToString();
+                            ciudad.CDepartamento = departamento;
+
+                            distrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
+                            distrito.NDistrito = dr["NDistrito"].ToString();
+                            distrito.CCiudad = ciudad;
+
+                            calle.CCalle = Convert.ToInt32(dr["CCalle"]);
+                            calle.NCalle = dr["NCalle"].ToString();
+                            calle.CDistrito = distrito;
+
+                            calles.Add(calle);
+                        }
+                    }
+
+                }
+            } catch (Exception ex)
+            {
+                throw;
+            }
+
+            return calles;
         }
 
         public Calle FindById(int? id)
         {
-            throw new NotImplementedException();
+            Calle calle = null;
+
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                {
+                    con.Open();
+
+                    var query = new SqlCommand("select c.CCalle, c.NCalle, d.CDistrito, d.NDistrito, ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento" +
+                                               "from Calle c, Distrito d, Ciudad ci, Departamento de", con);
+
+                    using (var dr = query.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            calle = new Calle();
+                            var distrito = new Distrito();
+                            var ciudad = new Ciudad();
+                            var departamento = new Departamento();
+
+                            departamento.CDepartamento = Convert.ToInt32(dr["CDepartamento"]);
+                            departamento.NDepartamento = dr["NDepartamento"].ToString();
+
+                            ciudad.CCiudad = Convert.ToInt32(dr["CCiudad"]);
+                            ciudad.NCiudad = dr["NCiudad"].ToString();
+                            ciudad.CDepartamento = departamento;
+
+                            distrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
+                            distrito.NDistrito = dr["NDistrito"].ToString();
+                            distrito.CCiudad = ciudad;
+
+                            calle.CCalle = Convert.ToInt32(dr["CCalle"]);
+                            calle.NCalle = dr["NCalle"].ToString();
+                            calle.CDistrito = distrito;
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return calle;
         }
 
         public bool Insertar(Calle t)
@@ -46,7 +135,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using(var con=new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                using(var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
                     var cmd = new SqlCommand("insert into Calle values(@NCalle,@CDistrito)");
