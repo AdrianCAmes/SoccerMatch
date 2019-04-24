@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Data.Implementacion
 {
@@ -11,7 +13,25 @@ namespace Data.Implementacion
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                {
+                    con.Open();
+
+                    var query = new SqlCommand("delete from Cancha where CCancha = '" + id + "'", con);
+                    query.ExecuteNonQuery();
+
+                    rpta = true;
+                }
+            } catch (Exception ex)
+            {
+                throw;
+            }
+
+            return rpta;
         }
 
         public List<Cancha> FindAll()

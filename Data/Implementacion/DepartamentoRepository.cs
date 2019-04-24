@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Data.Implementacion
 {
@@ -11,27 +13,136 @@ namespace Data.Implementacion
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                {
+                    var query = new SqlCommand("delete from Departamento where CDepartamento = '" + id + "'", con);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return rpta;
         }
 
         public List<Departamento> FindAll()
         {
-            throw new NotImplementedException();
+            var departamentos = new List<Departamento>();
+
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                {
+                    con.Open();
+
+                    var query = new SqlCommand("select de.CDepartamento, de.NDepartamento" +
+                                               "from Departamento de", con);
+
+                    using (var dr = query.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            var departamento = new Departamento();
+
+                            departamento.CDepartamento = Convert.ToInt32(dr["CDepartamento"]);
+                            departamento.NDepartamento = dr["NDepartamento"].ToString();
+
+                            departamentos.Add(departamento);
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return departamentos;
         }
 
         public Departamento FindById(int? id)
         {
-            throw new NotImplementedException();
+            Departamento departamento = null);
+
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                {
+                    con.Open();
+
+                    var query = new SqlCommand("select de.CDepartamento, de.NDepartamento" +
+                                               "from Departamento de" +
+                                               "where de.CDepartamento = '" + id + "'", con);
+
+                    using (var dr = query.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            departamento = new Departamento();
+
+                            departamento.CDepartamento = Convert.ToInt32(dr["CDepartamento"]);
+                            departamento.NDepartamento = dr["NDepartamento"].ToString();
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return departamento;
         }
 
         public bool Insertar(Departamento t)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                {
+                    var query = new SqlCommand("insert intro Departamento values (,@NDepartamento)", con);
+                    query.Parameters.AddWithValue("@NDepartamento", t.NDepartamento);
+                    query.ExecuteNonQuery();
+
+                    rpta = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return rpta;
         }
 
         public bool Update(Departamento t)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                {
+                    var query = new SqlCommand("update Ciudad set NDepartamento = @ndepartamento)", con);
+                    query.Parameters.AddWithValue("@ndepartamento", t.NDepartamento);
+                    query.ExecuteNonQuery();
+
+                    rpta = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return rpta;
         }
     }
 }
