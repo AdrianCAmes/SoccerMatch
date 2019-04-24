@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using Data;
+using Data.Implementacion;
 
 namespace Business.Implementacion
 {
     public class CanchaService : ICanchaService
     {
-        private ICanchaService objCanchaService = new CanchaService();
-        private IPropietarioService objPropietarioService = new PropietarioService();
-        private ICalleService objCalleService = new CalleService();
+        private ICanchaRepository objCanchaService = new CanchaRepository();
+        private IPropietarioRepository objPropietarioService = new PropietarioRepository();
+        private ICalleRepository objCalleService = new CalleRepository();
         public bool Delete(int id)
         {
             return objCanchaService.Delete(id);

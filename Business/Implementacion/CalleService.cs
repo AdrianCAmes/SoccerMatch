@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using Data;
+using Data.Implementacion;
 
 namespace Business.Implementacion
 {
     public class CalleService : ICalleService
     {
-        private ICalleService objCalleService = new CalleService();
-        private IDistritoService objDistritoService = new DistritoService();
+        private ICalleRepository objCalleService = new CalleRepository();
+        private IDistritoRepository objDistritoService = new DistritoRepository();
         public bool Delete(int id)
         {
             return objCalleService.Delete(id);

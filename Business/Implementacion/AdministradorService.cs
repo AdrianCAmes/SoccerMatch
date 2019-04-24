@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using Data;
+using Data.Implementacion;
 
 namespace Business.Implementacion
 {
     public class AdministradorService : IAdministradorService
     {
-        private IAdministradorService objAdministradorService = new AdministradorService();
-        private IJugadorService objJugadorService = new JugadorService();
+        private IAdministradorRepository objAdministradorService = new AdministradorRepository();
+        private IJugadorRepository objJugadorService = new JugadorRepository();
         public bool Delete(int id)
         {
             return objAdministradorService.Delete(id);

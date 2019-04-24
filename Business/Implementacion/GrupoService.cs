@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using Data;
+using Data.Implementacion;
 
 namespace Business.Implementacion
 {
     public class GrupoService : IGrupoService
     {
-        private IGrupoService objGrupoService = new GrupoService();
-        private IDistritoService objDistritoService = new DistritoService();
+        private IGrupoRepository objGrupoService = new GrupoRepository();
+        private IDistritoRepository objDistritoService = new DistritoRepository();
         public bool Delete(int id)
         {
             return objGrupoService.Delete(id);

@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using Data;
+using Data.Implementacion;
 
 namespace Business.Implementacion
 {
     public class DetalleParticipanteService : IDetalleParticipanteService
     {
-        private IDetalleParticipanteService objDetalleParticipante = new DetalleParticipanteService();
-        private IParticipanteService objParticipante = new ParticipanteService();
-        private IAlquilerService objAlquiler = new AlquilerService();
+        private IDetalleParticipanteRepository objDetalleParticipante = new DetalleParticipanteRepository();
+        private IParticipanteRepository objParticipante = new ParticipanteRepository();
+        private IAlquilerRepository objAlquiler = new AlquilerRepository();
         public bool Delete(int id)
         {
             return objDetalleParticipante.Delete(id);

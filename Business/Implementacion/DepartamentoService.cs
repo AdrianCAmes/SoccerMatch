@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using Data;
+using Data.Implementacion;
 
 namespace Business.Implementacion
 {
     public class DepartamentoService : IDepartamentoService
     {
-        private IDepartamentoService objDepartamentoService = new DepartamentoService();
+        private IDepartamentoRepository objDepartamentoService = new DepartamentoRepository();
         public bool Delete(int id)
         {
             return objDepartamentoService.Delete(id);

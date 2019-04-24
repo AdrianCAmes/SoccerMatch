@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using Data;
+using Data.Implementacion;
 
 namespace Business.Implementacion
 {
     public class JugadorService : IJugadorService
     {
-        private IJugadorService objJugadorService = new JugadorService();
-        private IUsuarioService objUsuarioService = new UsuarioService();
-        private ICalleService objCalleService = new CalleService();
+        private IJugadorRepository objJugadorService = new JugadorRepository();
+        private IUsuarioRepository objUsuarioService = new UsuarioRepository();
+        private ICalleRepository objCalleService = new CalleRepository();
         public bool Delete(int id)
         {
             return objJugadorService.Delete(id);
