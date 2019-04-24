@@ -25,9 +25,8 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("select a.CAdministrador, j.CCalle, j.TDireccion, u.CDNI, u.NUsuario, u.NumTelefono, c.CCalle," +
-                                                "c.CDistrito, c.NCalle, d.CCiudad,  d.CDistrito, d.NDistrito, ci.CCiudad, ci.CDepartamento, ci.NCiudad," +
-                                                "de.CDepartamento, de.NDepartamento" +
+                    var query = new SqlCommand("a.CAdministrador, u.NUsuario, u.CDNI, u.NumTelefono, j.TDireccion, c.CCalle, c.NCalle," +
+                                                "d.CDistrito, d.NDistrito, ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento" +
                                                 "from Administrador a, Jugador j, Usuario u, Calle c, Distrito d, Ciudad ci, Departamento de" +
                                                 "where a.CAdministrador = j.CJugador and j.CJugador = u.CUsuario and c.CCalle = j.CCalle and" +
                                                 "c.CDistrito = d.CDistrito and d.CCiudad = ci.CCiudad and ci.CDepartamento = de.CDepartamento", con);
@@ -86,9 +85,8 @@ namespace Data.Implementacion
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
-                    var query = new SqlCommand("select a.CAdministrador, j.CCalle, j.TDireccion, u.CDNI, u.NUsuario, u.NumTelefono, c.CCalle," +
-                                                "c.CDistrito, c.NCalle, d.CCiudad,  d.CDistrito, d.NDistrito, ci.CCiudad, ci.CDepartamento, ci.NCiudad," +
-                                                "de.CDepartamento, de.NDepartamento" +
+                    var query = new SqlCommand("a.CAdministrador, u.NUsuario, u.CDNI, u.NumTelefono, j.TDireccion, c.CCalle," + 
+                                                "c.NCalle,  d.CDistrito, d.NDistrito, ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento" +
                                                 "from Administrador a, Jugador j, Usuario u, Calle c, Distrito d, Ciudad ci, Departamento de" +
                                                 "where a.CAdministrador = '" + id + "' and j.CJugador ='" + id + "' and u.CUsuario '" + id + "' and" +
                                                 "c.CCalle = j.CCalle and c.CDistrito = d.CDistrito and d.CCiudad = ci.CCiudad and ci.CDepartamento = de.CDepartamento", con);
