@@ -45,7 +45,7 @@ namespace Data.Implementacion
                     while (dr.Read())
                     {
                         var propietario = new Propietario();
-                        propietario.CUsuario = Convert.ToInt32(dr["CJugador"]);
+                        propietario.CUsuario = Convert.ToInt32(dr["CPropietario"]);
                         propietario.CDNI = Convert.ToInt32(dr["CDNI"]);
                         propietario.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
                         propietario.NUsuario = Convert.ToString(dr["NUsuario"]);

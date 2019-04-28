@@ -5,3 +5,10 @@ C:\Users\Adrian\Desktop\TP\Data\bin\Debug\Entity.dll
 C:\Users\Adrian\Desktop\TP\Data\bin\Debug\Entity.pdb
 C:\Users\Adrian\Desktop\TP\Data\obj\Debug\Data.dll
 C:\Users\Adrian\Desktop\TP\Data\obj\Debug\Data.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP\Data\bin\Debug\Data.dll
+C:\UPC\2019-I\Aplicaciones Web\TP\Data\bin\Debug\Data.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP\Data\bin\Debug\Entity.dll
+C:\UPC\2019-I\Aplicaciones Web\TP\Data\bin\Debug\Entity.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\UPC\2019-I\Aplicaciones Web\TP\Data\obj\Debug\Data.dll
+C:\UPC\2019-I\Aplicaciones Web\TP\Data\obj\Debug\Data.pdb
