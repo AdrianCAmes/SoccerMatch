@@ -22,7 +22,7 @@ namespace TP.Controllers
         {
 
             return View();
-        }
+        }*/
 
         // GET: Usuario/Create
         public ActionResult Create()
@@ -32,12 +32,12 @@ namespace TP.Controllers
 
         // POST: Usuario/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Usuario usuario)
         {
             try
             {
                 // TODO: Add insert logic here
-
+                bool rpta = objUsuarioService.Insertar(usuario);
                 return RedirectToAction("Index");
             }
             catch
@@ -47,7 +47,7 @@ namespace TP.Controllers
         }
 
         // GET: Usuario/Edit/5
-        public ActionResult Edit(int id)
+        /*public ActionResult Edit(int id)
         {
             return View();
         }

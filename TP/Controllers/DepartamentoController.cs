@@ -1,5 +1,6 @@
 ﻿using Business;
 using Business.Implementacion;
+using Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,28 @@ namespace TP.Controllers
         public ActionResult Index()
         {
             return View(objDepartamentoService.FindAll());
+        }
+
+        // GET: Departamento/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Departamento/Create
+        [HttpPost]
+        public ActionResult Create(Departamento departamento)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+                bool rpta = objDepartamentoService.Insertar(departamento);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }
