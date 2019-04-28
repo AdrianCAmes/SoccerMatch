@@ -12,6 +12,6 @@ namespace Data
         bool Insertar(T t);
         bool Update(T t);
         List<T> FindAll();
-        T FindById(int?id);
+        T FindById(int? id);
     }
 }

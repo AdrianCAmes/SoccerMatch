@@ -16,7 +16,7 @@ namespace Entity
         [DisplayName("DNI")]
         public long CDNI { get; set; }
 
-        [Required(ErrorMessage ="Porfavor, ingrese un nombre de usuario")]
+        [Required(ErrorMessage = "Porfavor, ingrese un nombre de usuario")]
         [DisplayName("Nombre de Usuario")]
         public string NUsuario { get; set; }
 
@@ -24,6 +24,6 @@ namespace Entity
         [DisplayName("Numero de Telefono")]
         public long NumTelefono { get; set; }
 
-    
+
     }
 }

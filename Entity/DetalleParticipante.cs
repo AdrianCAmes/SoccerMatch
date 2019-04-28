@@ -12,11 +12,11 @@ namespace Entity
         [DisplayName("Código del Detalle")]
         public int CDetalleParticipante { get; set; }
 
-        [Required(ErrorMessage="Por favor, ingrese el codigo del alquiler: ")]
+        [Required(ErrorMessage = "Por favor, ingrese el codigo del alquiler: ")]
         [DisplayName("Alquiler")]
         public Alquiler CAlquiler { get; set; }
 
-        [Required(ErrorMessage ="Por favor, ingrese el codigo del participante: ")]
+        [Required(ErrorMessage = "Por favor, ingrese el codigo del participante: ")]
         [DisplayName("Participante")]
         public Participante CParticipante { get; set; }
 
@@ -24,7 +24,7 @@ namespace Entity
         [DisplayName("Cuota")]
         public Decimal MCuota { get; set; }
 
-        [Required(ErrorMessage ="Por favor, ingrese el estado del pago: ")]
+        [Required(ErrorMessage = "Por favor, ingrese el estado del pago: ")]
         [DisplayName("Estado de Pago")]
         public bool FPartePagada { get; set; }
     }

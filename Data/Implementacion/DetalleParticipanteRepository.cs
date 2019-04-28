@@ -22,7 +22,7 @@ namespace Data.Implementacion
                 cmd.ExecuteNonQuery();
                 rpta = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -65,7 +65,7 @@ namespace Data.Implementacion
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -81,7 +81,7 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("select dp.CDetalleParticipante,dp.CAlquiler,dp.CParticipante,dp.MCuota,dp.FPartePagada,a.CCancha,a.CEquipo,a.CHorario,a.FPagado,a.MDescuento,a.MTotal,a.NumHoras,p.CJugador from DetalleParticipante dp, Alquiler a, Participante p where dp.CDetalleParticipante='"+id+"' and"+" dp.CAlquiler = a.CAlquiler and dp.CParticipante = p.CParticipante", con);
+                var cmd = new SqlCommand("select dp.CDetalleParticipante,dp.CAlquiler,dp.CParticipante,dp.MCuota,dp.FPartePagada,a.CCancha,a.CEquipo,a.CHorario,a.FPagado,a.MDescuento,a.MTotal,a.NumHoras,p.CJugador from DetalleParticipante dp, Alquiler a, Participante p where dp.CDetalleParticipante='" + id + "' and" + " dp.CAlquiler = a.CAlquiler and dp.CParticipante = p.CParticipante", con);
                 var dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -124,7 +124,7 @@ namespace Data.Implementacion
                 cmd.ExecuteNonQuery();
                 rpta = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }

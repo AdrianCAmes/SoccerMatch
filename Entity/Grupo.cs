@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-  public class Grupo
+    public class Grupo
     {
         [DisplayName("Código de Grupo")]
         public int CGrupo { get; set; }
 
-        [Required(ErrorMessage ="Porfavor, ingrese el nombre del grupo: ")]
+        [Required(ErrorMessage = "Porfavor, ingrese el nombre del grupo: ")]
         [DisplayName("Nombre de Grupo")]
         public string NGrupo { get; set; }
 
@@ -31,5 +31,5 @@ namespace Entity
         [DisplayName("Distrito")]
         public Distrito CDistrito { get; set; }
 
-}
+    }
 }

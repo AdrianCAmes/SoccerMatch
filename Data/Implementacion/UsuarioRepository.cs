@@ -37,7 +37,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("select u.cusuario, u.cdni, u.nusuario,u.numtelefono from usuario u",con);
+                    var query = new SqlCommand("select u.cusuario, u.cdni, u.nusuario,u.numtelefono from usuario u", con);
                     using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())
@@ -65,17 +65,17 @@ namespace Data.Implementacion
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
             {
                 con.Open();
-                var query = new SqlCommand("select u.cusuario, u.cdni, u.nusuario,u.numtelefono from usuario u where u.cusuario=@id",con);
+                var query = new SqlCommand("select u.cusuario, u.cdni, u.nusuario,u.numtelefono from usuario u where u.cusuario=@id", con);
                 using (var dr = query.ExecuteReader())
                 {
-                   
-                        query.Parameters.AddWithValue("@id", id);
-                        usuario_temp = new Usuario();
-                        usuario_temp.CUsuario = Convert.ToInt16(dr["cusuario"]);
-                        usuario_temp.CDNI = Convert.ToInt32(dr["cusuario"]);
-                        usuario_temp.NumTelefono = Convert.ToInt32(dr["numtelefono"]);
-                        usuario_temp.NUsuario = dr["nusuario"].ToString();
-                    
+
+                    query.Parameters.AddWithValue("@id", id);
+                    usuario_temp = new Usuario();
+                    usuario_temp.CUsuario = Convert.ToInt16(dr["cusuario"]);
+                    usuario_temp.CDNI = Convert.ToInt32(dr["cusuario"]);
+                    usuario_temp.NumTelefono = Convert.ToInt32(dr["numtelefono"]);
+                    usuario_temp.NUsuario = dr["nusuario"].ToString();
+
                 }
             }
             return usuario_temp;
@@ -85,7 +85,7 @@ namespace Data.Implementacion
         {
             bool rpta = false;
             try
-            { 
+            {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
                 {
                     con.Open();

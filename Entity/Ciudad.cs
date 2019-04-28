@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-   public  class Ciudad
+    public class Ciudad
     {
         [DisplayName("Código de la Ciudad")]
         public int CCiudad { get; set; }
@@ -17,9 +17,9 @@ namespace Entity
         [DisplayName("Nombre de la Ciudad")]
         public string NCiudad { get; set; }
 
-        [Required(ErrorMessage ="Porfavor, seleccione un departamento: ")]
+        [Required(ErrorMessage = "Porfavor, seleccione un departamento: ")]
         [DisplayName("Departamento")]
         public Departamento CDepartamento { get; set; }
-   
+
     }
 }

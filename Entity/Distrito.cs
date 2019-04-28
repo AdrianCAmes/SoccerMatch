@@ -17,9 +17,9 @@ namespace Entity
         [DisplayName("Nombre del Distrito")]
         public string NDistrito { get; set; }
 
-        [Required(ErrorMessage ="Porfavor, seleccione una ciudad: ")]
+        [Required(ErrorMessage = "Porfavor, seleccione una ciudad: ")]
         [DisplayName("Ciudad")]
-        public Ciudad  CCiudad { get; set; }
-        
+        public Ciudad CCiudad { get; set; }
+
     }
 }

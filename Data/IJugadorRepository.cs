@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entity;
 namespace Data
 {
-    public interface IJugadorRepository:ICrudRepository<Jugador>
+    public interface IJugadorRepository : ICrudRepository<Jugador>
     {
     }
 }

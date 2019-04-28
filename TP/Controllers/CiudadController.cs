@@ -10,8 +10,7 @@ namespace TP.Controllers
 {
     public class CiudadController : Controller
     {
-        private ICiudadService objCiudadService = new CiudadService
-            ();
+        private ICiudadService objCiudadService = new CiudadService();
         // GET: Ciudad
         public ActionResult Index()
         {

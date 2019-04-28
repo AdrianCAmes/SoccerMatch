@@ -57,7 +57,7 @@ namespace Data.Implementacion
 
         public Distrito FindById(int? id)
         {
-            Distrito distrito_temp= null;
+            Distrito distrito_temp = null;
             try
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
@@ -97,7 +97,7 @@ namespace Data.Implementacion
 
                     query.Parameters.AddWithValue("@NDistrito", t.NDistrito);
                     query.Parameters.AddWithValue("@CCiudad", t.CCiudad);
-                   
+
 
                     query.ExecuteNonQuery();
                     rpta = true;
@@ -137,4 +137,4 @@ namespace Data.Implementacion
             return rpta;
         }
     }
-    }
+}

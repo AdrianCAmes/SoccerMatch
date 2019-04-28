@@ -26,7 +26,8 @@ namespace Data.Implementacion
 
                     rpta = true;
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }
@@ -61,7 +62,8 @@ namespace Data.Implementacion
                         canchas.Add(cancha);
                     }
                 }
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -80,7 +82,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("select c.CCalle,c.CCancha,c.CPropietario,c.MPrecioHora,c.NCancha,c.TDireccion,ca.CDistrito,ca.NCalle from Cancha c, Propietario p, Calle ca where CCancha='"+id+"' and"+" c.CCalle = ca.CCalle and c.CPropietario = p.CPropietario", con);
+                    var query = new SqlCommand("select c.CCalle,c.CCancha,c.CPropietario,c.MPrecioHora,c.NCancha,c.TDireccion,ca.CDistrito,ca.NCalle from Cancha c, Propietario p, Calle ca where CCancha='" + id + "' and" + " c.CCalle = ca.CCalle and c.CPropietario = p.CPropietario", con);
                     var dr = query.ExecuteReader();
                     while (dr.Read())
                     {

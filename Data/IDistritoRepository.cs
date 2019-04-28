@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entity;
 namespace Data
 {
-    public interface IDistritoRepository:ICrudRepository<Distrito>
+    public interface IDistritoRepository : ICrudRepository<Distrito>
     {
     }
 }

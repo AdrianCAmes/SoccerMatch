@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entity;
 namespace Data
 {
-    public interface ICanchaRepository:ICrudRepository<Cancha>
+    public interface ICanchaRepository : ICrudRepository<Cancha>
     {
     }
 }

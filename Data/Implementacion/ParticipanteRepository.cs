@@ -22,7 +22,7 @@ namespace Data.Implementacion
                 cmd.ExecuteNonQuery();
                 rpta = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -65,7 +65,7 @@ namespace Data.Implementacion
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -80,7 +80,7 @@ namespace Data.Implementacion
             try
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
-                var cmd = new SqlCommand("select p.CParticipante,p.CJugador,p.CEquipo,j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e where p.CParticipante='"+id+"' and "+" p.CParticipante = p.CJugador and p.CEquipo = e.CEquipo");
+                var cmd = new SqlCommand("select p.CParticipante,p.CJugador,p.CEquipo,j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e where p.CParticipante='" + id + "' and " + " p.CParticipante = p.CJugador and p.CEquipo = e.CEquipo");
                 var dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -115,8 +115,8 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("insert into Participante values(@CJugador,@CEquipo)",con);
-                cmd.Parameters.AddWithValue("@CJugador",t.CJugador);
+                var cmd = new SqlCommand("insert into Participante values(@CJugador,@CEquipo)", con);
+                cmd.Parameters.AddWithValue("@CJugador", t.CJugador);
                 cmd.Parameters.AddWithValue("@CEquipo", t.CGrupo);
                 cmd.ExecuteNonQuery();
                 rpta = true;
@@ -135,7 +135,7 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("update Participante set CJugador=@cjugador,CEquipo=@cequipo",con);
+                var cmd = new SqlCommand("update Participante set CJugador=@cjugador,CEquipo=@cequipo", con);
                 cmd.Parameters.AddWithValue("@cjugador", t.CJugador);
                 cmd.Parameters.AddWithValue("@cequipo", t.CGrupo);
                 cmd.ExecuteNonQuery();

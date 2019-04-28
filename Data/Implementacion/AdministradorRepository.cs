@@ -16,14 +16,16 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var con=new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString())) {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                {
                     con.Open();
                     var cmd = new SqlCommand("delete from Administrador where CAdministrador='" + id + "'", con);
                     cmd.ExecuteNonQuery();
                     rpta = true;
                 }
             }
-            catch (Exception ex){
+            catch (Exception ex)
+            {
                 throw ex;
             }
             return rpta;
@@ -94,7 +96,7 @@ namespace Data.Implementacion
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
-                    var query = new SqlCommand("select a.CAdministrador, u.NUsuario, u.CDNI, u.NumTelefono, j.TDireccion, c.CCalle," + 
+                    var query = new SqlCommand("select a.CAdministrador, u.NUsuario, u.CDNI, u.NumTelefono, j.TDireccion, c.CCalle," +
                                                 "c.NCalle,  d.CDistrito, d.NDistrito, ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento" +
                                                 "from Administrador a, Jugador j, Usuario u, Calle c, Distrito d, Ciudad ci, Departamento de" +
                                                 "where a.CAdministrador = '" + id + "' and j.CJugador ='" + id + "' and u.CUsuario '" + id + "' and" +
@@ -177,15 +179,16 @@ namespace Data.Implementacion
                 {
                     con.Open();
                     var query = new SqlCommand("update Administrador set CAdministrador=@id ");
-                    query.Parameters.AddWithValue("@id", t.CUsuario);                
+                    query.Parameters.AddWithValue("@id", t.CUsuario);
                     rpta = true;
                 }
-            } catch (Exception ex )
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
 
             return rpta;
         }
-    } 
+    }
 }

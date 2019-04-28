@@ -16,7 +16,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using(var con=new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
                     var cmd = new SqlCommand("delete from Calle where CCalle='" + id + "'", con);
@@ -24,7 +24,7 @@ namespace Data.Implementacion
                     rpta = true;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -45,7 +45,7 @@ namespace Data.Implementacion
 
                     using (var dr = query.ExecuteReader())
                     {
-                        while(dr.Read())
+                        while (dr.Read())
                         {
                             var calle = new Calle();
                             var distrito = new Distrito();
@@ -72,7 +72,8 @@ namespace Data.Implementacion
                     }
 
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }
@@ -135,7 +136,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using(var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
                     var cmd = new SqlCommand("insert into Calle values(@NCalle,@CDistrito)");

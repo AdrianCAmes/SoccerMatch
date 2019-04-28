@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 namespace Entity
 {
-  public class Propietario : Usuario
+    public class Propietario : Usuario
     {
     }
 }

@@ -16,10 +16,10 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var con=new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("delete from Alquiler where CAlquiler='" + id + "'",con);
+                    var cmd = new SqlCommand("delete from Alquiler where CAlquiler='" + id + "'", con);
                     cmd.ExecuteNonQuery();
                     rpta = true;
                 }
@@ -36,10 +36,10 @@ namespace Data.Implementacion
             List<Alquiler> alquileres = new List<Alquiler>();
             try
             {
-                using(var con=new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("select a.CAlquiler, a.DFechaInicio, a.NumHoras, a.MDescuento, a.MTotal, a.FPagado, c.CCancha, c.NCancha, c.TDireccion, c.MPrecioHora, u.CUsuario, u.CDNI, u.NUsuario, u.NumTelefono, e.CEquipo, e.NEquipo, e.TDescripcion, e.DFechaJuego, e.CDistrito 'CDistritoGrupo', d2.NDistrito 'NDistritoGrupo', ci2.CCiudad 'CCiudadGrupo', ci2.NCiudad'NCiudadGrupo', de2.CDepartamento 'CDepartamentoGrupo', de2.NDepartamento 'NDepartamentoGrupo', cl.CCalle, cl.NCalle, d1.CDistrito 'CDistritoCancha', d1.NDistrito 'NDistritoCancha', ci1.CCiudad 'CCiudadCancha', ci1.NCiudad'NCiudadCancha', de1.CDepartamento 'CDepartamentoCancha', de1.NDepartamento 'NDepartamentoCancha' from Alquiler a, Equipo e, Cancha c, Propietario p, Calle cl, Distrito d1, Distrito d2, Ciudad ci1, Ciudad ci2, Departamento de1, Departamento de2, Usuario u where a.CEquipo = e.CEquipo and a.CCancha = c.CCancha and u.CUsuario = p.CPropietario and cl.CCalle = c.CCalle and cl.CDistrito = d1.CDistrito and d1.CCiudad = ci1.CCiudad and ci1.CDepartamento = de1.CDepartamento and e.CDistrito = d2.CDistrito and d2.CCiudad = ci2.CCiudad and ci2.CDepartamento = de2.CDepartamento",con);
+                    var cmd = new SqlCommand("select a.CAlquiler, a.DFechaInicio, a.NumHoras, a.MDescuento, a.MTotal, a.FPagado, c.CCancha, c.NCancha, c.TDireccion, c.MPrecioHora, u.CUsuario, u.CDNI, u.NUsuario, u.NumTelefono, e.CEquipo, e.NEquipo, e.TDescripcion, e.DFechaJuego, e.CDistrito 'CDistritoGrupo', d2.NDistrito 'NDistritoGrupo', ci2.CCiudad 'CCiudadGrupo', ci2.NCiudad'NCiudadGrupo', de2.CDepartamento 'CDepartamentoGrupo', de2.NDepartamento 'NDepartamentoGrupo', cl.CCalle, cl.NCalle, d1.CDistrito 'CDistritoCancha', d1.NDistrito 'NDistritoCancha', ci1.CCiudad 'CCiudadCancha', ci1.NCiudad'NCiudadCancha', de1.CDepartamento 'CDepartamentoCancha', de1.NDepartamento 'NDepartamentoCancha' from Alquiler a, Equipo e, Cancha c, Propietario p, Calle cl, Distrito d1, Distrito d2, Ciudad ci1, Ciudad ci2, Departamento de1, Departamento de2, Usuario u where a.CEquipo = e.CEquipo and a.CCancha = c.CCancha and u.CUsuario = p.CPropietario and cl.CCalle = c.CCalle and cl.CDistrito = d1.CDistrito and d1.CCiudad = ci1.CCiudad and ci1.CDepartamento = de1.CDepartamento and e.CDistrito = d2.CDistrito and d2.CCiudad = ci2.CCiudad and ci2.CDepartamento = de2.CDepartamento", con);
                     var dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
@@ -122,7 +122,7 @@ namespace Data.Implementacion
 
         public Alquiler FindById(int? id)
         {
-            Alquiler alquiler = null; 
+            Alquiler alquiler = null;
             try
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
@@ -222,10 +222,10 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var con=new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("insert into Alquiler values(@CGrupo,@CCancha,@DFechaInicio, @NumHoras,@MDescuento,@MTotal,@FPagado)",con);
+                    var cmd = new SqlCommand("insert into Alquiler values(@CGrupo,@CCancha,@DFechaInicio, @NumHoras,@MDescuento,@MTotal,@FPagado)", con);
                     cmd.Parameters.AddWithValue("@CGrupo", t.CGrupo.CGrupo);
                     cmd.Parameters.AddWithValue("@CCancha", t.CCancha.CCancha);
                     cmd.Parameters.AddWithValue("@DFechaInicio", t.DHoraInicio);
@@ -252,7 +252,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("update Alquiler set CGrupo=@cgrupo,CCancha=@ccancha,DFechaInicio = @dfechainicio, NumHoras=@numhoras,MDescuento=@mdescuento,MTotal=@mtotal,FPagado=@fpagado",con);
+                    var cmd = new SqlCommand("update Alquiler set CGrupo=@cgrupo,CCancha=@ccancha,DFechaInicio = @dfechainicio, NumHoras=@numhoras,MDescuento=@mdescuento,MTotal=@mtotal,FPagado=@fpagado", con);
                     cmd.Parameters.AddWithValue("@cgrupo", t.CGrupo.CGrupo);
                     cmd.Parameters.AddWithValue("@ccancha", t.CCancha.CCancha);
                     cmd.Parameters.AddWithValue("@dfechainicio", t.DHoraInicio);
@@ -264,7 +264,7 @@ namespace Data.Implementacion
                     rpta = true;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }

@@ -13,7 +13,7 @@ namespace Entity
         [DisplayName("Código de Calle")]
         public int CCalle { get; set; }
 
-        [Required(ErrorMessage ="Porfavor, ingrese el nombre de calle: ")]
+        [Required(ErrorMessage = "Porfavor, ingrese el nombre de calle: ")]
         [DisplayName("Nombre de Calle")]
         public string NCalle { get; set; }
 

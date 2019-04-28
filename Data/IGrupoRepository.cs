@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entity;
 namespace Data
 {
-    public interface IGrupoRepository:ICrudRepository<Grupo>
+    public interface IGrupoRepository : ICrudRepository<Grupo>
     {
     }
 }

@@ -21,7 +21,8 @@ namespace Data.Implementacion
                 {
                     var query = new SqlCommand("delete from Ciudad where CCiudad = '" + id + "'", con);
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }
@@ -95,7 +96,7 @@ namespace Data.Implementacion
                             ciudad.CCiudad = Convert.ToInt32(dr["CCiudad"]);
                             ciudad.NCiudad = dr["NCiudad"].ToString();
                             ciudad.CDepartamento = departamento;
-                            
+
                         }
                     }
 
@@ -124,7 +125,7 @@ namespace Data.Implementacion
                     rpta = true;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw;
             }
@@ -147,7 +148,8 @@ namespace Data.Implementacion
 
                     rpta = true;
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }

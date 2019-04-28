@@ -59,7 +59,7 @@ namespace Data.Implementacion
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -68,13 +68,13 @@ namespace Data.Implementacion
 
         public Grupo FindById(int? id)
         {
-            Grupo grupo= new Grupo();
+            Grupo grupo = new Grupo();
             var distrito = new Distrito();
             try
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("select e.CEquipo,e.NEquipo,e.TDescripcion,e.NumParticipantes,e.DFechaJuego,e.CDistrito,d.CCiudad,d.CDistrito,d.NDistrito from Equipo e, Distrito d where e.Equipo='"+id+"' and"+" e.CDistrito = d.CDistrito", con);
+                var cmd = new SqlCommand("select e.CEquipo,e.NEquipo,e.TDescripcion,e.NumParticipantes,e.DFechaJuego,e.CDistrito,d.CCiudad,d.CDistrito,d.NDistrito from Equipo e, Distrito d where e.Equipo='" + id + "' and" + " e.CDistrito = d.CDistrito", con);
                 var dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -114,7 +114,7 @@ namespace Data.Implementacion
                 cmd.ExecuteNonQuery();
                 rpta = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }

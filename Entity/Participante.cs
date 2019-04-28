@@ -13,11 +13,11 @@ namespace Entity
         public int CParticipante { get; set; }
 
         [DisplayName("Jugador")]
-        [Required(ErrorMessage ="Por favor, ingrese el jugador")]
+        [Required(ErrorMessage = "Por favor, ingrese el jugador")]
         public Jugador CJugador { get; set; }
 
         [DisplayName("Grupo")]
-        [Required(ErrorMessage ="Por favor, ingrese el grupo")]
+        [Required(ErrorMessage = "Por favor, ingrese el grupo")]
         public Grupo CGrupo { get; set; }
 
     }

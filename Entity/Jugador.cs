@@ -10,7 +10,7 @@ namespace Entity
     public class Jugador : Usuario
     {
         [DisplayName("Calle")]
-        [Required(ErrorMessage ="Por favor, ingrese una calle: ")]
+        [Required(ErrorMessage = "Por favor, ingrese una calle: ")]
         public Calle CCalle { get; set; }
 
         [DisplayName("Direccion")]

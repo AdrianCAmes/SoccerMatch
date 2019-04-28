@@ -17,7 +17,7 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using(var con=new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
                     var cmd = new SqlCommand("delete from Propietario where CPropietario='" + id + "'", con);
@@ -25,7 +25,7 @@ namespace Data.Implementacion
                     rpta = true;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -37,7 +37,7 @@ namespace Data.Implementacion
             List<Propietario> propietarios = new List<Propietario>();
             try
             {
-                using(var con=new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
                     var cmd = new SqlCommand("select p.CPropietario,u.CUsuario,u.CDNI,u.NUsuario,u.NumTelefono from Propietario p, Usuario u where p.CPropietario = u.CUsuario", con);
@@ -49,7 +49,7 @@ namespace Data.Implementacion
                         propietario.CDNI = Convert.ToInt32(dr["CDNI"]);
                         propietario.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
                         propietario.NUsuario = Convert.ToString(dr["NUsuario"]);
-                       propietarios.Add(propietario);
+                        propietarios.Add(propietario);
                     }
                 }
             }
@@ -68,7 +68,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("select p.CPropietario,u.CUsuario,u.CDNI,u.NUsuario,u.NumTelefono from Propietario p, Usuario u where p.CPropietario='"+id+"' and "+" p.CPropietario = u.CUsuario", con);
+                    var cmd = new SqlCommand("select p.CPropietario,u.CUsuario,u.CDNI,u.NUsuario,u.NumTelefono from Propietario p, Usuario u where p.CPropietario='" + id + "' and " + " p.CPropietario = u.CUsuario", con);
                     var dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2F2AFD7F-22DD-4B8E-92E4-32C8651D2434}</ProjectGuid>
+    <ProjectGuid>{083F7AF6-EB41-4D07-B590-63A436E775B1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Entity</RootNamespace>
@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrador.cs" />
-    <Compile Include="Alquiler.cs" />
+    <Compile Include="Aquiller.cs" />
     <Compile Include="Calle.cs" />
     <Compile Include="Cancha.cs" />
     <Compile Include="Ciudad.cs" />
@@ -52,9 +52,9 @@
     <Compile Include="Grupo.cs" />
     <Compile Include="Jugador.cs" />
     <Compile Include="Participante.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Propietario.cs" />
     <Compile Include="Usuario.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
