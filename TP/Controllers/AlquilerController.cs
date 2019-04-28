@@ -16,5 +16,11 @@ namespace TP.Controllers
         {
             return View(objAlquilerService.FindAll());
         }
+
+        // GET: Alquiler/Details/5
+        public ActionResult Details(int? id)
+        {
+            return View(objAlquilerService.FindById(id));
+        }
     }
 }

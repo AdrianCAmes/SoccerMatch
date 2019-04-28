@@ -1,0 +1,66 @@
+﻿@model Entity.Alquiler
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Alquiler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CAlquiler)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAlquiler)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DHoraInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DHoraInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumHoras)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumHoras)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MDescuento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MDescuento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FPagado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FPagado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CAlquiler }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

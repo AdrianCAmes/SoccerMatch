@@ -43,7 +43,7 @@ namespace Data.Implementacion
                         while (dr.Read())
                         {
                             Usuario usuario_temp = new Usuario();
-                            usuario_temp.CUsuario = Convert.ToInt16(dr["cusuario"]);
+                            usuario_temp.CUsuario = Convert.ToInt32(dr["cusuario"]);
                             usuario_temp.CDNI = Convert.ToInt32(dr["cdni"]);
                             usuario_temp.NUsuario = dr["nusuario"].ToString();
                             usuario_temp.NumTelefono = Convert.ToInt32(dr["numtelefono"]);
@@ -65,17 +65,15 @@ namespace Data.Implementacion
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
             {
                 con.Open();
-                var query = new SqlCommand("select u.cusuario, u.cdni, u.nusuario,u.numtelefono from usuario u where u.cusuario=@id", con);
+                var query = new SqlCommand("select u.cusuario, u.cdni, u.nusuario,u.numtelefono from usuario u where u.CUsuario = '" + id + "'", con);
                 using (var dr = query.ExecuteReader())
                 {
-
-                    query.Parameters.AddWithValue("@id", id);
+                    dr.Read();
                     usuario_temp = new Usuario();
-                    usuario_temp.CUsuario = Convert.ToInt16(dr["cusuario"]);
-                    usuario_temp.CDNI = Convert.ToInt32(dr["cusuario"]);
-                    usuario_temp.NumTelefono = Convert.ToInt32(dr["numtelefono"]);
+                    usuario_temp.CUsuario = Convert.ToInt32(dr["cusuario"]);
+                    usuario_temp.CDNI = Convert.ToInt32(dr["cdni"]);
                     usuario_temp.NUsuario = dr["nusuario"].ToString();
-
+                    usuario_temp.NumTelefono = Convert.ToInt32(dr["numtelefono"]);
                 }
             }
             return usuario_temp;

@@ -45,19 +45,25 @@ namespace Data.Implementacion
                             var detalle = new DetalleParticipante();
                             var alquiler = new Alquiler();
                             var participante = new Participante();
+                            var grupo = new Grupo();
+                            var cancha = new Cancha();
+                            var jugador = new Jugador();
+                            cancha.CCancha = Convert.ToInt32(dr["CCancha"]);
+                            grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
+                            jugador.CUsuario = Convert.ToInt32(dr["CJugador"]);
                             detalle.CDetalleParticipante = Convert.ToInt32(dr["CDetalleParticipante"]);
                             alquiler.CAlquiler = Convert.ToInt32(dr["CAlquiler"]);
                             participante.CParticipante = Convert.ToInt32(dr["CParticipante"]);
                             detalle.MCuota = Convert.ToDecimal(dr["MCuota"]);
                             detalle.FPartePagada = Convert.ToBoolean(dr["FPartePagada"]);
-                            alquiler.CCancha.CCancha = Convert.ToInt32(dr["CCancha"]);
-                            alquiler.CGrupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
-                            alquiler.DHoraInicio = Convert.ToDateTime(dr["DHoraInicio"]);
+                            alquiler.CCancha = cancha;
+                            alquiler.CGrupo = grupo;
+                            alquiler.DHoraInicio = Convert.ToDateTime(dr["DFechaInicio"]);
                             alquiler.FPagado = Convert.ToBoolean(dr["FPagado"]);
                             alquiler.MDescuento = Convert.ToDecimal(dr["MDescuento"]);
                             alquiler.MTotal = Convert.ToDecimal(dr["MTotal"]);
                             alquiler.NumHoras = Convert.ToInt32(dr["NumHoras"]);
-                            participante.CJugador.CUsuario = Convert.ToInt32(dr["CJugador"]);
+                            participante.CJugador = jugador;
                             detalle.CAlquiler = alquiler;
                             detalle.CParticipante = participante;
                             detalles.Add(detalle);
@@ -74,30 +80,37 @@ namespace Data.Implementacion
 
         public DetalleParticipante FindById(int? id)
         {
-            var detalle = new DetalleParticipante();
-            var alquiler = new Alquiler();
-            var participante = new Participante();
+            DetalleParticipante detalle = null;
             try
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("select dp.CDetalleParticipante,dp.CAlquiler,dp.CParticipante,dp.MCuota,dp.FPartePagada,a.CCancha,a.CEquipo,a.CHorario,a.FPagado,a.MDescuento,a.MTotal,a.NumHoras,p.CJugador from DetalleParticipante dp, Alquiler a, Participante p where dp.CDetalleParticipante='" + id + "' and" + " dp.CAlquiler = a.CAlquiler and dp.CParticipante = p.CParticipante", con);
+                var cmd = new SqlCommand("select dp.CDetalleParticipante,dp.CAlquiler,dp.CParticipante,dp.MCuota,dp.FPartePagada,a.CCancha,a.CEquipo, a.DFechaInicio,a.FPagado,a.MDescuento,a.MTotal,a.NumHoras,p.CJugador from DetalleParticipante dp, Alquiler a, Participante p where dp.CDetalleParticipante = '" + id + "' and dp.CAlquiler = a.CAlquiler and dp.CParticipante = p.CParticipante", con);
                 var dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
+                    detalle = new DetalleParticipante();
+                    var alquiler = new Alquiler();
+                    var participante = new Participante();
+                    var grupo = new Grupo();
+                    var cancha = new Cancha();
+                    var jugador = new Jugador();
+                    cancha.CCancha = Convert.ToInt32(dr["CCancha"]);
+                    grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
+                    jugador.CUsuario = Convert.ToInt32(dr["CJugador"]);
                     detalle.CDetalleParticipante = Convert.ToInt32(dr["CDetalleParticipante"]);
                     alquiler.CAlquiler = Convert.ToInt32(dr["CAlquiler"]);
                     participante.CParticipante = Convert.ToInt32(dr["CParticipante"]);
                     detalle.MCuota = Convert.ToDecimal(dr["MCuota"]);
                     detalle.FPartePagada = Convert.ToBoolean(dr["FPartePagada"]);
-                    alquiler.CCancha.CCancha = Convert.ToInt32(dr["CCancha"]);
-                    alquiler.CGrupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
-                    alquiler.DHoraInicio = Convert.ToDateTime(dr["DHoraInicio"]);
+                    alquiler.CCancha = cancha;
+                    alquiler.CGrupo = grupo;
+                    alquiler.DHoraInicio = Convert.ToDateTime(dr["DFechaInicio"]);
                     alquiler.FPagado = Convert.ToBoolean(dr["FPagado"]);
                     alquiler.MDescuento = Convert.ToDecimal(dr["MDescuento"]);
                     alquiler.MTotal = Convert.ToDecimal(dr["MTotal"]);
                     alquiler.NumHoras = Convert.ToInt32(dr["NumHoras"]);
-                    participante.CJugador.CUsuario = Convert.ToInt32(dr["CJugador"]);
+                    participante.CJugador = jugador;
                     detalle.CAlquiler = alquiler;
                     detalle.CParticipante = participante;
                 }

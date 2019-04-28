@@ -10,21 +10,21 @@ namespace TP.Controllers
 {
     public class DistritoController : Controller
     {
-        private IDistritoService objServicio = new DistritoService();
+        private IDistritoService objDistritoServicio = new DistritoService();
         // GET: Distrito
         public ActionResult Index()
         {
-            return View(objServicio.FindAll());
+            return View(objDistritoServicio.FindAll());
         }
 
         // GET: Distrito/Details/5
-        /*public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            return View(objDistritoServicio.FindById(id));
         }
 
         // GET: Distrito/Create
-        public ActionResult Create()
+       /* public ActionResult Create()
         {
             return View();
         }

@@ -18,6 +18,13 @@ namespace TP.Controllers
         {
             return View(objCiudadService.FindAll());
         }
+
+        // GET: Ciudad/Details/5
+        public ActionResult Details(int? id)
+        {
+            return View(objCiudadService.FindById(id));
+        }
+
         // GET: Ciudad/Create
         public ActionResult Create()
         {

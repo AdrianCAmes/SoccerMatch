@@ -39,7 +39,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("select a.CAlquiler, a.DFechaInicio, a.NumHoras, a.MDescuento, a.MTotal, a.FPagado, c.CCancha, c.NCancha, c.TDireccion, c.MPrecioHora, u.CUsuario, u.CDNI, u.NUsuario, u.NumTelefono, e.CEquipo, e.NEquipo, e.TDescripcion, e.DFechaJuego, e.CDistrito 'CDistritoGrupo', d2.NDistrito 'NDistritoGrupo', ci2.CCiudad 'CCiudadGrupo', ci2.NCiudad'NCiudadGrupo', de2.CDepartamento 'CDepartamentoGrupo', de2.NDepartamento 'NDepartamentoGrupo', cl.CCalle, cl.NCalle, d1.CDistrito 'CDistritoCancha', d1.NDistrito 'NDistritoCancha', ci1.CCiudad 'CCiudadCancha', ci1.NCiudad'NCiudadCancha', de1.CDepartamento 'CDepartamentoCancha', de1.NDepartamento 'NDepartamentoCancha' from Alquiler a, Equipo e, Cancha c, Propietario p, Calle cl, Distrito d1, Distrito d2, Ciudad ci1, Ciudad ci2, Departamento de1, Departamento de2, Usuario u where a.CEquipo = e.CEquipo and a.CCancha = c.CCancha and u.CUsuario = p.CPropietario and cl.CCalle = c.CCalle and cl.CDistrito = d1.CDistrito and d1.CCiudad = ci1.CCiudad and ci1.CDepartamento = de1.CDepartamento and e.CDistrito = d2.CDistrito and d2.CCiudad = ci2.CCiudad and ci2.CDepartamento = de2.CDepartamento", con);
+                    var cmd = new SqlCommand("select a.CAlquiler, a.DFechaInicio, a.NumHoras, a.MDescuento, a.MTotal, a.FPagado, c.CCancha, c.NCancha, c.TDireccion, c.MPrecioHora, u.CUsuario, u.CDNI, u.NUsuario, u.NumTelefono, e.CEquipo, e.NEquipo, e.TDescripcion, e.NumParticipantes, e.DFechaJuego, e.CDistrito 'CDistritoGrupo', d2.NDistrito 'NDistritoGrupo', ci2.CCiudad 'CCiudadGrupo', ci2.NCiudad'NCiudadGrupo', de2.CDepartamento 'CDepartamentoGrupo', de2.NDepartamento 'NDepartamentoGrupo', cl.CCalle, cl.NCalle, d1.CDistrito 'CDistritoCancha', d1.NDistrito 'NDistritoCancha', ci1.CCiudad 'CCiudadCancha', ci1.NCiudad'NCiudadCancha', de1.CDepartamento 'CDepartamentoCancha', de1.NDepartamento 'NDepartamentoCancha' from Alquiler a, Equipo e, Cancha c, Propietario p, Calle cl, Distrito d1, Distrito d2, Ciudad ci1, Ciudad ci2, Departamento de1, Departamento de2, Usuario u where a.CEquipo = e.CEquipo and a.CCancha = c.CCancha and c.CPropietario = p.CPropietario and u.CUsuario = p.CPropietario and cl.CCalle = c.CCalle and cl.CDistrito = d1.CDistrito and d1.CCiudad = ci1.CCiudad and ci1.CDepartamento = de1.CDepartamento and e.CDistrito = d2.CDistrito and d2.CCiudad = ci2.CCiudad and ci2.CDepartamento = de2.CDepartamento", con);
                     var dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
@@ -104,7 +104,7 @@ namespace Data.Implementacion
                         alquiler.CGrupo = grupo;
                         alquiler.CCancha = cancha;
                         alquiler.DHoraInicio = Convert.ToDateTime(dr["DFechaInicio"]);
-                        alquiler.NumHoras = Convert.ToInt32("NumHoras");
+                        alquiler.NumHoras = Convert.ToInt32(dr["NumHoras"]);
                         alquiler.MDescuento = Convert.ToDecimal(dr["MDescuento"]);
                         alquiler.MTotal = Convert.ToDecimal(dr["MTotal"]);
                         alquiler.FPagado = Convert.ToBoolean(dr["FPagado"]);
@@ -128,85 +128,77 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("select a.CAlquiler, a.DFechaInicio, a.NumHoras, a.MDescuento, a.MTotal, a.FPagado," +
-                                             "c.CCancha, c.NCancha, c.TDireccion, c.MPrecioHora, u.CUsuario, u.CDNI, u.NUsuario, u.NumTelefono," +
-                                             "e.CEquipo, e.NEquipo, e.TDescripcion, e.DFechaJuego, e.CDistrito 'CDistritoGrupo', d2.NDistrito 'NDistritoGrupo'," +
-                                             "ci2.CCiudad 'CCiudadGrupo', ci2.NCiudad'NCiudadGrupo', de2.CDepartamento 'CDepartamentoGrupo', de2.NDepartamento " +
-                                             "'NDepartamentoGrupo', cl.CCalle, cl.NCalle, d1.CDistrito 'CDistritoCancha', d1.NDistrito 'NDistritoCancha', ci1.CCiudad" +
-                                             "'CCiudadCancha', ci1.NCiudad'NCiudadCancha', de1.CDepartamento 'CDepartamentoCancha', de1.NDepartamento 'NDepartamentoCancha'" +
-                                             "from Alquiler a, Equipo e, Cancha c, Propietario p, Calle cl, Distrito d1, Distrito d2, Ciudad ci1, Ciudad ci2, Departamento" +
-                                             "de1, Departamento de2, Usuario u" +
-                                             "where a.CAlquiler = '" + id + "' and a.CEquipo = e.CEquipo and a.CCancha = c.CCancha and u.CUsuario = p.CPropietario and cl.CCalle = c.CCalle and " +
-                                             "cl.CDistrito = d1.CDistrito and d1.CCiudad = ci1.CCiudad and ci1.CDepartamento = de1.CDepartamento and e.CDistrito = " +
-                                             "d2.CDistrito and d2.CCiudad = ci2.CCiudad and ci2.CDepartamento = de2.CDepartamento", con);
-                    var dr = cmd.ExecuteReader();
-                    while (dr.Read())
+                    var cmd = new SqlCommand("select a.CAlquiler, a.DFechaInicio, a.NumHoras, a.MDescuento, a.MTotal, a.FPagado, c.CCancha, c.NCancha, c.TDireccion, c.MPrecioHora, u.CUsuario, u.CDNI, u.NUsuario, u.NumTelefono, e.CEquipo, e.NEquipo, e.TDescripcion, e.NumParticipantes, e.DFechaJuego, e.CDistrito 'CDistritoGrupo', d2.NDistrito 'NDistritoGrupo', ci2.CCiudad 'CCiudadGrupo', ci2.NCiudad'NCiudadGrupo', de2.CDepartamento 'CDepartamentoGrupo', de2.NDepartamento 'NDepartamentoGrupo', cl.CCalle, cl.NCalle, d1.CDistrito 'CDistritoCancha', d1.NDistrito 'NDistritoCancha', ci1.CCiudad 'CCiudadCancha', ci1.NCiudad'NCiudadCancha', de1.CDepartamento 'CDepartamentoCancha', de1.NDepartamento 'NDepartamentoCancha' from Alquiler a, Equipo e, Cancha c, Propietario p, Calle cl, Distrito d1, Distrito d2, Ciudad ci1, Ciudad ci2, Departamento de1, Departamento de2, Usuario u where a.CAlquiler = '" + id + "' and a.CEquipo = e.CEquipo and a.CCancha = c.CCancha and c.CPropietario = p.CPropietario and u.CUsuario = p.CPropietario and cl.CCalle = c.CCalle and cl.CDistrito = d1.CDistrito and d1.CCiudad = ci1.CCiudad and ci1.CDepartamento = de1.CDepartamento and e.CDistrito = d2.CDistrito and d2.CCiudad = ci2.CCiudad and ci2.CDepartamento = de2.CDepartamento", con);
+                    using (var dr = cmd.ExecuteReader())
                     {
-                        alquiler = new Alquiler();
-                        var grupo = new Grupo();
-                        var cancha = new Cancha();
-                        var propietario = new Propietario();
-                        var calle = new Calle();
-                        var distritoCancha = new Distrito();
-                        var distritoGrupo = new Distrito();
-                        var ciudadCancha = new Ciudad();
-                        var ciudadGrupo = new Ciudad();
-                        var departamentoCancha = new Departamento();
-                        var departamentoGrupo = new Departamento();
+                        while (dr.Read())
+                        {
+                            alquiler = new Alquiler();
+                            var grupo = new Grupo();
+                            var cancha = new Cancha();
+                            var propietario = new Propietario();
+                            var calle = new Calle();
+                            var distritoCancha = new Distrito();
+                            var distritoGrupo = new Distrito();
+                            var ciudadCancha = new Ciudad();
+                            var ciudadGrupo = new Ciudad();
+                            var departamentoCancha = new Departamento();
+                            var departamentoGrupo = new Departamento();
 
-                        departamentoCancha.CDepartamento = Convert.ToInt32(dr["CDepartamentoCancha"]);
-                        departamentoCancha.NDepartamento = dr["NDepartamentoCancha"].ToString();
+                            departamentoCancha.CDepartamento = Convert.ToInt32(dr["CDepartamentoCancha"]);
+                            departamentoCancha.NDepartamento = dr["NDepartamentoCancha"].ToString();
 
-                        ciudadCancha.CCiudad = Convert.ToInt32(dr["CCiudadCancha"]);
-                        ciudadCancha.NCiudad = dr["NCiudadCancha"].ToString();
-                        ciudadCancha.CDepartamento = departamentoCancha;
+                            ciudadCancha.CCiudad = Convert.ToInt32(dr["CCiudadCancha"]);
+                            ciudadCancha.NCiudad = dr["NCiudadCancha"].ToString();
+                            ciudadCancha.CDepartamento = departamentoCancha;
 
-                        distritoCancha.CDistrito = Convert.ToInt32(dr["CDistritoCancha"]);
-                        distritoCancha.NDistrito = dr["NDistritoCancha"].ToString();
-                        distritoCancha.CCiudad = ciudadCancha;
+                            distritoCancha.CDistrito = Convert.ToInt32(dr["CDistritoCancha"]);
+                            distritoCancha.NDistrito = dr["NDistritoCancha"].ToString();
+                            distritoCancha.CCiudad = ciudadCancha;
 
-                        calle.CCalle = Convert.ToInt32(dr["CCalle"]);
-                        calle.NCalle = dr["NCalle"].ToString();
-                        calle.CDistrito = distritoCancha;
+                            calle.CCalle = Convert.ToInt32(dr["CCalle"]);
+                            calle.NCalle = dr["NCalle"].ToString();
+                            calle.CDistrito = distritoCancha;
 
-                        departamentoGrupo.CDepartamento = Convert.ToInt32(dr["CDepartamentoGrupo"]);
-                        departamentoGrupo.NDepartamento = dr["NDepartamentoGrupo"].ToString();
+                            departamentoGrupo.CDepartamento = Convert.ToInt32(dr["CDepartamentoGrupo"]);
+                            departamentoGrupo.NDepartamento = dr["NDepartamentoGrupo"].ToString();
 
-                        ciudadGrupo.CCiudad = Convert.ToInt32(dr["CCiudadGrupo"]);
-                        ciudadGrupo.NCiudad = dr["NCiudadGrupo"].ToString();
-                        ciudadGrupo.CDepartamento = departamentoGrupo;
+                            ciudadGrupo.CCiudad = Convert.ToInt32(dr["CCiudadGrupo"]);
+                            ciudadGrupo.NCiudad = dr["NCiudadGrupo"].ToString();
+                            ciudadGrupo.CDepartamento = departamentoGrupo;
 
-                        distritoGrupo.CDistrito = Convert.ToInt32(dr["CDistritoGrupo"]);
-                        distritoGrupo.NDistrito = dr["NDistritoGrupo"].ToString();
-                        distritoGrupo.CCiudad = ciudadGrupo;
+                            distritoGrupo.CDistrito = Convert.ToInt32(dr["CDistritoGrupo"]);
+                            distritoGrupo.NDistrito = dr["NDistritoGrupo"].ToString();
+                            distritoGrupo.CCiudad = ciudadGrupo;
 
-                        grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
-                        grupo.NGrupo = dr["NEquipo"].ToString();
-                        grupo.TDescripcion = dr["TDescripcion"].ToString();
-                        grupo.NumParticipantes = Convert.ToInt32(dr["NumParticipantes"]);
-                        grupo.DFechaJuego = Convert.ToDateTime(dr["DFechaJuego"]);
-                        grupo.CDistrito = distritoGrupo;
+                            grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
+                            grupo.NGrupo = dr["NEquipo"].ToString();
+                            grupo.TDescripcion = dr["TDescripcion"].ToString();
+                            grupo.NumParticipantes = Convert.ToInt32(dr["NumParticipantes"]);
+                            grupo.DFechaJuego = Convert.ToDateTime(dr["DFechaJuego"]);
+                            grupo.CDistrito = distritoGrupo;
 
-                        propietario.CUsuario = Convert.ToInt32(dr["CUsuario"]);
-                        propietario.CDNI = Convert.ToInt32(dr["CDNI"]);
-                        propietario.NUsuario = dr["NUsuario"].ToString();
-                        propietario.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
+                            propietario.CUsuario = Convert.ToInt32(dr["CUsuario"]);
+                            propietario.CDNI = Convert.ToInt32(dr["CDNI"]);
+                            propietario.NUsuario = dr["NUsuario"].ToString();
+                            propietario.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
 
-                        cancha.CCancha = Convert.ToInt32(dr["CCancha"]);
-                        cancha.CPropietario = propietario;
-                        cancha.CCalle = calle;
-                        cancha.NCancha = dr["NCancha"].ToString();
-                        cancha.TDireccion = dr["TDireccion"].ToString();
-                        cancha.MPrecioHora = Convert.ToDecimal(dr["MPrecioHora"]);
+                            cancha.CCancha = Convert.ToInt32(dr["CCancha"]);
+                            cancha.CPropietario = propietario;
+                            cancha.CCalle = calle;
+                            cancha.NCancha = dr["NCancha"].ToString();
+                            cancha.TDireccion = dr["TDireccion"].ToString();
+                            cancha.MPrecioHora = Convert.ToDecimal(dr["MPrecioHora"]);
 
-                        alquiler.CAlquiler = Convert.ToInt32(dr["CAlquiler"]);
-                        alquiler.CGrupo = grupo;
-                        alquiler.CCancha = cancha;
-                        alquiler.DHoraInicio = Convert.ToDateTime(dr["DFechaInicio"]);
-                        alquiler.NumHoras = Convert.ToInt32("NumHoras");
-                        alquiler.MDescuento = Convert.ToDecimal(dr["MDescuento"]);
-                        alquiler.MTotal = Convert.ToDecimal(dr["MTotal"]);
-                        alquiler.FPagado = Convert.ToBoolean(dr["FPagado"]);
+                            alquiler.CAlquiler = Convert.ToInt32(dr["CAlquiler"]);
+                            alquiler.CGrupo = grupo;
+                            alquiler.CCancha = cancha;
+                            alquiler.DHoraInicio = Convert.ToDateTime(dr["DFechaInicio"]);
+                            alquiler.NumHoras = Convert.ToInt32(dr["NumHoras"]);
+                            alquiler.MDescuento = Convert.ToDecimal(dr["MDescuento"]);
+                            alquiler.MTotal = Convert.ToDecimal(dr["MTotal"]);
+                            alquiler.FPagado = Convert.ToBoolean(dr["FPagado"]);
+                        }
                     }
                 }
             }

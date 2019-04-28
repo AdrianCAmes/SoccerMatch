@@ -16,5 +16,11 @@ namespace TP.Controllers
         {
             return View(objCanchaService.FindAll());
         }
+
+        // GET: Cancha/Details/5
+        public ActionResult Details(int? id)
+        {
+            return View(objCanchaService.FindById(id));
+        }
     }
 }

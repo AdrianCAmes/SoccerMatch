@@ -74,9 +74,7 @@ namespace Data.Implementacion
                 {
                     con.Open();
 
-                    var query = new SqlCommand("select de.CDepartamento, de.NDepartamento" +
-                                               "from Departamento de" +
-                                               "where de.CDepartamento = '" + id + "'", con);
+                    var query = new SqlCommand("select de.CDepartamento, de.NDepartamento from Departamento de where de.CDepartamento = '" + id + "'", con);
 
                     using (var dr = query.ExecuteReader())
                     {

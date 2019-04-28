@@ -16,5 +16,11 @@ namespace TP.Controllers
         {
             return View(objParticipanteService.FindAll());
         }
+
+        // GET: Participante/Details/5
+        public ActionResult Details(int? id)
+        {
+            return View(objParticipanteService.FindById(id));
+        }
     }
 }

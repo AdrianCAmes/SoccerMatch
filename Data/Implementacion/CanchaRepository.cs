@@ -73,19 +73,20 @@ namespace Data.Implementacion
 
         public Cancha FindById(int? id)
         {
-            var cancha = new Cancha();
-            var propietario = new Propietario();
-            var calle = new Calle();
+            Cancha cancha = null;
 
             try
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("select c.CCalle,c.CCancha,c.CPropietario,c.MPrecioHora,c.NCancha,c.TDireccion,ca.CDistrito,ca.NCalle from Cancha c, Propietario p, Calle ca where CCancha='" + id + "' and" + " c.CCalle = ca.CCalle and c.CPropietario = p.CPropietario", con);
+                    var query = new SqlCommand("select c.CCalle,c.CCancha,c.CPropietario,c.MPrecioHora,c.NCancha,c.TDireccion,ca.CDistrito,ca.NCalle from Cancha c, Propietario p, Calle ca where c.CCancha = '" + id + "' and c.CCalle = ca.CCalle and c.CPropietario = p.CPropietario", con);
                     var dr = query.ExecuteReader();
                     while (dr.Read())
                     {
+                        cancha = new Cancha();
+                        var propietario = new Propietario();
+                        var calle = new Calle();
                         cancha.CCancha = Convert.ToInt32(dr["Ccancha"]);
                         propietario.CUsuario = Convert.ToInt32(dr["CPropietario"]);
                         calle.CCalle = Convert.ToInt32(dr["CCalle"]);

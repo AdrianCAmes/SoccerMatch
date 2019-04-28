@@ -91,9 +91,7 @@ namespace Data.Implementacion
                 {
                     con.Open();
 
-                    var query = new SqlCommand("select c.CCalle, c.NCalle, d.CDistrito, d.NDistrito, ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento" +
-                                               "from Calle c, Distrito d, Ciudad ci, Departamento de" +
-                                               "where c.CDalle = '" + id + "' and c.CDistrito = d.CDistrito and d.CCiudad = ci.CCiudad and ci.CDepartamento = de.CDepartamento", con);
+                    var query = new SqlCommand("select c.CCalle, c.NCalle, d.CDistrito, d.NDistrito, ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento from Calle c, Distrito d, Ciudad ci, Departamento de where c.CCalle = '" + id + "' and c.CDistrito = d.CDistrito and d.CCiudad = ci.CCiudad and ci.CDepartamento = de.CDepartamento", con);
 
                     using (var dr = query.ExecuteReader())
                     {

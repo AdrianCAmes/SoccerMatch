@@ -62,18 +62,18 @@ namespace Data.Implementacion
 
         public Propietario FindById(int? id)
         {
-            Propietario propietarios = new Propietario();
+            Propietario propietario = new Propietario();
             try
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("select p.CPropietario,u.CUsuario,u.CDNI,u.NUsuario,u.NumTelefono from Propietario p, Usuario u where p.CPropietario='" + id + "' and " + " p.CPropietario = u.CUsuario", con);
+                    var cmd = new SqlCommand("select p.CPropietario,u.CUsuario,u.CDNI,u.NUsuario,u.NumTelefono from Propietario p, Usuario u where p.CPropietario = '" + id + "' and p.CPropietario = u.CUsuario", con);
                     var dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
-                        var propietario = new Propietario();
-                        propietario.CUsuario = Convert.ToInt32(dr["CJugador"]);
+                        propietario = new Propietario();
+                        propietario.CUsuario = Convert.ToInt32(dr["CPropietario"]);
                         propietario.CDNI = Convert.ToInt32(dr["CDNI"]);
                         propietario.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
                         propietario.NUsuario = Convert.ToString(dr["NUsuario"]);
@@ -84,7 +84,7 @@ namespace Data.Implementacion
             {
                 throw ex;
             }
-            return propietarios;
+            return propietario;
         }
 
         public bool Insertar(Propietario t)

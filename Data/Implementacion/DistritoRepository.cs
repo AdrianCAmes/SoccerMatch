@@ -58,26 +58,28 @@ namespace Data.Implementacion
 
         public Distrito FindById(int? id)
         {
-            Distrito distrito_temp = null;
+            Distrito objDistrito = null;
             try
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("select d.CDistrito,d.NDistrito,d.CCiudad from distrito d where d.CDistrito=2", con);
+                    var query = new SqlCommand("select d.CDistrito, d.NDistrito 'NDistrito',c.NCiudad 'NCiudad' from Distrito d join Ciudad c on c.CCiudad = d.CCiudad where d.CDistrito = '" + id + "'", con);
                     using (var dr = query.ExecuteReader())
                     {
-                        Ciudad objCiudad = new Ciudad();
-                        query.Parameters.AddWithValue("@id", id);
-                        distrito_temp = new Distrito();
-                        distrito_temp.CDistrito = Convert.ToInt32(dr["CDistrito"]);
-                        distrito_temp.NDistrito = dr["NDistrito"].ToString();
+                        while (dr.Read())
+                        {
+                            objDistrito = new Distrito();
+                            Ciudad objCiudad = new Ciudad();
 
-                        objCiudad.CCiudad = Convert.ToInt32(dr["CCiudad"]);
-                        distrito_temp.CCiudad = objCiudad;
+                            objCiudad.NCiudad = dr["NCiudad"].ToString();
+                            objDistrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
+                            objDistrito.NDistrito = dr["NDistrito"].ToString();
+                            objDistrito.CCiudad = objCiudad;
+                        }
                     }
                 }
-                return distrito_temp;
+                return objDistrito;
             }
             catch (Exception)
             {

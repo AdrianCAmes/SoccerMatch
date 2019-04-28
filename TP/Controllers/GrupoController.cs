@@ -16,5 +16,11 @@ namespace TP.Controllers
         {
             return View(objGrupoService.FindAll());
         }
+
+        // GET: Grupo/Details/5
+        public ActionResult Details(int? id)
+        {
+            return View(objGrupoService.FindById(id));
+        }
     }
 }

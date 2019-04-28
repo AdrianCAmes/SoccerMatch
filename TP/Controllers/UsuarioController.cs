@@ -18,11 +18,11 @@ namespace TP.Controllers
         }
 
         // GET: Usuario/Details/5
-        /*public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
 
-            return View();
-        }*/
+            return View(objUsuarioService.FindById(id));
+        }
 
         // GET: Usuario/Create
         public ActionResult Create()

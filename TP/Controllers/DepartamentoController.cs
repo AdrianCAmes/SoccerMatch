@@ -18,6 +18,12 @@ namespace TP.Controllers
             return View(objDepartamentoService.FindAll());
         }
 
+        // GET: Departamento/Details/5
+        public ActionResult Details(int? id)
+        {
+            return View(objDepartamentoService.FindById(id));
+        }
+
         // GET: Departamento/Create
         public ActionResult Create()
         {
