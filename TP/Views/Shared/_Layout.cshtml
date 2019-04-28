@@ -22,19 +22,24 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Alquiler", "Index", "Alquiler")</li>
-                    <li>@Html.ActionLink("Grupo", "Index", "Grupo")</li>
-                    <li>@Html.ActionLink("Participante", "Index", "Participante")</li>
-                    <li>@Html.ActionLink("Detalle", "Index", "Detalle")</li>
-                    <li>@Html.ActionLink("Cancha", "Index", "Cancha")</li>
-                    <li>@Html.ActionLink("Propietario", "Index", "Propietario")</li>
-                    <li>@Html.ActionLink("Usuario", "Index", "Usuario")</li>
-                    <li>@Html.ActionLink("Jugador", "Index", "Jugador")</li>
-                    <li>@Html.ActionLink("Administrador", "Index", "Administrador")</li>
-                    <li>@Html.ActionLink("Departamento", "Index", "Departamento")</li>
-                    <li>@Html.ActionLink("Ciudad", "Index", "Ciudad")</li>
-                    <li>@Html.ActionLink("Distrito", "Index", "Distrito")</li>
-                    <li>@Html.ActionLink("Calle", "Index", "Calle")</li>
+                    <li class="item">@Html.ActionLink("Alquiler", "Index", "Alquiler")</li>
+                    <li class="item">@Html.ActionLink("Grupo", "Index", "Grupo")</li>
+                    <li class="item">@Html.ActionLink("Participante", "Index", "Participante")</li>
+                    <li class="item">@Html.ActionLink("Detalle", "Index", "Detalle")</li>
+                    <li class="item">@Html.ActionLink("Cancha", "Index", "Cancha")</li>
+                    <li class="item">@Html.ActionLink("Propietario", "Index", "Propietario")</li>
+                    <li class="item">@Html.ActionLink("Usuario", "Index", "Usuario")</li>
+                    <li class="item">@Html.ActionLink("Jugador", "Index", "Jugador")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Otros</a>
+                        <ul class="dropdown-menu">
+                            <li class="item">@Html.ActionLink("Administrador", "Index", "Administrador")</li>
+                            <li class="item">@Html.ActionLink("Departamento", "Index", "Departamento")</li>
+                            <li class="item">@Html.ActionLink("Ciudad", "Index", "Ciudad")</li>
+                            <li class="item">@Html.ActionLink("Distrito", "Index", "Distrito")</li>
+                            <li class="item">@Html.ActionLink("Calle", "Index", "Calle")</li>
+                        </ul>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
