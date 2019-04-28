@@ -17,7 +17,9 @@
         <th>
             @Html.DisplayNameFor(model => model.NCiudad)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.CDepartamento.NDepartamento)
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -27,6 +29,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.NCiudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CDepartamento.NDepartamento)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
