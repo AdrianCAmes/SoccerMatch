@@ -35,15 +35,16 @@ namespace Data.Implementacion
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
             {
                 con.Open();
-                var query = new SqlCommand("select d.NDistrito 'NDistrito',c.NCiudad 'NCiudad' from Distrito d join Ciudad c on c.CCiudad = d.CCiudad", con);
+                var query = new SqlCommand("select d.CDistrito, d.NDistrito 'NDistrito',c.NCiudad 'NCiudad' from Distrito d join Ciudad c on c.CCiudad = d.CCiudad", con);
                 using (var dr = query.ExecuteReader())
                 {
                     while (dr.Read())
                     {
                         Distrito objDistrito = new Distrito();
                         Ciudad objCiudad = new Ciudad();
-
+                        
                         objCiudad.NCiudad = dr["NCiudad"].ToString();
+                        objDistrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
                         objDistrito.NDistrito = dr["NDistrito"].ToString();
                         objDistrito.CCiudad = objCiudad;
                         lstaDistrito.Add(objDistrito);

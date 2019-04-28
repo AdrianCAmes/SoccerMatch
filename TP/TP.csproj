@@ -296,6 +296,7 @@
     <Content Include="Views\Usuario\Create.cshtml" />
     <Content Include="Views\Departamento\Create.cshtml" />
     <Content Include="Views\Ciudad\Create.cshtml" />
+    <Content Include="Views\Administrador\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

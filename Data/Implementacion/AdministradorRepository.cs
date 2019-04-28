@@ -96,11 +96,9 @@ namespace Data.Implementacion
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
-                    var query = new SqlCommand("select a.CAdministrador, u.NUsuario, u.CDNI, u.NumTelefono, j.TDireccion, c.CCalle," +
-                                                "c.NCalle,  d.CDistrito, d.NDistrito, ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento" +
-                                                "from Administrador a, Jugador j, Usuario u, Calle c, Distrito d, Ciudad ci, Departamento de" +
-                                                "where a.CAdministrador = '" + id + "' and j.CJugador ='" + id + "' and u.CUsuario '" + id + "' and" +
-                                                "c.CCalle = j.CCalle and c.CDistrito = d.CDistrito and d.CCiudad = ci.CCiudad and ci.CDepartamento = de.CDepartamento", con);
+                    con.Open();
+                    var query = new SqlCommand("select a.CAdministrador, u.NUsuario, u.CDNI, u.NumTelefono, j.TDireccion, c.CCalle, c.NCalle,  d.CDistrito, d.NDistrito, ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento from Administrador a, Jugador j, Usuario u, Calle c, Distrito d, Ciudad ci, Departamento de where a.CAdministrador = '" + id + "' and j.CJugador ='" + id + "' and u.CUsuario = '" + id + "' and c.CCalle = j.CCalle and c.CDistrito = d.CDistrito and d.CCiudad = ci.CCiudad and ci.CDepartamento = de.CDepartamento", con);
+
                     using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())
@@ -126,9 +124,9 @@ namespace Data.Implementacion
                             calle.NCalle = dr["NCalle"].ToString();
                             calle.CDistrito = distrito;
 
-                            administrador.CUsuario = Convert.ToInt32(dr["CUsuario"]);
+                            administrador.CUsuario = Convert.ToInt32(dr["CAdministrador"]);
                             administrador.TDireccion = dr["TDireccion"].ToString();
-                            administrador.CDNI = Convert.ToInt32(dr["DNI"]);
+                            administrador.CDNI = Convert.ToInt32(dr["CDNI"]);
                             administrador.NUsuario = dr["NUsuario"].ToString();
                             administrador.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
                             administrador.CCalle = calle;
