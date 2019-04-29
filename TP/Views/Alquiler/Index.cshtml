@@ -15,6 +15,12 @@
             @Html.DisplayNameFor(model => model.CAlquiler)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.CGrupo.NGrupo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CCancha.NCancha)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.DHoraInicio)
         </th>
         <th>
@@ -36,6 +42,12 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.CAlquiler)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CGrupo.NGrupo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CCancha.NCancha)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DHoraInicio)

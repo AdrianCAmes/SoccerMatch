@@ -309,6 +309,7 @@
     <Content Include="Views\Ciudad\Details.cshtml" />
     <Content Include="Views\Distrito\Details.cshtml" />
     <Content Include="Views\Calle\Details.cshtml" />
+    <Content Include="Views\Alquiler\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

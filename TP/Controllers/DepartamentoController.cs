@@ -34,16 +34,11 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Create(Departamento departamento)
         {
-            try
-            {
-                // TODO: Add insert logic here
-                bool rpta = objDepartamentoService.Insertar(departamento);
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            bool rpta = objDepartamentoService.Insertar(departamento);
+
+            if(rpta) return RedirectToAction("Index");
+            return View();
+            
         }
     }
 }

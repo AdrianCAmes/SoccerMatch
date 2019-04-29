@@ -35,20 +35,14 @@ namespace TP.Controllers
         // POST: Ciudad/Create
         [HttpPost]
         public ActionResult Create(Ciudad ciudad)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-                ViewBag.departamento = objDepartamentoService.FindAll();
+        {  
+            ViewBag.departamento = objDepartamentoService.FindAll();
 
-                bool rpta = objCiudadService.Insertar(ciudad);
+            bool rpta = objCiudadService.Insertar(ciudad);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            if(rpta) return RedirectToAction("Index");
+            return View();
+           
         }
     }
 }

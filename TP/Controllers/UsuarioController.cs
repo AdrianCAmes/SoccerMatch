@@ -34,16 +34,10 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Create(Usuario usuario)
         {
-            try
-            {
-                // TODO: Add insert logic here
-                bool rpta = objUsuarioService.Insertar(usuario);
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            bool rpta = objUsuarioService.Insertar(usuario);
+
+            if(rpta) return RedirectToAction("Index");
+            return View();
         }
 
         // GET: Usuario/Edit/5
