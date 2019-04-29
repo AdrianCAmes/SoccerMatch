@@ -6,15 +6,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Entity;
-
 namespace TP.Controllers
 {
     public class CalleController : Controller
     {
         private ICalleService objCalleService = new CalleService();
-
         private IDistritoService objDistritoService = new DistritoService();
-
         // GET: Calle
         public ActionResult Index()
         {
@@ -26,22 +23,19 @@ namespace TP.Controllers
         {
             return View(objCalleService.FindById(id));
         }
-
-
-        public ActionResult Create()
+        public ActionResult Edit(int id)
         {
-            ViewBag.distritos = objDistritoService.FindAll();
-            return View();
+            ViewBag.distrito = objDistritoService.FindAll();
+            return View(objCalleService.FindById(id));
         }
-
-        // POST: Usuario/Create
         [HttpPost]
-        public ActionResult Create(Calle objCalle)
+        public ActionResult Edit(Calle c)
         {
-            ViewBag.distritos = objDistritoService.FindAll();
-            bool rpta = objCalleService.Insertar(objCalle);
-
-            if (rpta) return RedirectToAction("Index");
+            ViewBag.distrito = objDistritoService.FindAll();
+            bool rpta = false;
+            rpta = objCalleService.Update(c);
+            if (rpta)
+                return RedirectToAction("Index");
             return View();
         }
     }

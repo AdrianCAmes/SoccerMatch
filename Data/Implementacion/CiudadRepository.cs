@@ -140,6 +140,7 @@ namespace Data.Implementacion
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
+                    con.Open();
                     var query = new SqlCommand("update Ciudad set NCiudad = @nciudad, CDepartamento = @cdepartamento where CCiudad='"+t.CCiudad+"'", con);
                     query.Parameters.AddWithValue("@nciudad", t.NCiudad);
                     query.Parameters.AddWithValue("@cdepartamento", t.CDepartamento.CDepartamento);

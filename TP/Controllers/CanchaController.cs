@@ -5,18 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
 using Entity;
-
 namespace TP.Controllers
 {
     public class CanchaController : Controller
     {
         private ICanchaService objCanchaService = new CanchaService();
-
-        private IPropietarioService objPropiertarioService = new PropietarioService();
+        private IPropietarioService objPropietarioService = new PropietarioService();
         private ICalleService objCalleService = new CalleService();
-
         // GET: Cancha
         public ActionResult Index()
         {
@@ -28,24 +24,22 @@ namespace TP.Controllers
         {
             return View(objCanchaService.FindById(id));
         }
-        public ActionResult Create()
+        public ActionResult Edit(int id)
         {
-            ViewBag.propietarios = objPropiertarioService.FindAll();
-            ViewBag.calles = objCalleService.FindAll();
-            return View();
+            ViewBag.calle = objCalleService.FindAll();
+            ViewBag.propietario = objPropietarioService.FindAll();
+            return View(objCanchaService.FindById(id));
         }
-
-        // POST: Usuario/Create
         [HttpPost]
-        public ActionResult Create(Cancha objCancha)
+        public ActionResult Edit(Cancha c)
         {
-            ViewBag.propietarios = objPropiertarioService.FindAll();
-            ViewBag.calles = objCalleService.FindAll();
-            bool rpta = objCanchaService.Insertar(objCancha);
-
-            if (rpta) return RedirectToAction("Index");
+            ViewBag.calle = objCalleService.FindAll();
+            ViewBag.propietario = objPropietarioService.FindAll();
+            bool rpta = false;
+            rpta = objCanchaService.Update(c);
+            if (rpta)
+                return RedirectToAction("Index");
             return View();
         }
-
     }
 }
