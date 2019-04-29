@@ -324,6 +324,7 @@
     <Content Include="Views\Participante\Edit.cshtml" />
     <Content Include="Views\Detalle\Edit.cshtml" />
     <Content Include="Views\Grupo\Edit.cshtml" />
+    <Content Include="Views\Distrito\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

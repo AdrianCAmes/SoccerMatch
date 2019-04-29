@@ -67,3 +67,12 @@ C:\Users\Adrian\Desktop\SoccerMatch\SoccerMatch\Business\bin\Debug\Entity.pdb
 C:\Users\Adrian\Desktop\SoccerMatch\SoccerMatch\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 C:\Users\Adrian\Desktop\SoccerMatch\SoccerMatch\Business\obj\Debug\Business.dll
 C:\Users\Adrian\Desktop\SoccerMatch\SoccerMatch\Business\obj\Debug\Business.pdb
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Business.dll
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Business.pdb
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Data.dll
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Entity.dll
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Data.pdb
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Entity.pdb
+D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.dll
+D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.pdb
