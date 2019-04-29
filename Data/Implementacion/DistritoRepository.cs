@@ -99,7 +99,11 @@ namespace Data.Implementacion
                     var query = new SqlCommand("insert into distrito values (@NDistrito,@CCiudad)", con);
 
                     query.Parameters.AddWithValue("@NDistrito", t.NDistrito);
+<<<<<<< HEAD
                     query.Parameters.AddWithValue("@CCiudad", t.CCiudad.CCiudad);
+=======
+                    query.Parameters.AddWithValue("@CCiudad", t.CCiudad);
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
 
 
                     query.ExecuteNonQuery();

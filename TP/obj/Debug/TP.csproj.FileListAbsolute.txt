@@ -537,6 +537,7 @@ C:\Users\Adrian\Desktop\SoccerMatch\TP\bin\es\Microsoft.Owin.Security.MicrosoftA
 C:\Users\Adrian\Desktop\SoccerMatch\TP\obj\Debug\TP.csprojResolveAssemblyReference.cache
 C:\Users\Adrian\Desktop\SoccerMatch\TP\obj\Debug\TP.dll
 C:\Users\Adrian\Desktop\SoccerMatch\TP\obj\Debug\TP.pdb
+<<<<<<< HEAD
 D:\TRABAJO_PARCIAL_WEB\TP\bin\ApplicationInsights.config
 D:\TRABAJO_PARCIAL_WEB\TP\bin\roslyn\csc.exe
 D:\TRABAJO_PARCIAL_WEB\TP\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -644,3 +645,5 @@ D:\TRABAJO_PARCIAL_WEB\TP\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resour
 D:\TRABAJO_PARCIAL_WEB\TP\obj\Debug\TP.csprojResolveAssemblyReference.cache
 D:\TRABAJO_PARCIAL_WEB\TP\obj\Debug\TP.dll
 D:\TRABAJO_PARCIAL_WEB\TP\obj\Debug\TP.pdb
+=======
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9

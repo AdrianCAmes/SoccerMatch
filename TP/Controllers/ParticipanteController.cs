@@ -22,7 +22,10 @@ namespace TP.Controllers
         {
             return View(objParticipanteService.FindById(id));
         }
+<<<<<<< HEAD
 
      
+=======
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
     }
 }

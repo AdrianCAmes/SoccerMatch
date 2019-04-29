@@ -47,6 +47,7 @@ C:\Users\Adrian\Desktop\SoccerMatch\Business\bin\Debug\Entity.pdb
 C:\Users\Adrian\Desktop\SoccerMatch\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 C:\Users\Adrian\Desktop\SoccerMatch\Business\obj\Debug\Business.dll
 C:\Users\Adrian\Desktop\SoccerMatch\Business\obj\Debug\Business.pdb
+<<<<<<< HEAD
 D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Business.dll
 D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Business.pdb
 D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Data.dll
@@ -56,3 +57,5 @@ D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Entity.pdb
 D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.dll
 D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.pdb
+=======
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9

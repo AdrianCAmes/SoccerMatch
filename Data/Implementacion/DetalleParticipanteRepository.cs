@@ -37,7 +37,11 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
+<<<<<<< HEAD
                     var cmd = new SqlCommand("select dp.CDetalleParticipante,dp.CAlquiler,dp.CParticipante,dp.MCuota,dp.FPartePagada,a.CCancha,a.CEquipo, a.DHoraInicio,a.FPagado,a.MDescuento,a.MTotal,a.NumHoras,p.CJugador from DetalleParticipante dp, Alquiler a, Participante p where dp.CAlquiler = a.CAlquiler and dp.CParticipante = p.CParticipante", con);
+=======
+                    var cmd = new SqlCommand("select dp.CDetalleParticipante,dp.CAlquiler,dp.CParticipante,dp.MCuota,dp.FPartePagada,a.CCancha,a.CEquipo, a.DFechaInicio,a.FPagado,a.MDescuento,a.MTotal,a.NumHoras,p.CJugador from DetalleParticipante dp, Alquiler a, Participante p where dp.CAlquiler = a.CAlquiler and dp.CParticipante = p.CParticipante", con);
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
                     using (var dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
@@ -58,7 +62,11 @@ namespace Data.Implementacion
                             detalle.FPartePagada = Convert.ToBoolean(dr["FPartePagada"]);
                             alquiler.CCancha = cancha;
                             alquiler.CGrupo = grupo;
+<<<<<<< HEAD
                             alquiler.DHoraInicio = Convert.ToDateTime(dr["DHoraInicio"]);
+=======
+                            alquiler.DHoraInicio = Convert.ToDateTime(dr["DFechaInicio"]);
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
                             alquiler.FPagado = Convert.ToBoolean(dr["FPagado"]);
                             alquiler.MDescuento = Convert.ToDecimal(dr["MDescuento"]);
                             alquiler.MTotal = Convert.ToDecimal(dr["MTotal"]);

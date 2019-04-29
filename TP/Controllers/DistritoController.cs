@@ -11,7 +11,10 @@ namespace TP.Controllers
     public class DistritoController : Controller
     {
         private IDistritoService objDistritoServicio = new DistritoService();
+<<<<<<< HEAD
         private ICiudadService objCiudadService = new CiudadService();
+=======
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
         // GET: Distrito
         public ActionResult Index()
         {
@@ -25,11 +28,18 @@ namespace TP.Controllers
         }
 
         // GET: Distrito/Create
+<<<<<<< HEAD
          public ActionResult Create()
          {
             ViewBag.ciudades = objCiudadService.FindAll();
              return View();
          }
+=======
+       /* public ActionResult Create()
+        {
+            return View();
+        }
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
 
         //POST: Distrito/Create
         [HttpPost]
@@ -78,6 +88,7 @@ namespace TP.Controllers
              {
                  // TODO: Add delete logic here
 
+<<<<<<< HEAD
                  return RedirectToAction("Index");
              }
              catch
@@ -85,5 +96,14 @@ namespace TP.Controllers
                  return View();
              }
          }*/
+=======
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }*/
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
     }
 }

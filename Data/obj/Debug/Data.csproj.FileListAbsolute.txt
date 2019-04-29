@@ -37,6 +37,7 @@ C:\Users\Adrian\Desktop\SoccerMatch\Data\bin\Debug\Entity.pdb
 C:\Users\Adrian\Desktop\SoccerMatch\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\Users\Adrian\Desktop\SoccerMatch\Data\obj\Debug\Data.dll
 C:\Users\Adrian\Desktop\SoccerMatch\Data\obj\Debug\Data.pdb
+<<<<<<< HEAD
 D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Data.dll
 D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Data.pdb
 D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Entity.dll
@@ -44,3 +45,5 @@ D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Entity.pdb
 D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.dll
 D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.pdb
+=======
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
