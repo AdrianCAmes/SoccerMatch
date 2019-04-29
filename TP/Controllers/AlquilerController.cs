@@ -29,8 +29,8 @@ namespace TP.Controllers
         // GET: Alquiler/Create
         public ActionResult Create()
         {
-            ViewBag.grupos = objGrupoService.FindAll();
-            ViewBag.canchas = objCanchaService.FindAll();
+            ViewBag.grupo = objGrupoService.FindAll();
+            ViewBag.cancha = objCanchaService.FindAll();
             return View();
         }
 
