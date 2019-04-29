@@ -133,12 +133,12 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("update set Equipo NGrupo=@ngrupo,TDescripcion=@tdescripcion,NumParticipantes=@numparticipantes,DFechaJuego=@dfechajuego,CDistrito=@cdistrito where CEquipo='"+t.CGrupo+"'", con);
-                cmd.Parameters.AddWithValue("@NGrupo", t.NGrupo);
-                cmd.Parameters.AddWithValue("@TDescripcion", t.TDescripcion);
-                cmd.Parameters.AddWithValue("@NumParticipantes", t.NumParticipantes);
-                cmd.Parameters.AddWithValue("@DFechaJuego", t.DFechaJuego);
-                cmd.Parameters.AddWithValue("@CDistrito", t.CDistrito);
+                var cmd = new SqlCommand("update Equipo set NEquipo=@ngrupo,TDescripcion=@tdescripcion,NumParticipantes=@numparticipantes,DFechaJuego=@dfechajuego,CDistrito=@cdistrito where CEquipo='"+t.CGrupo+"'", con);
+                cmd.Parameters.AddWithValue("@ngrupo", t.NGrupo);
+                cmd.Parameters.AddWithValue("@tdescripcion", t.TDescripcion);
+                cmd.Parameters.AddWithValue("@numparticipantes", t.NumParticipantes);
+                cmd.Parameters.AddWithValue("@dfechajuego", t.DFechaJuego);
+                cmd.Parameters.AddWithValue("@cdistrito", t.CDistrito.CDistrito);
                 cmd.ExecuteNonQuery();
                 rpta = true;
             }

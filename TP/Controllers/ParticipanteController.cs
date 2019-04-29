@@ -36,6 +36,7 @@ namespace TP.Controllers
             ViewBag.jugador = objJugadorService.FindAll();
             ViewBag.grupo = objGrupoService.FindAll();
             bool rpta = false;
+            rpta = objParticipanteService.Update(p);
             if (rpta)
                 return RedirectToAction("Index");
             return View();
