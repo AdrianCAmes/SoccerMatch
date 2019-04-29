@@ -18,7 +18,7 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("delete from Usuario where CUsuario='" + id + "'", con);
+                var cmd = new SqlCommand("delete from Usuario where CUsuario=" + id , con);
                 cmd.ExecuteNonQuery();
                 rpta = true;
             }

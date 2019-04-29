@@ -60,3 +60,21 @@ D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Entity.pdb
 D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.dll
 D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.pdb
+C:\Users\Martín\Desktop\TP\SoccerMatch\Data\bin\Debug\Data.dll
+C:\Users\Martín\Desktop\TP\SoccerMatch\Data\bin\Debug\Data.pdb
+C:\Users\Martín\Desktop\TP\SoccerMatch\Data\bin\Debug\Entity.dll
+C:\Users\Martín\Desktop\TP\SoccerMatch\Data\bin\Debug\Entity.pdb
+C:\Users\Martín\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\Martín\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\Martín\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\Martín\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.dll
+C:\Users\Martín\Desktop\TP\SoccerMatch\Data\obj\Debug\Data.pdb
+C:\Users\Usuario\Desktop\Nueva carpeta\TP\SoccerMatch\Data\bin\Debug\Data.dll
+C:\Users\Usuario\Desktop\Nueva carpeta\TP\SoccerMatch\Data\bin\Debug\Data.pdb
+C:\Users\Usuario\Desktop\Nueva carpeta\TP\SoccerMatch\Data\bin\Debug\Entity.dll
+C:\Users\Usuario\Desktop\Nueva carpeta\TP\SoccerMatch\Data\bin\Debug\Entity.pdb
+C:\Users\Usuario\Desktop\Nueva carpeta\TP\SoccerMatch\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\Nueva carpeta\TP\SoccerMatch\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Nueva carpeta\TP\SoccerMatch\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\Usuario\Desktop\Nueva carpeta\TP\SoccerMatch\Data\obj\Debug\Data.dll
+C:\Users\Usuario\Desktop\Nueva carpeta\TP\SoccerMatch\Data\obj\Debug\Data.pdb

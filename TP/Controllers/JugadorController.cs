@@ -38,5 +38,21 @@ namespace TP.Controllers
                 return RedirectToAction("Index");
             return View();
         }
+        public ActionResult Delete(int id)
+        {
+            return View(objJugadorService.FindById(id));
+        }
+
+        // POST: Usuario/Delete/5
+        [HttpPost]
+        public ActionResult Delete(Jugador u)
+        {
+            bool rpta = false;
+            rpta = objJugadorService.Delete(u.CUsuario);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
+
+        }
     }
 }
