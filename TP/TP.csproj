@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -297,19 +298,19 @@
     <Content Include="Views\Departamento\Create.cshtml" />
     <Content Include="Views\Ciudad\Create.cshtml" />
     <Content Include="Views\Administrador\Details.cshtml" />
-    <Content Include="Views\Alquiler\Details.cshtml" />
-    <Content Include="Views\Participante\Details.cshtml" />
-    <Content Include="Views\Grupo\Details.cshtml" />
-    <Content Include="Views\Detalle\Details.cshtml" />
-    <Content Include="Views\Cancha\Details.cshtml" />
-    <Content Include="Views\Propietario\Details.cshtml" />
     <Content Include="Views\Usuario\Details.cshtml" />
+    <Content Include="Views\Participante\Details.cshtml" />
+    <Content Include="Views\Propietario\Details.cshtml" />
     <Content Include="Views\Jugador\Details.cshtml" />
-    <Content Include="Views\Departamento\Details.cshtml" />
-    <Content Include="Views\Ciudad\Details.cshtml" />
-    <Content Include="Views\Distrito\Details.cshtml" />
-    <Content Include="Views\Calle\Details.cshtml" />
     <Content Include="Views\Alquiler\Create.cshtml" />
+    <Content Include="Views\Alquiler\Details.cshtml" />
+    <Content Include="Views\Calle\Details.cshtml" />
+    <Content Include="Views\Cancha\Details.cshtml" />
+    <Content Include="Views\Ciudad\Details.cshtml" />
+    <Content Include="Views\Departamento\Details.cshtml" />
+    <Content Include="Views\Detalle\Details.cshtml" />
+    <Content Include="Views\Distrito\Details.cshtml" />
+    <Content Include="Views\Grupo\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
