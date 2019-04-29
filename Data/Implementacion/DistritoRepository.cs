@@ -32,7 +32,7 @@ namespace Data.Implementacion
         public List<Distrito> FindAll()
         {
             List<Distrito> lstaDistrito = new List<Distrito>();
-            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
+            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
             {
                 con.Open();
                 var query = new SqlCommand("select d.CDistrito, d.NDistrito 'NDistrito',c.NCiudad 'NCiudad' from Distrito d join Ciudad c on c.CCiudad = d.CCiudad", con);
@@ -61,7 +61,7 @@ namespace Data.Implementacion
             Distrito objDistrito = null;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
                     var query = new SqlCommand("select d.CDistrito, d.NDistrito 'NDistrito',c.NCiudad 'NCiudad' from Distrito d join Ciudad c on c.CCiudad = d.CCiudad where d.CDistrito = '" + id + "'", con);
@@ -92,14 +92,18 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["university"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
 
                     var query = new SqlCommand("insert into distrito values (@NDistrito,@CCiudad)", con);
 
                     query.Parameters.AddWithValue("@NDistrito", t.NDistrito);
+<<<<<<< HEAD
+                    query.Parameters.AddWithValue("@CCiudad", t.CCiudad.CCiudad);
+=======
                     query.Parameters.AddWithValue("@CCiudad", t.CCiudad);
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
 
 
                     query.ExecuteNonQuery();

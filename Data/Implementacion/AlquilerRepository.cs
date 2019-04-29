@@ -39,7 +39,11 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
+<<<<<<< HEAD
+                    var cmd = new SqlCommand("select a.CAlquiler, a.DHoraInicio, a.NumHoras, a.MDescuento, a.MTotal, a.FPagado, c.CCancha, c.NCancha, c.TDireccion, c.MPrecioHora, u.CUsuario, u.CDNI, u.NUsuario, u.NumTelefono, e.CEquipo, e.NEquipo, e.TDescripcion, e.NumParticipantes, e.DFechaJuego, e.CDistrito 'CDistritoGrupo', d2.NDistrito 'NDistritoGrupo', ci2.CCiudad 'CCiudadGrupo', ci2.NCiudad'NCiudadGrupo', de2.CDepartamento 'CDepartamentoGrupo', de2.NDepartamento 'NDepartamentoGrupo', cl.CCalle, cl.NCalle, d1.CDistrito 'CDistritoCancha', d1.NDistrito 'NDistritoCancha', ci1.CCiudad 'CCiudadCancha', ci1.NCiudad'NCiudadCancha', de1.CDepartamento 'CDepartamentoCancha', de1.NDepartamento 'NDepartamentoCancha' from Alquiler a, Equipo e, Cancha c, Propietario p, Calle cl, Distrito d1, Distrito d2, Ciudad ci1, Ciudad ci2, Departamento de1, Departamento de2, Usuario u where a.CEquipo = e.CEquipo and a.CCancha = c.CCancha and c.CPropietario = p.CPropietario and u.CUsuario = p.CPropietario and cl.CCalle = c.CCalle and cl.CDistrito = d1.CDistrito and d1.CCiudad = ci1.CCiudad and ci1.CDepartamento = de1.CDepartamento and e.CDistrito = d2.CDistrito and d2.CCiudad = ci2.CCiudad and ci2.CDepartamento = de2.CDepartamento", con);
+=======
                     var cmd = new SqlCommand("select a.CAlquiler, a.DFechaInicio, a.NumHoras, a.MDescuento, a.MTotal, a.FPagado, c.CCancha, c.NCancha, c.TDireccion, c.MPrecioHora, u.CUsuario, u.CDNI, u.NUsuario, u.NumTelefono, e.CEquipo, e.NEquipo, e.TDescripcion, e.NumParticipantes, e.DFechaJuego, e.CDistrito 'CDistritoGrupo', d2.NDistrito 'NDistritoGrupo', ci2.CCiudad 'CCiudadGrupo', ci2.NCiudad'NCiudadGrupo', de2.CDepartamento 'CDepartamentoGrupo', de2.NDepartamento 'NDepartamentoGrupo', cl.CCalle, cl.NCalle, d1.CDistrito 'CDistritoCancha', d1.NDistrito 'NDistritoCancha', ci1.CCiudad 'CCiudadCancha', ci1.NCiudad'NCiudadCancha', de1.CDepartamento 'CDepartamentoCancha', de1.NDepartamento 'NDepartamentoCancha' from Alquiler a, Equipo e, Cancha c, Propietario p, Calle cl, Distrito d1, Distrito d2, Ciudad ci1, Ciudad ci2, Departamento de1, Departamento de2, Usuario u where a.CEquipo = e.CEquipo and a.CCancha = c.CCancha and c.CPropietario = p.CPropietario and u.CUsuario = p.CPropietario and cl.CCalle = c.CCalle and cl.CDistrito = d1.CDistrito and d1.CCiudad = ci1.CCiudad and ci1.CDepartamento = de1.CDepartamento and e.CDistrito = d2.CDistrito and d2.CCiudad = ci2.CCiudad and ci2.CDepartamento = de2.CDepartamento", con);
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
                     var dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
@@ -103,7 +107,11 @@ namespace Data.Implementacion
                         alquiler.CAlquiler = Convert.ToInt32(dr["CAlquiler"]);
                         alquiler.CGrupo = grupo;
                         alquiler.CCancha = cancha;
+<<<<<<< HEAD
+                        alquiler.DHoraInicio = Convert.ToDateTime(dr["DHoraInicio"]);
+=======
                         alquiler.DHoraInicio = Convert.ToDateTime(dr["DFechaInicio"]);
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
                         alquiler.NumHoras = Convert.ToInt32(dr["NumHoras"]);
                         alquiler.MDescuento = Convert.ToDecimal(dr["MDescuento"]);
                         alquiler.MTotal = Convert.ToDecimal(dr["MTotal"]);
@@ -217,7 +225,11 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
+<<<<<<< HEAD
+                    var cmd = new SqlCommand("insert into Alquiler values(@CGrupo,@CCancha,@NumHoras,@MDescuento,@MTotal,@FPagado,@DFechaInicio)", con);
+=======
                     var cmd = new SqlCommand("insert into Alquiler values(@CGrupo,@CCancha,@DFechaInicio, @NumHoras,@MDescuento,@MTotal,@FPagado)", con);
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
                     cmd.Parameters.AddWithValue("@CGrupo", t.CGrupo.CGrupo);
                     cmd.Parameters.AddWithValue("@CCancha", t.CCancha.CCancha);
                     cmd.Parameters.AddWithValue("@DFechaInicio", t.DHoraInicio);

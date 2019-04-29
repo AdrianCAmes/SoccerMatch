@@ -247,7 +247,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -310,6 +312,7 @@
     <Content Include="Views\Detalle\Details.cshtml" />
     <Content Include="Views\Distrito\Details.cshtml" />
     <Content Include="Views\Grupo\Details.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Alquiler\Create.cshtml" />
     <Content Include="Views\Usuario\Edit.cshtml" />
     <Content Include="Views\Propietario\Edit.cshtml" />
@@ -324,6 +327,15 @@
     <Content Include="Views\Participante\Edit.cshtml" />
     <Content Include="Views\Detalle\Edit.cshtml" />
     <Content Include="Views\Grupo\Edit.cshtml" />
+=======
+<<<<<<< HEAD
+    <Content Include="Views\Cancha\Create.cshtml" />
+    <Content Include="Views\Detalle\Create.cshtml" />
+    <Content Include="Views\Distrito\Create.cshtml" />
+    <Content Include="Views\Calle\Create.cshtml" />
+=======
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
+>>>>>>> 9915bca4effb1a74fd0efc14a49346c36b1856f2
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -11,7 +11,14 @@ namespace TP.Controllers
     public class DistritoController : Controller
     {
         private IDistritoService objDistritoServicio = new DistritoService();
+<<<<<<< HEAD
         private ICiudadService objCiudadService = new CiudadService();
+=======
+<<<<<<< HEAD
+        private ICiudadService objCiudadService = new CiudadService();
+=======
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
+>>>>>>> 9915bca4effb1a74fd0efc14a49346c36b1856f2
         // GET: Distrito
         public ActionResult Index()
         {
@@ -25,19 +32,31 @@ namespace TP.Controllers
         }
 
         // GET: Distrito/Create
+<<<<<<< HEAD
         public ActionResult Create()
+=======
+<<<<<<< HEAD
+         public ActionResult Create()
+         {
+            ViewBag.ciudades = objCiudadService.FindAll();
+             return View();
+         }
+=======
+       /* public ActionResult Create()
+>>>>>>> 9915bca4effb1a74fd0efc14a49346c36b1856f2
         {
             return View();
         }
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
 
-        // POST: Distrito/Create
+        //POST: Distrito/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Distrito objDistrito)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            ViewBag.ciudades = objCiudadService.FindAll();
+            bool rpta = objDistritoServicio.Insertar(objDistrito);
 
+<<<<<<< HEAD
                 return RedirectToAction("Index");
             }
             catch
@@ -51,8 +70,19 @@ namespace TP.Controllers
         {
             ViewBag.ciudad = objCiudadService.FindAll();
             return View(objDistritoServicio.FindById(id));
+=======
+            if (rpta) return RedirectToAction("Index");
+            return View();
+>>>>>>> 9915bca4effb1a74fd0efc14a49346c36b1856f2
         }
+        /*
+         // GET: Distrito/Edit/5
+         public ActionResult Edit(int id)
+         {
+             return View();
+         }
 
+<<<<<<< HEAD
         // POST: Distrito/Edit/5
         [HttpPost]
         public ActionResult Edit(Distrito d)
@@ -65,27 +95,58 @@ namespace TP.Controllers
                 return View();
 
         }
+=======
+         // POST: Distrito/Edit/5
+         [HttpPost]
+         public ActionResult Edit(int id, FormCollection collection)
+         {
+             try
+             {
+                 // TODO: Add update logic here
 
-        // GET: Distrito/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+                 return RedirectToAction("Index");
+             }
+             catch
+             {
+                 return View();
+             }
+         }
+>>>>>>> 9915bca4effb1a74fd0efc14a49346c36b1856f2
 
-        // POST: Distrito/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
+         // GET: Distrito/Delete/5
+         public ActionResult Delete(int id)
+         {
+             return View();
+         }
 
+         // POST: Distrito/Delete/5
+         [HttpPost]
+         public ActionResult Delete(int id, FormCollection collection)
+         {
+             try
+             {
+                 // TODO: Add delete logic here
+
+<<<<<<< HEAD
+                 return RedirectToAction("Index");
+             }
+             catch
+             {
+                 return View();
+             }
+         }*/
+=======
                 return RedirectToAction("Index");
             }
             catch
             {
                 return View();
             }
+<<<<<<< HEAD
         }
+=======
+        }*/
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
+>>>>>>> 9915bca4effb1a74fd0efc14a49346c36b1856f2
     }
 }

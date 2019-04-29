@@ -137,7 +137,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("insert into Calle values(@NCalle,@CDistrito)");
+                    var cmd = new SqlCommand("insert into Calle values(@NCalle,@CDistrito)",con);
                     cmd.Parameters.AddWithValue("@NCalle", t.NCalle);
                     cmd.Parameters.AddWithValue("@CDistrito", t.CDistrito.CDistrito);
                     cmd.ExecuteNonQuery();

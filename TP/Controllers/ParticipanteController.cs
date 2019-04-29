@@ -24,6 +24,7 @@ namespace TP.Controllers
         {
             return View(objParticipanteService.FindById(id));
         }
+<<<<<<< HEAD
         public ActionResult Edit(int id)
         {
             ViewBag.jugador = objJugadorService.FindAll();
@@ -40,5 +41,12 @@ namespace TP.Controllers
                 return RedirectToAction("Index");
             return View();
         }
+=======
+<<<<<<< HEAD
+
+     
+=======
+>>>>>>> 30c09a7da3ce45b58043cfa1425d7f5b096d4ac9
+>>>>>>> 9915bca4effb1a74fd0efc14a49346c36b1856f2
     }
 }
