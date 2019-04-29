@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<Entity.Calle>
-
 @{
     ViewBag.Title = "Calle";
 }
@@ -17,6 +16,9 @@
         <th>
             @Html.DisplayNameFor(model => model.NCalle)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CDistrito.NDistrito)
+        </th>
         <th></th>
     </tr>
 
@@ -29,7 +31,10 @@
             @Html.DisplayFor(modelItem => item.NCalle)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.DisplayFor(modelItem => item.CDistrito.NDistrito)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.CCalle }) |
             @Html.ActionLink("Details", "Details", new { id = item.CCalle }) |
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>

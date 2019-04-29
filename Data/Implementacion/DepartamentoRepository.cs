@@ -127,7 +127,8 @@ namespace Data.Implementacion
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
-                    var query = new SqlCommand("update Ciudad set NDepartamento = @ndepartamento)", con);
+                    con.Open();
+                    var query = new SqlCommand("update Departamento set NDepartamento = @ndepartamento where CDepartamento='"+t.CDepartamento+"'", con);
                     query.Parameters.AddWithValue("@ndepartamento", t.NDepartamento);
                     query.ExecuteNonQuery();
 

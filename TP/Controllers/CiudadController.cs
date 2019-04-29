@@ -44,5 +44,23 @@ namespace TP.Controllers
             return View();
            
         }
+        public ActionResult Edit(int id)
+        {
+            ViewBag.departamento = objDepartamentoService.FindAll();
+            return View(objCiudadService.FindById(id));
+        }
+
+        // POST: Distrito/Edit/5
+        [HttpPost]
+        public ActionResult Edit(Ciudad d)
+        {
+            ViewBag.departamento = objDepartamentoService.FindAll();
+            bool rpta = false;
+            rpta = objCiudadService.Update(d);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
+
+        }
     }
 }

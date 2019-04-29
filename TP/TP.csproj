@@ -302,7 +302,6 @@
     <Content Include="Views\Participante\Details.cshtml" />
     <Content Include="Views\Propietario\Details.cshtml" />
     <Content Include="Views\Jugador\Details.cshtml" />
-    <Content Include="Views\Alquiler\Create.cshtml" />
     <Content Include="Views\Alquiler\Details.cshtml" />
     <Content Include="Views\Calle\Details.cshtml" />
     <Content Include="Views\Cancha\Details.cshtml" />
@@ -311,6 +310,20 @@
     <Content Include="Views\Detalle\Details.cshtml" />
     <Content Include="Views\Distrito\Details.cshtml" />
     <Content Include="Views\Grupo\Details.cshtml" />
+    <Content Include="Views\Alquiler\Create.cshtml" />
+    <Content Include="Views\Usuario\Edit.cshtml" />
+    <Content Include="Views\Propietario\Edit.cshtml" />
+    <Content Include="Views\Calle\Edit.cshtml" />
+    <Content Include="Views\Distrito\Edit.cshtml" />
+    <Content Include="Views\Ciudad\Edit.cshtml" />
+    <Content Include="Views\Departamento\Edit.cshtml" />
+    <Content Include="Views\Jugador\Edit.cshtml" />
+    <Content Include="Views\Administrador\Edit.cshtml" />
+    <Content Include="Views\Cancha\Edit.cshtml" />
+    <Content Include="Views\Alquiler\Edit.cshtml" />
+    <Content Include="Views\Participante\Edit.cshtml" />
+    <Content Include="Views\Detalle\Edit.cshtml" />
+    <Content Include="Views\Grupo\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

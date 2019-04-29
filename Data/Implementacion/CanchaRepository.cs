@@ -145,8 +145,8 @@ namespace Data.Implementacion
                 {
                     con.Open();
 
-                    var query = new SqlCommand("update Cancha set CPropietario = @cpropietario, CCalle = @ccalle, NCancha = @ncancha, TDireccion = @tdireccion, MPrecioHora = @mpreciohora)", con);
-                    query.Parameters.AddWithValue("@cpropietario", t.CPropietario.NUsuario);
+                    var query = new SqlCommand("update Cancha set CPropietario = @cpropietario, CCalle = @ccalle, NCancha = @ncancha, TDireccion = @tdireccion, MPrecioHora = @mpreciohora where CCancha='"+t.CCancha+"'", con);
+                    query.Parameters.AddWithValue("@cpropietario", t.CPropietario.CUsuario);
                     query.Parameters.AddWithValue("@ccalle", t.CCalle.CCalle);
                     query.Parameters.AddWithValue("@ncancha", t.NCancha);
                     query.Parameters.AddWithValue("@tdireccion", t.TDireccion);

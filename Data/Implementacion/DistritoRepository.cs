@@ -123,6 +123,7 @@ namespace Data.Implementacion
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
+                    con.Open();
                     var query = new SqlCommand("update Distrito set NDistrito =@ndistrito, CCiudad =@cciudad where CDistrito =@id", con);
                     query.Parameters.AddWithValue("@id", t.CDistrito);
                     query.Parameters.AddWithValue("@cciudad", t.CCiudad.CCiudad);

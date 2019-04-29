@@ -41,25 +41,19 @@ namespace TP.Controllers
         }
 
         // GET: Usuario/Edit/5
-        /*public ActionResult Edit(int id)
+        public ActionResult Edit(int id)
         {
-            return View();
+            return View(objUsuarioService.FindById(id));
         }
 
         // POST: Usuario/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Usuario u)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
+                bool rpta = objUsuarioService.Update(u);
+                if(rpta)
+                    return RedirectToAction("Index");
                 return View();
-            }
         }
 
         // GET: Usuario/Delete/5
@@ -82,6 +76,6 @@ namespace TP.Controllers
             {
                 return View();
             }
-        }*/
+        }
     }
 }

@@ -40,5 +40,21 @@ namespace TP.Controllers
             return View();
             
         }
+        public ActionResult Edit(int id)
+        {
+            return View(objDepartamentoService.FindById(id));
+        }
+
+        // POST: Distrito/Edit/5
+        [HttpPost]
+        public ActionResult Edit(Departamento d)
+        {
+            bool rpta = false;
+            rpta = objDepartamentoService.Update(d);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
+
+        }
     }
 }

@@ -23,5 +23,17 @@ namespace TP.Controllers
         {
             return View(objAdministradorService.FindById(id));
         }
+        public ActionResult Edit(int id)
+        {
+            return View(objAdministradorService.FindById(id));
+        }
+        [HttpPost]
+        public ActionResult Edit(Administrador a)
+        {
+            bool rpta = objAdministradorService.Update(a);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
+        }
     }
 }

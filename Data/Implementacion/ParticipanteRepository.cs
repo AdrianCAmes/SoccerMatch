@@ -147,8 +147,8 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("update Participante set CJugador=@cjugador,CEquipo=@cequipo", con);
-                cmd.Parameters.AddWithValue("@cjugador", t.CJugador);
+                var cmd = new SqlCommand("update Participante set CJugador=@cjugador,CEquipo=@cequipo where CParticipante='"+t.CParticipante+"'", con);
+                cmd.Parameters.AddWithValue("@cjugador", t.CJugador.CUsuario);
                 cmd.Parameters.AddWithValue("@cequipo", t.CGrupo);
                 cmd.ExecuteNonQuery();
                 rpta = true;

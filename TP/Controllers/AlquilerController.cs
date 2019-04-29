@@ -29,8 +29,8 @@ namespace TP.Controllers
         // GET: Alquiler/Create
         public ActionResult Create()
         {
-            ViewBag.grupo = objGrupoService.FindAll();
-            ViewBag.cancha = objCanchaService.FindAll();
+            ViewBag.grupos = objGrupoService.FindAll();
+            ViewBag.canchas = objCanchaService.FindAll();
             return View();
         }
 
@@ -38,12 +38,29 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Create(Alquiler alquiler)
         {
-            ViewBag.grupo = objGrupoService.FindAll();
-            ViewBag.cancha = objCanchaService.FindAll();
+            ViewBag.grupos = objGrupoService.FindAll();
+            ViewBag.canchas = objCanchaService.FindAll();
 
             bool rpta = objAlquilerService.Insertar(alquiler);
             
             if (rpta) return RedirectToAction("Index");
+            return View();
+        }
+        public ActionResult Edit(int id)
+        {
+            ViewBag.grupos = objGrupoService.FindAll();
+            ViewBag.canchas = objCanchaService.FindAll();
+            return View(objAlquilerService.FindById(id));
+        }
+        [HttpPost]
+        public ActionResult Edit(Alquiler a)
+        {
+            ViewBag.grupos = objGrupoService.FindAll();
+            ViewBag.canchas = objCanchaService.FindAll();
+            bool rpta = false;
+            rpta = objAlquilerService.Update(a);
+            if (rpta)
+                return RedirectToAction("Index");
             return View();
         }
     }

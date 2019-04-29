@@ -5,12 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Entity;
 namespace TP.Controllers
 {
     public class CalleController : Controller
     {
         private ICalleService objCalleService = new CalleService();
+        private IDistritoService objDistritoService = new DistritoService();
         // GET: Calle
         public ActionResult Index()
         {
@@ -21,6 +22,21 @@ namespace TP.Controllers
         public ActionResult Details(int? id)
         {
             return View(objCalleService.FindById(id));
+        }
+        public ActionResult Edit(int id)
+        {
+            ViewBag.distrito = objDistritoService.FindAll();
+            return View(objCalleService.FindById(id));
+        }
+        [HttpPost]
+        public ActionResult Edit(Calle c)
+        {
+            ViewBag.distrito = objDistritoService.FindAll();
+            bool rpta = false;
+            rpta = objCalleService.Update(c);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
         }
     }
 }

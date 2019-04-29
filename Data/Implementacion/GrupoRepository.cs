@@ -133,7 +133,7 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("update set Equipo NGrupo=@ngrupo,TDescripcion=@tdescripcion,NumParticipantes=@numparticipantes,DFechaJuego=@dfechajuego,CDistrito=@cdistrito", con);
+                var cmd = new SqlCommand("update set Equipo NGrupo=@ngrupo,TDescripcion=@tdescripcion,NumParticipantes=@numparticipantes,DFechaJuego=@dfechajuego,CDistrito=@cdistrito where CEquipo='"+t.CGrupo+"'", con);
                 cmd.Parameters.AddWithValue("@NGrupo", t.NGrupo);
                 cmd.Parameters.AddWithValue("@TDescripcion", t.TDescripcion);
                 cmd.Parameters.AddWithValue("@NumParticipantes", t.NumParticipantes);

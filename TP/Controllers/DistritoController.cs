@@ -11,6 +11,7 @@ namespace TP.Controllers
     public class DistritoController : Controller
     {
         private IDistritoService objDistritoServicio = new DistritoService();
+        private ICiudadService objCiudadService = new CiudadService();
         // GET: Distrito
         public ActionResult Index()
         {
@@ -24,7 +25,7 @@ namespace TP.Controllers
         }
 
         // GET: Distrito/Create
-       /* public ActionResult Create()
+        public ActionResult Create()
         {
             return View();
         }
@@ -48,23 +49,21 @@ namespace TP.Controllers
         // GET: Distrito/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            ViewBag.ciudad = objCiudadService.FindAll();
+            return View(objDistritoServicio.FindById(id));
         }
 
         // POST: Distrito/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Distrito d)
         {
-            try
-            {
-                // TODO: Add update logic here
-
+            ViewBag.ciudad = objCiudadService.FindAll();
+            bool rpta = false;
+            rpta = objDistritoServicio.Update(d);
+            if (rpta)
                 return RedirectToAction("Index");
-            }
-            catch
-            {
                 return View();
-            }
+
         }
 
         // GET: Distrito/Delete/5
@@ -87,6 +86,6 @@ namespace TP.Controllers
             {
                 return View();
             }
-        }*/
+        }
     }
 }

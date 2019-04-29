@@ -176,7 +176,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("update Administrador set CAdministrador=@id ");
+                    var query = new SqlCommand("update Administrador set CAdministrador=@id where CAdministrador='"+t.CUsuario+"'",con);
                     query.Parameters.AddWithValue("@id", t.CUsuario);
                     rpta = true;
                 }

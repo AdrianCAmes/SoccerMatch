@@ -159,7 +159,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("update Calle set NCalle=@ncalle,CDistrito=@cdistrito)");
+                    var cmd = new SqlCommand("update Calle set NCalle=@ncalle,CDistrito=@cdistrito where CCalle='"+t.CCalle+"'",con);
                     cmd.Parameters.AddWithValue("@ncalle", t.NCalle);
                     cmd.Parameters.AddWithValue("@cdistrito", t.CDistrito.CDistrito);
                     cmd.ExecuteNonQuery();

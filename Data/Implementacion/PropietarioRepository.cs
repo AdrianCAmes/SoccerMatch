@@ -116,11 +116,8 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("update Propietario set CUsuario=@cusuario,CDNI=@cdni,NUsuario=@nusuario,NumTelefono=@numtelefono");
+                var cmd = new SqlCommand("update Propietario set CPropietario=@cusuario where CPropietario='"+t.CUsuario+"'",con);
                 cmd.Parameters.AddWithValue("@cusuario", t.CUsuario);
-                cmd.Parameters.AddWithValue("@cdni", t.CDNI);
-                cmd.Parameters.AddWithValue("nusuario", t.NUsuario);
-                cmd.Parameters.AddWithValue("numtelefono", t.NumTelefono);
                 cmd.ExecuteNonQuery();
                 rpta = true;
             }
