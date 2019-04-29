@@ -21,7 +21,8 @@ namespace Data.Implementacion
                 {
                     var query = new SqlCommand("delete from Ciudad where CCiudad = '" + id + "'", con);
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }
@@ -38,9 +39,7 @@ namespace Data.Implementacion
                 {
                     con.Open();
 
-                    var query = new SqlCommand("select ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento" +
-                                               "from Ciudad ci, Departamento de" +
-                                               "where ci.CDepartamento = ci.CDepartamento", con);
+                    var query = new SqlCommand("select ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento from Ciudad ci, Departamento de where ci.CDepartamento = de.CDepartamento", con);
 
                     using (var dr = query.ExecuteReader())
                     {
@@ -80,9 +79,7 @@ namespace Data.Implementacion
                 {
                     con.Open();
 
-                    var query = new SqlCommand("select ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento" +
-                                               "from Ciudad ci, Departamento de" +
-                                               "where ci.CCiudad = '" + id + "' and ci.CDepartamento = de.CDepartamento", con);
+                    var query = new SqlCommand("select ci.CCiudad, ci.NCiudad, de.CDepartamento, de.NDepartamento from Ciudad ci, Departamento de where ci.CCiudad = '" + id + "' and ci.CDepartamento = de.CDepartamento", con);
 
                     using (var dr = query.ExecuteReader())
                     {
@@ -97,7 +94,7 @@ namespace Data.Implementacion
                             ciudad.CCiudad = Convert.ToInt32(dr["CCiudad"]);
                             ciudad.NCiudad = dr["NCiudad"].ToString();
                             ciudad.CDepartamento = departamento;
-                            
+
                         }
                     }
 
@@ -126,7 +123,7 @@ namespace Data.Implementacion
                     rpta = true;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw;
             }
@@ -149,7 +146,8 @@ namespace Data.Implementacion
 
                     rpta = true;
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }

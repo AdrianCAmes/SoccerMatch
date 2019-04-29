@@ -1,13 +1,12 @@
-D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
-D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Business.dll
-D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Business.pdb
-D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Entity.dll
-D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Entity.pdb
-D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.dll
-D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.pdb
-D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Data.dll
-D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Data.pdb
-<<<<<<< HEAD
+C:\Users\Adrian\Desktop\TP\Business\bin\Debug\Business.dll
+C:\Users\Adrian\Desktop\TP\Business\bin\Debug\Business.pdb
+C:\Users\Adrian\Desktop\TP\Business\bin\Debug\Data.dll
+C:\Users\Adrian\Desktop\TP\Business\bin\Debug\Entity.dll
+C:\Users\Adrian\Desktop\TP\Business\bin\Debug\Data.pdb
+C:\Users\Adrian\Desktop\TP\Business\bin\Debug\Entity.pdb
+C:\Users\Adrian\Desktop\TP\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\Desktop\TP\Business\obj\Debug\Business.dll
+C:\Users\Adrian\Desktop\TP\Business\obj\Debug\Business.pdb
 C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Business.dll
 C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Business.pdb
 C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Data.dll
@@ -17,7 +16,6 @@ C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Entity.pdb
 C:\UPC\2019-I\Aplicaciones Web\TP\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 C:\UPC\2019-I\Aplicaciones Web\TP\Business\obj\Debug\Business.dll
 C:\UPC\2019-I\Aplicaciones Web\TP\Business\obj\Debug\Business.pdb
-=======
 C:\Users\Usuario\Desktop\TP\SoccerMatch\Business\bin\Debug\Business.dll
 C:\Users\Usuario\Desktop\TP\SoccerMatch\Business\bin\Debug\Business.pdb
 C:\Users\Usuario\Desktop\TP\SoccerMatch\Business\bin\Debug\Data.dll
@@ -29,4 +27,32 @@ C:\Users\Usuario\Desktop\TP\SoccerMatch\Business\obj\Debug\Business.csproj.CoreC
 C:\Users\Usuario\Desktop\TP\SoccerMatch\Business\obj\Debug\Business.csproj.CopyComplete
 C:\Users\Usuario\Desktop\TP\SoccerMatch\Business\obj\Debug\Business.dll
 C:\Users\Usuario\Desktop\TP\SoccerMatch\Business\obj\Debug\Business.pdb
->>>>>>> 08f01f9bde55f2513f749f2e229a169af4b51bae
+C:\Users\Usuario\Desktop\SoccerMatch\Business\bin\Debug\Business.dll
+C:\Users\Usuario\Desktop\SoccerMatch\Business\bin\Debug\Business.pdb
+C:\Users\Usuario\Desktop\SoccerMatch\Business\bin\Debug\Data.dll
+C:\Users\Usuario\Desktop\SoccerMatch\Business\bin\Debug\Entity.dll
+C:\Users\Usuario\Desktop\SoccerMatch\Business\bin\Debug\Data.pdb
+C:\Users\Usuario\Desktop\SoccerMatch\Business\bin\Debug\Entity.pdb
+C:\Users\Usuario\Desktop\SoccerMatch\Business\obj\Debug\Business.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\SoccerMatch\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\SoccerMatch\Business\obj\Debug\Business.csproj.CopyComplete
+C:\Users\Usuario\Desktop\SoccerMatch\Business\obj\Debug\Business.dll
+C:\Users\Usuario\Desktop\SoccerMatch\Business\obj\Debug\Business.pdb
+C:\Users\Adrian\Desktop\SoccerMatch\Business\bin\Debug\Business.dll
+C:\Users\Adrian\Desktop\SoccerMatch\Business\bin\Debug\Business.pdb
+C:\Users\Adrian\Desktop\SoccerMatch\Business\bin\Debug\Data.dll
+C:\Users\Adrian\Desktop\SoccerMatch\Business\bin\Debug\Entity.dll
+C:\Users\Adrian\Desktop\SoccerMatch\Business\bin\Debug\Data.pdb
+C:\Users\Adrian\Desktop\SoccerMatch\Business\bin\Debug\Entity.pdb
+C:\Users\Adrian\Desktop\SoccerMatch\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\Desktop\SoccerMatch\Business\obj\Debug\Business.dll
+C:\Users\Adrian\Desktop\SoccerMatch\Business\obj\Debug\Business.pdb
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Business.dll
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Business.pdb
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Data.dll
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Entity.dll
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Data.pdb
+D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Entity.pdb
+D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.dll
+D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.pdb

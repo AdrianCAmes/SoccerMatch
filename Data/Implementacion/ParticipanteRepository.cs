@@ -22,7 +22,7 @@ namespace Data.Implementacion
                 cmd.ExecuteNonQuery();
                 rpta = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -34,33 +34,42 @@ namespace Data.Implementacion
             List<Participante> participantes = new List<Participante>();
             try
             {
-                var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
-                var cmd = new SqlCommand("select p.CParticipante,p.CJugador,p.CEquipo,j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e where p.CParticipante = p.CJugador and p.CEquipo = e.CEquipo");
-                var dr = cmd.ExecuteReader();
-                while (dr.Read())
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
-                    var participante = new Participante();
-                    var jugador = new Jugador();
-                    var grupo = new Grupo();
-                    participante.CParticipante = Convert.ToInt32(dr["CParticipante"]);
-                    jugador.CCalle.CCalle = Convert.ToInt32(dr["CCalle"]);
-                    jugador.CDNI = Convert.ToInt32(dr["CDNI"]);
-                    jugador.CUsuario = Convert.ToInt32(dr["CUsuario"]);
-                    jugador.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
-                    jugador.NUsuario = Convert.ToString(dr["NUsuario"]);
-                    jugador.TDireccion = Convert.ToString(dr["TDireccion"]);
-                    grupo.CDistrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
-                    grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
-                    grupo.DFechaJuego = Convert.ToDateTime(dr["DFechaJuego"]);
-                    grupo.NGrupo = Convert.ToString(dr["NEquipo"]);
-                    grupo.NumParticipantes = Convert.ToInt32(dr["NumParticipantes"]);
-                    grupo.TDescripcion = Convert.ToString(dr["TDescripcion"]);
-                    participante.CJugador = jugador;
-                    participante.CGrupo = grupo;
-                    participantes.Add(participante);
+                    con.Open();
+                    var cmd = new SqlCommand("select p.CParticipante, u.CDNI, u.NUsuario, u.NumTelefono, j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e, Usuario u where p.CJugador = j.CJugador and p.CEquipo = e.CEquipo and j.CJugador = u.CUsuario", con);
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            var participante = new Participante();
+                            var jugador = new Jugador();
+                            var grupo = new Grupo();
+                            var calle = new Calle();
+                            var distrito = new Distrito();
+                            distrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
+                            calle.CCalle = Convert.ToInt32(dr["CCalle"]);
+                            participante.CParticipante = Convert.ToInt32(dr["CParticipante"]);
+                            jugador.CCalle = calle;
+                            jugador.CDNI = Convert.ToInt32(dr["CDNI"]);
+                            jugador.CUsuario = Convert.ToInt32(dr["CJugador"]);
+                            jugador.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
+                            jugador.NUsuario = Convert.ToString(dr["NUsuario"]);
+                            jugador.TDireccion = Convert.ToString(dr["TDireccion"]);
+                            grupo.CDistrito = distrito;
+                            grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
+                            grupo.DFechaJuego = Convert.ToDateTime(dr["DFechaJuego"]);
+                            grupo.NGrupo = Convert.ToString(dr["NEquipo"]);
+                            grupo.NumParticipantes = Convert.ToInt32(dr["NumParticipantes"]);
+                            grupo.TDescripcion = Convert.ToString(dr["TDescripcion"]);
+                            participante.CJugador = jugador;
+                            participante.CGrupo = grupo;
+                            participantes.Add(participante);
+                        }
+                    }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -70,30 +79,38 @@ namespace Data.Implementacion
         public Participante FindById(int? id)
         {
             var participante = new Participante();
-            var jugador = new Jugador();
-            var grupo = new Grupo();
             try
             {
-                var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
-                var cmd = new SqlCommand("select p.CParticipante,p.CJugador,p.CEquipo,j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e where p.CParticipante='"+id+"' and "+" p.CParticipante = p.CJugador and p.CEquipo = e.CEquipo");
-                var dr = cmd.ExecuteReader();
-                while (dr.Read())
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
-                    participante.CParticipante = Convert.ToInt32(dr["CParticipante"]);
-                    jugador.CCalle.CCalle = Convert.ToInt32(dr["CCalle"]);
-                    jugador.CDNI = Convert.ToInt32(dr["CDNI"]);
-                    jugador.CUsuario = Convert.ToInt32(dr["CUsuario"]);
-                    jugador.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
-                    jugador.NUsuario = Convert.ToString(dr["NUsuario"]);
-                    jugador.TDireccion = Convert.ToString(dr["TDireccion"]);
-                    grupo.CDistrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
-                    grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
-                    grupo.DFechaJuego = Convert.ToDateTime(dr["DFechaJuego"]);
-                    grupo.NGrupo = Convert.ToString(dr["NEquipo"]);
-                    grupo.NumParticipantes = Convert.ToInt32(dr["NumParticipantes"]);
-                    grupo.TDescripcion = Convert.ToString(dr["TDescripcion"]);
-                    participante.CJugador = jugador;
-                    participante.CGrupo = grupo;
+                    con.Open();
+                    var cmd = new SqlCommand("select p.CParticipante, u.CDNI, u.NUsuario, u.NumTelefono, j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e, Usuario u where p.CParticipante = '" + id + "' and p.CJugador = j.CJugador and p.CEquipo = e.CEquipo and j.CJugador = u.CUsuario", con);
+                    var dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        participante = new Participante();
+                        var jugador = new Jugador();
+                        var grupo = new Grupo();
+                        var calle = new Calle();
+                        var distrito = new Distrito();
+                        distrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
+                        calle.CCalle = Convert.ToInt32(dr["CCalle"]);
+                        participante.CParticipante = Convert.ToInt32(dr["CParticipante"]);
+                        jugador.CCalle = calle;
+                        jugador.CDNI = Convert.ToInt32(dr["CDNI"]);
+                        jugador.CUsuario = Convert.ToInt32(dr["CJugador"]);
+                        jugador.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
+                        jugador.NUsuario = Convert.ToString(dr["NUsuario"]);
+                        jugador.TDireccion = Convert.ToString(dr["TDireccion"]);
+                        grupo.CDistrito = distrito;
+                        grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
+                        grupo.DFechaJuego = Convert.ToDateTime(dr["DFechaJuego"]);
+                        grupo.NGrupo = Convert.ToString(dr["NEquipo"]);
+                        grupo.NumParticipantes = Convert.ToInt32(dr["NumParticipantes"]);
+                        grupo.TDescripcion = Convert.ToString(dr["TDescripcion"]);
+                        participante.CJugador = jugador;
+                        participante.CGrupo = grupo;
+                    }
                 }
             }
             catch (Exception ex)
@@ -110,8 +127,8 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("insert into Participante values(@CJugador,@CEquipo)",con);
-                cmd.Parameters.AddWithValue("@CJugador",t.CJugador);
+                var cmd = new SqlCommand("insert into Participante values(@CJugador,@CEquipo)", con);
+                cmd.Parameters.AddWithValue("@CJugador", t.CJugador);
                 cmd.Parameters.AddWithValue("@CEquipo", t.CGrupo);
                 cmd.ExecuteNonQuery();
                 rpta = true;
@@ -130,7 +147,7 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("update Participante set CJugador=@cjugador,CEquipo=@cequipo",con);
+                var cmd = new SqlCommand("update Participante set CJugador=@cjugador,CEquipo=@cequipo", con);
                 cmd.Parameters.AddWithValue("@cjugador", t.CJugador);
                 cmd.Parameters.AddWithValue("@cequipo", t.CGrupo);
                 cmd.ExecuteNonQuery();

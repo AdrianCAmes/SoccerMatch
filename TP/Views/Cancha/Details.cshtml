@@ -1,0 +1,50 @@
+﻿@model Entity.Cancha
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cancha</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CCancha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CCancha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NCancha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NCancha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TDireccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TDireccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MPrecioHora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MPrecioHora)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CCancha }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

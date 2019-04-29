@@ -1,5 +1,6 @@
 ﻿using Business;
 using Business.Implementacion;
+using Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,12 @@ namespace TP.Controllers
         public ActionResult Index()
         {
             return View(objAdministradorService.FindAll());
+        }
+
+        // GET: Usuario/Details/5
+        public ActionResult Details(int? id)
+        {
+            return View(objAdministradorService.FindById(id));
         }
     }
 }

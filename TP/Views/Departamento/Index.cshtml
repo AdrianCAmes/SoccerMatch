@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Entity.Departamento>
+
+@{
+    ViewBag.Title = "Departamento";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CDepartamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NDepartamento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CDepartamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NDepartamento)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CDepartamento }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
