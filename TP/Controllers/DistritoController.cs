@@ -11,7 +11,9 @@ namespace TP.Controllers
     public class DistritoController : Controller
     {
         private IDistritoService objDistritoServicio = new DistritoService();
+
         private ICiudadService objCiudadService = new CiudadService();
+
         // GET: Distrito
         public ActionResult Index()
         {
@@ -25,62 +27,23 @@ namespace TP.Controllers
         }
 
         // GET: Distrito/Create
-        public ActionResult Create()
+
+         public ActionResult Create()
         {
+            ViewBag.ciudades = objCiudadService.FindAll();
+            return View();
+        }  
+
+        //POST: Distrito/Create
+        [HttpPost]
+        public ActionResult Create(Distrito objDistrito)
+        {
+            ViewBag.ciudades = objCiudadService.FindAll();
+            bool rpta = objDistritoServicio.Insertar(objDistrito);
+
+            if (rpta) return RedirectToAction("Index");
             return View();
         }
 
-        // POST: Distrito/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Distrito/Edit/5
-        public ActionResult Edit(int id)
-        {
-            ViewBag.ciudad = objCiudadService.FindAll();
-            return View(objDistritoServicio.FindById(id));
-        }
-
-        // POST: Distrito/Edit/5
-        [HttpPost]
-        public ActionResult Edit(Distrito d)
-        {
-            ViewBag.ciudad = objCiudadService.FindAll();
-            bool rpta = false;
-            rpta = objDistritoServicio.Update(d);
-            if (rpta)
-                return RedirectToAction("Index");
-                return View();
-
-        }
-
-        public ActionResult Delete(int id)
-        {
-            return View(objDistritoServicio.FindById(id));
-        }
-
-        // POST: Usuario/Delete/5
-        [HttpPost]
-        public ActionResult Delete(Distrito u)
-        {
-            bool rpta = false;
-            rpta = objDistritoServicio.Delete(u.CDistrito);
-            if (rpta)
-                return RedirectToAction("Index");
-            return View();
-
-        }
     }
 }
