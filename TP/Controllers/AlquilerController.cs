@@ -63,5 +63,23 @@ namespace TP.Controllers
                 return RedirectToAction("Index");
             return View();
         }
+
+        // GET: Alquiler/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View(objAlquilerService.FindById(id));
+        }
+
+        // POST: Administrador/Delete/5
+        [HttpPost]
+        public ActionResult Delete(Alquiler alquiler)
+        {
+            bool rpta = false;
+            rpta = objAlquilerService.Delete(alquiler.CAlquiler);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
+
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace Data.Implementacion
                 con.Open();
                 var cmd = new SqlCommand("delete from Distrito where CDistrito='" + id + "'", con);
                 cmd.ExecuteNonQuery();
+                con.Close();
                 rpta = true;
             }
             catch (Exception ex)

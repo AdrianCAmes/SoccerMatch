@@ -41,5 +41,23 @@ namespace TP.Controllers
                 return RedirectToAction("Index");
             return View();
         }
+
+        // GET: Cancha/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View(objCanchaService.FindById(id));
+        }
+
+        // POST: Cancha/Delete/5
+        [HttpPost]
+        public ActionResult Delete(Cancha cancha)
+        {
+            bool rpta = false;
+            rpta = objCanchaService.Delete(cancha.CCancha);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
+
+        }
     }
 }

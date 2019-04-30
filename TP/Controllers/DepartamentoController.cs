@@ -45,12 +45,30 @@ namespace TP.Controllers
             return View(objDepartamentoService.FindById(id));
         }
 
-        // POST: Distrito/Edit/5
+        // POST: Departamento/Edit/5
         [HttpPost]
         public ActionResult Edit(Departamento d)
         {
             bool rpta = false;
             rpta = objDepartamentoService.Update(d);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
+
+        }
+
+        // GET: Departamento/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View(objDepartamentoService.FindById(id));
+        }
+
+        // POST: Departamento/Delete/5
+        [HttpPost]
+        public ActionResult Delete(Departamento departamento)
+        {
+            bool rpta = false;
+            rpta = objDepartamentoService.Delete(departamento.CDepartamento);
             if (rpta)
                 return RedirectToAction("Index");
             return View();

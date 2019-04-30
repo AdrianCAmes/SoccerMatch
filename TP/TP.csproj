@@ -331,6 +331,13 @@
     <Content Include="Views\Jugador\Delete.cshtml" />
     <Content Include="Views\Distrito\Delete.cshtml" />
     <Content Include="Views\Grupo\Delete.cshtml" />
+    <Content Include="Views\Administrador\Delete.cshtml" />
+    <Content Include="Views\Alquiler\Delete.cshtml" />
+    <Content Include="Views\Calle\Delete.cshtml" />
+    <Content Include="Views\Cancha\Delete.cshtml" />
+    <Content Include="Views\Ciudad\Delete.cshtml" />
+    <Content Include="Views\Departamento\Delete.cshtml" />
+    <Content Include="Views\Detalle\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

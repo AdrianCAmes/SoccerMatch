@@ -19,13 +19,19 @@ namespace Data.Implementacion
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
+                    con.Open();
+
                     var query = new SqlCommand("delete from Ciudad where CCiudad = '" + id + "'", con);
+                    query.ExecuteNonQuery();
+
+                    rpta = true;
                 }
             }
             catch (Exception ex)
             {
                 throw;
             }
+
             return rpta;
         }
 

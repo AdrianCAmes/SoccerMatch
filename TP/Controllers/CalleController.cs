@@ -38,5 +38,23 @@ namespace TP.Controllers
                 return RedirectToAction("Index");
             return View();
         }
+
+        // GET: Calle/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View(objCalleService.FindById(id));
+        }
+
+        // POST: Calle/Delete/5
+        [HttpPost]
+        public ActionResult Delete(Calle calle)
+        {
+            bool rpta = false;
+            rpta = objCalleService.Delete(calle.CCalle);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
+
+        }
     }
 }

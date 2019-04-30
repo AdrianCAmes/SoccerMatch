@@ -62,5 +62,23 @@ namespace TP.Controllers
             return View();
 
         }
+
+        // GET: Ciudad/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View(objCiudadService.FindById(id));
+        }
+
+        // POST: Ciudad/Delete/5
+        [HttpPost]
+        public ActionResult Delete(Ciudad ciudad)
+        {
+            bool rpta = false;
+            rpta = objCiudadService.Delete(ciudad.CCiudad);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
+
+        }
     }
 }
