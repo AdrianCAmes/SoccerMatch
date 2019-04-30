@@ -110,7 +110,8 @@ namespace Data.Implementacion
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
-                    var query = new SqlCommand("insert intro Departamento values (,@NDepartamento)", con);
+                    con.Open();
+                    var query = new SqlCommand("insert into Departamento values (@NDepartamento)", con);
                     query.Parameters.AddWithValue("@NDepartamento", t.NDepartamento);
                     query.ExecuteNonQuery();
 
