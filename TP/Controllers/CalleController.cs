@@ -43,7 +43,41 @@ namespace TP.Controllers
             if (rpta) return RedirectToAction("Index");
             return View();
         }
+        // GET: Calle/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View(objCalleService.FindById(id));
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Calle calle)
+        {
+            bool rpta = false;
+            rpta = objCalleService.Delete(calle.CCalle);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
+
+        }
+        public ActionResult Edit(int id)
+        {
+            ViewBag.distrito = objDistritoService.FindAll();
+            return View(objCalleService.FindById(id));
+        }
+        [HttpPost]
+        public ActionResult Edit(Calle c)
+        {
+            ViewBag.distrito = objDistritoService.FindAll();
+            bool rpta = false;
+            rpta = objCalleService.Update(c);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
+        }
     }
 
     }
+
+
+
 

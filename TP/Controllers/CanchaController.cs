@@ -59,5 +59,25 @@ namespace TP.Controllers
             return View();
 
         }
+
+        public ActionResult Create()
+        {
+            ViewBag.propietarios = objPropietarioService.FindAll();
+            ViewBag.calles = objCalleService.FindAll();
+            return View();
+        }
+
+        // POST: Usuario/Create
+        [HttpPost]
+        public ActionResult Create(Cancha objCancha)
+        {
+            ViewBag.propietarios = objPropietarioService.FindAll();
+            ViewBag.calles = objCalleService.FindAll();
+            bool rpta = objCanchaService.Insertar(objCancha);
+
+            if (rpta) return RedirectToAction("Index");
+            return View();
+        }
     }
 }
+
