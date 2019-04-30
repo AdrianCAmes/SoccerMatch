@@ -66,26 +66,21 @@ namespace TP.Controllers
 
         }
 
-        // GET: Distrito/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(objDistritoServicio.FindById(id));
         }
 
-        // POST: Distrito/Delete/5
+        // POST: Usuario/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Distrito u)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
+            bool rpta = false;
+            rpta = objDistritoServicio.Delete(u.CDistrito);
+            if (rpta)
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return View();
+
         }
     }
 }

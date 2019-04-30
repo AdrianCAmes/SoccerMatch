@@ -27,7 +27,7 @@
             <div class="col-md-10">
 
                 @Html.DropDownListFor(model => model.CAlquiler.CAlquiler,
-                             new SelectList(ViewBag.alquiler, "CAlquiler"), "---Select---", "")
+                             new SelectList(ViewBag.alquiler, "CAlquiler","CAlquiler"), "---Select---", "")
                 @Html.ValidationMessageFor(model => model.CAlquiler.CAlquiler, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -36,7 +36,7 @@
             <div class="col-md-10">
 
                 @Html.DropDownListFor(model => model.CParticipante.CParticipante,
-                             new SelectList(ViewBag.participante, "CParticipante", "NParticipante"), "---Select---", "")
+                             new SelectList(ViewBag.participante, "CParticipante","CParticipante"), "---Select---", "")
                 @Html.ValidationMessageFor(model => model.CParticipante.CParticipante, "", new { @class = "text-danger" })
             </div>
         </div>

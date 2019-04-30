@@ -36,9 +36,26 @@ namespace TP.Controllers
             ViewBag.jugador = objJugadorService.FindAll();
             ViewBag.grupo = objGrupoService.FindAll();
             bool rpta = false;
+            rpta = objParticipanteService.Update(p);
             if (rpta)
                 return RedirectToAction("Index");
             return View();
+        }
+        public ActionResult Delete(int id)
+        {
+            return View(objParticipanteService.FindById(id));
+        }
+
+        // POST: Usuario/Delete/5
+        [HttpPost]
+        public ActionResult Delete(Participante u)
+        {
+            bool rpta = false;
+            rpta = objParticipanteService.Delete(u.CParticipante);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
+
         }
     }
 }

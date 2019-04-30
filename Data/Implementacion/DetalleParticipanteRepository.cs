@@ -151,9 +151,9 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("update DetalleParticipante set CAlquiler=@calquiler,CParticipante=@cparticipante,MCuota=@cuota,FPartePagada=@fpartepagada where CDetalleParticipante='"+t.CDetalleParticipante+"'",con);
-                cmd.Parameters.AddWithValue("calquiler", t.CAlquiler);
-                cmd.Parameters.AddWithValue("cparticipante", t.CParticipante);
+                var cmd = new SqlCommand("update DetalleParticipante set CAlquiler=@calquiler,CParticipante=@cparticipante,MCuota=@mcuota,FPartePagada=@fpartepagada where CDetalleParticipante='"+t.CDetalleParticipante+"'",con);
+                cmd.Parameters.AddWithValue("calquiler", t.CAlquiler.CAlquiler);
+                cmd.Parameters.AddWithValue("cparticipante", t.CParticipante.CParticipante);
                 cmd.Parameters.AddWithValue("mcuota", t.MCuota);
                 cmd.Parameters.AddWithValue("fpartepagada", t.FPartePagada);
                 cmd.ExecuteNonQuery();

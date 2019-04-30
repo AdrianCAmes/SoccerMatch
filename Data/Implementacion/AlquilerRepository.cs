@@ -244,7 +244,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("update Alquiler set CGrupo=@cgrupo,CCancha=@ccancha,DFechaInicio = @dfechainicio, NumHoras=@numhoras,MDescuento=@mdescuento,MTotal=@mtotal,FPagado=@fpagado", con);
+                    var cmd = new SqlCommand("update Alquiler set CEquipo=@cgrupo,CCancha=@ccancha,DFechaInicio = @dfechainicio, NumHoras=@numhoras,MDescuento=@mdescuento,MTotal=@mtotal,FPagado=@fpagado where CAlquiler='"+t.CAlquiler+"'", con);
                     cmd.Parameters.AddWithValue("@cgrupo", t.CGrupo.CGrupo);
                     cmd.Parameters.AddWithValue("@ccancha", t.CCancha.CCancha);
                     cmd.Parameters.AddWithValue("@dfechainicio", t.DHoraInicio);

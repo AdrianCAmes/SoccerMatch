@@ -324,6 +324,13 @@
     <Content Include="Views\Participante\Edit.cshtml" />
     <Content Include="Views\Detalle\Edit.cshtml" />
     <Content Include="Views\Grupo\Edit.cshtml" />
+    <Content Include="Views\Distrito\Create.cshtml" />
+    <Content Include="Views\Usuario\Delete.cshtml" />
+    <Content Include="Views\Propietario\Delete.cshtml" />
+    <Content Include="Views\Participante\Delete.cshtml" />
+    <Content Include="Views\Jugador\Delete.cshtml" />
+    <Content Include="Views\Distrito\Delete.cshtml" />
+    <Content Include="Views\Grupo\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

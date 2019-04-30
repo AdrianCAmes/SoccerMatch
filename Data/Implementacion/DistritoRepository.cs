@@ -92,14 +92,14 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["university"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccerMatch"].ToString()))
                 {
                     con.Open();
 
                     var query = new SqlCommand("insert into distrito values (@NDistrito,@CCiudad)", con);
 
                     query.Parameters.AddWithValue("@NDistrito", t.NDistrito);
-                    query.Parameters.AddWithValue("@CCiudad", t.CCiudad);
+                    query.Parameters.AddWithValue("@CCiudad", t.CCiudad.CCiudad);
 
 
                     query.ExecuteNonQuery();
