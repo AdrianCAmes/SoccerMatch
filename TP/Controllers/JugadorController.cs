@@ -54,5 +54,22 @@ namespace TP.Controllers
             return View();
 
         }
+
+        public ActionResult Create()
+        {
+            ViewBag.calles = objCalleService.FindAll();
+            return View();
+        }
+
+        //POST: Distrito/Create
+        [HttpPost]
+        public ActionResult Create(Jugador objJugador)
+        {
+            ViewBag.calles = objCalleService.FindAll();
+            bool rpta = objJugadorService.Insertar(objJugador);
+
+            if (rpta) return RedirectToAction("Index");
+            return View();
+        }
     }
 }

@@ -53,5 +53,19 @@ namespace TP.Controllers
             return View();
 
         }
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Usuario/Create
+        [HttpPost]
+        public ActionResult Create(Propietario objPropietario)
+        {
+            bool rpta = objPropietarioService.Insertar(objPropietario);
+
+            if (rpta) return RedirectToAction("Index");
+            return View();
+        }
     }
 }

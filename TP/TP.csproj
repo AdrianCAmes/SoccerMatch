@@ -342,6 +342,9 @@
     <Content Include="Views\Cancha\Create.cshtml" />
     <Content Include="Views\Participante\Create.cshtml" />
     <Content Include="Views\Detalle\Create.cshtml" />
+    <Content Include="Views\Propietario\Create.cshtml" />
+    <Content Include="Views\Jugador\Create.cshtml" />
+    <Content Include="Views\Grupo\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

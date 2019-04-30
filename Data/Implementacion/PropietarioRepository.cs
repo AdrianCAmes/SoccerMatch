@@ -46,9 +46,9 @@ namespace Data.Implementacion
                     {
                         var propietario = new Propietario();
                         propietario.CUsuario = Convert.ToInt32(dr["CPropietario"]);
-                        propietario.CDNI = Convert.ToInt32(dr["CDNI"]);
+                        propietario.CDNI = Convert.ToInt64(dr["CDNI"]);
                         propietario.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
-                        propietario.NUsuario = Convert.ToString(dr["NUsuario"]);
+                        propietario.NUsuario = dr["NUsuario"].ToString();
                         propietarios.Add(propietario);
                     }
                 }
@@ -92,15 +92,20 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
-                con.Open();
-                var cmd = new SqlCommand("insert into Propietario values(@CUsuario,@CDNI,@NUsuario,@NumTelefono)");
-                cmd.Parameters.AddWithValue("@CUsuario", t.CUsuario);
-                cmd.Parameters.AddWithValue("@CDNI", t.CDNI);
-                cmd.Parameters.AddWithValue("NUsuario", t.NUsuario);
-                cmd.Parameters.AddWithValue("NumTelefono", t.NumTelefono);
-                cmd.ExecuteNonQuery();
-                rpta = true;
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
+                {
+                    con.Open();
+                    var cmd = new SqlCommand("insert into usuario values(@CDNI,@NUsuario,@NumTelefono)", con);
+                    cmd.Parameters.AddWithValue("@CDNI", t.CDNI);
+                    cmd.Parameters.AddWithValue("@NUsuario", t.NUsuario);
+                    cmd.Parameters.AddWithValue("NumTelefono", t.NumTelefono);
+
+                    cmd.ExecuteNonQuery();
+
+                    var cmd2 = new SqlCommand("insert into Propietario values (convert(int,(select max(u.CUsuario) ultimo from Usuario u)))", con);
+                    cmd2.ExecuteNonQuery();
+                    rpta = true;
+                }
             }
             catch (Exception ex)
             {

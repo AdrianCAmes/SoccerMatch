@@ -112,10 +112,17 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("insert into Jugador values(@CCalle,@TDireccion)", con);
-                    cmd.Parameters.AddWithValue("@CCalle", t.CCalle.CCalle);
-                    cmd.Parameters.AddWithValue("@TDireccion", t.TDireccion);
+                    var cmd = new SqlCommand("insert into usuario values(@CDNI,@NUsuario,@NumTelefono)", con);
+                    cmd.Parameters.AddWithValue("@CDNI", t.CDNI);
+                    cmd.Parameters.AddWithValue("@NUsuario", t.NUsuario);
+                    cmd.Parameters.AddWithValue("NumTelefono", t.NumTelefono);
+
                     cmd.ExecuteNonQuery();
+
+                    var cmd2 = new SqlCommand("insert into Jugador values (convert(int,(select max(u.CUsuario) ultimo from Usuario u)),@CCalle,@TDireccion)", con);
+                    cmd2.Parameters.AddWithValue("@CCalle", t.CCalle.CCalle);
+                    cmd2.Parameters.AddWithValue("@TDireccion", t.TDireccion);
+                    cmd2.ExecuteNonQuery();
                     rpta = true;
                 }
             }
