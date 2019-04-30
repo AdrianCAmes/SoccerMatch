@@ -122,7 +122,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("insert intro Ciudad values (@NCiudad,@CDepartamento)", con);
+                    var query = new SqlCommand("insert into Ciudad values (@NCiudad,@CDepartamento)", con);
                     query.Parameters.AddWithValue("@NCiudad", t.NCiudad);
                     query.Parameters.AddWithValue("@CDepartamento", t.CDepartamento.CDepartamento);
                     query.ExecuteNonQuery();

@@ -128,8 +128,8 @@ namespace Data.Implementacion
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
                 var cmd = new SqlCommand("insert into Participante values(@CJugador,@CEquipo)", con);
-                cmd.Parameters.AddWithValue("@CJugador", t.CJugador);
-                cmd.Parameters.AddWithValue("@CEquipo", t.CGrupo);
+                cmd.Parameters.AddWithValue("@CJugador", t.CJugador.CUsuario);
+                cmd.Parameters.AddWithValue("@CEquipo", t.CGrupo.CGrupo);
                 cmd.ExecuteNonQuery();
                 rpta = true;
             }

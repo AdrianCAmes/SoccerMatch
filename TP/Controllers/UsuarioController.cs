@@ -38,6 +38,40 @@ namespace TP.Controllers
 
             if (rpta) return RedirectToAction("Index");
             return View();
-        }      
+        }
+
+        // GET: Usuario/Edit/5
+        public ActionResult Edit(int id)
+        {
+            return View(objUsuarioService.FindById(id));
+        }
+
+        // POST: Usuario/Edit/5
+        [HttpPost]
+        public ActionResult Edit(Usuario u)
+        {
+            bool rpta = objUsuarioService.Update(u);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
+        }
+
+        // GET: Usuario/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View(objUsuarioService.FindById(id));
+        }
+
+        // POST: Usuario/Delete/5
+        [HttpPost]
+        public ActionResult Delete(Usuario u)
+        {
+            bool rpta = false;
+            rpta = objUsuarioService.Delete(u.CUsuario);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
+
+        }
     }
 }

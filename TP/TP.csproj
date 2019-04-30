@@ -340,6 +340,7 @@
     <Content Include="Views\Detalle\Delete.cshtml" />
     <Content Include="Views\Calle\Create.cshtml" />
     <Content Include="Views\Cancha\Create.cshtml" />
+    <Content Include="Views\Participante\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

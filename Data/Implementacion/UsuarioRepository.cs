@@ -88,9 +88,9 @@ namespace Data.Implementacion
                 {
                     con.Open();
 
-                    var query = new SqlCommand("insert into usuario values (@CUsuario, @CDNI,@NUsuario,@NumTelefono)", con);
+                    var query = new SqlCommand("insert into usuario values (@CDNI,@NUsuario,@NumTelefono)", con);
 
-                    query.Parameters.AddWithValue("@CUsuario", t.CUsuario);
+                
                     query.Parameters.AddWithValue("@CDNI", t.CDNI);
                     query.Parameters.AddWithValue("@NUsuario", t.NUsuario);
                     query.Parameters.AddWithValue("@NumTelefono", t.NumTelefono);
