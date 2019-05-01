@@ -20,5 +20,9 @@ namespace Entity
         [Required(ErrorMessage = "Por favor, ingrese el grupo")]
         public Grupo CGrupo { get; set; }
 
+        [DisplayName("Es Administrador")]
+        [Required(ErrorMessage = "Por favor, especifique si es administrador")]
+        public bool FEsAdministrador { get; set; }
+
     }
 }

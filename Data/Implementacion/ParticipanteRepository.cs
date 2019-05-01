@@ -37,7 +37,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("select p.CParticipante, u.CDNI, u.NUsuario, u.NumTelefono, j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e, Usuario u where p.CJugador = j.CJugador and p.CEquipo = e.CEquipo and j.CJugador = u.CUsuario", con);
+                    var cmd = new SqlCommand("select p.CParticipante, p.FEsAdministrador, u.CDNI, u.NUsuario, u.NumTelefono, j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e, Usuario u where p.CJugador = j.CJugador and p.CEquipo = e.CEquipo and j.CJugador = u.CUsuario", con);
                     using (var dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
@@ -64,6 +64,7 @@ namespace Data.Implementacion
                             grupo.TDescripcion = Convert.ToString(dr["TDescripcion"]);
                             participante.CJugador = jugador;
                             participante.CGrupo = grupo;
+                            participante.FEsAdministrador = Convert.ToBoolean(dr["FEsAdministrador"]);
                             participantes.Add(participante);
                         }
                     }
@@ -84,7 +85,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("select p.CParticipante, u.CDNI, u.NUsuario, u.NumTelefono, j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e, Usuario u where p.CParticipante = '" + id + "' and p.CJugador = j.CJugador and p.CEquipo = e.CEquipo and j.CJugador = u.CUsuario", con);
+                    var cmd = new SqlCommand("select p.CParticipante, p.FEsAdministrador, u.CDNI, u.NUsuario, u.NumTelefono, j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e, Usuario u where p.CParticipante = '" + id + "' and p.CJugador = j.CJugador and p.CEquipo = e.CEquipo and j.CJugador = u.CUsuario", con);
                     var dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
@@ -110,6 +111,7 @@ namespace Data.Implementacion
                         grupo.TDescripcion = Convert.ToString(dr["TDescripcion"]);
                         participante.CJugador = jugador;
                         participante.CGrupo = grupo;
+                        participante.FEsAdministrador = Convert.ToBoolean(dr["FEsAdministrador"]);
                     }
                 }
             }
@@ -127,9 +129,10 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("insert into Participante values(@CJugador,@CEquipo)", con);
+                var cmd = new SqlCommand("insert into Participante values(@CJugador,@CEquipo, @FEsAdministrador)", con);
                 cmd.Parameters.AddWithValue("@CJugador", t.CJugador.CUsuario);
                 cmd.Parameters.AddWithValue("@CEquipo", t.CGrupo.CGrupo);
+                cmd.Parameters.AddWithValue("@FEsAdministrador", t.FEsAdministrador);
                 cmd.ExecuteNonQuery();
                 rpta = true;
             }
@@ -147,9 +150,10 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("update Participante set CJugador=@cjugador,CEquipo=@cequipo where CParticipante='"+t.CParticipante+"'", con);
+                var cmd = new SqlCommand("update Participante set CJugador=@cjugador,CEquipo=@cequipo, FEsAdministrador = @fesadministrador where CParticipante='"+t.CParticipante+"'", con);
                 cmd.Parameters.AddWithValue("@cjugador", t.CJugador.CUsuario);
                 cmd.Parameters.AddWithValue("@cequipo", t.CGrupo.CGrupo);
+                cmd.Parameters.AddWithValue("@fesadministrador", t.FEsAdministrador);
                 cmd.ExecuteNonQuery();
                 rpta = true;
             }

@@ -14,13 +14,24 @@
         <th>
             @Html.DisplayNameFor(model => model.CParticipante)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.CGrupo.NGrupo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CJugador.NUsuario)
+        </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.CParticipante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CGrupo.NGrupo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CJugador.NUsuario)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new {  id=item.CParticipante }) |

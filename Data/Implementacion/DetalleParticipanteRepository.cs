@@ -37,7 +37,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("select dp.CDetalleParticipante,dp.CAlquiler,dp.CParticipante,dp.MCuota,dp.FPartePagada,a.CCancha,a.CEquipo, a.DFechaInicio,a.FPagado,a.MDescuento,a.MTotal,a.NumHoras,p.CJugador from DetalleParticipante dp, Alquiler a, Participante p where dp.CAlquiler = a.CAlquiler and dp.CParticipante = p.CParticipante", con);
+                    var cmd = new SqlCommand("select dp.CDetalleParticipante,dp.CAlquiler,dp.CParticipante,dp.MCuota,dp.FPartePagada,a.CCancha,a.CEquipo, a.DFechaInicio,a.FPagado,a.MDescuento,a.MTotal,a.NumHoras,p.CJugador, u.NUsuario from DetalleParticipante dp, Alquiler a, Participante p, Usuario u where dp.CAlquiler = a.CAlquiler and dp.CParticipante = p.CParticipante and p.CJugador = u.CUsuario", con);
                     using (var dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
@@ -51,6 +51,7 @@ namespace Data.Implementacion
                             cancha.CCancha = Convert.ToInt32(dr["CCancha"]);
                             grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
                             jugador.CUsuario = Convert.ToInt32(dr["CJugador"]);
+                            jugador.NUsuario = dr["NUsuario"].ToString();
                             detalle.CDetalleParticipante = Convert.ToInt32(dr["CDetalleParticipante"]);
                             alquiler.CAlquiler = Convert.ToInt32(dr["CAlquiler"]);
                             participante.CParticipante = Convert.ToInt32(dr["CParticipante"]);
@@ -85,7 +86,7 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("select dp.CDetalleParticipante,dp.CAlquiler,dp.CParticipante,dp.MCuota,dp.FPartePagada,a.CCancha,a.CEquipo, a.DFechaInicio,a.FPagado,a.MDescuento,a.MTotal,a.NumHoras,p.CJugador from DetalleParticipante dp, Alquiler a, Participante p where dp.CDetalleParticipante = '" + id + "' and dp.CAlquiler = a.CAlquiler and dp.CParticipante = p.CParticipante", con);
+                var cmd = new SqlCommand("select dp.CDetalleParticipante,dp.CAlquiler,dp.CParticipante,dp.MCuota,dp.FPartePagada,a.CCancha,a.CEquipo, a.DFechaInicio,a.FPagado,a.MDescuento,a.MTotal,a.NumHoras,p.CJugador, u.NUsuario from DetalleParticipante dp, Alquiler a, Participante p, Usuario u where dp.CAlquiler = '" + id + "' and dp.CAlquiler = a.CAlquiler and dp.CParticipante = p.CParticipante and p.CJugador = u.CUsuario", con);
                 var dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -98,6 +99,7 @@ namespace Data.Implementacion
                     cancha.CCancha = Convert.ToInt32(dr["CCancha"]);
                     grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
                     jugador.CUsuario = Convert.ToInt32(dr["CJugador"]);
+                    jugador.NUsuario = dr["NUsuario"].ToString();
                     detalle.CDetalleParticipante = Convert.ToInt32(dr["CDetalleParticipante"]);
                     alquiler.CAlquiler = Convert.ToInt32(dr["CAlquiler"]);
                     participante.CParticipante = Convert.ToInt32(dr["CParticipante"]);

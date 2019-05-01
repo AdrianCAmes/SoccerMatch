@@ -20,3 +20,8 @@ D:\TRABAJO_PARCIAL_WEB\Entity\bin\Debug\Entity.pdb
 D:\TRABAJO_PARCIAL_WEB\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
 D:\TRABAJO_PARCIAL_WEB\Entity\obj\Debug\Entity.dll
 D:\TRABAJO_PARCIAL_WEB\Entity\obj\Debug\Entity.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP\Entity\bin\Debug\Entity.dll
+C:\UPC\2019-I\Aplicaciones Web\TP\Entity\bin\Debug\Entity.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+C:\UPC\2019-I\Aplicaciones Web\TP\Entity\obj\Debug\Entity.dll
+C:\UPC\2019-I\Aplicaciones Web\TP\Entity\obj\Debug\Entity.pdb

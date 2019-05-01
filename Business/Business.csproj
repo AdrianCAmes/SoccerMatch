@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAdministradorService.cs" />
     <Compile Include="IAlquilerService.cs" />
     <Compile Include="ICalleService.cs" />
     <Compile Include="ICanchaService.cs" />
@@ -51,7 +50,6 @@
     <Compile Include="IDistritoService.cs" />
     <Compile Include="IGrupoService.cs" />
     <Compile Include="IJugadorService.cs" />
-    <Compile Include="Implementacion\AdministradorService.cs" />
     <Compile Include="Implementacion\AlquilerService.cs" />
     <Compile Include="Implementacion\CalleService.cs" />
     <Compile Include="Implementacion\CanchaService.cs" />

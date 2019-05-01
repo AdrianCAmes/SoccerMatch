@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAdministradorRepository.cs" />
     <Compile Include="IAlquilerRepository.cs" />
     <Compile Include="ICalleRepository.cs" />
     <Compile Include="ICanchaRepository.cs" />
@@ -52,7 +51,6 @@
     <Compile Include="IDistritoRepository.cs" />
     <Compile Include="IGrupoRepository.cs" />
     <Compile Include="IJugadorRepository.cs" />
-    <Compile Include="Implementacion\AdministradorRepository.cs" />
     <Compile Include="Implementacion\AlquilerRepository.cs" />
     <Compile Include="Implementacion\CalleRepository.cs" />
     <Compile Include="Implementacion\CanchaRepository.cs" />
