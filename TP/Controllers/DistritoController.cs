@@ -38,7 +38,7 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Create(Distrito objDistrito)
         {
-            ViewBag.ciudades = objCiudadService.FindAll();
+            //ViewBag.ciudades = objCiudadService.FindAll();
             bool rpta = objDistritoServicio.Insertar(objDistrito);
 
             if (rpta) return RedirectToAction("Index");

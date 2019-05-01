@@ -63,12 +63,14 @@ namespace TP.Controllers
         public ActionResult Create()
         {
             ViewBag.alquileres = objAlquilerService.FindAll();
+            
             ViewBag.participantes= objParticipanteService.FindAll();
             return View();
         }
         [HttpPost]
         public ActionResult Create(DetalleParticipante objDetalleParticipante)
         {
+
             ViewBag.alquileres = objAlquilerService.FindAll();
             ViewBag.participantes = objParticipanteService.FindAll();
             bool rpta = objDetalleService.Insertar(objDetalleParticipante);
