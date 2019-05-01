@@ -1,7 +1,7 @@
 ﻿@model Entity.Ciudad
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Delete Ciudad " + Model.CCiudad;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,7 +9,7 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Ciudad</h4>
+    <h4>Ciudad @Html.DisplayFor(model => model.CCiudad)</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -28,6 +28,13 @@
             @Html.DisplayFor(model => model.NCiudad)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.CDepartamento.NDepartamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CDepartamento.NDepartamento)
+        </dd>
     </dl>
 
     @using (Html.BeginForm()) {

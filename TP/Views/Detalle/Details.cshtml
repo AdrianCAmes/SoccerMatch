@@ -1,13 +1,13 @@
 ﻿@model Entity.DetalleParticipante
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Details Detalle " + Model.CDetalleParticipante;
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>DetalleParticipante</h4>
+    <h4>Detalle @Html.DisplayFor(model => model.CDetalleParticipante)</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -15,7 +15,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CParticipante.CJugador.NUsuario)
+            @Html.DisplayFor(model => model.CDetalleParticipante)
         </dd>
 
         <dt>
@@ -23,7 +23,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CAlquiler.CAlquiler)
+            @Html.DisplayFor(model => model.CParticipante.CJugador.NUsuario)
         </dd>
 
         <dt>
@@ -31,7 +31,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CDetalleParticipante)
+            @Html.DisplayFor(model => model.CAlquiler.CAlquiler)
         </dd>
 
         <dt>

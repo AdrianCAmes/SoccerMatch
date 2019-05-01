@@ -1,7 +1,7 @@
 ﻿@model Entity.Ciudad
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Ciudad " + Model.CCiudad;
 }
 
 <h2>Edit</h2>
@@ -12,16 +12,17 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>Ciudad</h4>
+    <h4>Ciudad @Html.DisplayFor(model => model.CCiudad)</h4>
     <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.CCiudad, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.CCiudad, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.CCiudad, "", new { @class = "text-danger" })
-        </div>
-    </div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CCiudad)
+        </dd>
+    </dl>
 
     <div class="form-group">
         @Html.LabelFor(model => model.NCiudad, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -31,7 +32,7 @@
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.CDepartamento.CDepartamento, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.CDepartamento.NDepartamento, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownListFor(model => model.CDepartamento.CDepartamento,
                  new SelectList(ViewBag.departamento, "CDepartamento", "NDepartamento"), "---Select---", "")

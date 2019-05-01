@@ -1,7 +1,7 @@
 ﻿@model Entity.Jugador
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "New Jugador";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -17,28 +17,12 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
       
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CDNI, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CDNI, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CDNI, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.NUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NUsuario, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NUsuario, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.NumTelefono, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NumTelefono, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NumTelefono, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.CUsuario,
+                                      new SelectList(ViewBag.usuarios, "CUsuario", "NUsuario"), "---Select---", "")
+                @Html.ValidationMessageFor(model => model.CUsuario, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -52,13 +36,14 @@
 
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CCalle, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CCalle.NCalle, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.CCalle.CCalle,
                                       new SelectList(ViewBag.calles, "CCalle", "NCalle"), "---Select---", "")
                 @Html.ValidationMessageFor(model => model.CCalle.CCalle, "", new { @class = "text-danger" })
             </div>
         </div>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

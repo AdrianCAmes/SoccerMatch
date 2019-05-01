@@ -86,7 +86,7 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("select dp.CDetalleParticipante,dp.CAlquiler,dp.CParticipante,dp.MCuota,dp.FPartePagada,a.CCancha,a.CEquipo, a.DFechaInicio,a.FPagado,a.MDescuento,a.MTotal,a.NumHoras,p.CJugador, u.NUsuario from DetalleParticipante dp, Alquiler a, Participante p, Usuario u where dp.CAlquiler = '" + id + "' and dp.CAlquiler = a.CAlquiler and dp.CParticipante = p.CParticipante and p.CJugador = u.CUsuario", con);
+                var cmd = new SqlCommand("select dp.CDetalleParticipante,dp.CAlquiler,dp.CParticipante,dp.MCuota,dp.FPartePagada,a.CCancha,a.CEquipo, a.DFechaInicio,a.FPagado,a.MDescuento,a.MTotal,a.NumHoras,p.CJugador, u.NUsuario from DetalleParticipante dp, Alquiler a, Participante p, Usuario u where dp.CDetalleParticipante = '" + id + "' and dp.CAlquiler = a.CAlquiler and dp.CParticipante = p.CParticipante and p.CJugador = u.CUsuario", con);
                 var dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {

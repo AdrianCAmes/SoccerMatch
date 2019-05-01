@@ -2,7 +2,7 @@
 @model Entity.DetalleParticipante
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "New Detalle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,11 +14,28 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>DetalleParticipante</h4>
+        <h4>Detalle</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-       
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.CAlquiler.CAlquiler, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                @Html.DropDownListFor(model => model.CAlquiler.CAlquiler,
+                             new SelectList(ViewBag.alquileres, "CAlquiler", "CAlquiler"), "---Select---", "")
+                @Html.ValidationMessageFor(model => model.CAlquiler.CAlquiler, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CParticipante.CJugador.NUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                @Html.DropDownListFor(model => model.CParticipante.CJugador.CUsuario,
+                             new SelectList(ViewBag.participantes, "CJugador.CUsuario", "CJugador.NUsuario"), "---Select---", "")
+                @Html.ValidationMessageFor(model => model.CParticipante.CJugador.CUsuario, "", new { @class = "text-danger" })
+            </div>
+        </div>
         <div class="form-group">
             @Html.LabelFor(model => model.MCuota, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -36,37 +53,6 @@
                 </div>
             </div>
         </div>
-
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.CAlquiler.CCancha.NCancha, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.CAlquiler.CAlquiler,
-                                      new SelectList(ViewBag.alquileres, "CAlquiler","CCancha.NCancha"), "---Select---", "")
-                @Html.ValidationMessageFor(model => model.CAlquiler.CCancha, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.CParticipante.CJugador.NUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.CParticipante.CParticipante,
-                                      new SelectList(ViewBag.participantes, "CParticipante", "CJugador.NUsuario"), "---Select---", "")
-                @Html.ValidationMessageFor(model => model.CParticipante.CParticipante, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
-@*----------------------------------------------------------*@
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.CAlquiler, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.CParticipante,
-                                      new SelectList(ViewBag.alquileres, "CAlquiler", "CCancha.NCancha", "CAlquiler"), "---Select---", "")
-                @Html.ValidationMessageFor(model => model.CAlquiler.CAlquiler, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
-@*----------------------------------------------------------*@
-
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

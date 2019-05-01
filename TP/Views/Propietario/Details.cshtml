@@ -1,13 +1,13 @@
 ﻿@model Entity.Propietario
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Details Propietario " + Model.CUsuario;
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>Propietario</h4>
+    <h4>Propietario @Html.DisplayFor(model => model.CUsuario)</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>

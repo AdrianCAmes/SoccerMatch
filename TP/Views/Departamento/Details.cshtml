@@ -1,13 +1,13 @@
 ﻿@model Entity.Departamento
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Details Departamento " + Model.CDepartamento;
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>Departamento</h4>
+    <h4>Departamento @Html.DisplayFor(model => model.CDepartamento)</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>

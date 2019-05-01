@@ -1,13 +1,13 @@
 ﻿@model Entity.Cancha
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Details Cancha " + Model.CCancha;
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>Cancha</h4>
+    <h4>Cancha @Html.DisplayFor(model => model.CCancha)</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -24,6 +24,22 @@
 
         <dd>
             @Html.DisplayFor(model => model.NCancha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPropietario.NUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPropietario.NUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CCalle.NCalle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CCalle.NCalle)
         </dd>
 
         <dt>

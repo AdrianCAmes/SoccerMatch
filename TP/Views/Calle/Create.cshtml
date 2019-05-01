@@ -1,7 +1,7 @@
 ﻿@model Entity.Calle
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "New Calle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -27,7 +27,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CDistrito, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CDistrito.NDistrito, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.CDistrito.CDistrito,
                                       new SelectList(ViewBag.distritos, "CDistrito", "NDistrito"), "---Select---", "")

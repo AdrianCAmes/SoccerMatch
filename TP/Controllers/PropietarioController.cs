@@ -55,6 +55,7 @@ namespace TP.Controllers
         }
         public ActionResult Create()
         {
+            ViewBag.usuarios = objUsuarioService.FindAll();
             return View();
         }
 
@@ -62,6 +63,7 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Create(Propietario objPropietario)
         {
+            ViewBag.usuarios = objUsuarioService.FindAll();
             bool rpta = objPropietarioService.Insertar(objPropietario);
 
             if (rpta) return RedirectToAction("Index");

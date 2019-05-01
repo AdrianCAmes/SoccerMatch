@@ -44,7 +44,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("select c.CCalle,c.CCancha,c.CPropietario,c.MPrecioHora,c.NCancha,c.TDireccion,ca.CDistrito,ca.NCalle from Cancha c, Propietario p, Calle ca where c.CCalle = ca.CCalle and c.CPropietario = p.CPropietario", con);
+                    var query = new SqlCommand("select c.CCalle,c.CCancha,c.CPropietario, u.NUsuario, c.MPrecioHora,c.NCancha,c.TDireccion,ca.CDistrito,ca.NCalle from Cancha c, Propietario p, Calle ca, Usuario u where c.CCalle = ca.CCalle and c.CPropietario = p.CPropietario and u.CUsuario = p.CPropietario", con);
                     var dr = query.ExecuteReader();
                     while (dr.Read())
                     {
@@ -53,7 +53,9 @@ namespace Data.Implementacion
                         var calle = new Calle();
                         cancha.CCancha = Convert.ToInt32(dr["Ccancha"]);
                         propietario.CUsuario = Convert.ToInt32(dr["CPropietario"]);
+                        propietario.NUsuario = dr["NUsuario"].ToString();
                         calle.CCalle = Convert.ToInt32(dr["CCalle"]);
+                        calle.NCalle = dr["NCalle"].ToString();
                         cancha.NCancha = Convert.ToString(dr["NCancha"]);
                         cancha.TDireccion = Convert.ToString(dr["TDireccion"]);
                         cancha.MPrecioHora = Convert.ToDecimal(dr["MPrecioHora"]);
@@ -80,7 +82,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("select c.CCalle,c.CCancha,c.CPropietario,c.MPrecioHora,c.NCancha,c.TDireccion,ca.CDistrito,ca.NCalle from Cancha c, Propietario p, Calle ca where c.CCancha = '" + id + "' and c.CCalle = ca.CCalle and c.CPropietario = p.CPropietario", con);
+                    var query = new SqlCommand("select c.CCalle,c.CCancha,c.CPropietario, u.NUsuario, c.MPrecioHora,c.NCancha,c.TDireccion,ca.CDistrito,ca.NCalle from Cancha c, Propietario p, Calle ca, Usuario u where c.CCancha = '" + id + "' and c.CCalle = ca.CCalle and c.CPropietario = p.CPropietario and u.CUsuario = p.CPropietario", con);
                     var dr = query.ExecuteReader();
                     while (dr.Read())
                     {
@@ -89,7 +91,9 @@ namespace Data.Implementacion
                         var calle = new Calle();
                         cancha.CCancha = Convert.ToInt32(dr["Ccancha"]);
                         propietario.CUsuario = Convert.ToInt32(dr["CPropietario"]);
+                        propietario.NUsuario = dr["NUsuario"].ToString();
                         calle.CCalle = Convert.ToInt32(dr["CCalle"]);
+                        calle.NCalle = dr["NCalle"].ToString();
                         cancha.NCancha = Convert.ToString(dr["NCancha"]);
                         cancha.TDireccion = Convert.ToString(dr["TDireccion"]);
                         cancha.MPrecioHora = Convert.ToDecimal(dr["MPrecioHora"]);

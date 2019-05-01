@@ -1,13 +1,13 @@
 ﻿@model Entity.Distrito
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Details Distrito " + Model.CDistrito;
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>Distrito</h4>
+    <h4>Distrito @Html.DisplayFor(model => model.CDistrito)</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -24,6 +24,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.NDistrito)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CCiudad.CCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CCiudad.NCiudad)
         </dd>
 
     </dl>

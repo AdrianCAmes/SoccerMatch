@@ -95,15 +95,10 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("insert into usuario values(@CDNI,@NUsuario,@NumTelefono)", con);
-                    cmd.Parameters.AddWithValue("@CDNI", t.CDNI);
-                    cmd.Parameters.AddWithValue("@NUsuario", t.NUsuario);
-                    cmd.Parameters.AddWithValue("NumTelefono", t.NumTelefono);
 
+                    var cmd = new SqlCommand("insert into Propietario values (@cusuario)", con);
+                    cmd.Parameters.AddWithValue("@cusuario", t.CUsuario);
                     cmd.ExecuteNonQuery();
-
-                    var cmd2 = new SqlCommand("insert into Propietario values (convert(int,(select max(u.CUsuario) ultimo from Usuario u)))", con);
-                    cmd2.ExecuteNonQuery();
                     rpta = true;
                 }
             }

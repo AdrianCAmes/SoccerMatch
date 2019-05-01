@@ -1,7 +1,7 @@
 ﻿@model Entity.Participante
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Participante " + Model.CParticipante;
 }
 
 <h2>Edit</h2>
@@ -12,18 +12,19 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Participante</h4>
+        <h4>Participante @Html.DisplayFor(model => model.CParticipante)</h4>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CParticipante)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CParticipante)
+            </dd>
+        </dl>
         <div class="form-group">
-            @Html.LabelFor(model => model.CParticipante, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CParticipante, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CParticipante, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.CJugador.CUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CJugador.NUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
 
                 @Html.DropDownListFor(model => model.CJugador.CUsuario,
@@ -32,7 +33,7 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.CGrupo.CGrupo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CGrupo.NGrupo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
 
                 @Html.DropDownListFor(model => model.CGrupo.CGrupo,

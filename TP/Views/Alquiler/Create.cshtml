@@ -1,7 +1,7 @@
 ﻿@model Entity.Alquiler
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "New Alquiler";
 }
 
 <h2>Create</h2>
@@ -10,14 +10,13 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
 <div class="form-horizontal">
     <h4>Alquiler</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div class="form-group">
-        @Html.LabelFor(model => model.CGrupo, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.CGrupo.NGrupo, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownListFor(model => model.CGrupo.CGrupo,
                                   new SelectList(ViewBag.grupos, "CGrupo", "NGrupo"), "---Select---", "")
@@ -25,7 +24,7 @@
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.CCancha, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.CCancha.NCancha, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownListFor(model => model.CCancha.CCancha,
                                   new SelectList(ViewBag.canchas, "CCancha", "NCancha"), "---Select---", "")
