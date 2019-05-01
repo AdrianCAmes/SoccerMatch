@@ -132,8 +132,8 @@ namespace Data.Implementacion
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
                 var cmd = new SqlCommand("insert into DetalleParticipante values(@CAlquiler,@CParticipante,@MCuota,@FPartePagada)",con);
-                cmd.Parameters.AddWithValue("@CAlquiler", t.CAlquiler);
-                cmd.Parameters.AddWithValue("@CParticipante", t.CParticipante);
+                cmd.Parameters.AddWithValue("@CAlquiler", t.CAlquiler.CAlquiler);
+                cmd.Parameters.AddWithValue("@CParticipante", t.CParticipante.CParticipante);
                 cmd.Parameters.AddWithValue("@MCuota", t.MCuota);
                 cmd.Parameters.AddWithValue("@FPartePagada", t.FPartePagada);
                 cmd.ExecuteNonQuery();

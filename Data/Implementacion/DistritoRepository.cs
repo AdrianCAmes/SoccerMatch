@@ -36,14 +36,14 @@ namespace Data.Implementacion
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
             {
                 con.Open();
-                var query = new SqlCommand("select d.CDistrito, d.NDistrito 'NDistrito',c.NCiudad 'NCiudad' from Distrito d join Ciudad c on c.CCiudad = d.CCiudad", con);
+                var query = new SqlCommand("select c.CCiudad, d.CDistrito, d.NDistrito 'NDistrito',c.NCiudad 'NCiudad' from Distrito d join Ciudad c on c.CCiudad = d.CCiudad", con);
                 using (var dr = query.ExecuteReader())
                 {
                     while (dr.Read())
                     {
                         Distrito objDistrito = new Distrito();
                         Ciudad objCiudad = new Ciudad();
-                        
+                        objCiudad.CCiudad = Convert.ToInt32(dr["CCiudad"]);
                         objCiudad.NCiudad = dr["NCiudad"].ToString();
                         objDistrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
                         objDistrito.NDistrito = dr["NDistrito"].ToString();
@@ -65,14 +65,14 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("select d.CDistrito, d.NDistrito 'NDistrito',c.NCiudad 'NCiudad' from Distrito d join Ciudad c on c.CCiudad = d.CCiudad where d.CDistrito = '" + id + "'", con);
+                    var query = new SqlCommand("select c.CCiudad,d.CDistrito, d.NDistrito 'NDistrito',c.NCiudad 'NCiudad' from Distrito d join Ciudad c on c.CCiudad = d.CCiudad where d.CDistrito = '" + id + "'", con);
                     using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())
                         {
                             objDistrito = new Distrito();
                             Ciudad objCiudad = new Ciudad();
-
+                            objCiudad.CCiudad = Convert.ToInt32(dr["CCiudad"]);
                             objCiudad.NCiudad = dr["NCiudad"].ToString();
                             objDistrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
                             objDistrito.NDistrito = dr["NDistrito"].ToString();
@@ -125,8 +125,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("update Distrito set NDistrito =@ndistrito, CCiudad =@cciudad where CDistrito =@id", con);
-                    query.Parameters.AddWithValue("@id", t.CDistrito);
+                    var query = new SqlCommand("update Distrito set NDistrito =@ndistrito, CCiudad =@cciudad where CDistrito='"+t.CDistrito+"'", con);
                     query.Parameters.AddWithValue("@cciudad", t.CCiudad.CCiudad);
                     query.Parameters.AddWithValue("@ndistrito", t.NDistrito);
                     query.ExecuteNonQuery();
