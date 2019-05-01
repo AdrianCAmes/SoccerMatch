@@ -15,3 +15,8 @@ C:\Users\Martín\Desktop\TP\SoccerMatch\Entity\obj\Debug\Entity.csprojAssemblyRe
 C:\Users\Martín\Desktop\TP\SoccerMatch\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\Martín\Desktop\TP\SoccerMatch\Entity\obj\Debug\Entity.dll
 C:\Users\Martín\Desktop\TP\SoccerMatch\Entity\obj\Debug\Entity.pdb
+D:\TRABAJO_PARCIAL_WEB\Entity\bin\Debug\Entity.dll
+D:\TRABAJO_PARCIAL_WEB\Entity\bin\Debug\Entity.pdb
+D:\TRABAJO_PARCIAL_WEB\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+D:\TRABAJO_PARCIAL_WEB\Entity\obj\Debug\Entity.dll
+D:\TRABAJO_PARCIAL_WEB\Entity\obj\Debug\Entity.pdb

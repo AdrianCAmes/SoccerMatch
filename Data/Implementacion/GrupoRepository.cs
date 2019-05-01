@@ -115,7 +115,7 @@ namespace Data.Implementacion
                 cmd.Parameters.AddWithValue("@TDescripcion", t.TDescripcion);
                 cmd.Parameters.AddWithValue("@NumParticipantes", t.NumParticipantes);
                 cmd.Parameters.AddWithValue("@DFechaJuego", t.DFechaJuego);
-                cmd.Parameters.AddWithValue("@CDistrito", t.CDistrito);
+                cmd.Parameters.AddWithValue("@CDistrito", t.CDistrito.CDistrito);
                 cmd.ExecuteNonQuery();
                 rpta = true;
             }

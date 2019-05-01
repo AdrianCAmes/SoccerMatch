@@ -31,10 +31,7 @@ namespace Business.Implementacion
 
         public bool Insertar(Propietario t)
         {
-            Usuario usuario = objUsuarioRepository.FindById(t.CUsuario);
-            t.CUsuario = usuario.CUsuario;
-
-            return objPropietarioRepository.Insertar(t);
+                 return objPropietarioRepository.Insertar(t);
         }
 
         public bool Update(Propietario t)

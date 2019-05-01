@@ -11,7 +11,7 @@ namespace TP.Controllers
     public class ParticipanteController : Controller
     {
         private IParticipanteService objParticipanteService = new ParticipanteService();
-        private IJugadorService objJugadorService = new JugadorService();
+        private IJugadorService objJugadorService = new JugadorService();        
         private IGrupoService objGrupoService = new GrupoService();
         // GET: Participante
         public ActionResult Index()
@@ -21,7 +21,7 @@ namespace TP.Controllers
 
         // GET: Participante/Details/5
         public ActionResult Details(int? id)
-        {
+        {            
             return View(objParticipanteService.FindById(id));
         }
         public ActionResult Edit(int id)
@@ -56,6 +56,24 @@ namespace TP.Controllers
                 return RedirectToAction("Index");
             return View();
 
+        }
+        public ActionResult Create()
+        {
+            ViewBag.jugadores = objJugadorService.FindAll();
+            ViewBag.grupos = objGrupoService.FindAll();
+            return View();
+        }
+
+        //POST: Distrito/Create
+        [HttpPost]
+        public ActionResult Create(Participante objParticipante)
+        {
+            ViewBag.jugadores = objJugadorService.FindAll();
+            ViewBag.grupos = objGrupoService.FindAll();
+            bool rpta = objParticipanteService.Insertar(objParticipante);
+
+            if (rpta) return RedirectToAction("Index");
+            return View();
         }
     }
 }

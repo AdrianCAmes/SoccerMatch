@@ -338,6 +338,13 @@
     <Content Include="Views\Ciudad\Delete.cshtml" />
     <Content Include="Views\Departamento\Delete.cshtml" />
     <Content Include="Views\Detalle\Delete.cshtml" />
+    <Content Include="Views\Calle\Create.cshtml" />
+    <Content Include="Views\Cancha\Create.cshtml" />
+    <Content Include="Views\Participante\Create.cshtml" />
+    <Content Include="Views\Detalle\Create.cshtml" />
+    <Content Include="Views\Propietario\Create.cshtml" />
+    <Content Include="Views\Jugador\Create.cshtml" />
+    <Content Include="Views\Grupo\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

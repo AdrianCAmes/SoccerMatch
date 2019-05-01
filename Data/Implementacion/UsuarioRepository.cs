@@ -34,7 +34,7 @@ namespace Data.Implementacion
             List<Usuario> Lsta_usuarios = new List<Usuario>();
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
                     var query = new SqlCommand("select u.cusuario, u.cdni, u.nusuario,u.numtelefono from usuario u", con);
@@ -44,7 +44,7 @@ namespace Data.Implementacion
                         {
                             Usuario usuario_temp = new Usuario();
                             usuario_temp.CUsuario = Convert.ToInt32(dr["cusuario"]);
-                            usuario_temp.CDNI = Convert.ToInt32(dr["cdni"]);
+                            usuario_temp.CDNI = Convert.ToInt64(dr["cdni"]);
                             usuario_temp.NUsuario = dr["nusuario"].ToString();
                             usuario_temp.NumTelefono = Convert.ToInt32(dr["numtelefono"]);
                             Lsta_usuarios.Add(usuario_temp);
@@ -62,18 +62,20 @@ namespace Data.Implementacion
         public Usuario FindById(int? id)
         {
             Usuario usuario_temp = null;
-            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
+            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
             {
                 con.Open();
                 var query = new SqlCommand("select u.cusuario, u.cdni, u.nusuario,u.numtelefono from usuario u where u.CUsuario = '" + id + "'", con);
                 using (var dr = query.ExecuteReader())
                 {
-                    dr.Read();
-                    usuario_temp = new Usuario();
-                    usuario_temp.CUsuario = Convert.ToInt32(dr["cusuario"]);
-                    usuario_temp.CDNI = Convert.ToInt32(dr["cdni"]);
-                    usuario_temp.NUsuario = dr["nusuario"].ToString();
-                    usuario_temp.NumTelefono = Convert.ToInt32(dr["numtelefono"]);
+                    while (dr.Read())
+                    {
+                        usuario_temp = new Usuario();
+                        usuario_temp.CUsuario = Convert.ToInt32(dr["cusuario"]);
+                        usuario_temp.CDNI = Convert.ToInt32(dr["cdni"]);
+                        usuario_temp.NUsuario = dr["nusuario"].ToString();
+                        usuario_temp.NumTelefono = Convert.ToInt32(dr["numtelefono"]);
+                    }
                 }
             }
             return usuario_temp;
@@ -84,13 +86,13 @@ namespace Data.Implementacion
             bool rpta = false;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SoccerMatch"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
 
-                    var query = new SqlCommand("insert into usuario values (@CUsuario, @CDNI,@NUsuario,@NumTelefono)", con);
+                    var query = new SqlCommand("insert into usuario values (@CDNI,@NUsuario,@NumTelefono)", con);
 
-                    query.Parameters.AddWithValue("@CUsuario", t.CUsuario);
+                
                     query.Parameters.AddWithValue("@CDNI", t.CDNI);
                     query.Parameters.AddWithValue("@NUsuario", t.NUsuario);
                     query.Parameters.AddWithValue("@NumTelefono", t.NumTelefono);

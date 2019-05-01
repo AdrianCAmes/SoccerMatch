@@ -54,5 +54,21 @@ namespace TP.Controllers
             return View();
 
         }
+        public ActionResult Create()
+        {
+            ViewBag.distritos = objDistritoService.FindAll();
+            return View();
+        }
+
+        //POST: Distrito/Create
+        [HttpPost]
+        public ActionResult Create(Grupo objGrupo)
+        {
+            ViewBag.distritos = objDistritoService.FindAll();
+            bool rpta = objGrupoService.Insertar(objGrupo);
+
+            if (rpta) return RedirectToAction("Index");
+            return View();
+        }
     }
 }

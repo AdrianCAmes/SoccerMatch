@@ -36,7 +36,7 @@ namespace TP.Controllers
         {
             bool rpta = objUsuarioService.Insertar(usuario);
 
-            if(rpta) return RedirectToAction("Index");
+            if (rpta) return RedirectToAction("Index");
             return View();
         }
 
@@ -50,10 +50,10 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Edit(Usuario u)
         {
-                bool rpta = objUsuarioService.Update(u);
-                if(rpta)
-                    return RedirectToAction("Index");
-                return View();
+            bool rpta = objUsuarioService.Update(u);
+            if (rpta)
+                return RedirectToAction("Index");
+            return View();
         }
 
         // GET: Usuario/Delete/5
@@ -70,8 +70,8 @@ namespace TP.Controllers
             rpta = objUsuarioService.Delete(u.CUsuario);
             if (rpta)
                 return RedirectToAction("Index");
-                return View();
-            
+            return View();
+
         }
     }
 }
