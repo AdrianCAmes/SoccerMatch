@@ -1,6 +1,7 @@
 -- Created by Vertabelo (http://vertabelo.com)
 -- Last modification date: 2019-04-23 04:10:10.889
 
+create database SoccerMatch
 -- tables
 -- Table: Alquiler
 CREATE TABLE Alquiler (
