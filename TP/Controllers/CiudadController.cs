@@ -22,6 +22,11 @@ namespace TP.Controllers
         // GET: Ciudad/Details/5
         public ActionResult Details(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(objCiudadService.FindById(id));
         }
 
@@ -44,8 +49,15 @@ namespace TP.Controllers
             return View();
            
         }
-        public ActionResult Edit(int id)
+
+        // GET: Distrito/Edit/5
+        public ActionResult Edit(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
             ViewBag.departamento = objDepartamentoService.FindAll();
             return View(objCiudadService.FindById(id));
         }
@@ -54,29 +66,36 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Edit(Ciudad d)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             ViewBag.departamento = objDepartamentoService.FindAll();
             bool rpta = false;
             rpta = objCiudadService.Update(d);
-            if (rpta)
-                return RedirectToAction("Index");
+            if (rpta) return RedirectToAction("Index");
             return View();
-
         }
 
         // GET: Ciudad/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(objCiudadService.FindById(id));
         }
 
         // POST: Ciudad/Delete/5
         [HttpPost]
-        public ActionResult Delete(Ciudad ciudad)
+        public ActionResult Delete(int id)
         {
             bool rpta = false;
-            rpta = objCiudadService.Delete(ciudad.CCiudad);
-            if (rpta)
-                return RedirectToAction("Index");
+            rpta = objCiudadService.Delete(id);
+            if (rpta) return RedirectToAction("Index");
             return View();
 
         }

@@ -24,9 +24,15 @@ namespace TP.Controllers
         // GET: Calle/Details/5
         public ActionResult Details(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(objCalleService.FindById(id));
         }
 
+        // GET: Usuario/Create
         public ActionResult Create()
         {
             ViewBag.distritos = objDistritoService.FindAll();
@@ -43,35 +49,53 @@ namespace TP.Controllers
             if (rpta) return RedirectToAction("Index");
             return View();
         }
+
         // GET: Calle/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(objCalleService.FindById(id));
         }
 
+        // POST: Calle/Delete/5
         [HttpPost]
-        public ActionResult Delete(Calle calle)
+        public ActionResult Delete(int id)
         {
             bool rpta = false;
-            rpta = objCalleService.Delete(calle.CCalle);
-            if (rpta)
-                return RedirectToAction("Index");
+            rpta = objCalleService.Delete(id);
+            if (rpta) return RedirectToAction("Index");
             return View();
 
         }
-        public ActionResult Edit(int id)
+        // GET: Calle/Edit/5
+        public ActionResult Edit(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
             ViewBag.distrito = objDistritoService.FindAll();
             return View(objCalleService.FindById(id));
         }
+
+        // POST: Calle/Edit/5
         [HttpPost]
         public ActionResult Edit(Calle c)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             ViewBag.distrito = objDistritoService.FindAll();
             bool rpta = false;
             rpta = objCalleService.Update(c);
-            if (rpta)
-                return RedirectToAction("Index");
+            if (rpta) return RedirectToAction("Index");
             return View();
         }
     }

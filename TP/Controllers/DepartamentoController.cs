@@ -21,6 +21,11 @@ namespace TP.Controllers
         // GET: Departamento/Details/5
         public ActionResult Details(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(objDepartamentoService.FindById(id));
         }
 
@@ -38,10 +43,17 @@ namespace TP.Controllers
 
             if(rpta) return RedirectToAction("Index");
             return View();
-            
+
         }
-        public ActionResult Edit(int id)
+
+        // GET: Departamento/Edit/5
+        public ActionResult Edit(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(objDepartamentoService.FindById(id));
         }
 
@@ -49,6 +61,11 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Edit(Departamento d)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             bool rpta = false;
             rpta = objDepartamentoService.Update(d);
             if (rpta)
@@ -58,17 +75,22 @@ namespace TP.Controllers
         }
 
         // GET: Departamento/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(objDepartamentoService.FindById(id));
         }
 
         // POST: Departamento/Delete/5
         [HttpPost]
-        public ActionResult Delete(Departamento departamento)
+        public ActionResult Delete(int id)
         {
             bool rpta = false;
-            rpta = objDepartamentoService.Delete(departamento.CDepartamento);
+            rpta = objDepartamentoService.Delete(id);
             if (rpta)
                 return RedirectToAction("Index");
             return View();
