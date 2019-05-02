@@ -31,10 +31,6 @@ namespace Business.Implementacion
 
         public bool Insertar(Jugador t)
         {
-            Usuario usuario = objJugadorService.FindById(t.CUsuario);
-            t.CUsuario = usuario.CUsuario;
-            Calle calle = objCalleService.FindById(t.CCalle.CCalle);
-            t.CCalle = calle;
 
             return objJugadorService.Insertar(t);
         }

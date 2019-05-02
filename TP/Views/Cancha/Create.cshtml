@@ -37,7 +37,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CPropietario.NUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.CPropietario.NUsuario,
+                @Html.DropDownListFor(model => model.CPropietario.CUsuario,
                                       new SelectList(ViewBag.propietarios, "CUsuario", "NUsuario"), "---Select---", "")
                 @Html.ValidationMessageFor(model => model.CPropietario.CUsuario, "", new { @class = "text-danger" })
             </div>
@@ -45,7 +45,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CCalle.NCalle, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.CCalle.NCalle,
+                @Html.DropDownListFor(model => model.CCalle.CCalle,
                                       new SelectList(ViewBag.calles, "CCalle", "NCalle"), "---Select---", "")
                 @Html.ValidationMessageFor(model => model.CCalle.CCalle, "", new { @class = "text-danger" })
             </div>

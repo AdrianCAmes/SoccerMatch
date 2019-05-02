@@ -31,11 +31,6 @@ namespace Business.Implementacion
 
         public bool Insertar(DetalleParticipante t)
         {
-            Participante participante = objParticipante.FindById(t.CParticipante.CParticipante);
-            t.CParticipante = participante;
-            Alquiler alquiler = objAlquiler.FindById(t.CAlquiler.CAlquiler);
-            t.CAlquiler = alquiler;
-
             return objDetalleParticipante.Insertar(t);
         }
 

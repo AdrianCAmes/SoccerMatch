@@ -31,11 +31,6 @@ namespace Business.Implementacion
 
         public bool Insertar(Cancha t)
         {
-            Propietario propietario = objPropietarioService.FindById(t.CPropietario.CUsuario);
-            t.CPropietario = propietario;
-            Calle calle = objCalleService.FindById(t.CCalle.CCalle);
-            t.CCalle = calle;
-
             return objCanchaService.Insertar(t);
         }
 
