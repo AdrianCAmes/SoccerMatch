@@ -41,17 +41,22 @@ namespace TP.Controllers
                 return RedirectToAction("Index");
             return View();
         }
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(objParticipanteService.FindById(id));
         }
 
         // POST: Usuario/Delete/5
         [HttpPost]
-        public ActionResult Delete(Participante u)
+        public ActionResult Delete(int id)
         {
             bool rpta = false;
-            rpta = objParticipanteService.Delete(u.CParticipante);
+            rpta = objParticipanteService.Delete(id);
             if (rpta)
                 return RedirectToAction("Index");
             return View();
