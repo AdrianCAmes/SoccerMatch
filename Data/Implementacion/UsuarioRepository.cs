@@ -21,6 +21,7 @@ namespace Data.Implementacion
                 var cmd = new SqlCommand("delete from Usuario where CUsuario=" + id , con);
                 cmd.ExecuteNonQuery();
                 rpta = true;
+                con.Close();
             }
             catch (Exception ex)
             {

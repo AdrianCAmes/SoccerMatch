@@ -68,7 +68,7 @@ namespace TP.Controllers
         {
             bool rpta = false;
             rpta = objUsuarioService.Delete(u.CUsuario);
-            if (rpta)
+            if (rpta==false)
                 return RedirectToAction("Index");
             return View();
 
