@@ -21,18 +21,27 @@ namespace TP.Controllers
 
         // GET: Participante/Details/5
         public ActionResult Details(int? id)
-        {            
+        {
+            if (id == null)
+                return HttpNotFound();
             return View(objParticipanteService.FindById(id));
         }
+
+        // GET: Participante/Edit
         public ActionResult Edit(int id)
         {
+            if (id == null)
+                return HttpNotFound();
             ViewBag.jugador = objJugadorService.FindAll();
             ViewBag.grupo = objGrupoService.FindAll();
             return View(objParticipanteService.FindById(id));
         }
+        // POST: Participante/Edit
         [HttpPost]
         public ActionResult Edit(Participante p)
         {
+            if (!ModelState.IsValid)
+                return View();
             ViewBag.jugador = objJugadorService.FindAll();
             ViewBag.grupo = objGrupoService.FindAll();
             bool rpta = false;
@@ -41,6 +50,7 @@ namespace TP.Controllers
                 return RedirectToAction("Index");
             return View();
         }
+<<<<<<< HEAD
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -48,10 +58,17 @@ namespace TP.Controllers
                 return HttpNotFound();
             }
 
+=======
+        // GET: Participante/Delete
+        public ActionResult Delete(int id)
+        {
+            if (id == null)
+                return HttpNotFound();
+>>>>>>> 5700018031bc31e9d5cfb8a490f7b58f1376579d
             return View(objParticipanteService.FindById(id));
         }
 
-        // POST: Usuario/Delete/5
+        // POST: Participante/Delete/5
         [HttpPost]
         public ActionResult Delete(int id)
         {
@@ -62,6 +79,7 @@ namespace TP.Controllers
             return View();
 
         }
+        // GET: Participante/Create
         public ActionResult Create()
         {
             ViewBag.jugadores = objJugadorService.FindAll();
@@ -69,7 +87,7 @@ namespace TP.Controllers
             return View();
         }
 
-        //POST: Distrito/Create
+        //POST: Participante/Create
         [HttpPost]
         public ActionResult Create(Participante objParticipante)
         {

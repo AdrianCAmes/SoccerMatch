@@ -20,7 +20,8 @@ namespace TP.Controllers
         // GET: Usuario/Details/5
         public ActionResult Details(int? id)
         {
-
+            if (id == null)
+                return HttpNotFound();
             return View(objUsuarioService.FindById(id));
         }
 
@@ -43,6 +44,8 @@ namespace TP.Controllers
         // GET: Usuario/Edit/5
         public ActionResult Edit(int id)
         {
+            if (id == null)
+                return HttpNotFound();
             return View(objUsuarioService.FindById(id));
         }
 
@@ -50,6 +53,8 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Edit(Usuario u)
         {
+            if (!ModelState.IsValid)
+                return View();
             bool rpta = objUsuarioService.Update(u);
             if (rpta)
                 return RedirectToAction("Index");
@@ -60,10 +65,14 @@ namespace TP.Controllers
         public ActionResult Delete(int? id)
         {
             if (id == null)
+<<<<<<< HEAD
             {
                 return HttpNotFound();
             }
 
+=======
+                return HttpNotFound();
+>>>>>>> 5700018031bc31e9d5cfb8a490f7b58f1376579d
             return View(objUsuarioService.FindById(id));
         }
 

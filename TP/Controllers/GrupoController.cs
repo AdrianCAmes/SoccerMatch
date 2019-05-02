@@ -21,16 +21,24 @@ namespace TP.Controllers
         // GET: Grupo/Details/5
         public ActionResult Details(int? id)
         {
+            if (id == null)
+                return HttpNotFound();
             return View(objGrupoService.FindById(id));
         }
+        // GET: Grupo/Edit
         public ActionResult Edit(int id)
         {
+            if (id == null)
+                return HttpNotFound();
             ViewBag.distrito = objDistritoService.FindAll();
             return View(objGrupoService.FindById(id));
         }
+        // POST: Grupo/Edit
         [HttpPost]
         public ActionResult Edit(Grupo p)
         {
+            if (!ModelState.IsValid)
+                return View();
             ViewBag.usuarios = objDistritoService.FindAll();
             bool rpta = false;
             rpta = objGrupoService.Update(p);
@@ -38,15 +46,20 @@ namespace TP.Controllers
                 return RedirectToAction("Index");
             return View();
         }
+        // GET: Grupo/Delete
         public ActionResult Delete(int id)
         {
+            if (id == null)
+                return HttpNotFound();
             return View(objGrupoService.FindById(id));
         }
 
-        // POST: Usuario/Delete/5
+        // POST: Grupo/Delete/5
         [HttpPost]
         public ActionResult Delete(Grupo u)
         {
+            if (!ModelState.IsValid)
+                return View();
             bool rpta = false;
             rpta = objGrupoService.Delete(u.CGrupo);
             if (rpta)
@@ -54,13 +67,14 @@ namespace TP.Controllers
             return View();
 
         }
+        // GET: Grupo/Create
         public ActionResult Create()
         {
             ViewBag.distritos = objDistritoService.FindAll();
             return View();
         }
 
-        //POST: Distrito/Create
+        // POST: Grupo/Create
         [HttpPost]
         public ActionResult Create(Grupo objGrupo)
         {

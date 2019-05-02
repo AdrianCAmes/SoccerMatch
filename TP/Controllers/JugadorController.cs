@@ -22,17 +22,25 @@ namespace TP.Controllers
         // GET: Jugador/Details/5
         public ActionResult Details(int? id)
         {
+            if (id == null)
+                return HttpNotFound();
             return View(objJugadorService.FindById(id));
         }
+        // GET: Jugador/Edit
         public ActionResult Edit(int id)
         {
+            if (id == null)
+                return HttpNotFound();
             ViewBag.usuarios = objUsuarioService.FindAll();
             ViewBag.calle = objCalleService.FindAll();
             return View(objJugadorService.FindById(id));
         }
+        // POST: Jugador/Edit
         [HttpPost]
         public ActionResult Edit(Jugador c)
         {
+            if (!ModelState.IsValid)
+                return View();
             ViewBag.usuarios = objUsuarioService.FindAll();
             ViewBag.calle = objCalleService.FindAll();
             bool rpta = false;
@@ -41,15 +49,20 @@ namespace TP.Controllers
                 return RedirectToAction("Index");
             return View();
         }
+        // GET: Jugador/Delete
         public ActionResult Delete(int id)
         {
+            if (id == null)
+                return HttpNotFound();
             return View(objJugadorService.FindById(id));
         }
 
-        // POST: Usuario/Delete/5
+        // POST: Jugador/Delete
         [HttpPost]
         public ActionResult Delete(Jugador u)
         {
+            if (!ModelState.IsValid)
+                return View();
             bool rpta = false;
             rpta = objJugadorService.Delete(u.CUsuario);
             if (rpta)
@@ -57,7 +70,7 @@ namespace TP.Controllers
             return View();
 
         }
-
+        // GET: Jugador/Create
         public ActionResult Create()
         {
             ViewBag.calles = objCalleService.FindAll();
@@ -65,7 +78,7 @@ namespace TP.Controllers
             return View();
         }
 
-        //POST: Distrito/Create
+        // POST: Jugador/Create
         [HttpPost]
         public ActionResult Create(Jugador objJugador)
         {
