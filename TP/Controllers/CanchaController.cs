@@ -22,17 +22,36 @@ namespace TP.Controllers
         // GET: Cancha/Details/5
         public ActionResult Details(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(objCanchaService.FindById(id));
         }
-        public ActionResult Edit(int id)
+
+        // GET: Cancha/Edit/5
+        public ActionResult Edit(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
             ViewBag.calle = objCalleService.FindAll();
             ViewBag.propietario = objPropietarioService.FindAll();
             return View(objCanchaService.FindById(id));
         }
+
+        // POST: Cancha/Edit/5
         [HttpPost]
         public ActionResult Edit(Cancha c)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             ViewBag.calle = objCalleService.FindAll();
             ViewBag.propietario = objPropietarioService.FindAll();
             bool rpta = false;
@@ -43,23 +62,29 @@ namespace TP.Controllers
         }
 
         // GET: Cancha/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
             return View(objCanchaService.FindById(id));
         }
 
         // POST: Cancha/Delete/5
         [HttpPost]
-        public ActionResult Delete(Cancha cancha)
+        public ActionResult Delete(int id)
         {
             bool rpta = false;
-            rpta = objCanchaService.Delete(cancha.CCancha);
+            rpta = objCanchaService.Delete(id);
             if (rpta)
                 return RedirectToAction("Index");
             return View();
 
         }
 
+        // GET: Usuario/Create
         public ActionResult Create()
         {
             ViewBag.propietarios = objPropietarioService.FindAll();
