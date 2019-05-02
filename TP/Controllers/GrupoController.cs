@@ -55,10 +55,10 @@ namespace TP.Controllers
 
         // POST: Grupo/Delete/5
         [HttpPost]
-        public ActionResult Delete(Grupo u)
+        public ActionResult Delete(int id)
         {
             bool rpta = false;
-            rpta = objGrupoService.Delete(u.CGrupo);
+            rpta = objGrupoService.Delete(id);
             if (rpta)
                 return RedirectToAction("Index");
             return View();
