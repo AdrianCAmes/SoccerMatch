@@ -1092,7 +1092,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #18bc9c;
+  color: #18bd7e;
   text-decoration: none;
 }
 a:hover,
@@ -2988,7 +2988,7 @@ select[multiple].input-lg {
 .btn {
   display: inline-block;
   margin-bottom: 0;
-  font-weight: normal;
+  font-weight: bolder;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -3040,9 +3040,9 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-default {
-  color: #ffffff;
-  background-color: #95a5a6;
-  border-color: #95a5a6;
+  color: #2c3e50;
+  background-color: #18bd7e;
+  border-color: #18bd7e;
 }
 .btn-default:focus,
 .btn-default.focus {
