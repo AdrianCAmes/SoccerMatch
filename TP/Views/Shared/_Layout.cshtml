@@ -10,24 +10,59 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary font-weight-bolder">
+    <nav class="navbar navbar-fixed-top navbar-dark bg-primary font-weight-bolder">
         <div class="container">
-            @Html.ActionLink("SoccerMatch", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            @Html.ActionLink("Alquiler", "Index", "Alquiler")
-            @Html.ActionLink("Alquiler", "Index", "Alquiler")
-            @Html.ActionLink("Grupo", "Index", "Grupo")
-            @Html.ActionLink("Participante", "Index", "Participante")
-            @Html.ActionLink("Detalle", "Index", "Detalle")
-            @Html.ActionLink("Cancha", "Index", "Cancha")
-            @Html.ActionLink("Propietario", "Index", "Propietario")
-            @Html.ActionLink("Usuario", "Index", "Usuario")
-            @Html.ActionLink("Jugador", "Index", "Jugador")
-            @Html.ActionLink("Departamento", "Index", "Departamento")
-            @Html.ActionLink("Ciudad", "Index", "Ciudad")
-            @Html.ActionLink("Distrito", "Index", "Distrito")
-            @Html.ActionLink("Calle", "Index", "Calle")
+            <div class="navbar-header">
+                
+                @Html.ActionLink("SoccerMatch", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li class="menu">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Reserva<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Alquiler", "Index", "Alquiler")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Detalle", "Index", "Detalle")</li>
+                        </ul>
+                    </li>
+                    <li class="menu">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Grupo<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Grupo", "Index", "Grupo")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Participante", "Index", "Participante")</li>
+                        </ul>
+                    </li>
+                    <li class="menu">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Usuarios<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Usuario", "Index", "Usuario")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Jugador", "Index", "Jugador")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Propietario", "Index", "Propietario")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Cancha", "Index", "Cancha")</li>
+                    <li class="menu">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Location Data<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Departamento", "Index", "Departamento")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Ciudad", "Index", "Ciudad")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Distrito", "Index", "Distrito")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Calle", "Index", "Calle")</li>
+                        </ul>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
         </div>
-        @Html.Partial("_LoginPartial")
     </nav>
     <div class="container body-content">
         @RenderBody()
