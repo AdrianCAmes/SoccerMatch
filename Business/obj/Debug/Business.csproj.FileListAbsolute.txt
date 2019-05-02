@@ -7,15 +7,6 @@ C:\Users\Adrian\Desktop\TP\Business\bin\Debug\Entity.pdb
 C:\Users\Adrian\Desktop\TP\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 C:\Users\Adrian\Desktop\TP\Business\obj\Debug\Business.dll
 C:\Users\Adrian\Desktop\TP\Business\obj\Debug\Business.pdb
-C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Business.dll
-C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Business.pdb
-C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Data.dll
-C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Entity.dll
-C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Data.pdb
-C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Entity.pdb
-C:\UPC\2019-I\Aplicaciones Web\TP\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
-C:\UPC\2019-I\Aplicaciones Web\TP\Business\obj\Debug\Business.dll
-C:\UPC\2019-I\Aplicaciones Web\TP\Business\obj\Debug\Business.pdb
 C:\Users\Usuario\Desktop\TP\SoccerMatch\Business\bin\Debug\Business.dll
 C:\Users\Usuario\Desktop\TP\SoccerMatch\Business\bin\Debug\Business.pdb
 C:\Users\Usuario\Desktop\TP\SoccerMatch\Business\bin\Debug\Data.dll
@@ -109,3 +100,12 @@ C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Business\obj\Debug\Business.c
 C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Business\obj\Debug\Business.csproj.CopyComplete
 C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Business\obj\Debug\Business.dll
 C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Business\obj\Debug\Business.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Business.dll
+C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Business.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Data.dll
+C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Entity.dll
+C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Data.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP\Business\bin\Debug\Entity.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\UPC\2019-I\Aplicaciones Web\TP\Business\obj\Debug\Business.dll
+C:\UPC\2019-I\Aplicaciones Web\TP\Business\obj\Debug\Business.pdb
