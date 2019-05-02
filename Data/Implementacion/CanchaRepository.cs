@@ -51,7 +51,7 @@ namespace Data.Implementacion
                         var cancha = new Cancha();
                         var propietario = new Propietario();
                         var calle = new Calle();
-                        cancha.CCancha = Convert.ToInt32(dr["Ccancha"]);
+                        cancha.CCancha = Convert.ToInt32(dr["CCancha"]);
                         propietario.CUsuario = Convert.ToInt32(dr["CPropietario"]);
                         propietario.NUsuario = dr["NUsuario"].ToString();
                         calle.CCalle = Convert.ToInt32(dr["CCalle"]);
@@ -89,7 +89,7 @@ namespace Data.Implementacion
                         cancha = new Cancha();
                         var propietario = new Propietario();
                         var calle = new Calle();
-                        cancha.CCancha = Convert.ToInt32(dr["Ccancha"]);
+                        cancha.CCancha = Convert.ToInt32(dr["CCancha"]);
                         propietario.CUsuario = Convert.ToInt32(dr["CPropietario"]);
                         propietario.NUsuario = dr["NUsuario"].ToString();
                         calle.CCalle = Convert.ToInt32(dr["CCalle"]);
@@ -120,9 +120,11 @@ namespace Data.Implementacion
                 {
                     con.Open();
 
-                    var query = new SqlCommand("insert into Cancha values (@CCalle,@CPropietario, @CCalle, @NCancha, @TDireccion, @MPrecioHora)", con);
-                    query.Parameters.AddWithValue("@CPropietario", t.CPropietario.CUsuario);
+                    var query = new SqlCommand("insert into Cancha(CPropietario,CCalle,NCancha,TDireccion,MPrecioHora) values (@CPropietario, @CCalle, @NCancha, @TDireccion, @MPrecioHora)", con);
+                    t.CCalle.CCalle = 5;
+                    t.CPropietario.CUsuario = 3;
                     query.Parameters.AddWithValue("@CCalle", t.CCalle.CCalle);
+                    query.Parameters.AddWithValue("@CPropietario", t.CPropietario.CUsuario);
                     query.Parameters.AddWithValue("@NCancha", t.NCancha);
                     query.Parameters.AddWithValue("@TDireccion", t.TDireccion);
                     query.Parameters.AddWithValue("@MPrecioHora", t.MPrecioHora);
@@ -148,7 +150,6 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-
                     var query = new SqlCommand("update Cancha set CPropietario = @cpropietario, CCalle = @ccalle, NCancha = @ncancha, TDireccion = @tdireccion, MPrecioHora = @mpreciohora where CCancha='"+t.CCancha+"'", con);
                     query.Parameters.AddWithValue("@cpropietario", t.CPropietario.CUsuario);
                     query.Parameters.AddWithValue("@ccalle", t.CCalle.CCalle);

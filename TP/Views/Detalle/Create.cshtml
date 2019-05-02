@@ -31,9 +31,9 @@
             @Html.LabelFor(model => model.CParticipante.CJugador.NUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
 
-                @Html.DropDownListFor(model => model.CParticipante.CJugador.CUsuario,
+                @Html.DropDownListFor(model => model.CParticipante.CParticipante,
                              new SelectList(ViewBag.participantes, "CJugador.CUsuario", "CJugador.NUsuario"), "---Select---", "")
-                @Html.ValidationMessageFor(model => model.CParticipante.CJugador.CUsuario, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.CParticipante.CParticipante, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
