@@ -28,7 +28,7 @@ namespace TP.Controllers
         }
 
         // GET: Participante/Edit
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
                 return HttpNotFound();
@@ -50,21 +50,14 @@ namespace TP.Controllers
                 return RedirectToAction("Index");
             return View();
         }
-<<<<<<< HEAD
+
+        // GET: Participante/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return HttpNotFound();
             }
-
-=======
-        // GET: Participante/Delete
-        public ActionResult Delete(int id)
-        {
-            if (id == null)
-                return HttpNotFound();
->>>>>>> 5700018031bc31e9d5cfb8a490f7b58f1376579d
             return View(objParticipanteService.FindById(id));
         }
 

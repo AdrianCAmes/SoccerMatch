@@ -26,7 +26,7 @@ namespace TP.Controllers
             return View(objGrupoService.FindById(id));
         }
         // GET: Grupo/Edit
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
                 return HttpNotFound();
@@ -47,10 +47,9 @@ namespace TP.Controllers
             return View();
         }
         // GET: Grupo/Delete
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            if (id == null)
-                return HttpNotFound();
+            if (id == null) return HttpNotFound();
             return View(objGrupoService.FindById(id));
         }
 
@@ -58,8 +57,6 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Delete(Grupo u)
         {
-            if (!ModelState.IsValid)
-                return View();
             bool rpta = false;
             rpta = objGrupoService.Delete(u.CGrupo);
             if (rpta)
@@ -67,6 +64,7 @@ namespace TP.Controllers
             return View();
 
         }
+
         // GET: Grupo/Create
         public ActionResult Create()
         {

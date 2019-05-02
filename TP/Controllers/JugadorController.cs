@@ -27,7 +27,7 @@ namespace TP.Controllers
             return View(objJugadorService.FindById(id));
         }
         // GET: Jugador/Edit
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace TP.Controllers
             return View();
         }
         // GET: Jugador/Delete
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
                 return HttpNotFound();
@@ -59,12 +59,10 @@ namespace TP.Controllers
 
         // POST: Jugador/Delete
         [HttpPost]
-        public ActionResult Delete(Jugador u)
+        public ActionResult Delete(int id)
         {
-            if (!ModelState.IsValid)
-                return View();
             bool rpta = false;
-            rpta = objJugadorService.Delete(u.CUsuario);
+            rpta = objJugadorService.Delete(id);
             if (rpta)
                 return RedirectToAction("Index");
             return View();

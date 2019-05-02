@@ -40,13 +40,15 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Create(Distrito objDistrito)
         {
-            //ViewBag.ciudades = objCiudadService.FindAll();
+            ViewBag.ciudades = objCiudadService.FindAll();
             bool rpta = objDistritoServicio.Insertar(objDistrito);
 
             if (rpta) return RedirectToAction("Index");
             return View();
         }
-        public ActionResult Edit(int id)
+
+        // GET: Distrito/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
                 return HttpNotFound();
@@ -69,7 +71,8 @@ namespace TP.Controllers
 
         }
 
-        public ActionResult Delete(int id)
+        // GET: Usuario/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
                 return HttpNotFound();
@@ -78,12 +81,10 @@ namespace TP.Controllers
 
         // POST: Usuario/Delete/5
         [HttpPost]
-        public ActionResult Delete(Distrito u)
+        public ActionResult Delete(int id)
         {
-            if (!ModelState.IsValid)
-                return View();
             bool rpta = false;
-            rpta = objDistritoServicio.Delete(u.CDistrito);
+            rpta = objDistritoServicio.Delete(id);
             if (rpta)
                 return RedirectToAction("Index");
             return View();

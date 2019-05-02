@@ -65,14 +65,9 @@ namespace TP.Controllers
         public ActionResult Delete(int? id)
         {
             if (id == null)
-<<<<<<< HEAD
             {
                 return HttpNotFound();
             }
-
-=======
-                return HttpNotFound();
->>>>>>> 5700018031bc31e9d5cfb8a490f7b58f1376579d
             return View(objUsuarioService.FindById(id));
         }
 
