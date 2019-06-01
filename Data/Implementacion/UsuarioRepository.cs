@@ -120,7 +120,7 @@ namespace Data.Implementacion
                 {
                     con.Open();
 
-                    var query = new SqlCommand("update Usuario set CDNI=@cdni,NUsuario=@nusuario,NumTelefono=@numtelefono where CUsuario='"+t.CUsuario+"'", con);
+                    var query = new SqlCommand("update Usuario set CDNI=@cdni,NUsuario=@nusuario,NumTelefono=@numtelefono where CUsuario="+t.CUsuario, con);
                     query.Parameters.AddWithValue("@cdni", t.CDNI);
                     query.Parameters.AddWithValue("@nusuario", t.NUsuario);
                     query.Parameters.AddWithValue("@numtelefono", t.NumTelefono);
