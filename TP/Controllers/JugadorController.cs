@@ -11,7 +11,6 @@ namespace TP.Controllers
     public class JugadorController : Controller
     {
         private IJugadorService objJugadorService = new JugadorService();
-        private ICalleService objCalleService = new CalleService();
         private IUsuarioService objUsuarioService = new UsuarioService();
         // GET: Jugador
         public ActionResult Index()
@@ -32,7 +31,6 @@ namespace TP.Controllers
             if (id == null)
                 return HttpNotFound();
             ViewBag.usuarios = objUsuarioService.FindAll();
-            ViewBag.calle = objCalleService.FindAll();
             return View(objJugadorService.FindById(id));
         }
         // POST: Jugador/Edit
@@ -42,7 +40,6 @@ namespace TP.Controllers
             if (!ModelState.IsValid)
                 return View();
             ViewBag.usuarios = objUsuarioService.FindAll();
-            ViewBag.calle = objCalleService.FindAll();
             bool rpta = false;
             rpta = objJugadorService.Update(c);
             if (rpta)
@@ -71,7 +68,6 @@ namespace TP.Controllers
         // GET: Jugador/Create
         public ActionResult Create()
         {
-            ViewBag.calles = objCalleService.FindAll();
             ViewBag.usuarios = objUsuarioService.FindAll();
             return View();
         }
@@ -80,7 +76,6 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Create(Jugador objJugador)
         {
-            ViewBag.calles = objCalleService.FindAll();
             ViewBag.usuarios = objUsuarioService.FindAll();
             bool rpta = objJugadorService.Insertar(objJugador);
 

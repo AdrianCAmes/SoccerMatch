@@ -13,7 +13,6 @@ namespace Business.Implementacion
     {
         private IJugadorRepository objJugadorService = new JugadorRepository();
         private IUsuarioRepository objUsuarioService = new UsuarioRepository();
-        private ICalleRepository objCalleService = new CalleRepository();
         public bool Delete(int id)
         {
             return objJugadorService.Delete(id);
