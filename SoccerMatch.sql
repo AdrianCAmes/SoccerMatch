@@ -82,7 +82,6 @@ CREATE TABLE Equipo (
 -- Table: Jugador
 CREATE TABLE Jugador (
     CJugador int  NOT NULL,
-    CCalle int  NOT NULL,
     TDireccion text  NOT NULL,
     CONSTRAINT Jugador_pk PRIMARY KEY  (CJugador)
 );
@@ -161,11 +160,6 @@ ALTER TABLE Distrito ADD CONSTRAINT Distrito_Ciudad
 ALTER TABLE Equipo ADD CONSTRAINT Grupo_Distrito
     FOREIGN KEY (CDistrito)
     REFERENCES Distrito (CDistrito);
-
--- Reference: Jugador_Calle (table: Jugador)
-ALTER TABLE Jugador ADD CONSTRAINT Jugador_Calle
-    FOREIGN KEY (CCalle)
-    REFERENCES Calle (CCalle) on delete cascade;
 
 -- Reference: Jugador_Equipo_Jugador (table: Participante)
 ALTER TABLE Participante ADD CONSTRAINT Jugador_Equipo_Jugador
@@ -255,21 +249,21 @@ insert into Calle values ('Av. Universitaria', 2),
 							('Jr. Vizcardo y Guzman', 8),
 							('Jr. Jose Gabriel Aguilar', 8)
 ------------------------------------------
-insert into Jugador values (1, 1,'Av. Universitaria 1745'),
-							(4, 2,'Jr. Puno 478'),
-							(6, 3,'Av. Juan de Arona 1255'),
-							(7, 4,'Calle Los Alamos 78'),
-							(8, 5,'Av. La Marina 1236'),
-							(9, 6,'Calle Micaela Bastidas 23'),
-							(10, 7,'Jr. Los Rubies 65'),
-							(12, 8,'Jr. Los Topacios 14'),
-							(13, 9,'Jr. Vizcardo y Guzman 74'),
-							(14, 10,'Jr. Jorge Gabriel Aguilar 236'),
-							(15, 1,'Av. Universitaria 1456'),
-							(16, 2,'Jr. Puno 512'),
-							(18, 3,'Av. Juan de Arona 447'),
-							(19, 4,'Calle Los Alamos 777'),
-							(20, 5,'Av. La Marina 2460')
+insert into Jugador values (1,'Av. Universitaria 1745'),
+							(4,'Jr. Puno 478'),
+							(6,'Av. Juan de Arona 1255'),
+							(7,'Calle Los Alamos 78'),
+							(8,'Av. La Marina 1236'),
+							(9,'Calle Micaela Bastidas 23'),
+							(10,'Jr. Los Rubies 65'),
+							(12,'Jr. Los Topacios 14'),
+							(13,'Jr. Vizcardo y Guzman 74'),
+							(14,'Jr. Jorge Gabriel Aguilar 236'),
+							(15,'Av. Universitaria 1456'),
+							(16,'Jr. Puno 512'),
+							(18,'Av. Juan de Arona 447'),
+							(19,'Calle Los Alamos 777'),
+							(20,'Av. La Marina 2460')
 ------------------------------------------									
 insert into Cancha values (2, 2, 'La Cantera', 'Jr. Puno 751', 50),
 							(3, 4, 'Planeta Futbol', 'Calle Los Alamos 996', 60),
