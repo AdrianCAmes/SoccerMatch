@@ -121,8 +121,7 @@ namespace Data.Implementacion
                     con.Open();
 
                     var query = new SqlCommand("insert into Cancha(CPropietario,CCalle,NCancha,TDireccion,MPrecioHora) values (@CPropietario, @CCalle, @NCancha, @TDireccion, @MPrecioHora)", con);
-                    t.CCalle.CCalle = 5;
-                    t.CPropietario.CUsuario = 3;
+                    
                     query.Parameters.AddWithValue("@CCalle", t.CCalle.CCalle);
                     query.Parameters.AddWithValue("@CPropietario", t.CPropietario.CUsuario);
                     query.Parameters.AddWithValue("@NCancha", t.NCancha);

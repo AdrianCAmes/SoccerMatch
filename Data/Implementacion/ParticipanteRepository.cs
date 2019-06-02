@@ -48,6 +48,10 @@ namespace Data.Implementacion
                             var distrito = new Distrito();
                             distrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
                             participante.CParticipante = Convert.ToInt32(dr["CParticipante"]);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2d6772c7b72ad9cbddd2f81b304bd33bf26459b9
                             jugador.CDNI = Convert.ToInt32(dr["CDNI"]);
                             jugador.CUsuario = Convert.ToInt32(dr["CJugador"]);
                             jugador.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
@@ -82,7 +86,7 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString()))
                 {
                     con.Open();
-                    var cmd = new SqlCommand("select p.CParticipante, p.FEsAdministrador, u.CDNI, u.NUsuario, u.NumTelefono, j.CCalle,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e, Usuario u where p.CParticipante = '" + id + "' and p.CJugador = j.CJugador and p.CEquipo = e.CEquipo and j.CJugador = u.CUsuario", con);
+                    var cmd = new SqlCommand("select p.CParticipante, p.FEsAdministrador, u.CDNI, u.NUsuario, u.NumTelefono,j.CJugador,j.TDireccion,e.CDistrito,e.CEquipo,e.DFechaJuego,e.NEquipo,e.NumParticipantes,e.TDescripcion from Participante p, Jugador j, Equipo e, Usuario u where p.CParticipante = '" + id + "' and p.CJugador = j.CJugador and p.CEquipo = e.CEquipo and j.CJugador = u.CUsuario", con);
                     var dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {

@@ -750,7 +750,6 @@ D:\TRABAJO_PARCIAL_WEB\TP\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
 D:\TRABAJO_PARCIAL_WEB\TP\bin\es\Microsoft.Owin.Security.Google.resources.dll
 D:\TRABAJO_PARCIAL_WEB\TP\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 D:\TRABAJO_PARCIAL_WEB\TP\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-D:\TRABAJO_PARCIAL_WEB\TP\obj\Debug\TP.csprojResolveAssemblyReference.cache
 D:\TRABAJO_PARCIAL_WEB\TP\obj\Debug\TP.dll
 D:\TRABAJO_PARCIAL_WEB\TP\obj\Debug\TP.pdb
 C:\Users\Martín\Desktop\TP\SoccerMatch\TP\bin\ApplicationInsights.config
@@ -1296,6 +1295,7 @@ C:\Users\Usuario\Desktop\Web\SoccerMatch\TP\obj\Debug\TP.csproj.CoreCompileInput
 C:\Users\Usuario\Desktop\Web\SoccerMatch\TP\obj\Debug\TP.csproj.CopyComplete
 C:\Users\Usuario\Desktop\Web\SoccerMatch\TP\obj\Debug\TP.dll
 C:\Users\Usuario\Desktop\Web\SoccerMatch\TP\obj\Debug\TP.pdb
+<<<<<<< HEAD
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\TP\bin\ApplicationInsights.config
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\TP\bin\roslyn\csc.exe
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\TP\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -1405,3 +1405,8 @@ C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\TP\obj\Debug\TP.csproj.CoreComp
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\TP\obj\Debug\TP.csproj.CopyComplete
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\TP\obj\Debug\TP.dll
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\TP\obj\Debug\TP.pdb
+=======
+D:\TRABAJO_PARCIAL_WEB\TP\obj\Debug\TP.csprojAssemblyReference.cache
+D:\TRABAJO_PARCIAL_WEB\TP\obj\Debug\TP.csproj.CoreCompileInputs.cache
+D:\TRABAJO_PARCIAL_WEB\TP\obj\Debug\TP.csproj.CopyComplete
+>>>>>>> 2d6772c7b72ad9cbddd2f81b304bd33bf26459b9

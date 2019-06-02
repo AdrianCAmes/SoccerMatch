@@ -64,7 +64,6 @@ D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Data.dll
 D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Entity.dll
 D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Data.pdb
 D:\TRABAJO_PARCIAL_WEB\Business\bin\Debug\Entity.pdb
-D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.dll
 D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.pdb
 C:\Users\Martín\Desktop\TP\SoccerMatch\Business\bin\Debug\Business.dll
@@ -120,6 +119,7 @@ C:\Users\Usuario\Desktop\Web\SoccerMatch\Business\obj\Debug\Business.csproj.Core
 C:\Users\Usuario\Desktop\Web\SoccerMatch\Business\obj\Debug\Business.csproj.CopyComplete
 C:\Users\Usuario\Desktop\Web\SoccerMatch\Business\obj\Debug\Business.dll
 C:\Users\Usuario\Desktop\Web\SoccerMatch\Business\obj\Debug\Business.pdb
+<<<<<<< HEAD
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Business\bin\Debug\Business.dll
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Business\bin\Debug\Business.pdb
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Business\bin\Debug\Data.dll
@@ -131,3 +131,8 @@ C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Business\obj\Debug\Business.csp
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Business\obj\Debug\Business.csproj.CopyComplete
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Business\obj\Debug\Business.dll
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Business\obj\Debug\Business.pdb
+=======
+D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.csprojAssemblyReference.cache
+D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+D:\TRABAJO_PARCIAL_WEB\Business\obj\Debug\Business.csproj.CopyComplete
+>>>>>>> 2d6772c7b72ad9cbddd2f81b304bd33bf26459b9

@@ -27,5 +27,7 @@ namespace Entity
         [Required(ErrorMessage = "Por favor, ingrese el estado del pago: ")]
         [DisplayName("Estado de Pago")]
         public bool FPartePagada { get; set; }
+        [DisplayName("Numero de cupos")]
+        public int NCupos { get; set; }
     }
 }
