@@ -96,3 +96,12 @@ C:\Users\Usuario\Desktop\Web\SoccerMatch\Data\obj\Debug\Data.csproj.CoreCompileI
 C:\Users\Usuario\Desktop\Web\SoccerMatch\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\Usuario\Desktop\Web\SoccerMatch\Data\obj\Debug\Data.dll
 C:\Users\Usuario\Desktop\Web\SoccerMatch\Data\obj\Debug\Data.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Data\obj\Debug\Data.dll
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Data\obj\Debug\Data.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Data\bin\Debug\Data.dll
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Data\bin\Debug\Data.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Data\bin\Debug\Entity.dll
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Data\bin\Debug\Entity.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Data\obj\Debug\Data.csproj.CopyComplete
