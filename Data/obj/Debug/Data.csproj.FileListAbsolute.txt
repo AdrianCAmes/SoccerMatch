@@ -50,7 +50,6 @@ D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Data.dll
 D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Data.pdb
 D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Entity.dll
 D:\TRABAJO_PARCIAL_WEB\Data\bin\Debug\Entity.pdb
-D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.dll
 D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.pdb
 C:\Users\Martín\Desktop\TP\SoccerMatch\Data\bin\Debug\Data.dll
@@ -96,3 +95,6 @@ C:\Users\Usuario\Desktop\Web\SoccerMatch\Data\obj\Debug\Data.csproj.CoreCompileI
 C:\Users\Usuario\Desktop\Web\SoccerMatch\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\Usuario\Desktop\Web\SoccerMatch\Data\obj\Debug\Data.dll
 C:\Users\Usuario\Desktop\Web\SoccerMatch\Data\obj\Debug\Data.pdb
+D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.csprojAssemblyReference.cache
+D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+D:\TRABAJO_PARCIAL_WEB\Data\obj\Debug\Data.csproj.CopyComplete
