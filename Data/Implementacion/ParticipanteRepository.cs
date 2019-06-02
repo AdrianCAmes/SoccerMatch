@@ -48,10 +48,7 @@ namespace Data.Implementacion
                             var distrito = new Distrito();
                             distrito.CDistrito = Convert.ToInt32(dr["CDistrito"]);
                             participante.CParticipante = Convert.ToInt32(dr["CParticipante"]);
-<<<<<<< HEAD
-=======
 
->>>>>>> 2d6772c7b72ad9cbddd2f81b304bd33bf26459b9
                             jugador.CDNI = Convert.ToInt32(dr["CDNI"]);
                             jugador.CUsuario = Convert.ToInt32(dr["CJugador"]);
                             jugador.NumTelefono = Convert.ToInt32(dr["NumTelefono"]);
