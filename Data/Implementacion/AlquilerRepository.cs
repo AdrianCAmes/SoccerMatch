@@ -223,7 +223,7 @@ namespace Data.Implementacion
                     cmd.Parameters.AddWithValue("@DFechaInicio", t.DHoraInicio);
                     cmd.Parameters.AddWithValue("@NumHoras", t.NumHoras);
                     cmd.Parameters.AddWithValue("@MDescuento", t.MDescuento);
-                    cmd.Parameters.AddWithValue("@MTotal", t.MTotal);
+                    cmd.Parameters.AddWithValue("@MTotal", t.CCancha.MPrecioHora * t.NumHoras * (1 - t.MDescuento));
                     cmd.Parameters.AddWithValue("@FPagado", t.FPagado);
                     cmd.ExecuteNonQuery();
                     rpta = true;
@@ -250,7 +250,7 @@ namespace Data.Implementacion
                     cmd.Parameters.AddWithValue("@dfechainicio", t.DHoraInicio);
                     cmd.Parameters.AddWithValue("@numhoras", t.NumHoras);
                     cmd.Parameters.AddWithValue("@mdescuento", t.MDescuento);
-                    cmd.Parameters.AddWithValue("@mtotal", t.MTotal);
+                    cmd.Parameters.AddWithValue("@mtotal", t.CCancha.MPrecioHora * t.NumHoras * (1 - t.MDescuento));
                     cmd.Parameters.AddWithValue("@fpagado", t.FPagado);
                     cmd.ExecuteNonQuery();
                     rpta = true;
@@ -261,6 +261,6 @@ namespace Data.Implementacion
                 throw ex;
             }
             return rpta;
-        }
+        }    
     }
 }
