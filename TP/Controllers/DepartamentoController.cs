@@ -61,11 +61,6 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Edit(Departamento d)
         {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
             bool rpta = false;
             rpta = objDepartamentoService.Update(d);
             if (rpta)

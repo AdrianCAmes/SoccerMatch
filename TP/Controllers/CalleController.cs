@@ -86,12 +86,7 @@ namespace TP.Controllers
         // POST: Calle/Edit/5
         [HttpPost]
         public ActionResult Edit(Calle c)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
+        {           
             ViewBag.distrito = objDistritoService.FindAll();
             bool rpta = false;
             rpta = objCalleService.Update(c);

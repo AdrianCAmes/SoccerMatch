@@ -23,6 +23,7 @@
             @Html.DisplayFor(model => model.CDetalleParticipante)
         </dd>
     </dl>
+    @Html.HiddenFor(model => model.CDetalleParticipante)
     <div class="form-group">
         @Html.LabelFor(model => model.CAlquiler.CAlquiler, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">

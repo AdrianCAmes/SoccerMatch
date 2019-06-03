@@ -23,7 +23,7 @@
             @Html.ValidationMessageFor(model => model.CDistrito, "", new { @class = "text-danger" })
         </div>
     </div>
-
+    @Html.HiddenFor(model => model.CDistrito)
     <div class="form-group">
         @Html.LabelFor(model => model.NDistrito, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">

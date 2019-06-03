@@ -37,7 +37,6 @@ namespace TP.Controllers
             {
                 return HttpNotFound();
             }
-
             ViewBag.alquiler = objAlquilerService.FindAll();
             ViewBag.participante = objParticipanteService.FindAll();
             return View(objDetalleService.FindById(id));
@@ -46,12 +45,7 @@ namespace TP.Controllers
         // POST: Detalle/Edit/5
         [HttpPost]
         public ActionResult Edit(DetalleParticipante p)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
+        {         
             ViewBag.alquiler = objAlquilerService.FindAll();
             ViewBag.participante = objParticipanteService.FindAll();
             bool rpta = false;

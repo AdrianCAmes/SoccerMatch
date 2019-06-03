@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>Departamento @Html.DisplayFor(model => model.CDepartamento)</h4>
+    <h4>Departamento @Html.DisplayFor(model => model.NDepartamento)</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.CDepartamento)
@@ -25,6 +25,7 @@
             @Html.DisplayFor(model => model.CDepartamento)
         </dd>
     </dl>
+
 
     <div class="form-group">
         @Html.LabelFor(model => model.NDepartamento, htmlAttributes: new { @class = "control-label col-md-2" })

@@ -59,9 +59,7 @@ namespace TP.Controllers
         // POST: Distrito/Edit/5
         [HttpPost]
         public ActionResult Edit(Distrito d)
-        {
-            if (!ModelState.IsValid)
-                return View();
+        {            
             ViewBag.ciudad = objCiudadService.FindAll();
             bool rpta = false;
             rpta = objDistritoServicio.Update(d);

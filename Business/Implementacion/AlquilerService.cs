@@ -41,6 +41,11 @@ namespace Business.Implementacion
 
         public bool Update(Alquiler t)
         {
+            Grupo grupo = objGrupoService.FindById(t.CGrupo.CGrupo);
+            t.CGrupo = grupo;
+            Cancha cancha = objCanchaService.FindById(t.CCancha.CCancha);
+            t.CCancha = cancha;
+
             return objAlquilerService.Update(t);
         }
     }

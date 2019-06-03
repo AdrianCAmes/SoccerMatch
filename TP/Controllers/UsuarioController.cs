@@ -52,9 +52,7 @@ namespace TP.Controllers
         // POST: Usuario/Edit/5
         [HttpPost]
         public ActionResult Edit(Usuario u)
-        {
-            if (!ModelState.IsValid)
-                return View();
+        {           
             bool rpta = objUsuarioService.Update(u);
             if (rpta)
                 return RedirectToAction("Index");

@@ -47,11 +47,6 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Edit(Cancha c)
         {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
             ViewBag.calle = objCalleService.FindAll();
             ViewBag.propietario = objPropietarioService.FindAll();
             bool rpta = false;

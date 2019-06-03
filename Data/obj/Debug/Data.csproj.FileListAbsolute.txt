@@ -107,3 +107,12 @@ C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Data\obj\Debug\Data.csproj.Core
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Data\obj\Debug\Data.csproj.CopyComplete
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Data\obj\Debug\Data.dll
 C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Data\obj\Debug\Data.pdb
+D:\SoccerMatch\Data\bin\Debug\Data.dll
+D:\SoccerMatch\Data\bin\Debug\Data.pdb
+D:\SoccerMatch\Data\bin\Debug\Entity.dll
+D:\SoccerMatch\Data\bin\Debug\Entity.pdb
+D:\SoccerMatch\Data\obj\Debug\Data.csprojAssemblyReference.cache
+D:\SoccerMatch\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+D:\SoccerMatch\Data\obj\Debug\Data.csproj.CopyComplete
+D:\SoccerMatch\Data\obj\Debug\Data.dll
+D:\SoccerMatch\Data\obj\Debug\Data.pdb

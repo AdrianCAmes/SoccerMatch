@@ -154,7 +154,7 @@ namespace Data.Implementacion
                 con.Open();
                 var cmd = new SqlCommand("update DetalleParticipante set CAlquiler=@calquiler,CParticipante=@cparticipante,MCuota=@mcuota,FPartePagada=@fpartepagada,NCupos=@ncupos where CDetalleParticipante='" + t.CDetalleParticipante + "'", con);
                 cmd.Parameters.AddWithValue("calquiler", t.CAlquiler.CAlquiler);
-                cmd.Parameters.AddWithValue("cparticipante", t.CParticipante.CParticipante);
+                cmd.Parameters.AddWithValue("cparticipante", t.CParticipante.CJugador.CUsuario);
                 cmd.Parameters.AddWithValue("mcuota", t.MCuota);
                 cmd.Parameters.AddWithValue("fpartepagada", t.FPartePagada);
                 cmd.Parameters.AddWithValue("ncupos", t.NCupos);

@@ -40,8 +40,7 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Edit(Participante p)
         {
-            if (!ModelState.IsValid)
-                return View();
+            
             ViewBag.jugador = objJugadorService.FindAll();
             ViewBag.grupo = objGrupoService.FindAll();
             bool rpta = false;

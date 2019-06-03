@@ -37,8 +37,7 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Edit(Jugador c)
         {
-            if (!ModelState.IsValid)
-                return View();
+           
             ViewBag.usuarios = objUsuarioService.FindAll();
             bool rpta = false;
             rpta = objJugadorService.Update(c);

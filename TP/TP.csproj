@@ -316,7 +316,6 @@
     <Content Include="Views\Departamento\Edit.cshtml" />
     <Content Include="Views\Jugador\Edit.cshtml" />
     <Content Include="Views\Cancha\Edit.cshtml" />
-    <Content Include="Views\Alquiler\Edit.cshtml" />
     <Content Include="Views\Participante\Edit.cshtml" />
     <Content Include="Views\Detalle\Edit.cshtml" />
     <Content Include="Views\Grupo\Edit.cshtml" />
@@ -342,6 +341,7 @@
     <Content Include="Views\Grupo\Create.cshtml" />
     <Content Include="Views\Distrito\Edit.cshtml" />
     <Content Include="Views\Ciudad\Edit.cshtml" />
+    <Content Include="Views\Alquiler\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

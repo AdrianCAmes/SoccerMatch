@@ -37,9 +37,7 @@ namespace TP.Controllers
         // Post: Propietario/Edit
         [HttpPost]
         public ActionResult Edit(Propietario p)
-        {
-            if (!ModelState.IsValid)
-                return View();
+        {           
             ViewBag.usuarios = objUsuarioService.FindAll();
             bool rpta = false;
             rpta = objPropietarioService.Update(p);

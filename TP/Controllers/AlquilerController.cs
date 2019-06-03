@@ -68,12 +68,7 @@ namespace TP.Controllers
         // POST: Alquiler/Edit/5
         [HttpPost]
         public ActionResult Edit(Alquiler a)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-
+        {          
             ViewBag.grupos = objGrupoService.FindAll();
             ViewBag.canchas = objCanchaService.FindAll();
             bool rpta = false;

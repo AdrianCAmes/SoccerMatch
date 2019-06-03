@@ -37,8 +37,7 @@ namespace TP.Controllers
         [HttpPost]
         public ActionResult Edit(Grupo p)
         {
-            if (!ModelState.IsValid)
-                return View();
+          
             ViewBag.usuarios = objDistritoService.FindAll();
             bool rpta = false;
             rpta = objGrupoService.Update(p);

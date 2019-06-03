@@ -20,15 +20,18 @@ namespace Entity
         [DisplayName("Cancha")]
         public Cancha CCancha { get; set; }
 
+        [DataType(DataType.DateTime)]
         [Required(ErrorMessage = "Porfavor, seleccione una hora de inicio: ")]
-        [DisplayName("Hora de Incio")]
+        [DisplayName("Hora de inicio")]
         public DateTime DHoraInicio { get; set; }
 
+        
         [DisplayName("Horas")]
         public int NumHoras { get; set; }
 
+     
         [DisplayName("Descuento")]
-        public Decimal MDescuento { get; set; }
+        public decimal MDescuento { get; set; }
 
         [DisplayName("Total")]
         public Decimal MTotal { get; set; }

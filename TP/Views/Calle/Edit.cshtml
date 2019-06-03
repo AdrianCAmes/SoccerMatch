@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>Calle @Html.DisplayFor(model => model.CCalle)</h4>
+    <h4>Calle: @Html.DisplayFor(model => model.NCalle)</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -23,6 +23,8 @@
             @Html.DisplayFor(model => model.CCalle)
         </dd>
     </dl>
+
+    @Html.HiddenFor(model => model.CCalle)
 
     <div class="form-group">
         @Html.LabelFor(model => model.NCalle, htmlAttributes: new { @class = "control-label col-md-2" })
