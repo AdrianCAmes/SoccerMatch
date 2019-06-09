@@ -1,7 +1,12 @@
--- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2019-04-23 04:10:10.889
 
-create database SoccerMatch
+
+--PRIMERO: EJECUTAR SOLO ESTA LINEA
+use [master]
+--SEGUNDO: EJECUTAR SOLO ESTA OTRA LINEA
+create database SoccerMatch 
+--TERCERO: EJECUTAR SOLO ESTA OTRA LINEA
+use SoccerMatch 
+--CUARTO: EJECUTAR TODO LO QUE ESTA ABAJO
 -- tables
 -- Table: Alquiler
 CREATE TABLE Alquiler (
@@ -32,6 +37,8 @@ CREATE TABLE Cancha (
     NCancha varchar(100)  NOT NULL,
     TDireccion text  NOT NULL,
     MPrecioHora money  NOT NULL,
+	ImgFoto1 image,
+	ImgFoto2 image,
     CONSTRAINT Cancha_pk PRIMARY KEY  (CCancha)
 );
 
@@ -75,8 +82,9 @@ CREATE TABLE Equipo (
     NEquipo varchar(100)  NOT NULL,
     TDescripcion text  NOT NULL,
     NumParticipantes int  NOT NULL,
-    DFechaJuego Date  NOT NULL,
+    DFechaJuego Date  NOT NULL,	
     CDistrito int  NOT NULL,
+	ImgFoto image,
     CONSTRAINT Equipo_pk PRIMARY KEY  (CEquipo)
 );
 
@@ -108,6 +116,9 @@ CREATE TABLE Usuario (
     CDNI bigint  NOT NULL,
     NUsuario varchar(100)  NOT NULL,
     NumTelefono bigint  NOT NULL,
+	usuario varchar(20),
+	pswd varchar(20),
+	ImgFoto image,
     CONSTRAINT Usuario_pk PRIMARY KEY  (CUsuario)
 );
 
@@ -183,26 +194,26 @@ ALTER TABLE Participante ADD CONSTRAINT Usuario_Grupo_Grupo
     REFERENCES Equipo (CEquipo);
 
 --------------------------------TABLES
-insert into Usuario values (73456712, 'Jesus Alvarado', 974874521),
-							(72146321, 'Enrique Acevedo', 987452167),
-							(69874541, 'Irma Aguilar', 954780123),
-							(70154213, 'Fredy Acosta', 98741254),
-							(68745596, 'Adolfo Alderete', 965478852),
-							(71245325, 'Victor Hugo Baltazar', 954123678),
-							(71458792, 'Juan Caballero', 998745545),
-							(72031458, 'Marcos Cardona', 945443621),
-							(74589621, 'Luis Castro', 97441123),
-							(73557889, 'Jesús Cuellar', 999521002),
-							(69225478, 'Roberto De La Fuente', 987441436),
-							(68541123, 'Adán De Lira', 963362584),
-							(71412458, 'Vicente Díaz', 954123698),
-							(70125336, 'Romo Dominguez', 987654321),
-							(71102365, 'Ángel Ferreira', 987321654),
-							(73216599, 'Ernesto Altamirano', 963852741),
-							(72100012, 'Fernando Gallegos', 963741852),
-							(69992214, 'Carlos García', 951753654),
-							(71452365, 'Jorge Gamarra', 987455541),
-							(73321444, 'Alberto Huaman', 95566644)
+insert into Usuario values (73456712, 'Jesus Alvarado', 974874521,'jessa','123',null),
+							(72146321, 'Enrique Acevedo', 987452167,'enac','123',null),
+							(69874541, 'Irma Aguilar', 954780123,'irag','123',null),
+							(70154213, 'Fredy Acosta', 98741254,'frac','123',null),
+							(68745596, 'Adolfo Alderete', 965478852,'adal','123',null),
+							(71245325, 'Victor Hugo Baltazar', 954123678,'vich','123',null),
+							(71458792, 'Juan Caballero', 998745545,'juca','123',null),
+							(72031458, 'Marcos Cardona', 945443621,'maca','123',null),
+							(74589621, 'Luis Castro', 97441123,'luca','123',null),
+							(73557889, 'Jesús Cuellar', 999521002,'jecu','123',null),
+							(69225478, 'Roberto De La Fuente', 987441436,'rofu','123',null),
+							(68541123, 'Adán De Lira', 963362584,'adli','123',null),
+							(71412458, 'Vicente Díaz', 954123698,'vidi','123',null),
+							(70125336, 'Romo Dominguez', 987654321,'rodo','123',null),
+							(71102365, 'Ángel Ferreira', 987321654,'anfe','123',null),
+							(73216599, 'Ernesto Altamirano', 963852741,'eral','123',null),
+							(72100012, 'Fernando Gallegos', 963741852,'fega','123',null),
+							(69992214, 'Carlos García', 951753654,'caga','123',null),
+							(71452365, 'Jorge Gamarra', 987455541,'joga','123',null),
+							(73321444, 'Alberto Huaman', 95566644,'alhu','123',null)
 ------------------------------------------
 insert into Propietario values (2),
 								(3),
@@ -266,15 +277,15 @@ insert into Jugador values (1,'Av. Universitaria 1745'),
 							(19,'Calle Los Alamos 777'),
 							(20,'Av. La Marina 2460')
 ------------------------------------------									
-insert into Cancha values (2, 2, 'La Cantera', 'Jr. Puno 751', 50),
-							(3, 4, 'Planeta Futbol', 'Calle Los Alamos 996', 60),
-							(5, 6, 'Tiro Libre', 'Calle Micaela Bastidas 57', 55),
-							(11, 8, 'La Cancha', 'Jr. Los Topacios 1234', 65),
-							(17, 10, 'Olimpus Futbol', 'Jr. Jose Gabriel Aguilar 4321', 50)
+insert into Cancha values (2, 2, 'La Cantera', 'Jr. Puno 751', 50,null,null),
+							(3, 4, 'Planeta Futbol', 'Calle Los Alamos 996', 60,null,null),
+							(5, 6, 'Tiro Libre', 'Calle Micaela Bastidas 57', 55,null,null),
+							(11, 8, 'La Cancha', 'Jr. Los Topacios 1234', 65,null,null),
+							(17, 10, 'Olimpus Futbol', 'Jr. Jose Gabriel Aguilar 4321', 50,null,null)
 ------------------------------------------							
-insert into Equipo values ('Los Supercampeones', 'Equipo de futbol de 5 personas', 5, '2019-05-25', 3),
-							('FC Pichanga', 'Pichanga todos los jueves', 5, '2019-05-15', 4),
-							('Los Diablos Rojos', 'Grupo de futbol amateur', 5, '2019-04-30', 5)
+insert into Equipo values ('Los Supercampeones', 'Equipo de futbol de 5 personas', 5, '2019-05-25', 3,null),
+							('FC Pichanga', 'Pichanga todos los jueves', 5, '2019-05-15', 4,null),
+							('Los Diablos Rojos', 'Grupo de futbol amateur', 5, '2019-04-30', 5,null)
 ------------------------------------------							
 insert into Participante values (1, 1, 1),
 								(4, 1, 0),
