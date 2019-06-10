@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Trabajo_Final
+namespace SoccerMatch_TF
 {
     public class Program
     {

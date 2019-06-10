@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Trabajo_Final.Models;
+using SoccerMatch_TF.Models;
 
-namespace Trabajo_Final.Controllers
+namespace SoccerMatch_TF.Controllers
 {
     public class HomeController : Controller
     {

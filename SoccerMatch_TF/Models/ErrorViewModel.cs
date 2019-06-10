@@ -1,6 +1,6 @@
 using System;
 
-namespace Trabajo_Final.Models
+namespace SoccerMatch_TF.Models
 {
     public class ErrorViewModel
     {
