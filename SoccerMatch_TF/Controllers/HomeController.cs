@@ -10,9 +10,11 @@ namespace SoccerMatch_TF.Controllers
 {
     public class HomeController : Controller
     {
+        AplicacionDbContext db = new AplicacionDbContext();
         public IActionResult Index()
         {
-            return View();
+            var data = db.Calle;
+            return View(data);
         }
 
         public IActionResult Privacy()

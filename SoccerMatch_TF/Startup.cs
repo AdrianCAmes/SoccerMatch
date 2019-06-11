@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SoccerMatch_TF.Controllers;
+using SoccerMatch_TF.Models;
 
 namespace SoccerMatch_TF
 {
@@ -57,8 +59,10 @@ namespace SoccerMatch_TF
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}");
+
             });
+            
         }
     }
 }
