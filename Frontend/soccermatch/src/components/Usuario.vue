@@ -62,18 +62,7 @@
           <td>{{ props.item.numTelefono }}</td>
           <td>{{ props.item.usuario1 }}</td>
           <td>{{ props.item.pswd }}</td >
-                  <td>
-                @{
-                    var imgSrc="";
-                    if (item.ImgFoto != null)
-                    {
-                        string base64ImageRepresentation = Convert.ToBase64String(item.ImgFoto);
-                            imgSrc = String.Format("data:image/gif;base64,{0}", base64ImageRepresentation);
-                    }
-                 }
-                <p>Imagen es:</p>
-                <img src="@imgSrc" />
-            </td>
+          
 
              
         </template>
