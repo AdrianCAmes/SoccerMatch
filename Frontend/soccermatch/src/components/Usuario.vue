@@ -54,17 +54,13 @@
       <v-data-table :headers="headers" :items="usuarios" :search="search" class="elevation-1">
         <template slot="items" slot-scope="props">
           <td class="justify-center layout px-0">
-            <v-icon small class="mr-2" @click="editItem(props.item)">edit</v-icon>
-          
+            <v-icon small class="mr-2" @click="editItem(props.item)">edit</v-icon>          
           </td>
           <td>{{ props.item.nusuario }}</td>
           <td>{{ props.item.cdni }}</td>
           <td>{{ props.item.numTelefono }}</td>
           <td>{{ props.item.usuario1 }}</td>
-          <td>{{ props.item.pswd }}</td >
-          
-
-             
+          <td>{{ props.item.pswd }}</td >             
         </template>
         <template slot="no-data">
           <v-btn color="primary" @click="listar">Resetear</v-btn>
