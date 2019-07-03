@@ -12,12 +12,13 @@
 
 
 
-     <div>
+     <form>
         <v-text-field v-model="contraseña" label="Ingrese su contraseña de usuario">Contraseña </v-text-field>
 
-        <v-btn  type="button" onclick=this.Loggin() color="primary"   dark class="mb-2"> Loggin    </v-btn>   <!-- @click="this.Loggin()"-->
+        <v-btn @click="Loggin()" href='ruta' slot="activator" color="primary" dark class="mb-2">Registrarse</v-btn>
+           <!-- @click="this.Loggin()"-->
         
-      </div>
+      </form>
 
 </v-flex>
 
@@ -59,30 +60,32 @@ export default {
         });
   },
 
-  LoginCorrecto(){       
+  LoginCorrecto(){      
             var correcto = 0;
             for (var i = 0; i < this.lstaUsuarios.length; i++) {
-               if (this.lstaUsuarios[i].usuario1 == this.loginUsuario  ) { 
+               if (this.lstaUsuarios[i].usuario1 == this.loginUsuario ) { 
                     correcto = 1;
                }
             }
             return correcto;       
   },
-  Loggin(){
- 
- 
+  Loggin(){ 
+
       if (this.LoginCorrecto()==1){
           this.ruta="./usuarios";
       }
-      else{      
-        alert('Usuario incorrecto')
+      else{ 
+             
+        alert(this.loginUsuario);
        this.loginUsuario='';
         this.contraseña='';
       }
-      
+
+      return router[this.usuarios];
     
   }
   },
+  
 
 }
 </script>
