@@ -1,0 +1,12 @@
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Repository\obj\Debug\netcoreapp2.2\Repository.csprojAssemblyReference.cache
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Repository\obj\Debug\netcoreapp2.2\Repository.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Repository\obj\Debug\netcoreapp2.2\Repository.AssemblyInfoInputs.cache
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Repository\obj\Debug\netcoreapp2.2\Repository.AssemblyInfo.cs
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Repository\bin\Debug\netcoreapp2.2\Repository.deps.json
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Repository\bin\Debug\netcoreapp2.2\Repository.dll
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Repository\bin\Debug\netcoreapp2.2\Repository.pdb
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Repository\bin\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Repository\bin\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Repository\obj\Debug\netcoreapp2.2\Repository.csproj.CopyComplete
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Repository\obj\Debug\netcoreapp2.2\Repository.dll
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Repository\obj\Debug\netcoreapp2.2\Repository.pdb
