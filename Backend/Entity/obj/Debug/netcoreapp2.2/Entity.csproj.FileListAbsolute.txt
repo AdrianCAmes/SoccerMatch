@@ -20,3 +20,14 @@ C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.
 C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.dll
 C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.pdb
 C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csprojAssemblyReference.cache
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.deps.json
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.json
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.dev.json
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csprojAssemblyReference.cache
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfoInputs.cache
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfo.cs
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.pdb

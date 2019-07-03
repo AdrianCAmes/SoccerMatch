@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Entity\\Entity.csproj": {}
+    "C:\\Users\\Administrador\\Documents\\TF_Web\\SoccerMatch\\Backend\\Entity\\Entity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Entity\\Entity.csproj": {
+    "C:\\Users\\Administrador\\Documents\\TF_Web\\SoccerMatch\\Backend\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\Administrador\\Documents\\TF_Web\\SoccerMatch\\Backend\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Entity\\Entity.csproj",
+        "projectPath": "C:\\Users\\Administrador\\Documents\\TF_Web\\SoccerMatch\\Backend\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Entity\\obj\\",
+        "outputPath": "C:\\Users\\Administrador\\Documents\\TF_Web\\SoccerMatch\\Backend\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
