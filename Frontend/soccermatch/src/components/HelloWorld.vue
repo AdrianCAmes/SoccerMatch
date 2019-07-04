@@ -10,15 +10,16 @@
                     <v-text-field v-model="loginUsuario" label="Ingrese su identidad de usuario"></v-text-field>
                   </v-flex>
 
+ 
+         <v-text-field v-model="contraseña" label="Ingrese su contraseña de usuario">Contraseña </v-text-field>
+
+        <v-btn   @click="Loggin()" slot="activator" color="primary" dark class="mb-2"  v-bind:href="ruta">Registrarse</v-btn>   
+           
 
 
-     <form>
-        <v-text-field v-model="contraseña" label="Ingrese su contraseña de usuario">Contraseña </v-text-field>
 
-        <v-btn @click="Loggin()" href='ruta' slot="activator" color="primary" dark class="mb-2">Registrarse</v-btn>
-           <!-- @click="this.Loggin()"-->
         
-      </form>
+   
 
 </v-flex>
 
@@ -76,13 +77,10 @@ export default {
       }
       else{ 
              
-        alert(this.loginUsuario);
+        alert("USUARIO o PASSWORD INCORRECTO");
        this.loginUsuario='';
         this.contraseña='';
-      }
-
-      return router[this.usuarios];
-    
+      }   
   }
   },
   
