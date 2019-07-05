@@ -1,5 +1,5 @@
 <template>
- 
+  <v-layout align-start>
     <v-flex>
       <v-toolbar flat color="white">
         <v-toolbar-title>Usuarios</v-toolbar-title>
@@ -22,7 +22,8 @@
             </v-card-title>
 
             <v-card-text>
-              <v-container grid-list-md>               
+              <v-container grid-list-md>
+                <v-layout wrap>
                   <v-flex xs12 sm12 md12>
                     <v-text-field v-model="nusuario" label="Nombres"></v-text-field>
                   </v-flex>
@@ -36,8 +37,9 @@
                     <v-text-field v-model="usuario1" label="User"></v-text-field>
                   </v-flex>
                   <v-flex xs12 sm12 md12>
-                    <v-text-field v-model="pswd" label="Contraseña" ></v-text-field>
-                  </v-flex>               
+                    <v-text-field v-model="pswd" label="Contraseña" type="password"></v-text-field>
+                  </v-flex>
+                </v-layout>
               </v-container>
             </v-card-text>
 
@@ -49,7 +51,6 @@
           </v-card>
         </v-dialog>
       </v-toolbar>
-
       <v-data-table :headers="headers" :items="usuarios" :search="search" class="elevation-1">
         <template slot="items" slot-scope="props">
           <td class="justify-center layout px-0">
@@ -60,16 +61,16 @@
           <td>{{ props.item.cdni }}</td>
           <td>{{ props.item.numTelefono }}</td>
           <td>{{ props.item.usuario1 }}</td>
-          <td>{{ props.item.pswd }}</td >            
+          <td>{{ props.item.pswd }}</td >
+          
+             
         </template>
-
         <template slot="no-data">
           <v-btn color="primary" @click="listar">Resetear</v-btn>
         </template>
       </v-data-table>
-
     </v-flex>
-
+  </v-layout>
 </template>
 <script>
 import axios from "axios";

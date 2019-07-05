@@ -12997,11 +12997,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrador\\Documents\\TF_Web\\SoccerMatch\\Backend\\SoccerMatch\\SoccerMatch.csproj",
+      "projectUniqueName": "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\SoccerMatch\\SoccerMatch.csproj",
       "projectName": "SoccerMatch",
-      "projectPath": "C:\\Users\\Administrador\\Documents\\TF_Web\\SoccerMatch\\Backend\\SoccerMatch\\SoccerMatch.csproj",
+      "projectPath": "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\SoccerMatch\\SoccerMatch.csproj",
       "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrador\\Documents\\TF_Web\\SoccerMatch\\Backend\\SoccerMatch\\obj\\",
+      "outputPath": "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\SoccerMatch\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13020,11 +13020,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Administrador\\Documents\\TF_Web\\SoccerMatch\\Backend\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\Administrador\\Documents\\TF_Web\\SoccerMatch\\Backend\\Entity\\Entity.csproj"
+            "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Entity\\Entity.csproj"
             },
-            "C:\\Users\\Administrador\\Documents\\TF_Web\\SoccerMatch\\Backend\\Service\\Service.csproj": {
-              "projectPath": "C:\\Users\\Administrador\\Documents\\TF_Web\\SoccerMatch\\Backend\\Service\\Service.csproj"
+            "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Service\\Service.csproj": {
+              "projectPath": "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Service\\Service.csproj"
             }
           }
         }

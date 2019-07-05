@@ -12,17 +12,3 @@ C:\Users\Administrador\Desktop\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2
 C:\Users\Administrador\Desktop\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.csproj.CopyComplete
 C:\Users\Administrador\Desktop\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.dll
 C:\Users\Administrador\Desktop\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.pdb
-C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Service.deps.json
-C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Service.dll
-C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Service.pdb
-C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Entity.dll
-C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Repository.dll
-C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Entity.pdb
-C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Repository.pdb
-C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.csprojAssemblyReference.cache
-C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.csproj.CoreCompileInputs.cache
-C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.AssemblyInfoInputs.cache
-C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.AssemblyInfo.cs
-C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.csproj.CopyComplete
-C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.dll
-C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.pdb
