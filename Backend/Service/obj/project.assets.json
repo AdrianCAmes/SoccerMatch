@@ -3504,23 +3504,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrador\\.nuget\\packages\\": {},
+    "C:\\Users\\Ryzen\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Service\\Service.csproj",
+      "projectUniqueName": "d:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Service\\Service.csproj",
       "projectName": "Service",
-      "projectPath": "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Service\\Service.csproj",
-      "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Service\\obj\\",
+      "projectPath": "d:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Service\\Service.csproj",
+      "packagesPath": "C:\\Users\\Ryzen\\.nuget\\packages\\",
+      "outputPath": "d:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Administrador\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ryzen\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3533,11 +3533,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Entity\\Entity.csproj"
+            "d:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Entity\\Entity.csproj": {
+              "projectPath": "d:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Entity\\Entity.csproj"
             },
-            "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\Administrador\\Desktop\\SoccerMatch\\Backend\\Repository\\Repository.csproj"
+            "d:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Repository\\Repository.csproj": {
+              "projectPath": "d:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Repository\\Repository.csproj"
             }
           }
         }
