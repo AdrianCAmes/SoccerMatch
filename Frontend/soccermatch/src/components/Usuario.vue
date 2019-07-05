@@ -92,7 +92,12 @@ export default {
       editedIndex: -1,
 
       //TODO:Model
-      
+       cusuario :'',
+     cdni :'',
+      nusuario:'',
+      numTelefono:'',
+      usuario1:'',
+      pswd:'',
 
     };
   },

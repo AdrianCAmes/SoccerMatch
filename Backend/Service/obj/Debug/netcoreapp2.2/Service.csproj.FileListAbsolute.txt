@@ -12,3 +12,31 @@ C:\Users\Administrador\Desktop\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2
 C:\Users\Administrador\Desktop\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.csproj.CopyComplete
 C:\Users\Administrador\Desktop\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.dll
 C:\Users\Administrador\Desktop\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.pdb
+d:\Descargas y archivos\Documentos\Maquinas virtuales - Oracle Virtual box\Compartido_VirBox\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Service.deps.json
+d:\Descargas y archivos\Documentos\Maquinas virtuales - Oracle Virtual box\Compartido_VirBox\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Service.dll
+d:\Descargas y archivos\Documentos\Maquinas virtuales - Oracle Virtual box\Compartido_VirBox\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Service.pdb
+d:\Descargas y archivos\Documentos\Maquinas virtuales - Oracle Virtual box\Compartido_VirBox\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Entity.dll
+d:\Descargas y archivos\Documentos\Maquinas virtuales - Oracle Virtual box\Compartido_VirBox\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Repository.dll
+d:\Descargas y archivos\Documentos\Maquinas virtuales - Oracle Virtual box\Compartido_VirBox\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Entity.pdb
+d:\Descargas y archivos\Documentos\Maquinas virtuales - Oracle Virtual box\Compartido_VirBox\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Repository.pdb
+d:\Descargas y archivos\Documentos\Maquinas virtuales - Oracle Virtual box\Compartido_VirBox\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.csprojAssemblyReference.cache
+d:\Descargas y archivos\Documentos\Maquinas virtuales - Oracle Virtual box\Compartido_VirBox\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.csproj.CoreCompileInputs.cache
+d:\Descargas y archivos\Documentos\Maquinas virtuales - Oracle Virtual box\Compartido_VirBox\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.AssemblyInfoInputs.cache
+d:\Descargas y archivos\Documentos\Maquinas virtuales - Oracle Virtual box\Compartido_VirBox\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.AssemblyInfo.cs
+d:\Descargas y archivos\Documentos\Maquinas virtuales - Oracle Virtual box\Compartido_VirBox\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.csproj.CopyComplete
+d:\Descargas y archivos\Documentos\Maquinas virtuales - Oracle Virtual box\Compartido_VirBox\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.dll
+d:\Descargas y archivos\Documentos\Maquinas virtuales - Oracle Virtual box\Compartido_VirBox\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.pdb
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Service.deps.json
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Service.dll
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Service.pdb
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Entity.dll
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Repository.dll
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Entity.pdb
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Service\bin\Debug\netcoreapp2.2\Repository.pdb
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.csprojAssemblyReference.cache
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.csproj.CoreCompileInputs.cache
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.AssemblyInfoInputs.cache
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.AssemblyInfo.cs
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.csproj.CopyComplete
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.dll
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Service\obj\Debug\netcoreapp2.2\Service.pdb

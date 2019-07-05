@@ -12997,11 +12997,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\SoccerMatch\\SoccerMatch.csproj",
+      "projectUniqueName": "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\SoccerMatch\\SoccerMatch.csproj",
       "projectName": "SoccerMatch",
-      "projectPath": "d:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\SoccerMatch\\SoccerMatch.csproj",
+      "projectPath": "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\SoccerMatch\\SoccerMatch.csproj",
       "packagesPath": "C:\\Users\\Ryzen\\.nuget\\packages\\",
-      "outputPath": "d:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\SoccerMatch\\obj\\",
+      "outputPath": "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\SoccerMatch\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13020,11 +13020,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "d:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Entity\\Entity.csproj": {
-              "projectPath": "d:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Entity\\Entity.csproj"
+            "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Entity\\Entity.csproj": {
+              "projectPath": "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Entity\\Entity.csproj"
             },
-            "d:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Service\\Service.csproj": {
-              "projectPath": "d:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Service\\Service.csproj"
+            "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Service\\Service.csproj": {
+              "projectPath": "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Service\\Service.csproj"
             }
           }
         }
