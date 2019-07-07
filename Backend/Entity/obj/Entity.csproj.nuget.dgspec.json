@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Desktop\\Nueva carpeta\\SoccerMatch\\Backend\\Entity\\Entity.csproj": {}
+    "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Entity\\Entity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Desktop\\Nueva carpeta\\SoccerMatch\\Backend\\Entity\\Entity.csproj": {
+    "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\Nueva carpeta\\SoccerMatch\\Backend\\Entity\\Entity.csproj",
+        "projectUniqueName": "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\Usuario\\Desktop\\Nueva carpeta\\SoccerMatch\\Backend\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Desktop\\Nueva carpeta\\SoccerMatch\\Backend\\Entity\\obj\\",
+        "projectPath": "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\Ryzen\\.nuget\\packages\\",
+        "outputPath": "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ryzen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

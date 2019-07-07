@@ -120,3 +120,24 @@ C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\obj\Debug
 C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.csproj.CopyComplete
 C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.dll
 C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.pdb
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.deps.json
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.runtimeconfig.json
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.runtimeconfig.dev.json
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.dll
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.pdb
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Entity.dll
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Repository.dll
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Service.dll
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Entity.pdb
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Service.pdb
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Repository.pdb
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.csprojAssemblyReference.cache
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.csproj.CoreCompileInputs.cache
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.RazorAssemblyInfo.cache
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.RazorAssemblyInfo.cs
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.AssemblyInfoInputs.cache
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.AssemblyInfo.cs
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.RazorTargetAssemblyInfo.cache
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.csproj.CopyComplete
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.dll
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.pdb
