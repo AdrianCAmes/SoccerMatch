@@ -29,9 +29,6 @@
                   <v-flex xs12 sm12 md12>
                     <v-text-field v-model="tdescripcion" label="Descripcion"></v-text-field>
                   </v-flex>
-                  <v-flex xs12 sm12 md12>
-                    <v-text-field v-model="numParticipantes" label="Numero de participantes"></v-text-field>
-                  </v-flex>
                   <v-flex xs12 sm12 md12 >
                     <v-text-field v-model="dfechaJuego" label="Fecha de Juego"></v-text-field>
                   </v-flex>
@@ -91,7 +88,10 @@ export default {
       editedIndex: -1,
 
       //TODO:Model
-      
+      nequipo: "",
+      tdescripcion:"",
+      dfechaJuego:"",
+      cdistrito:"",      
 
     };
   },
