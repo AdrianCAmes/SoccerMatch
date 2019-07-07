@@ -30,3 +30,9 @@ C:\Users\Usuario\Desktop\Web\SoccerMatch\Entity\obj\Debug\Entity.csprojAssemblyR
 C:\Users\Usuario\Desktop\Web\SoccerMatch\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\Web\SoccerMatch\Entity\obj\Debug\Entity.dll
 C:\Users\Usuario\Desktop\Web\SoccerMatch\Entity\obj\Debug\Entity.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Entity\bin\Debug\Entity.dll
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Entity\bin\Debug\Entity.pdb
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Entity\obj\Debug\Entity.dll
+C:\UPC\2019-I\Aplicaciones Web\TP_SoccerMatch\TP\Entity\obj\Debug\Entity.pdb

@@ -22,6 +22,7 @@ namespace Entity
 
         [Required(ErrorMessage = "Porfavor, seleccione una hora de inicio: ")]
         [DisplayName("Hora de Incio")]
+        [DataType(DataType.Date)]
         public DateTime DHoraInicio { get; set; }
 
         [DisplayName("Horas")]

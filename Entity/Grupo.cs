@@ -25,6 +25,7 @@ namespace Entity
 
         [Required(ErrorMessage = "Porfavor, ingrese una fecha de juego: ")]
         [DisplayName("Fecha de Juego")]
+        [DataType(DataType.Date)]
         public DateTime DFechaJuego { get; set; }
 
         [Required(ErrorMessage = "Porfavor, seleccion un distrito: ")]

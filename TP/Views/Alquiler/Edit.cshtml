@@ -1,7 +1,7 @@
 ﻿@model Entity.Alquiler
 
 @{
-    ViewBag.Title = "Edit Alquiler " + Model.CAlquiler;
+    ViewBag.Title = "Edit Alquiler ";
 }
 
 <h2>Edit</h2>
@@ -14,29 +14,27 @@
     <div class="form-horizontal">
         <h4>Alquiler @Html.DisplayFor(model => model.CAlquiler)</h4>
         <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.CAlquiler)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.CAlquiler)
-            </dd>
-        </dl>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    
+        <div class="form-group">
+            @Html.LabelFor(model => model.CAlquiler, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CAlquiler, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CAlquiler, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    
         <div class="form-group">
             @Html.LabelFor(model => model.CGrupo.NGrupo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-
                 @Html.DropDownListFor(model => model.CGrupo.CGrupo,
-                             new SelectList(ViewBag.grupos, "CGrupo", "NGrupo"), "---Select---", "")
+                                      new SelectList(ViewBag.grupos, "CGrupo", "NGrupo"), "---Select---", "")
                 @Html.ValidationMessageFor(model => model.CGrupo.CGrupo, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.CCancha.NCancha, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-
                 @Html.DropDownListFor(model => model.CCancha.CCancha,
                              new SelectList(ViewBag.canchas, "CCancha", "NCancha"), "---Select---", "")
                 @Html.ValidationMessageFor(model => model.CCancha.CCancha, "", new { @class = "text-danger" })
@@ -49,7 +47,6 @@
                 @Html.ValidationMessageFor(model => model.DHoraInicio, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.NumHoras, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -57,7 +54,6 @@
                 @Html.ValidationMessageFor(model => model.NumHoras, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.MDescuento, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -65,7 +61,6 @@
                 @Html.ValidationMessageFor(model => model.MDescuento, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.MTotal, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -73,7 +68,6 @@
                 @Html.ValidationMessageFor(model => model.MTotal, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.FPagado, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -83,7 +77,6 @@
                 </div>
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />

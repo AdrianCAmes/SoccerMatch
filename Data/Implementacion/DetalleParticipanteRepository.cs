@@ -87,7 +87,7 @@ namespace Data.Implementacion
             {
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["soccermatch"].ToString());
                 con.Open();
-                var cmd = new SqlCommand("select dp.CDetalleParticipante,dp.CAlquiler,dp.CParticipante,dp.MCuota,dp.FPartePagada,dp.NCupos,a.CCancha,a.CEquipo, a.DFechaInicio,a.FPagado,a.MDescuento,a.MTotal,a.NumHoras,p.CParticipante, u.NUsuario from DetalleParticipante dp, Alquiler a, Participante p, Usuario u where dp.CDetalleParticipante = '" + id + "' and dp.CAlquiler = a.CAlquiler and dp.CParticipante = p.CParticipante and p.CJugador = u.CUsuario", con);
+                var cmd = new SqlCommand("select dp.CDetalleParticipante,dp.CAlquiler,dp.CParticipante,dp.MCuota,dp.FPartePagada,dp.NCupos,a.CCancha,a.CEquipo, a.DFechaInicio,a.FPagado,a.MDescuento,a.MTotal,a.NumHoras,p.CParticipante, u.NUsuario, u.CUsuario from DetalleParticipante dp, Alquiler a, Participante p, Usuario u where dp.CDetalleParticipante = '" + id + "' and dp.CAlquiler = a.CAlquiler and dp.CParticipante = p.CParticipante and p.CJugador = u.CUsuario", con);
                 var dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -96,11 +96,15 @@ namespace Data.Implementacion
                     var participante = new Participante();
                     var grupo = new Grupo();
                     var cancha = new Cancha();
+                    var jugador = new Jugador();
                     cancha.CCancha = Convert.ToInt32(dr["CCancha"]);
                     grupo.CGrupo = Convert.ToInt32(dr["CEquipo"]);
                     detalle.CDetalleParticipante = Convert.ToInt32(dr["CDetalleParticipante"]);
                     alquiler.CAlquiler = Convert.ToInt32(dr["CAlquiler"]);
                     participante.CParticipante = Convert.ToInt32(dr["CParticipante"]);
+                    jugador.CUsuario = Convert.ToInt32(dr["CUsuario"]);
+                    jugador.NUsuario = dr["NUsuario"].ToString();
+                    participante.CJugador = jugador;
                     detalle.MCuota = Convert.ToDecimal(dr["MCuota"]);
                     detalle.FPartePagada = Convert.ToBoolean(dr["FPartePagada"]);
                     detalle.NCupos = Convert.ToInt32(dr["NCupos"]);
