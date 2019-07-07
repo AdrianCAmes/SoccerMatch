@@ -21,12 +21,22 @@ namespace Repository.Implementacion
         }
 
         public IEnumerable<Equipo> EquiposRecomendados(int  idUsuario)
-        {   var participante=new List<Participante>();
+        {   
+            var participante=new List<Participante>();
             participante= context.Participante.Where(p=>p.Cjugador==idUsuario).ToList();
+            List<int> ids=new List<int>();
             var equipo=new List<Equipo>();
-            foreach(var par in participante)
-                equipo.Add(context.Equipo.Single(e=>e.Cequipo==par.Cequipo));
-            return equipo;
+            foreach(var part in participante)
+                ids.Add(part.Cequipo);
+            equipo=context.Equipo.Where(e=>!ids.Contains(e.Cequipo)).ToList();
+            return equipo.Select (o => new Equipo {
+                Cequipo=o.Cequipo,
+                    Nequipo = o.Nequipo,
+                    Tdescripcion = o.Tdescripcion,
+                    NumParticipantes = o.NumParticipantes,
+                   DfechaJuego = o.DfechaJuego,
+                    Cdistrito = o.Cdistrito
+            });
         }
 
         public Equipo Get(int id)
@@ -48,6 +58,23 @@ namespace Repository.Implementacion
                 throw;
             }
             return result;
+        }
+
+        public IEnumerable<Equipo> MisEquipos(int idUsuario)
+        {
+            var participante=new List<Participante>();
+            participante= context.Participante.Where(p=>p.Cjugador==idUsuario).ToList();
+            var equipo=new List<Equipo>();
+            foreach(var par in participante)
+                equipo.Add(context.Equipo.Single(e=>e.Cequipo==par.Cequipo));
+                        return equipo.Select (o => new Equipo {
+                Cequipo=o.Cequipo,
+                    Nequipo = o.Nequipo,
+                    Tdescripcion = o.Tdescripcion,
+                    NumParticipantes = o.NumParticipantes,
+                   DfechaJuego = o.DfechaJuego,
+                    Cdistrito = o.Cdistrito
+            });
         }
 
         public bool Save(Equipo entity)

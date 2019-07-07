@@ -2,7 +2,7 @@
  
     <v-flex>
       <v-toolbar flat color="white">
-        <v-toolbar-title>Equipos recomendados</v-toolbar-title>
+        <v-toolbar-title>Mis Equipos</v-toolbar-title>
         <v-divider class="mx-2" inset vertical></v-divider>
         <v-spacer></v-spacer>
         <v-text-field
@@ -108,12 +108,12 @@ export default {
   },
 
   created() {
-    this.setListaEquiposRecomendados();
+    this.setListaMisEquipos();
   },
   methods: {
-    setListaEquiposRecomendados(){
+    setListaMisEquipos(){
   let me =this;    
-  axios.get("api/equipo/recomendados/"+localStorage.getItem("usuario"))//INSERTAR AQUIE EL IDUSUARIO  EN LUGAR DEL 2
+  axios.get("api/equipo/misequipos/"+localStorage.getItem("usuario"))//INSERTAR AQUIE EL IDUSUARIO  EN LUGAR DEL 2
        .then(function(response) {
           console.log(response);
           me.equipos = response.data;

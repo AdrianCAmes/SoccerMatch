@@ -73,7 +73,7 @@ export default {
   Loggin(){ 
 
       if (this.LoginCorrecto()==1){
-        this.$router.push('/equipo');
+        this.$router.push('/equipo/misequipos');
         localStorage.setItem("usuario",this.idUsuario);
       }
       else{ 

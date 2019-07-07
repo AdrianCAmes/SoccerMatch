@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Usuario from './components/Usuario.vue'
 import Register from './components/Register.vue'
 import EquiposRecomendados from './components/EquiposRecomendados.vue'
+import MisEquipos from './components/MisEquipos.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -29,9 +30,14 @@ export default new Router({
       component:Register
     },
     {
-      path:'/equipo',
-      name:'equipo',
+      path:'/equipo/recomendados',
+      name:'equipoRecomendados',
       component:EquiposRecomendados
+    },
+    {
+      path:'/equipo/misequipos',
+      name:'misEquipos',
+      component:MisEquipos
     }
   ]
 })

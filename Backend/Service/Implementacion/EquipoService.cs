@@ -34,6 +34,11 @@ namespace Service.Implementacion
             return equiporepository.GetAll();
         }
 
+        public IEnumerable<Equipo> MisEquipos(int idUsuario)
+        {
+            return equiporepository.MisEquipos(idUsuario);
+        }
+
         public bool Save(Equipo entity)
         {
             return equiporepository.Save(entity);
