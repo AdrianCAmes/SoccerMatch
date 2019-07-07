@@ -75,3 +75,14 @@ D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Ent
 D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfo.cs
 D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.dll
 D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.deps.json
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.json
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.dev.json
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.pdb

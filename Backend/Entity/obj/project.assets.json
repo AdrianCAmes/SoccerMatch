@@ -3614,23 +3614,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ryzen\\.nuget\\packages\\": {},
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Entity\\Entity.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\TF_WEB\\SoccerMatch\\Backend\\Entity\\Entity.csproj",
       "projectName": "Entity",
-      "projectPath": "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Entity\\Entity.csproj",
-      "packagesPath": "C:\\Users\\Ryzen\\.nuget\\packages\\",
-      "outputPath": "D:\\REPOSITORIOS DE GITHUB\\SoccerMatch\\Backend\\Entity\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\Desktop\\TF_WEB\\SoccerMatch\\Backend\\Entity\\Entity.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\Desktop\\TF_WEB\\SoccerMatch\\Backend\\Entity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ryzen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
