@@ -1,0 +1,88 @@
+C:\Users\Administrador\Desktop\SoccerMatch\SoccerMatch\Entity\bin\Debug\netcoreapp2.2\Entity.deps.json
+C:\Users\Administrador\Desktop\SoccerMatch\SoccerMatch\Entity\bin\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Administrador\Desktop\SoccerMatch\SoccerMatch\Entity\obj\Debug\netcoreapp2.2\Entity.csprojAssemblyReference.cache
+C:\Users\Administrador\Desktop\SoccerMatch\SoccerMatch\Entity\obj\Debug\netcoreapp2.2\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Desktop\SoccerMatch\SoccerMatch\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfoInputs.cache
+C:\Users\Administrador\Desktop\SoccerMatch\SoccerMatch\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfo.cs
+C:\Users\Administrador\Desktop\SoccerMatch\SoccerMatch\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.json
+C:\Users\Administrador\Desktop\SoccerMatch\SoccerMatch\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.dev.json
+C:\Users\Administrador\Desktop\SoccerMatch\SoccerMatch\Entity\bin\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Administrador\Desktop\SoccerMatch\SoccerMatch\Entity\obj\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Administrador\Desktop\SoccerMatch\SoccerMatch\Entity\obj\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.deps.json
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.json
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.dev.json
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfoInputs.cache
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfo.cs
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Administrador\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csprojAssemblyReference.cache
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.deps.json
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.json
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.dev.json
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csprojAssemblyReference.cache
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfoInputs.cache
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfo.cs
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Administrador\Documents\TF_Web\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Usuario\Desktop\Nueva carpeta (3)\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.deps.json
+C:\Users\Usuario\Desktop\Nueva carpeta (3)\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.json
+C:\Users\Usuario\Desktop\Nueva carpeta (3)\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.dev.json
+C:\Users\Usuario\Desktop\Nueva carpeta (3)\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Usuario\Desktop\Nueva carpeta (3)\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Usuario\Desktop\Nueva carpeta (3)\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\Nueva carpeta (3)\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Nueva carpeta (3)\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\Nueva carpeta (3)\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\Nueva carpeta (3)\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Usuario\Desktop\Nueva carpeta (3)\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Usuario\Desktop\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.deps.json
+C:\Users\Usuario\Desktop\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.json
+C:\Users\Usuario\Desktop\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.dev.json
+C:\Users\Usuario\Desktop\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Usuario\Desktop\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Usuario\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Usuario\Desktop\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.deps.json
+C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.json
+C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.dev.json
+C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.pdb
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.deps.json
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.json
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.dev.json
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.dll
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.pdb
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csprojAssemblyReference.cache
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csproj.CoreCompileInputs.cache
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfoInputs.cache
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfo.cs
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.dll
+D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.deps.json
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.json
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.runtimeconfig.dev.json
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\bin\Debug\netcoreapp2.2\Entity.pdb
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.dll
+C:\Users\Usuario\Desktop\TF_WEB\SoccerMatch\Backend\Entity\obj\Debug\netcoreapp2.2\Entity.pdb
