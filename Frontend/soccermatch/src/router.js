@@ -33,5 +33,6 @@ export default new Router({
       name:'equipo',
       component:EquiposRecomendados
     }
+  
   ]
 })
