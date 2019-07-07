@@ -99,27 +99,27 @@ C:\Users\Usuario\Desktop\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2
 C:\Users\Usuario\Desktop\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.csproj.CopyComplete
 C:\Users\Usuario\Desktop\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.dll
 C:\Users\Usuario\Desktop\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.pdb
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.deps.json
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.runtimeconfig.json
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.runtimeconfig.dev.json
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.dll
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.pdb
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Entity.dll
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Repository.dll
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Service.dll
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Entity.pdb
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Service.pdb
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Repository.pdb
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.csprojAssemblyReference.cache
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.csproj.CoreCompileInputs.cache
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.RazorAssemblyInfo.cache
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.RazorAssemblyInfo.cs
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.AssemblyInfoInputs.cache
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.AssemblyInfo.cs
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.RazorTargetAssemblyInfo.cache
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.csproj.CopyComplete
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.dll
-C:\Users\Usuario\Desktop\Nueva carpeta\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.pdb
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.deps.json
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.runtimeconfig.json
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.runtimeconfig.dev.json
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.dll
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.pdb
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Entity.dll
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Repository.dll
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Service.dll
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Entity.pdb
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Service.pdb
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\Repository.pdb
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.csprojAssemblyReference.cache
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.csproj.CoreCompileInputs.cache
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.RazorAssemblyInfo.cache
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.RazorAssemblyInfo.cs
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.AssemblyInfoInputs.cache
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.AssemblyInfo.cs
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.RazorTargetAssemblyInfo.cache
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.csproj.CopyComplete
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.dll
+f:\OneDrive\OneDrive - Universidad Peruana de Ciencias\UPC\Aplicaciones Web\COPIAS DE SEGURIDAD_TF_WEB\SoccerMatch\Backend\SoccerMatch\obj\Debug\netcoreapp2.2\SoccerMatch.pdb
 D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.deps.json
 D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.runtimeconfig.json
 D:\REPOSITORIOS DE GITHUB\SoccerMatch\Backend\SoccerMatch\bin\Debug\netcoreapp2.2\SoccerMatch.runtimeconfig.dev.json

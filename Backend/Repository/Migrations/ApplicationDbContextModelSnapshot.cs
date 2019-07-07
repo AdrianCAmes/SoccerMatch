@@ -324,6 +324,8 @@ namespace Repository.Migrations
                         .HasColumnName("CUsuario")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("Cdistrito");
+
                     b.Property<long>("Cdni")
                         .HasColumnName("CDNI");
 

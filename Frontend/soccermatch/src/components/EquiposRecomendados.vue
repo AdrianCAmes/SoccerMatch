@@ -50,17 +50,21 @@
         </v-dialog>
       </v-toolbar>
 
-      <v-data-table :headers="headers" :items="equipos" :search="search" class="elevation-1">
+      <v-data-table :headers="headers" :items="equiposRecomendados" :search="search" class="elevation-1">
         <template slot="items" slot-scope="props">
           <td class="justify-center layout px-0">
             <v-icon small class="mr-2" @click="editItem(props.item)">edit</v-icon>
-          
+          <!--   public int idEquipo{get;set;}
+        public string NombreEquipo { get; set; }
+        public string NombreDistrito { get; set; }
+        public int  CantidadVacantes { get; set; }
+        public DateTime fechaJuego { get; set; }-->
           </td>
-          <td>{{ props.item.nequipo }}</td>
-          <td>{{ props.item.tdescripcion }}</td>
-          <td>{{ props.item.numParticipantes }}</td>
-          <td>{{ props.item.dfechaJuego }}</td>
-          <td>{{ props.item.cdistrito }}</td >            
+          <td>{{ props.item.idEquipo }}</td>
+          <td>{{ props.item.nombreEquipo }}</td>
+          <td>{{ props.item.nombreDistrito }}</td>
+          <td>{{ props.item.cantidadVacantes }}</td>
+          <td>{{ props.item.fechaJuego }}</td >            
         </template>
 
         <template slot="no-data">
@@ -77,6 +81,7 @@ export default {
   data() {
     return {
       equipos: [],
+      equiposRecomendados: [],
       dialog: false,
       headers: [    
         { text: "Opciones", value: "opciones", sortable: false },
@@ -91,7 +96,12 @@ export default {
       editedIndex: -1,
 
       //TODO:Model
-      
+       cequipo:'',
+       tdescripcion:'',
+       cdistrito:'',
+        nequipo:'',
+       numParticipantes:'',
+       dfechaJuego:'',
 
     };
   },
@@ -109,9 +119,23 @@ export default {
 
   created() {
       this.listar();
-
+      this.setListaEquiposRecomendados();
   },
   methods: {
+setListaEquiposRecomendados(){
+  let me =this;    
+axios.get("api/equipo/"+'2')//INSERTAR AQUIE EL IDUSUARIO  EN LUGAR DEL 2
+       .then(function(response) {
+          console.log(response);
+          me.equiposRecomendados = response.data;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+
+        
+
+},
     listar() {
       let me = this;
       axios
@@ -125,7 +149,7 @@ export default {
         });
     },
     editItem(item) {
-      this.cequipo = item.cequipo;
+     /* this.cequipo = item.cequipo;
       this.tdescripcion = item.tdescripcion;
       this.nequipo = item.nequipo;
       this.numParticipantes = item.numParticipantes;
@@ -133,7 +157,7 @@ export default {
       this.cdistrito = item.cdistrito;
 
       this.editedIndex = 1;
-      this.dialog = true;
+      this.dialog = true;*/
     },
     close() {
       this.dialog = false;
@@ -146,6 +170,8 @@ export default {
       this.numParticipantes = "";
       this.dfechaJuego = "";
     },
+
+    
    guardar() {
       if (this.editedIndex > -1) {
         //Código para editar

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Entity;
 using Repository;
+using Repository.ViewModel;
+
 namespace Service.Implementacion
 {
     public class EquipoService : IEquipoService
@@ -15,6 +17,11 @@ namespace Service.Implementacion
         public bool Delete(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<EquiposRecomendadosViewModel> EquiposRecomendados(int idUsuario)
+        {
+            return equiporepository.EquiposRecomendados(idUsuario);
         }
 
         public Equipo Get(int id)

@@ -28,6 +28,14 @@ namespace SoccerMatch.Controllers
             );
         }
 
+        [HttpGet("{idUsuario}")]
+        public ActionResult EquiposRecomendados(int idUsuario)
+        {
+            
+            return Ok(
+                EquipoService.EquiposRecomendados(idUsuario)
+            );
+        }
         [HttpPost]
         public ActionResult Post([FromBody] Equipo Equipo)
         {
@@ -51,6 +59,7 @@ namespace SoccerMatch.Controllers
                 EquipoService.Delete(id)
             );
         }
+
 
     }
 }
