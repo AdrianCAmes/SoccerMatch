@@ -14,7 +14,7 @@ namespace Entity
         public int Cjugador { get; set; }
         public int Cequipo { get; set; }
         public bool FesAdministrador { get; set; }
-
+        public DateTime DfechaUnion{get;set;}
         public virtual Equipo CequipoNavigation { get; set; }
         public virtual Jugador CjugadorNavigation { get; set; }
         public virtual ICollection<DetalleParticipante> DetalleParticipante { get; set; }

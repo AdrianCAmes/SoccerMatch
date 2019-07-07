@@ -36,7 +36,8 @@ namespace SoccerMatch
 
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IUsuarioService, UsuarioService>();
-
+            services.AddTransient<IEquipoRepository, EquipoRepository>();
+            services.AddTransient<IEquipoService, EquipoService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 

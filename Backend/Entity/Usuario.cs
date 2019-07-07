@@ -11,7 +11,6 @@ namespace Entity
         public long NumTelefono { get; set; }
         public string Usuario1 { get; set; }
         public string Pswd { get; set; }
-        public byte[] ImgFoto { get; set; }
 
         public virtual Jugador Jugador { get; set; }
         public virtual Propietario Propietario { get; set; }

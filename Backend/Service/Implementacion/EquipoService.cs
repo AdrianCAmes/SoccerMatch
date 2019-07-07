@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Entity;
 using Repository;
-using Repository.Implementacion;
-
 namespace Service.Implementacion
 {
     public class EquipoService : IEquipoService
     {
+        private IEquipoRepository equiporepository;
+        public EquipoService(IEquipoRepository equiporepository)
+        {
+            this.equiporepository = equiporepository;
+        }
         public bool Delete(int id)
         {
             throw new NotImplementedException();
@@ -23,12 +24,12 @@ namespace Service.Implementacion
 
         public IEnumerable<Equipo> GetAll()
         {
-            throw new NotImplementedException();
+            return equiporepository.GetAll();
         }
 
         public bool Save(Equipo entity)
         {
-            throw new NotImplementedException();
+            return equiporepository.Save(entity);
         }
 
         public bool Update(Equipo entity)

@@ -14,6 +14,7 @@ namespace Entity
         public int Cequipo { get; set; }
         public int Ccancha { get; set; }
         public DateTime DfechaInicio { get; set; }
+        public DateTime DfechaRegistro{get;set;}
         public int NumHoras { get; set; }
         public decimal Mdescuento { get; set; }
         public decimal Mtotal { get; set; }

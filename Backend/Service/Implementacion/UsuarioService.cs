@@ -15,7 +15,6 @@ namespace Service.Implementacion
         {
             this.UsuarioRepository = UsuarioRepository;
         }
-
         public bool Delete(int id)
         {
             return UsuarioRepository.Delete(id);

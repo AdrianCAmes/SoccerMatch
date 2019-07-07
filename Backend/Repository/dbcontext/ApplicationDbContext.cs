@@ -32,7 +32,7 @@ namespace Repository.dbcontext
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Repository Source=localhost;Initial Catalog=SoccerMatch;Persist Security Info=True;User ID=sa;Password=sa");
             }
         }
@@ -55,7 +55,9 @@ namespace Repository.dbcontext
                 entity.Property(e => e.DfechaInicio)
                     .HasColumnName("DFechaInicio")
                     .HasColumnType("datetime");
-
+                entity.Property(e=>e.DfechaRegistro)
+                .HasColumnName("DFechaRegistro")
+                .HasColumnType("datetime");
                 entity.Property(e => e.Fpagado).HasColumnName("FPagado");
 
                 entity.Property(e => e.Mdescuento)
@@ -108,10 +110,6 @@ namespace Repository.dbcontext
                 entity.Property(e => e.Ccalle).HasColumnName("CCalle");
 
                 entity.Property(e => e.Cpropietario).HasColumnName("CPropietario");
-
-                entity.Property(e => e.ImgFoto1).HasColumnType("image");
-
-                entity.Property(e => e.ImgFoto2).HasColumnType("image");
 
                 entity.Property(e => e.MprecioHora)
                     .HasColumnName("MPrecioHora")
@@ -238,7 +236,6 @@ namespace Repository.dbcontext
                     .HasColumnName("DFechaJuego")
                     .HasColumnType("date");
 
-                entity.Property(e => e.ImgFoto).HasColumnType("image");
 
                 entity.Property(e => e.Nequipo)
                     .IsRequired()
@@ -290,7 +287,7 @@ namespace Repository.dbcontext
                 entity.Property(e => e.Cjugador).HasColumnName("CJugador");
 
                 entity.Property(e => e.FesAdministrador).HasColumnName("FEsAdministrador");
-
+                entity.Property(e=>e.DfechaUnion).HasColumnName("DFechaUnion").HasColumnType("datetime");
                 entity.HasOne(d => d.CequipoNavigation)
                     .WithMany(p => p.Participante)
                     .HasForeignKey(d => d.Cequipo)
@@ -328,7 +325,6 @@ namespace Repository.dbcontext
 
                 entity.Property(e => e.Cdni).HasColumnName("CDNI");
 
-                entity.Property(e => e.ImgFoto).HasColumnType("image");
 
                 entity.Property(e => e.Nusuario)
                     .IsRequired()

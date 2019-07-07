@@ -17,7 +17,6 @@ namespace Entity
         public int NumParticipantes { get; set; }
         public DateTime DfechaJuego { get; set; }
         public int Cdistrito { get; set; }
-        public byte[] ImgFoto { get; set; }
 
         public virtual Distrito CdistritoNavigation { get; set; }
         public virtual ICollection<Alquiler> Alquiler { get; set; }

@@ -77,7 +77,6 @@ namespace Repository.Implementacion
 
                 UsuarioOriginal.Cusuario = entity.Cusuario;
                 UsuarioOriginal.Nusuario = entity.Nusuario;
-                UsuarioOriginal.ImgFoto = entity.ImgFoto;
                 UsuarioOriginal.NumTelefono = entity.NumTelefono;
                 UsuarioOriginal.Propietario = entity.Propietario;
                 UsuarioOriginal.Pswd = entity.Pswd;

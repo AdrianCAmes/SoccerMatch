@@ -16,8 +16,6 @@ namespace Entity
         public string Ncancha { get; set; }
         public string Tdireccion { get; set; }
         public decimal MprecioHora { get; set; }
-        public byte[] ImgFoto1 { get; set; }
-        public byte[] ImgFoto2 { get; set; }
 
         public virtual Calle CcalleNavigation { get; set; }
         public virtual Propietario CpropietarioNavigation { get; set; }
