@@ -81,6 +81,7 @@
 </template>
 <script>
 import axios from "axios";
+import router from "vue-router";
 export default {
   data() {
     return {
@@ -201,7 +202,9 @@ export default {
           })
           .catch(function(error) {
             console.log(error);
-          });}
+          });
+            this.$router.push('/usuarios');
+          }
       }
     }
   }
