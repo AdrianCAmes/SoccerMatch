@@ -40,6 +40,8 @@ namespace SoccerMatch
             services.AddTransient<IEquipoService, EquipoService>();
             services.AddTransient<IJugadorRepository,JugadorRepository>();
             services.AddTransient<IJugadorService,JugadorService>();
+            services.AddTransient<IDistritoRepository, DistritoRepository>();
+            services.AddTransient<IDistritoService, DistritoService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddCors(options =>

@@ -8,5 +8,6 @@ namespace Repository
 {
     public interface IDistritoRepository : ICrudRepository<Distrito>
     {
+        IEnumerable<string> GetAllNames();
     }
 }

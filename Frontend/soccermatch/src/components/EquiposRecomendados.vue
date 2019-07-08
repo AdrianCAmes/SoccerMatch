@@ -53,8 +53,12 @@
                     </v-menu>
                   </v-flex>
                   <v-flex xs12 sm12 md12>
-                    <v-text-field v-model="cdistrito" label="Distrito" ></v-text-field>
-                  </v-flex>       
+                    <v-combobox
+                      v-model="ndistrito"
+                      :items="distritos"
+                      label="Distritos"
+                    ></v-combobox>
+                  </v-flex>      
               </v-container>
             </v-card-text>
 
@@ -120,7 +124,7 @@ export default {
       nequipo :  '',
       numParticipantes :  '',
       dfechaJuego :  '',
-      cdistrito : '',
+      ndistrito: '',
 
       distritos: [],
       
@@ -144,6 +148,7 @@ export default {
 
   created() {
     this.setListaEquiposRecomendados();
+    this.setListaDistritos();
   },
   methods: {
     setListaEquiposRecomendados(){
@@ -151,11 +156,20 @@ export default {
         axios.get("api/equipo/recomendados/"+localStorage.getItem("usuario"))//INSERTAR AQUIE EL IDUSUARIO  EN LUGAR DEL 2
        .then(function(response) {
           me.equipos = response.data;
-          console.log(response);
         })
         .catch(function(error) {
           console.log(error);
         });
+    },
+    setListaDistritos() {
+      let me = this;
+      axios.get("api/distrito/names")
+      .then(function(response) {
+        me.distritos = response.data;
+      }) 
+      .catch(function(error) {
+        console.log(error);
+      });
     },
     listar() {
       let me = this;
@@ -195,11 +209,12 @@ export default {
         //Código para editar
 
         let me = this;
+
         axios 
           .put("api/equipo", {
             cequipo: me.cequipo,
             tdescripcion: me.tdescripcion,
-            cdistrito: me.cdistrito,
+            ndistrito: me.ndistrito,
             nequipo: me.nequipo,
             numParticipantes: me.numParticipantes,
             dfechaJuego: me.dfechaJuego
@@ -213,15 +228,18 @@ export default {
             console.log(error);
           });
       } else {
+
         //Código para guardar
         let me = this;
+
+        
         axios
           .post("api/equipo", {
-           tdescripcion: me.tdescripcion,
-            cdistrito: me.cdistrito,
-            nequipo: me.nequipo,
-            numParticipantes: me.numParticipantes,
-            dfechaJuego: me.dfechaJuego
+            Tdescripcion: me.tdescripcion,
+            Nequipo: me.nequipo,
+            ndistrito: me.ndistrito,
+            numParticipantes: 1,
+            DfechaJuego: me.dfechaJuego
           })
           .then(function(response) {
             me.close();

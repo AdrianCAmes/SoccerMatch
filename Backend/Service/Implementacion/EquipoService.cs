@@ -34,6 +34,11 @@ namespace Service.Implementacion
             return equiporepository.GetAll();
         }
 
+        public bool Guardar(EquiposRecomendadosViewModel entity)
+        {
+            return equiporepository.Guardar(entity);
+        }
+
         public IEnumerable<EquiposRecomendadosViewModel> MisEquipos(int idUsuario)
         {
             return equiporepository.MisEquipos(idUsuario);

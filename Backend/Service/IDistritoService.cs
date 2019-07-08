@@ -9,5 +9,6 @@ namespace Service
 {
     public interface IDistritoService : ICrudService<Distrito>
     {
+        IEnumerable<string> GetAllNames();
     }
 }

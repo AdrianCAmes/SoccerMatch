@@ -21,7 +21,7 @@
            
             <v-list-tile :to="{ name: 'equipoRecomendados'}">
               <v-list-tile-action>
-                <v-icon>supervisor_account</v-icon>
+                <v-icon large color="teal darken-2">supervisor_account</v-icon>
               </v-list-tile-action>
               
               <v-list-tile-content>
@@ -33,7 +33,7 @@
 
             <v-list-tile :to="{ name: 'misEquipos'}">
               <v-list-tile-action>
-                <v-icon>group</v-icon>
+                <v-icon large color="teal darken-2">group</v-icon>
               </v-list-tile-action>
               
               <v-list-tile-content>
@@ -49,7 +49,7 @@
         <template>
           <v-list-tile :to="{name:'home'}">
             <v-list-tile-action>
-              <v-icon>keyboard_backspace</v-icon>
+              <v-icon large color="blue-grey darken-2">keyboard_backspace</v-icon>
             </v-list-tile-action>
 
             <v-list-tile-title>
