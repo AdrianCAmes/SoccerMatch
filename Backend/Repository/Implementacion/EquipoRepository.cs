@@ -66,6 +66,7 @@ namespace Repository.Implementacion
                     Cequipo = e.Cequipo,
                     Nequipo = e.Nequipo,
                     Tdescripcion = e.Tdescripcion,
+                    NumParticipantes = e.NumParticipantes,
                     DfechaJuego = e.DfechaJuego,
                 });
             }

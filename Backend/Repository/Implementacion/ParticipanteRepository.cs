@@ -42,9 +42,6 @@ namespace Repository.Implementacion
             try {
                 context.Participante.Add(participante);
                 context.SaveChanges();
-                var equipo = context.Equipo.FirstOrDefault(x=>x.Cequipo == entity.Cequipo);
-                context.Equipo.Update(equipo);
-                context.SaveChanges();
             }
             catch (System.Exception) {
                 return false;
