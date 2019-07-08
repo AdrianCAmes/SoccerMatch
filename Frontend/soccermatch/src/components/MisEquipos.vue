@@ -44,7 +44,7 @@
                        <td>{{ props.item.numhoras }}</td>
                         <td>  
                <v-flex xs12 sm2 md2 lg2 xl2>
-                      <v-btn @click="mostrarDetallesEquipo(props.item)" small fab dark color="teal">
+                      <v-btn @click="pagarAlquiler(props.item)" small fab dark color="teal">
                         <v-icon dark>money</v-icon>
                     </v-btn>
                 </v-flex>       
@@ -223,6 +223,20 @@ export default {
     this.setListaDistritos();
   },
   methods: {
+    validarFecha(){
+         let me =this;    
+      axios.get("api/equipo/misequipos/"+localStorage.getItem("usuario"))//INSERTAR AQUIE EL IDUSUARIO  EN LUGAR DEL 2
+          .then(function(response) {
+              me.equipos = response.data;
+            })
+            .catch(function(error) {
+              console.log(error);
+            });
+    },
+    pagarAlquiler(){
+      
+     },
+
     AlquilarFuncion(){
        tempNumParticipantes
     },
