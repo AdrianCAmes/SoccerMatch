@@ -183,7 +183,7 @@ export default {
       menu: false,
 
       distritos: [],
-      
+      cdistrito:'',
 
       //para la vista detalleEquipo
       verDetalleEquipo:0,
