@@ -208,7 +208,7 @@ export default {
           })
           .then(function(response) {
             me.close();
-            me.listar();
+            me.setListaMisEquipos();
             me.limpiar();
           })
           .catch(function(error) {
@@ -240,7 +240,7 @@ export default {
           })
           .then(function(response) {
             me.close();
-            me.listar();
+            me.setListaMisEquipos();
             me.limpiar();
           })
           .catch(function(error) {
