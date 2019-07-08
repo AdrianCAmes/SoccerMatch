@@ -63,12 +63,18 @@ namespace Repository.Implementacion
             List<EquiposRecomendadosViewModel> equipoVM = new List<EquiposRecomendadosViewModel>();
             foreach(var e in equipo)
             {
-                equipoVM.Add(new EquiposRecomendadosViewModel{
-                    Cequipo = e.Cequipo,
-                    Nequipo = e.Nequipo,
-                    Tdescripcion = e.Tdescripcion,
-                    DfechaJuego = e.DfechaJuego,
-                });
+                var temporal = GetAllParticipantes(e.Cequipo).Count();
+                if(temporal < e.NumParticipantes)
+                {
+                    equipoVM.Add(new EquiposRecomendadosViewModel{
+                        Cequipo = e.Cequipo,
+                        Nequipo = e.Nequipo,
+                        Tdescripcion = e.Tdescripcion,
+                        NumParticipantes = e.NumParticipantes,
+                        NumParticipantesActual = temporal,
+                        DfechaJuego = e.DfechaJuego,
+                    });
+                }
             }
             for(var i = 0; i < equipoVM.Count(); i++)
             {
@@ -155,11 +161,13 @@ namespace Repository.Implementacion
             List<EquiposRecomendadosViewModel> equipoVM = new List<EquiposRecomendadosViewModel>();
             foreach(var e in equipo)
             {
+                var temporal = GetAllParticipantes(e.Cequipo).Count();
                 equipoVM.Add(new EquiposRecomendadosViewModel{
                     Cequipo = e.Cequipo,
                     Nequipo = e.Nequipo,
                     Tdescripcion = e.Tdescripcion,
                     NumParticipantes = e.NumParticipantes,
+                    NumParticipantesActual = temporal,
                     DfechaJuego = e.DfechaJuego,
                 });
             }
