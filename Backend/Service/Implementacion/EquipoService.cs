@@ -19,6 +19,11 @@ namespace Service.Implementacion
             throw new NotImplementedException();
         }
 
+        public IEnumerable<DetalleEquipoViewModel> DetalleEquipo(int idEquipo)
+        {
+            return equiporepository.DetalleEquipo(idEquipo);
+        }
+
         public IEnumerable<Equipo> EquiposRecomendados(int idUsuario)
         {
             return equiporepository.EquiposRecomendados(idUsuario);

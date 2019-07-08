@@ -2,7 +2,7 @@
  
     <v-flex>
       <v-toolbar flat color="white">
-        <v-toolbar-title>Equipos recomendados</v-toolbar-title>
+        <v-toolbar-title>Equipos recomendados {{idEquipo}}</v-toolbar-title>
         <v-divider class="mx-2" inset vertical></v-divider>
         <v-spacer></v-spacer>
         <v-text-field
@@ -46,39 +46,31 @@
           </v-card>
         </v-dialog>
       </v-toolbar>
+<!-------------------------------------------------------------------------------------------------------------------------------------->
 
-       <v-dialog v-model="verDetalleEquipo" max-width="500px">
-          <v-btn slot="activator" color="primary" dark class="mb-2">Nuevo</v-btn>
-          <v-card>
-            <v-card-title>
-              <span class="headline">{{ formTitle }}</span>
-            </v-card-title>
-
+       <v-dialog v-model="verDetalleEquipo" max-width="800px">        
+          <v-card>           
             <v-card-text>
-              <v-container grid-list-md>               
-                  <v-flex xs12 sm12 md12>
-                    <v-text-field v-model="nequipo" label="Nombre"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm12 md12>
-                    <v-text-field v-model="tdescripcion" label="Descripcion"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm12 md12 >
-                    <v-text-field v-model="dfechaJuego" label="Fecha de Juego"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm12 md12>
-                    <v-text-field v-model="cdistrito" label="Distrito" ></v-text-field>
-                  </v-flex>               
-              </v-container>
+                    
+                  <v-data-table :headers="cabeceraDetalleEquipo" :items="lstaParticipantes" :search="search" class="elevation-1">
+                      <template slot="items" slot-scope="props">        
+                       <td>{{ props.item.nombreUsuario }}</td>
+                       <td>{{ props.item.userUsuario }}</td>
+                       <td>{{ props.item.numeroContacto }}</td>
+                       </template>        
+                   </v-data-table>      
+           
             </v-card-text>
 
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" flat @click.native="close">Cancelar</v-btn>
-              <v-btn color="blue darken-1" flat @click.native="guardar">Guardar</v-btn>
+              <v-btn color="blue darken-1" flat @click.native="ocultarDetallesEquipo">Atras</v-btn>
+              <!--v-btn color="blue darken-1" flat @click.native="guardar">Guardar</v-btn -->
             </v-card-actions>
+
           </v-card>
         </v-dialog>
-
+<!-------------------------------------------------------------------------------------------------------------------------------------->
       <v-data-table :headers="headers" :items="equipos" :search="search" class="elevation-1">
         <template slot="items" slot-scope="props">
           <td class="justify-center layout px-0">
@@ -91,7 +83,7 @@
           <td>{{ props.item.cdistrito }}</td >   
             <td>  
                <v-flex xs12 sm2 md2 lg2 xl2>
-                      <v-btn @click="mostrarDetallesEquipo()" small fab dark color="teal">
+                      <v-btn @click="mostrarDetallesEquipo(props.item)" small fab dark color="teal">
                         <v-icon dark>list</v-icon>
                     </v-btn>
                 </v-flex>       
@@ -123,6 +115,13 @@ export default {
         { text: "VerDetalle", value: "detalle"}
         
       ],
+        cabeceraDetalleEquipo: [    
+        { text: "Nombre Jugador", value: "njugador", sortable: false },
+        { text: "Usuario", value: "usuario", sortable: false },     
+        { text: "Numero de Contacto", value: "numContacto", sortable: false },  
+       
+        
+      ],
       search: "",
       editedIndex: -1,
 
@@ -135,8 +134,10 @@ export default {
       cdistrito : '',
       
 
-      //para la vista
-      verDetalleEquipo:'',
+      //para la vista detalleEquipo
+      verDetalleEquipo:0,
+      lstaParticipantes:[],
+      idEquipo:'',
     };
   },
   computed: {
@@ -152,7 +153,7 @@ export default {
   },
 
   created() {
-    this.setListaEquiposRecomendados();
+    this.setListaEquiposRecomendados();    
   },
   methods: {
     setListaEquiposRecomendados(){
@@ -243,8 +244,24 @@ export default {
           });
       }
     },
-    mostrarDetallesEquipo(){
+    setearParticipantes(){
+         let me = this;
+      axios
+      //http://localhost:5001/api/equipo/equipodetalle/3
+        .get("/api/equipo/equipodetalle/"+me.idEquipo)
+        .then(function(response) {
+          console.log(response);
+          me.lstaParticipantes = response.data;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+
+    mostrarDetallesEquipo(data =[]){
      this.verDetalleEquipo=1;
+     this.idEquipo=data["cequipo"];
+     this.setearParticipantes();
     },
     ocultarDetallesEquipo(){
 this.verDetalleEquipo=0;

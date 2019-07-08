@@ -10,5 +10,6 @@ namespace Service
     {
         IEnumerable<Equipo> EquiposRecomendados(int idUsuario);
         IEnumerable<Equipo> MisEquipos(int idUsuario);
+        IEnumerable<DetalleEquipoViewModel> DetalleEquipo(int idEquipo);
     }
 }

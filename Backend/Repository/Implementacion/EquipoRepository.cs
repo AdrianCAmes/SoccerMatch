@@ -5,6 +5,7 @@ using Entity;
 using Repository.dbcontext;
 using System.Linq;
 using Repository.ViewModel;
+using Microsoft.EntityFrameworkCore;
 
 namespace Repository.Implementacion
 {
@@ -18,6 +19,28 @@ namespace Repository.Implementacion
         public bool Delete(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<DetalleEquipoViewModel> DetalleEquipo(int idEquipo)
+        {
+            var jugadoresDelEquipo = (from p in context.Participante
+                                where p.Cequipo == idEquipo
+                                select p.Cjugador
+                                );
+            var lstaJugadores = new List<Jugador>();
+            var lstaDetalleEquipo = new List<DetalleEquipoViewModel>();
+            foreach(var item in jugadoresDelEquipo)
+            {
+                var objJugador = context.Jugador.Include(o =>o.CjugadorNavigation).Single(obj => obj.Cjugador == item);
+                lstaDetalleEquipo.Add(new DetalleEquipoViewModel()
+                {
+                    nombreUsuario = objJugador.CjugadorNavigation.Nusuario,
+                    numeroContacto = objJugador.CjugadorNavigation.NumTelefono,
+                    userUsuario = objJugador.CjugadorNavigation.Usuario1
+                });
+            }
+            return lstaDetalleEquipo;
+
         }
 
         public IEnumerable<Equipo> EquiposRecomendados(int  idUsuario)
