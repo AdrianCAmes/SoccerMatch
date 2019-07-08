@@ -1,84 +1,71 @@
 <template>
-  <v-form v-model="valid">
-    <v-container grid-list-xl text-xs-center>
-      <v-layout column>
-        <v-flex xs12 md4 offset-xs8>
+  <v-layout justify-center>
+    <v-flex xs12 sm10 md8 lg6>
+      <v-card ref="form">
+        <v-card-text>
           <v-text-field
             v-model="nusuario"
-            :counter="10"
             label="Nombre"
             required
           ></v-text-field>
-        </v-flex>
-                <v-flex xs12 md4 offset-xs8>
-          <v-text-field
+                    <v-text-field
             v-model="direccion"
-            :counter="10"
             label="Direccion"
             required
           ></v-text-field>
-        </v-flex>
-        <v-flex
-          xs12
-          md4
-          offset-xs8
-        >
           <v-text-field
             v-model="usuario1"
-            :counter="10"
             label="Usuario"
             required
           ></v-text-field>
-        </v-flex>
-
-        <v-flex
-          xs12
-          md4
-          offset-xs8
-        >
           <v-text-field
             v-model="pswd"
             label="Contraseña"
             required
           ></v-text-field>
-        </v-flex>
-                <v-flex
-          xs12
-          md4
-          offset-xs8
-        >
           <v-text-field
             v-model="cpswd"
             label="Confirmar contraseña"
             required
           ></v-text-field>
-        </v-flex>
-                <v-flex
-          xs12
-          md4
-          offset-xs8
-        >
-          <v-text-field
+            <v-text-field
             v-model="cdni"
             label="DNI"
             required
           ></v-text-field>
-        </v-flex>
-                <v-flex
-          xs12
-          md4
-          offset-xs8
-        >
           <v-text-field
             v-model="numTelefono"
             label="Telefono"
             required
           ></v-text-field>
-          <v-btn   @click="guardar()" slot="activator" color="primary" dark class="mb-2">Registrarse</v-btn>    
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-form>
+        </v-card-text>
+        <v-divider class="mt-5"></v-divider>
+        <v-card-actions>
+          <v-btn flat>Cancel</v-btn>
+          <v-spacer></v-spacer>
+          <v-slide-x-reverse-transition>
+            <v-tooltip
+              v-if="formHasErrors"
+              left
+            >
+              <template v-slot:activator="{ on }">
+                <v-btn
+                  icon
+                  class="my-0"
+                  @click="resetForm"  
+                  v-on="on"
+                >
+                  <v-icon>refresh</v-icon>
+                </v-btn>
+              </template>
+              <span>Refresh form</span>
+            </v-tooltip>
+          </v-slide-x-reverse-transition>
+         <v-btn   @click="guardar()" slot="activator" color="primary" dark class="mb-2">Registrarse</v-btn> 
+        </v-card-actions>
+      </v-card>
+    </v-flex>
+  </v-layout>
 </template>
 <script>
 import axios from "axios";

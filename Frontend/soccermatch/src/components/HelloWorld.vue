@@ -10,12 +10,22 @@
           <h1>¡Bienvenido a SoccerMatch!</h1>    
           </v-toolbar>
 
-          <v-flex xs12 sm12 md12>
+          <v-flex xs12 sm6> 
               <v-text-field v-model="loginUsuario" label="Usuario"></v-text-field>
           </v-flex>
 
-      
-              <v-text-field v-model="contraseña" label="Contraseña">Contraseña </v-text-field>
+        <v-flex xs12 sm6>
+          <v-text-field v-model="contraseña"
+            :append-icon="show2 ? 'visibility' : 'visibility_off'"
+            :type="show2 ? 'text' : 'password'"
+            name="input-10-2"
+            label="Contraseña"
+            value="wqfasds"
+            class="input-group--focused"
+            @click:append="show2 = !show2"
+          ></v-text-field>
+        </v-flex>
+             <!-- <v-text-field v-model="contraseña" label="Contraseña">Contraseña </v-text-field>-->
 
               <v-btn   @click="Loggin()" slot="activator" color="primary" dark class="mb-2">Login</v-btn>    
             <v-btn   @click="Register()" slot="activator" color="primary" dark class="mb-2">Register</v-btn>
@@ -34,6 +44,8 @@ export default {
   name: 'App',
   data () {
     return {
+        show2: false,
+        password: 'Password',
     lstaUsuarios:[],
     loginUsuario:'',
     contraseña:'',
@@ -59,7 +71,6 @@ export default {
           console.log(error);
         });
   },
-
   LoginCorrecto(){      
             var correcto = 0;
             for (var i = 0; i < this.lstaUsuarios.length; i++) {
