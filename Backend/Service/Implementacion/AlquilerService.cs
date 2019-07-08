@@ -45,7 +45,12 @@ namespace Service.Implementacion
 
         public bool Save(Alquiler entity)
         {
-            throw new NotImplementedException();
+            return alquilerRepository.Save(entity);
+        }
+
+        public bool Guardar(AlquilerInsertarViewModel entity)
+        {
+            return alquilerRepository.Guardar(entity);
         }
 
         public bool Update(Alquiler entity)

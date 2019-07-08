@@ -11,5 +11,7 @@ namespace Service
     public interface IAlquilerService : ICrudService<Alquiler>
     {
         IEnumerable<AlquilerDetalleXEquipo> AlquilerDetalle(int idEquipo);
+        bool Guardar(AlquilerInsertarViewModel entity);
+
     }
 }

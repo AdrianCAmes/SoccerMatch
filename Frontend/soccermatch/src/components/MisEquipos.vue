@@ -48,7 +48,7 @@
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="blue darken-1" flat @click.native="ocultarDetallesEquipo">Atras</v-btn>
-              <!--v-btn color="blue darken-1" flat @click.native="guardar">Guardar</v-btn -->
+              <v-btn color="blue darken-1" flat @click.native="setMostrarFrmAlquilerTrue">Nuevo Alquiler</v-btn>
             </v-card-actions>
 
           </v-card>
@@ -56,7 +56,7 @@
 
         <!------------------------------------------------------------------------------------------------------>
         <v-dialog v-model="dialog" max-width="500px">
-          <v-btn slot="activator" color="primary" dark class="mb-2">Nuevo</v-btn>
+          <v-btn slot="activator" color="primary" dark class="mb-2" v-if="mostrarFrmAlquiler == false">Nuevo</v-btn>
           <v-card>
             <v-card-title>
               <span class="headline">{{ formTitle }}</span>
@@ -115,7 +115,7 @@
         </v-dialog>
       </v-toolbar>
 
-      <v-data-table :headers="headers" :items="equipos" :search="search" class="elevation-1">
+      <v-data-table :headers="headers" :items="equipos" :search="search" class="elevation-1" v-if="mostrarFrmAlquiler == false">
         <template slot="items" slot-scope="props">
           <td class="justify-center layout px-0">
             <v-icon small class="mr-2" @click="editItem(props.item)">edit</v-icon>
@@ -138,6 +138,89 @@
           <v-btn color="primary" @click="listar">Resetear</v-btn>
         </template>
       </v-data-table>
+      
+        <v-container grid-list-sm class="pa-4 white" v-if="mostrarFrmAlquiler == true">
+          
+              <span class="headline">Nuevo Alquiler</span>
+                <v-flex>
+                  <td>Código de Equipo: {{this.alquilerEquipo}}</td>
+                </v-flex>
+                <v-layout row wrap>
+                <v-flex>
+                    <v-menu
+                      v-model="menu2"
+                      :close-on-content-click="false"
+                      :nudge-right="40"
+                      lazy
+                      transition="scale-transition"
+                      offset-y
+                      full-width
+                      min-width="290px"
+                    >
+                      <template v-slot:activator="{ on }">
+                        <v-text-field
+                          v-model="alquilerFechaInicio"
+                          label="Fecha del alquiler"
+                          prepend-icon="event"
+                          readonly
+                          v-on="on"
+                        ></v-text-field>
+                      </template>
+                      <v-date-picker v-model="alquilerFechaInicio" @input="menu2 = false"></v-date-picker>
+                    </v-menu>
+                  </v-flex>
+
+                  <v-flex xs11 sm5>
+                      <v-menu
+                        ref="menu"
+                        v-model="menu3"
+                        :close-on-content-click="false"
+                        :nudge-right="40"
+                        :return-value.sync="alquilerHoraInicio"
+                        lazy
+                        transition="scale-transition"
+                        offset-y
+                        full-width
+                        max-width="290px"
+                        min-width="290px"
+                      >
+                        <template v-slot:activator="{ on }">
+                          <v-text-field
+                            v-model="alquilerHoraInicio"
+                            label="Hora de Alquiler"
+                            prepend-icon="access_time"
+                            readonly
+                            v-on="on"
+                          ></v-text-field>
+                        </template>
+                        <v-time-picker
+                          v-if="menu3"
+                          v-model="alquilerHoraInicio"
+                          format="24hr"
+                          full-width
+                          @click:minute="$refs.menu.save(alquilerHoraInicio)"
+                        ></v-time-picker> 
+                      </v-menu>
+                    </v-flex>
+                    
+                    
+
+
+
+
+
+
+
+
+
+
+
+                <v-flex xs12 sm12 md12 lg12 xl12>
+                    <v-btn @click="setCancelar()" color="blue darken-1" flat>Cancelar</v-btn>
+                    <v-btn @click="guardarAlquiler()" color="success">Guardar</v-btn>
+                </v-flex>
+            </v-layout>
+        </v-container>
 
     </v-flex>
  </v-layout>
@@ -188,12 +271,27 @@ export default {
       ndistrito:"",
       numParticipantes: '',
       menu: false,
+      menu2: false,
+      menu3: false,
+
+      mostrarFrmAlquiler: false,
 
      //para la vista detalleEquipo
       verDetalleEquipo:0,
       lstaParticipantes:[],
       idEquipo:'',
       lstaAlquilerDelEquipo:[],
+
+      //para frm alquiler
+      alquilerEquipo: '',
+      alquilerCancha: '',
+      alquilerFechaInicio: '',
+      alquilerHoraInicio: '',
+      alquilerRegistro: '',
+      alquilerHoras:'',
+      alquilerDescuento: 0,
+      alquilerTotal: '',
+      alquilerPagado: false,
 
     };
   },
@@ -208,6 +306,7 @@ export default {
       val || this.close();
     }
   },
+
 
   created() {
     this.setListaMisEquipos();
@@ -233,6 +332,32 @@ export default {
       .catch(function(error) {
         console.log(error);
       });
+    },
+    setMostrarFrmAlquilerTrue() {let me = this;
+
+      var dFechaRegistro = new Date();
+      var dia = dFechaRegistro.getDate();
+      var mes = dFechaRegistro.getMonth();
+      var anio = dFechaRegistro.getFullYear();
+      var hora = dFechaRegistro.getHours();
+      var minutos = dFechaRegistro.getMinutes();
+      var segundos = dFechaRegistro.getSeconds();
+
+      var f = dia+'-'+mes+'-'+anio+' '+hora+':'+minutos+':'+segundos;
+      
+      me.alquilerEquipo = localStorage.getItem("equipo"),
+      me.alquilerRegistro = f,
+      
+      this.ocultarDetallesEquipo();
+      this.mostrarFrmAlquiler = true;
+    },
+    setMostrarFrmAlquilerFalse() {
+      this.limpiar();
+      this.mostrarFrmAlquiler = false;
+    },
+    setCancelar() {
+      this.setMostrarFrmAlquilerFalse();
+      localStorage.removeItem("equipo");
     },
     listar() {
       let me = this;
@@ -324,7 +449,6 @@ export default {
       }
       
     },
-    //NUEVOOOOOOOOOOOOOOOOOOOOOOOO
 
     setearParticipantes(){
          let me = this;
@@ -339,8 +463,8 @@ export default {
           console.log(error);
         });
     },
-     setearLstaAlquileresDelEquipo(){
-         let me = this;
+    setearLstaAlquileresDelEquipo(){
+      let me = this;
       axios
       
         .get("/api/alquiler/alquilerdetalle/"+me.idEquipo)
@@ -353,13 +477,19 @@ export default {
         });
     },
       mostrarDetallesEquipo(data =[]){
+    localStorage.removeItem("equipo");
      this.verDetalleEquipo=1;
      this.idEquipo=data["cequipo"];
+     localStorage.setItem("equipo", this.idEquipo);
      this.setearParticipantes();
      this.setearLstaAlquileresDelEquipo();
     },
     ocultarDetallesEquipo(){
-this.verDetalleEquipo=0;
+      this.verDetalleEquipo=0;
+    },
+    guardarAlquiler(){
+
+      
     }
   }
 };

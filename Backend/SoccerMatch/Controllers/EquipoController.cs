@@ -28,7 +28,6 @@ namespace SoccerMatch.Controllers
             );
         }
 
-        
         [HttpGet("{id}")]
         public ActionResult GetByID(int id)
         {

@@ -11,5 +11,6 @@ namespace Repository
     public interface IAlquilerRepository : ICrudRepository<Alquiler>
     {
         IEnumerable<AlquilerDetalleXEquipo> AlquilerDetalle(int idEquipo);
+        bool Guardar(AlquilerInsertarViewModel entity);
     }
 }

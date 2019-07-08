@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Service;
+using Entity;
 
 namespace SoccerMatch.Controllers
 {
@@ -24,6 +25,14 @@ namespace SoccerMatch.Controllers
             return Ok(
                 AlquilerService.AlquilerDetalle(idEquipo)
             ); 
+        }
+
+        [HttpPost]
+        public ActionResult Post([FromBody] AlquilerInsertarViewModel alquiler)
+        {
+            return Ok(
+                AlquilerService.Guardar(alquiler)
+            );
         }
     }
 }

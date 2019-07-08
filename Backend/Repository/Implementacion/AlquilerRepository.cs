@@ -71,6 +71,31 @@ namespace Repository.Implementacion
             throw new NotImplementedException();
         }
 
+        public bool Guardar(AlquilerInsertarViewModel entity)
+        {
+            var id_cancha = context.Cancha.FirstOrDefault(x=>x.Ncancha == entity.Ncancha);
+            Alquiler alquiler = new Alquiler {
+                Cequipo = entity.Cequipo,
+                Ccancha = id_cancha.Ccancha,
+                DfechaInicio = entity.DfechaInicio,
+                DfechaRegistro = entity.DfechaRegistro,
+                NumHoras  = entity.NumHoras,
+                Mdescuento  = entity.Mdescuento,
+                Mtotal  = entity.Mtotal,
+                Fpagado = entity.Fpagado,
+            };
+            try {
+                context.Alquiler.Add(alquiler);
+                context.SaveChanges();
+            }
+            catch (System.Exception) {
+                return false;
+            }
+            return true;
+            
+              
+        }
+
         public bool Save(Alquiler entity)
         {
             throw new NotImplementedException();
