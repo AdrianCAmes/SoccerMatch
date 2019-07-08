@@ -31,7 +31,7 @@ namespace Service.Implementacion
 
         public Equipo Get(int id)
         {
-            throw new NotImplementedException();
+            return equiporepository.Get(id);
         }
 
         public IEnumerable<Equipo> GetAll()
@@ -56,7 +56,7 @@ namespace Service.Implementacion
 
         public bool Update(Equipo entity)
         {
-            throw new NotImplementedException();
+            return equiporepository.Update(entity);
         }
     }
 }

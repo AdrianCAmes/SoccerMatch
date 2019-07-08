@@ -2,7 +2,7 @@
  <v-layout align-start>
     <v-flex>
       <v-toolbar flat color="white">
-        <v-toolbar-title>Equipos recomendados </v-toolbar-title>
+        <v-toolbar-title>Equipos recomendados {{idEquipo}} {{}} </v-toolbar-title>
         <v-divider class="mx-2" inset vertical></v-divider>
         <v-spacer></v-spacer>
         <v-text-field
@@ -28,6 +28,9 @@
                   </v-flex>
                   <v-flex xs12 sm12 md12>
                     <v-text-field v-model="tdescripcion" label="Descripcion"></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm12 md12>
+                    <v-text-field v-model="numParticipantes" label="Numero de Participantes Para Jugar"></v-text-field>
                   </v-flex>
                   <v-flex>
                     <v-menu
@@ -105,7 +108,7 @@
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="blue darken-1" flat @click.native="ocultarDetallesEquipo">Atras</v-btn>
-              <!--v-btn color="blue darken-1" flat @click.native="guardar">Guardar</v-btn -->
+              <v-btn color="blue darken-1" flat @click.native="unirJugador">Unirse</v-btn>
             </v-card-actions>
 
           </v-card>
@@ -145,6 +148,7 @@ export default {
   data() {
     return {
       equipos: [],
+
       dialog: false,
       headers: [    
         { text: "Opciones", value: "opciones", sortable: false },
@@ -192,6 +196,7 @@ export default {
       idEquipo:'',
       lstaAlquilerDelEquipo:[],
 
+
     };
   },
   computed: {
@@ -211,8 +216,9 @@ export default {
     this.setListaDistritos();
   },
   methods: {
+    GuardarAlquiler(){
 
-
+    },
     setListaEquiposRecomendados(){
   let me =this;    
   axios.get("api/equipo/recomendados/"+localStorage.getItem("usuario"))//INSERTAR AQUIE EL IDUSUARIO  EN LUGAR DEL 2
@@ -310,7 +316,7 @@ export default {
             Tdescripcion: me.tdescripcion,
             Nequipo: me.nequipo,
             ndistrito: me.ndistrito,
-            numParticipantes: 1,
+            numParticipantes: me.numParticipantes,
             DfechaJuego: me.dfechaJuego,
             DfechaRegistro: f,
             idJugador: Number(localStorage.getItem('usuario')),
@@ -355,11 +361,44 @@ export default {
     mostrarDetallesEquipo(data =[]){
      this.verDetalleEquipo=1;
      this.idEquipo=data["cequipo"];
+     localStorage.setItem("equipo", this.idEquipo);
      this.setearParticipantes();
      this.setearLstaAlquileresDelEquipo();
     },
     ocultarDetallesEquipo(){
-this.verDetalleEquipo=0;
+      this.verDetalleEquipo=0;
+      localStorage.removeItem("equipo");
+    },
+    unirJugador(){
+      let me = this;
+
+      var dFechaRegistro = new Date();
+      var dia = dFechaRegistro.getDate();
+      var mes = dFechaRegistro.getMonth();
+      var anio = dFechaRegistro.getFullYear();
+      var hora = dFechaRegistro.getHours();
+      var minutos = dFechaRegistro.getMinutes();
+      var segundos = dFechaRegistro.getSeconds();
+
+      var f = dia+'-'+mes+'-'+anio+' '+hora+':'+minutos+':'+segundos;
+
+      axios
+        .post("api/participante", {
+          cjugador: Number(localStorage.getItem('usuario')),
+          cequipo: Number(localStorage.getItem("equipo")),
+          fesadministrador: false,
+          dfechaunion: f,
+        })
+        .then(function(response) {
+          me.close();
+          me.setListaEquiposRecomendados();
+          me.limpiar();
+          localStorage.removeItem("equipo"),
+          me.$router.push('/equipo/misequipos');
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
     }
   }
 };
