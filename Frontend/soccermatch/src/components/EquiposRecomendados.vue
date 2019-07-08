@@ -50,14 +50,20 @@
       <v-data-table :headers="headers" :items="equipos" :search="search" class="elevation-1">
         <template slot="items" slot-scope="props">
           <td class="justify-center layout px-0">
-            <v-icon small class="mr-2" @click="editItem(props.item)">edit</v-icon>
-          
+            <v-icon small class="mr-2" @click="editItem(props.item)">edit</v-icon>          
           </td>
           <td>{{ props.item.nequipo }}</td>
           <td>{{ props.item.tdescripcion }}</td>
           <td>{{ props.item.numParticipantes }}</td>
           <td>{{ props.item.dfechaJuego }}</td>
-          <td>{{ props.item.cdistrito }}</td >            
+          <td>{{ props.item.cdistrito }}</td >   
+            <td>  
+               <v-flex xs12 sm2 md2 lg2 xl2>
+                      <v-btn @click="mostrarDetallesEquipo()" small fab dark color="teal">
+                        <v-icon dark>list</v-icon>
+                    </v-btn>
+                </v-flex>       
+            </td >  
         </template>
 
         <template slot="no-data">
@@ -81,18 +87,24 @@ export default {
         { text: "Descripcion", value: "tdescripcion", sortable: false },  
         { text: "Numero de participantes", value: "numParticipantes" },  
         { text: "Fecha de juego", value: "dfechaJuego" },
-        { text: "Distrito", value: "cdistrito"}
+        { text: "Distrito", value: "cdistrito"},
+        { text: "VerDetalle", value: "detalle"}
         
       ],
       search: "",
       editedIndex: -1,
 
       //TODO:Model
-      nequipo: "",
-      tdescripcion:"",
-      dfechaJuego:"",
-      cdistrito:"",      
+      cequipo : '',
+      tdescripcion :  '',
+      nequipo :  '',
+      numParticipantes :  '',
+      dfechaJuego :  '',
+      cdistrito : '',
+      
 
+      //para la vista
+      verDetalleEquipo:'',
     };
   },
   computed: {
