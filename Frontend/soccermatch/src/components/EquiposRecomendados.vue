@@ -2,7 +2,7 @@
  <v-layout align-start>
     <v-flex>
       <v-toolbar flat color="white">
-        <v-toolbar-title>Equipos recomendados</v-toolbar-title>
+        <v-toolbar-title>Equipos recomendados </v-toolbar-title>
         <v-divider class="mx-2" inset vertical></v-divider>
         <v-spacer></v-spacer>
         <v-text-field
@@ -29,28 +29,26 @@
                   <v-flex xs12 sm12 md12>
                     <v-text-field v-model="tdescripcion" label="Descripcion"></v-text-field>
                   </v-flex>
+                  <v-flex xs12 sm12 md12 >
+                    <v-text-field v-model="dfechaJuego" label="Fecha de Juego"></v-text-field>
+                  </v-flex>
                   <v-flex xs12 sm12 md12>
-                    <v-menu
-                      v-model="menu"
-                      :close-on-content-click="false"
-                      :nudge-right="40"
-                      lazy
-                      transition="scale-transition"
-                      offset-y
-                      full-width
-                      min-width="290px"
-                    >
-                      <template v-slot:activator="{ on }">
-                        <v-text-field
-                          v-model="dfechaJuego"
-                          label="Fecha de Juego"
-                          prepend-icon="event"
-                          readonly
-                          v-on="on"
-                        ></v-text-field>
-                      </template>
-                      <v-date-picker v-model="dfechaJuego" @input="menu = false"></v-date-picker>
-                    </v-menu>
+                    <v-text-field v-model="cdistrito" label="Distrito" ></v-text-field>
+                  </v-flex>               
+              </v-container>
+            </v-card-text>
+             <v-spacer></v-spacer>
+
+               <v-card-text>
+              <v-container grid-list-md>               
+                  <v-flex xs12 sm12 md12>
+                    <v-text-field v-model="nequipo" label="Nombre"></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm12 md12>
+                    <v-text-field v-model="tdescripcion" label="Descripcion"></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm12 md12 >
+                    <v-text-field v-model="dfechaJuego" label="Fecha de Juego"></v-text-field>
                   </v-flex>
                   <v-flex xs12 sm12 md12>
                     <v-combobox
@@ -62,6 +60,8 @@
               </v-container>
             </v-card-text>
 
+
+
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="blue darken-1" flat @click.native="close">Cancelar</v-btn>
@@ -70,7 +70,46 @@
           </v-card>
         </v-dialog>
       </v-toolbar>
+<!-------------------------------------------------------------------------------------------------------------------------------------->
 
+       <v-dialog v-model="verDetalleEquipo" max-width="800px">        
+          <v-card>        
+                <v-card-title>
+              <span class="headline">Detalles del Equipo</span>
+            </v-card-title>   
+            <v-card-text>
+                    <h4>PARTICIPANTES</h4>
+                  <v-data-table :headers="cabeceraDetalleEquipo_PARTICIPANTES" :items="lstaParticipantes" :search="search" class="elevation-1">
+                      <template slot="items" slot-scope="props">        
+                       <td>{{ props.item.nombreUsuario }}</td>
+                       <td>{{ props.item.userUsuario }}</td>
+                       <td>{{ props.item.numeroContacto }}</td>
+                       </template>        
+                   </v-data-table>                
+            </v-card-text>
+
+              <v-card-text>
+                   <v-spacer></v-spacer> <h4>Alquiler</h4>
+                  <v-data-table :headers="cabeceraDetalleEquipo_Alquiler" :items="lstaAlquilerDelEquipo" :search="search" class="elevation-1">
+                      <template slot="items" slot-scope="props">        
+                       <td>{{ props.item.ncancha }}</td>
+                       <td>{{ props.item.fInicio }}</td>
+                       <td>{{ props.item.tdireccion }}</td>
+                       <td>{{ props.item.ndistrito }}</td>
+                       <td>{{ props.item.numparticipantes }}</td>
+                       <td>{{ props.item.numhoras }}</td>
+                       </template>        
+                   </v-data-table>   
+                    </v-card-text>  
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="blue darken-1" flat @click.native="ocultarDetallesEquipo">Atras</v-btn>
+              <!--v-btn color="blue darken-1" flat @click.native="guardar">Guardar</v-btn -->
+            </v-card-actions>
+
+          </v-card>
+        </v-dialog>
+<!-------------------------------------------------------------------------------------------------------------------------------------->
       <v-data-table :headers="headers" :items="equipos" :search="search" class="elevation-1">
         <template slot="items" slot-scope="props">
           <td class="justify-center layout px-0">
@@ -80,10 +119,10 @@
           <td>{{ props.item.tdescripcion }}</td>
           <td>{{ props.item.numParticipantes }}</td>
           <td>{{ props.item.dfechaJuego }}</td>
-          <td>{{ props.item.ndistrito }}</td >   
+          <td>{{ props.item.cdistrito }}</td >   
             <td>  
                <v-flex xs12 sm2 md2 lg2 xl2>
-                      <v-btn @click="mostrarDetallesEquipo()" small fab dark color="teal">
+                      <v-btn @click="mostrarDetallesEquipo(props.item)" small fab dark color="teal">
                         <v-icon dark>list</v-icon>
                     </v-btn>
                 </v-flex>       
@@ -111,9 +150,24 @@ export default {
         { text: "Descripcion", value: "tdescripcion", sortable: false },  
         { text: "Numero de participantes", value: "numParticipantes" },  
         { text: "Fecha de juego", value: "dfechaJuego" },
-        { text: "Distrito", value: "ndistrito"},
+        { text: "Distrito", value: "cdistrito"},
         { text: "VerDetalle", value: "detalle"}
         
+      ],
+        cabeceraDetalleEquipo_PARTICIPANTES: [    
+        { text: "Nombre Jugador", value: "njugador", sortable: false },
+        { text: "Usuario", value: "usuario", sortable: false },     
+        { text: "Numero de Contacto", value: "numContacto", sortable: false },     
+        
+      ],
+
+      cabeceraDetalleEquipo_Alquiler:[
+        { text: "Cancha", value: "Cancha", sortable: false },
+        { text: "Fecha de Inicio", value: "Fecha", sortable: false },     
+        { text: "Direccion de cancha", value: "Direccion", sortable: false },  
+        { text: "Distrito", value: "Distrito", sortable: false },  
+        { text: "Participantes", value: "Participantes", sortable: false },  
+        { text: "Horas", value: "horas", sortable: false }, 
       ],
       search: "",
       editedIndex: -1,
@@ -127,11 +181,14 @@ export default {
       ndistrito: '',
 
       distritos: [],
-      
+      cdistrito:'',
 
-      //para la vista
-      verDetalleEquipo:'',
-      menu: false,
+      //para la vista detalleEquipo
+      verDetalleEquipo:0,
+      lstaParticipantes:[],
+      idEquipo:'',
+      lstaAlquilerDelEquipo:[],
+
     };
   },
   computed: {
@@ -151,9 +208,11 @@ export default {
     this.setListaDistritos();
   },
   methods: {
+
+
     setListaEquiposRecomendados(){
-        let me =this;    
-        axios.get("api/equipo/recomendados/"+localStorage.getItem("usuario"))//INSERTAR AQUIE EL IDUSUARIO  EN LUGAR DEL 2
+  let me =this;    
+  axios.get("api/equipo/recomendados/"+localStorage.getItem("usuario"))//INSERTAR AQUIE EL IDUSUARIO  EN LUGAR DEL 2
        .then(function(response) {
           me.equipos = response.data;
         })
@@ -176,6 +235,7 @@ export default {
       axios
         .get("api/equipo")
         .then(function(response) {
+          console.log(response);
           me.equipos = response.data;
         })
         .catch(function(error) {
@@ -232,14 +292,25 @@ export default {
         //Código para guardar
         let me = this;
 
-        
+        var dFechaRegistro = new Date();
+        var dia = dFechaRegistro.getDate();
+        var mes = dFechaRegistro.getMonth();
+        var anio = dFechaRegistro.getFullYear();
+        var hora = dFechaRegistro.getHours();
+        var minutos = dFechaRegistro.getMinutes();
+        var segundos = dFechaRegistro.getSeconds();
+
+        var f = dia+'-'+mes+'-'+anio+' '+hora+':'+minutos+':'+segundos;
+
         axios
           .post("api/equipo", {
             Tdescripcion: me.tdescripcion,
             Nequipo: me.nequipo,
             ndistrito: me.ndistrito,
             numParticipantes: 1,
-            DfechaJuego: me.dfechaJuego
+            DfechaJuego: me.dfechaJuego,
+            DfechaRegistro: f,
+            idJugador: Number(localStorage.getItem('usuario')),
           })
           .then(function(response) {
             me.close();
@@ -250,6 +321,41 @@ export default {
             console.log(error);
           });
       }
+    },
+    setearParticipantes(){
+         let me = this;
+      axios
+      
+        .get("/api/equipo/equipodetalle/"+me.idEquipo)
+        .then(function(response) {
+          console.log(response);
+          me.lstaParticipantes = response.data;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+     setearLstaAlquileresDelEquipo(){
+         let me = this;
+      axios
+      
+        .get("/api/alquiler/alquilerdetalle/"+me.idEquipo)
+        .then(function(response) {
+          console.log(response);
+          me.lstaAlquilerDelEquipo = response.data;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    mostrarDetallesEquipo(data =[]){
+     this.verDetalleEquipo=1;
+     this.idEquipo=data["cequipo"];
+     this.setearParticipantes();
+     this.setearLstaAlquileresDelEquipo();
+    },
+    ocultarDetallesEquipo(){
+this.verDetalleEquipo=0;
     }
   }
 };

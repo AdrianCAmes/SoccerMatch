@@ -1,4 +1,5 @@
 ﻿using Entity;
+using Repository.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace Service
 {
     public interface IAlquilerService : ICrudService<Alquiler>
     {
+        IEnumerable<AlquilerDetalleXEquipo> AlquilerDetalle(int idEquipo);
     }
 }

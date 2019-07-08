@@ -19,6 +19,11 @@ namespace Service.Implementacion
             throw new NotImplementedException();
         }
 
+        public IEnumerable<DetalleEquipoViewModel> DetalleEquipo(int idEquipo)
+        {
+            return equiporepository.DetalleEquipo(idEquipo);
+        }
+
         public IEnumerable<EquiposRecomendadosViewModel> EquiposRecomendados(int idUsuario)
         {
             return equiporepository.EquiposRecomendados(idUsuario);
@@ -34,7 +39,7 @@ namespace Service.Implementacion
             return equiporepository.GetAll();
         }
 
-        public bool Guardar(EquiposRecomendadosViewModel entity)
+        public bool Guardar(EquiposInsertarViewModel entity)
         {
             return equiporepository.Guardar(entity);
         }

@@ -10,6 +10,7 @@ namespace Service
     {
         IEnumerable<EquiposRecomendadosViewModel> EquiposRecomendados(int idUsuario);
         IEnumerable<EquiposRecomendadosViewModel> MisEquipos(int idUsuario);
-        bool Guardar(EquiposRecomendadosViewModel entity);
+        bool Guardar(EquiposInsertarViewModel entity);
+        IEnumerable<DetalleEquipoViewModel> DetalleEquipo(int idEquipo);
     }
 }

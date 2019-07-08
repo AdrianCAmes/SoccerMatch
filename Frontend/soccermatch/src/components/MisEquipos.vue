@@ -215,13 +215,26 @@ export default {
       } else {
         //Código para guardar
         let me = this;
+
+        var dFechaRegistro = new Date();
+        var dia = dFechaRegistro.getDate();
+        var mes = dFechaRegistro.getMonth();
+        var anio = dFechaRegistro.getFullYear();
+        var hora = dFechaRegistro.getHours();
+        var minutos = dFechaRegistro.getMinutes();
+        var segundos = dFechaRegistro.getSeconds();
+
+        var f = dia+'-'+mes+'-'+anio+' '+hora+':'+minutos+':'+segundos;
+
         axios
           .post("api/equipo", {
-           tdescripcion: me.tdescripcion,
+            Tdescripcion: me.tdescripcion,
+            Nequipo: me.nequipo,
             ndistrito: me.ndistrito,
-            nequipo: me.nequipo,
             numParticipantes: 1,
-            dfechaJuego: me.dfechaJuego
+            DfechaJuego: me.dfechaJuego,
+            DfechaRegistro: f,
+            idJugador: Number(localStorage.getItem('usuario')),
           })
           .then(function(response) {
             me.close();
