@@ -8,7 +8,7 @@ namespace Service
 {
     public interface IEquipoService:ICrudService<Equipo>
     {
-        IEnumerable<Equipo> EquiposRecomendados(int idUsuario);
+        IEnumerable<EquiposRecomendadosViewModel> EquiposRecomendados(int idUsuario);
         IEnumerable<Equipo> MisEquipos(int idUsuario);
     }
 }

@@ -29,12 +29,32 @@
                   <v-flex xs12 sm12 md12>
                     <v-text-field v-model="tdescripcion" label="Descripcion"></v-text-field>
                   </v-flex>
-                  <v-flex xs12 sm12 md12 >
-                    <v-text-field v-model="dfechaJuego" label="Fecha de Juego"></v-text-field>
+                  <v-flex xs12 sm12 md12>
+                    <v-menu
+                      v-model="menu"
+                      :close-on-content-click="false"
+                      :nudge-right="40"
+                      lazy
+                      transition="scale-transition"
+                      offset-y
+                      full-width
+                      min-width="290px"
+                    >
+                      <template v-slot:activator="{ on }">
+                        <v-text-field
+                          v-model="dfechaJuego"
+                          label="Fecha de Juego"
+                          prepend-icon="event"
+                          readonly
+                          v-on="on"
+                        ></v-text-field>
+                      </template>
+                      <v-date-picker v-model="dfechaJuego" @input="menu = false"></v-date-picker>
+                    </v-menu>
                   </v-flex>
                   <v-flex xs12 sm12 md12>
                     <v-text-field v-model="cdistrito" label="Distrito" ></v-text-field>
-                  </v-flex>               
+                  </v-flex>       
               </v-container>
             </v-card-text>
 
@@ -56,7 +76,7 @@
           <td>{{ props.item.tdescripcion }}</td>
           <td>{{ props.item.numParticipantes }}</td>
           <td>{{ props.item.dfechaJuego }}</td>
-          <td>{{ props.item.cdistrito }}</td >   
+          <td>{{ props.item.ndistrito }}</td >   
             <td>  
                <v-flex xs12 sm2 md2 lg2 xl2>
                       <v-btn @click="mostrarDetallesEquipo()" small fab dark color="teal">
@@ -87,7 +107,7 @@ export default {
         { text: "Descripcion", value: "tdescripcion", sortable: false },  
         { text: "Numero de participantes", value: "numParticipantes" },  
         { text: "Fecha de juego", value: "dfechaJuego" },
-        { text: "Distrito", value: "cdistrito"},
+        { text: "Distrito", value: "ndistrito"},
         { text: "VerDetalle", value: "detalle"}
         
       ],
@@ -101,10 +121,13 @@ export default {
       numParticipantes :  '',
       dfechaJuego :  '',
       cdistrito : '',
+
+      distritos: [],
       
 
       //para la vista
       verDetalleEquipo:'',
+      menu: false,
     };
   },
   computed: {
@@ -124,22 +147,21 @@ export default {
   },
   methods: {
     setListaEquiposRecomendados(){
-  let me =this;    
-  axios.get("api/equipo/recomendados/"+localStorage.getItem("usuario"))//INSERTAR AQUIE EL IDUSUARIO  EN LUGAR DEL 2
+        let me =this;    
+        axios.get("api/equipo/recomendados/"+localStorage.getItem("usuario"))//INSERTAR AQUIE EL IDUSUARIO  EN LUGAR DEL 2
        .then(function(response) {
-          console.log(response);
           me.equipos = response.data;
+          console.log(response);
         })
         .catch(function(error) {
           console.log(error);
         });
-},
+    },
     listar() {
       let me = this;
       axios
         .get("api/equipo")
         .then(function(response) {
-          console.log(response);
           me.equipos = response.data;
         })
         .catch(function(error) {

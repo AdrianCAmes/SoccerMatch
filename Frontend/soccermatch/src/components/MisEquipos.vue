@@ -14,6 +14,7 @@
           hide-details
         ></v-text-field>
         <v-spacer></v-spacer>
+
         <v-dialog v-model="dialog" max-width="500px">
           <v-btn slot="activator" color="primary" dark class="mb-2">Nuevo</v-btn>
           <v-card>
@@ -29,8 +30,28 @@
                   <v-flex xs12 sm12 md12>
                     <v-text-field v-model="tdescripcion" label="Descripcion"></v-text-field>
                   </v-flex>
-                  <v-flex xs12 sm12 md12 >
-                    <v-text-field v-model="dfechaJuego" label="Fecha de Juego"></v-text-field>
+                  <v-flex xs12 sm12 md12>
+                    <v-menu
+                      v-model="menu"
+                      :close-on-content-click="false"
+                      :nudge-right="40"
+                      lazy
+                      transition="scale-transition"
+                      offset-y
+                      full-width
+                      min-width="290px"
+                    >
+                      <template v-slot:activator="{ on }">
+                        <v-text-field
+                          v-model="dfechaJuego"
+                          label="Fecha de Juego"
+                          prepend-icon="event"
+                          readonly
+                          v-on="on"
+                        ></v-text-field>
+                      </template>
+                      <v-date-picker v-model="dfechaJuego" @input="menu = false"></v-date-picker>
+                    </v-menu>
                   </v-flex>
                   <v-flex xs12 sm12 md12>
                     <v-text-field v-model="cdistrito" label="Distrito" ></v-text-field>
@@ -91,6 +112,7 @@ export default {
       tdescripcion:"",
       dfechaJuego:"",
       cdistrito:"",
+      menu: false,
 
     };
   },
@@ -111,22 +133,20 @@ export default {
   },
   methods: {
     setListaMisEquipos(){
-  let me =this;    
-  axios.get("api/equipo/misequipos/"+localStorage.getItem("usuario"))//INSERTAR AQUIE EL IDUSUARIO  EN LUGAR DEL 2
-       .then(function(response) {
-          console.log(response);
-          me.equipos = response.data;
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
-},
+      let me =this;    
+      axios.get("api/equipo/misequipos/"+localStorage.getItem("usuario"))//INSERTAR AQUIE EL IDUSUARIO  EN LUGAR DEL 2
+          .then(function(response) {
+              me.equipos = response.data;
+            })
+            .catch(function(error) {
+              console.log(error);
+            });
+    },
     listar() {
       let me = this;
       axios
         .get("api/equipo")
         .then(function(response) {
-          console.log(response);
           me.equipos = response.data;
         })
         .catch(function(error) {
