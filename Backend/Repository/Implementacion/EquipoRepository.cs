@@ -43,7 +43,7 @@ namespace Repository.Implementacion
 
         }
 
-        public IEnumerable<Equipo> EquiposRecomendados(int  idUsuario)
+        public IEnumerable<EquiposRecomendadosViewModel> EquiposRecomendados(int  idUsuario)
         {   
             var participante=new List<Participante>();
             participante= context.Participante.Where(p=>p.Cjugador==idUsuario).ToList();
