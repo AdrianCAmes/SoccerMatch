@@ -34,7 +34,7 @@ namespace Service.Implementacion
             return equiporepository.GetAll();
         }
 
-        public IEnumerable<Equipo> MisEquipos(int idUsuario)
+        public IEnumerable<EquiposRecomendadosViewModel> MisEquipos(int idUsuario)
         {
             return equiporepository.MisEquipos(idUsuario);
         }
