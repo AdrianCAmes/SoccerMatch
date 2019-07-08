@@ -2,7 +2,7 @@
  <v-layout align-start>
     <v-flex>
       <v-toolbar flat color="white">
-        <v-toolbar-title>Equipos recomendados {{idEquipo}} {{}} </v-toolbar-title>
+        <v-toolbar-title>Equipos recomendados  </v-toolbar-title>
         <v-divider class="mx-2" inset vertical></v-divider>
         <v-spacer></v-spacer>
         <v-text-field
@@ -121,9 +121,10 @@
           </td>
           <td>{{ props.item.nequipo }}</td>
           <td>{{ props.item.tdescripcion }}</td>
-          <td>{{ props.item.numParticipantes }}</td>
+          <td>{{ props.item.numParticipantesActual }}</td>
+          <td>{{ props.item.numParticipantes }}</td>     
           <td>{{ props.item.dfechaJuego }}</td>
-          <td>{{ props.item.ndistrito }}</td >   
+          <td>{{ props.item.ndistrito }}</td >
             <td>  
                <v-flex xs12 sm2 md2 lg2 xl2>
                       <v-btn @click="mostrarDetallesEquipo(props.item)" small fab dark color="teal">
@@ -150,15 +151,14 @@ export default {
       equipos: [],
 
       dialog: false,
-      headers: [    
+     headers: [    
         { text: "Opciones", value: "opciones", sortable: false },
         { text: "Nombre", value: "nequipo", sortable: false },     
         { text: "Descripcion", value: "tdescripcion", sortable: false },  
-        { text: "Numero de participantes", value: "numParticipantes" },  
+        { text: "Participantes Actualmente", value: "Participantes_A", sortable: false },  
+         { text: "Participantes Esperados", value: "Participantes_E", sortable: false },         
         { text: "Fecha de juego", value: "dfechaJuego" },
-        { text: "Distrito", value: "ndistrito"},
-        { text: "VerDetalle", value: "detalle"}
-        
+        { text: "Distrito", value: "ndistrito"}        
       ],
         cabeceraDetalleEquipo_PARTICIPANTES: [    
         { text: "Nombre Jugador", value: "njugador", sortable: false },
@@ -166,13 +166,13 @@ export default {
         { text: "Numero de Contacto", value: "numContacto", sortable: false },     
         
       ],
-
+       
       cabeceraDetalleEquipo_Alquiler:[
         { text: "Cancha", value: "Cancha", sortable: false },
         { text: "Fecha de Inicio", value: "Fecha", sortable: false },     
         { text: "Direccion de cancha", value: "Direccion", sortable: false },  
         { text: "Distrito", value: "Distrito", sortable: false },  
-        { text: "Participantes", value: "Participantes", sortable: false },  
+        { text: "Participantes", value: "Distrito", sortable: false },       
         { text: "Horas", value: "horas", sortable: false }, 
       ],
       search: "",
