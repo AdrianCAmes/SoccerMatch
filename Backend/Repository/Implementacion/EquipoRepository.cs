@@ -75,14 +75,6 @@ namespace Repository.Implementacion
             }
 
             return equipoVM;
-            /*return equipo.Select (o => new Equipo {
-                    Cequipo=o.Cequipo,
-                    Nequipo = o.Nequipo,
-                    Tdescripcion = o.Tdescripcion,
-                    NumParticipantes = o.NumParticipantes,
-                    DfechaJuego = o.DfechaJuego,
-                    Cdistrito = o.Cdistrito
-            });*/
         }
 
         public Equipo Get(int id)
@@ -106,21 +98,61 @@ namespace Repository.Implementacion
             return result;
         }
 
-        public IEnumerable<Equipo> MisEquipos(int idUsuario)
+        public bool Guardar(EquiposRecomendadosViewModel entity)
+        {
+            var id_distrito = context.Distrito.FirstOrDefault(x=>x.Ndistrito == entity.Ndistrito);
+            Equipo equipo = new Equipo {
+                Nequipo = entity.Nequipo,
+                Tdescripcion = entity.Tdescripcion,
+                DfechaJuego = entity.DfechaJuego,
+                NumParticipantes = entity.NumParticipantes,
+                Cdistrito = id_distrito.Cdistrito,
+            };
+            try
+            {
+                context.Add(equipo);
+                context.SaveChanges();
+            }
+            catch (System.Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
+        public IEnumerable<EquiposRecomendadosViewModel> MisEquipos(int idUsuario)
         {
             var participante=new List<Participante>();
             participante= context.Participante.Where(p=>p.Cjugador==idUsuario).ToList();
             var equipo=new List<Equipo>();
             foreach(var par in participante)
                 equipo.Add(context.Equipo.Single(e=>e.Cequipo==par.Cequipo));
-                return equipo.Select (o => new Equipo {
-                    Cequipo=o.Cequipo,
-                    Nequipo = o.Nequipo,
-                    Tdescripcion = o.Tdescripcion,
-                    NumParticipantes = o.NumParticipantes,
-                    DfechaJuego = o.DfechaJuego,
-                    Cdistrito = o.Cdistrito
-            });
+            
+            
+            var ndistritos = new List<string>();
+            foreach(var e in equipo)
+            {
+                var distrito = context.Distrito.FirstOrDefault(x=>x.Cdistrito == e.Cdistrito);
+                var nombre = distrito.Ndistrito;
+                ndistritos.Add(nombre);
+            }
+            List<EquiposRecomendadosViewModel> equipoVM = new List<EquiposRecomendadosViewModel>();
+            foreach(var e in equipo)
+            {
+                equipoVM.Add(new EquiposRecomendadosViewModel{
+                    Cequipo = e.Cequipo,
+                    Nequipo = e.Nequipo,
+                    Tdescripcion = e.Tdescripcion,
+                    DfechaJuego = e.DfechaJuego,
+                });
+            }
+            for(var i = 0; i < equipoVM.Count(); i++)
+            {
+                equipoVM.ElementAt(i).Ndistrito = ndistritos.ElementAt(i);
+            }
+
+            return equipoVM;
         }
 
         public bool Save(Equipo entity)

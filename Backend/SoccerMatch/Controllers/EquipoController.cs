@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Entity;
 using Service;
+using Repository.ViewModel;
 namespace SoccerMatch.Controllers
 {
     [Route("api/[controller]")]
@@ -52,10 +53,10 @@ namespace SoccerMatch.Controllers
             );
         }
         [HttpPost]
-        public ActionResult Post([FromBody] Equipo Equipo)
+        public ActionResult Post([FromBody] EquiposRecomendadosViewModel Equipo)
         {
             return Ok(
-                EquipoService.Save(Equipo)
+                EquipoService.Guardar(Equipo)
             );
         }
 

@@ -36,7 +36,31 @@ namespace Repository.Implementacion
 
         public IEnumerable<Distrito> GetAll()
         {
-            throw new NotImplementedException();
+            var distritos = new List<Distrito>();
+            try {
+                distritos = context.Distrito.ToList();
+            }
+            catch(System.Exception) {
+                throw;
+            }
+            return distritos;            
+        }
+
+        public IEnumerable<string> GetAllNames()
+        {
+            var distritos = new List<Distrito>();
+            var nombres = new List<string>();
+            try {
+                distritos = context.Distrito.ToList();
+                foreach(var d in distritos)
+                {
+                    nombres.Add(d.Ndistrito);
+                }
+            }
+            catch(System.Exception) {
+                throw;
+            }
+            return nombres;
         }
 
         public bool Save(Distrito entity)

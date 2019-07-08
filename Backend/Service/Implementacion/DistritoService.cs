@@ -11,6 +11,13 @@ namespace Service.Implementacion
 {
     public class DistritoService : IDistritoService
     {
+        private IDistritoRepository distritoRepository;
+
+        public DistritoService(IDistritoRepository distritoRepository)
+        {
+            this.distritoRepository = distritoRepository;
+        }
+
         public bool Delete(int id)
         {
             throw new NotImplementedException();
@@ -23,7 +30,12 @@ namespace Service.Implementacion
 
         public IEnumerable<Distrito> GetAll()
         {
-            throw new NotImplementedException();
+            return distritoRepository.GetAll();
+        }
+        
+        public IEnumerable<string> GetAllNames()
+        {
+            return distritoRepository.GetAllNames();
         }
 
         public bool Save(Distrito entity)
