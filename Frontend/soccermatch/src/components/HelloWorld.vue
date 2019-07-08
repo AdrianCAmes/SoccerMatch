@@ -62,9 +62,11 @@ export default {
   },
 
   LoginCorrecto(){      
+    console.log(this.contraseña);
+    console.log(this.loginUsuario);
             var correcto = 0;
             for (var i = 0; i < this.lstaUsuarios.length; i++) {
-               if (this.lstaUsuarios[i].usuario1 == this.loginUsuario ) { 
+               if (this.lstaUsuarios[i].usuario1 == this.loginUsuario && this.lstaUsuarios[i].pswd == this.contraseña) { 
                     correcto = 1;
                     this.idUsuario=this.lstaUsuarios[i].cusuario;
                }

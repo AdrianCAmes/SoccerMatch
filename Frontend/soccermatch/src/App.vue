@@ -21,7 +21,7 @@
            
             <v-list-tile :to="{ name: 'equipoRecomendados'}">
               <v-list-tile-action>
-                <v-icon>table_chart</v-icon>
+                <v-icon>supervisor_account</v-icon>
               </v-list-tile-action>
               
               <v-list-tile-content>
@@ -33,7 +33,7 @@
 
             <v-list-tile :to="{ name: 'misEquipos'}">
               <v-list-tile-action>
-                <v-icon>table_chart</v-icon>
+                <v-icon>group</v-icon>
               </v-list-tile-action>
               
               <v-list-tile-content>
@@ -49,7 +49,7 @@
         <template>
           <v-list-tile :to="{name:'home'}">
             <v-list-tile-action>
-              <v-icon>home</v-icon>
+              <v-icon>keyboard_backspace</v-icon>
             </v-list-tile-action>
 
             <v-list-tile-title>
@@ -106,7 +106,7 @@ export default {
   name: 'App',
   data () {
     return {
-      drawer: true,
+      drawer: false,
      }
   }
 }
