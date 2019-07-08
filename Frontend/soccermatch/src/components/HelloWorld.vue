@@ -14,8 +14,20 @@
               <v-text-field v-model="loginUsuario" label="Usuario"></v-text-field>
           </v-flex>
 
-      
-              <v-text-field v-model="contraseña" label="Contraseña">Contraseña </v-text-field>
+        <v-flex xs12 sm6>
+          <v-text-field v-model="contraseña"
+            :append-icon="show2 ? 'visibility' : 'visibility_off'"
+            :rules="[rules.required, rules.min]"
+            :type="show2 ? 'text' : 'password'"
+            name="input-10-2"
+            label="Contraseña"
+            hint="At least 8 characters"
+            value="wqfasds"
+            class="input-group--focused"
+            @click:append="show2 = !show2"
+          ></v-text-field>
+        </v-flex>
+             <!-- <v-text-field v-model="contraseña" label="Contraseña">Contraseña </v-text-field>-->
 
               <v-btn   @click="Loggin()" slot="activator" color="primary" dark class="mb-2">Login</v-btn>    
             <v-btn   @click="Register()" slot="activator" color="primary" dark class="mb-2">Register</v-btn>
@@ -34,6 +46,12 @@ export default {
   name: 'App',
   data () {
     return {
+        show2: false,
+        password: 'Password',
+        rules: {
+          required: value => !!value || 'Required.',
+          min: v => v.length >= 8 || 'Min 8 characters',
+          emailMatch: () => ('The email and password you entered don\'t match')},
     lstaUsuarios:[],
     loginUsuario:'',
     contraseña:'',
@@ -59,7 +77,6 @@ export default {
           console.log(error);
         });
   },
-
   LoginCorrecto(){      
             var correcto = 0;
             for (var i = 0; i < this.lstaUsuarios.length; i++) {
