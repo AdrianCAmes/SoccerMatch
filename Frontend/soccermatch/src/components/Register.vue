@@ -5,13 +5,19 @@
         <v-flex xs12 md4 offset-xs8>
           <v-text-field
             v-model="nusuario"
-            :rules="nameRules"
             :counter="10"
             label="Nombre"
             required
           ></v-text-field>
         </v-flex>
-
+                <v-flex xs12 md4 offset-xs8>
+          <v-text-field
+            v-model="direccion"
+            :counter="10"
+            label="Direccion"
+            required
+          ></v-text-field>
+        </v-flex>
         <v-flex
           xs12
           md4
@@ -19,7 +25,6 @@
         >
           <v-text-field
             v-model="usuario1"
-            :rules="nameRules"
             :counter="10"
             label="Usuario"
             required
@@ -33,7 +38,6 @@
         >
           <v-text-field
             v-model="pswd"
-            :rules="emailRules"
             label="Contraseña"
             required
           ></v-text-field>
@@ -45,7 +49,6 @@
         >
           <v-text-field
             v-model="cpswd"
-            :rules="emailRules"
             label="Confirmar contraseña"
             required
           ></v-text-field>
@@ -57,7 +60,6 @@
         >
           <v-text-field
             v-model="cdni"
-            :rules="emailRules"
             label="DNI"
             required
           ></v-text-field>
@@ -69,11 +71,10 @@
         >
           <v-text-field
             v-model="numTelefono"
-            :rules="emailRules"
             label="Telefono"
             required
           ></v-text-field>
-          <v-btn   @click="guardar()" slot="activator" color="primary" dark class="mb-2"  v-bind:href="ruta">Registrarse</v-btn>    
+          <v-btn   @click="guardar()" slot="activator" color="primary" dark class="mb-2">Registrarse</v-btn>    
         </v-flex>
       </v-layout>
     </v-container>
@@ -94,7 +95,8 @@ export default {
         { text: "Telefono", value: "numTelefono" },  
         { text: "Usuario", value: "usuario1" },
         { text: "Contraseña", value: "pswd"},
-        {text:"Confirmar contraseña",value:"cpswd"}
+        {text:"Confirmar contraseña",value:"cpswd"},
+        {text:"Direccion",value:"direccion"}
       ],
       search: "",
       editedIndex: -1,
@@ -106,7 +108,8 @@ export default {
       numTelefono:'',
       usuario1:'',
       pswd:'',
-        cpswd:''
+        cpswd:'',
+        direccion:''
     };
   },
   computed: {
@@ -146,6 +149,7 @@ export default {
       this.usuario1 = item.usuario1;
       this.pswd = item.pswd;
       this.cpswd=item.cpswd;
+      this.direccion=item.direccion;
       this.editedIndex = 1;
       this.dialog = true;
     },
@@ -160,6 +164,7 @@ export default {
       this.numTelefono = "";
       this.usuario1 = "";
       this.cpswd="";
+      this.direccion="";
     },
    guardar() {
       if (this.editedIndex > -1) {
@@ -186,7 +191,6 @@ export default {
       } else {
         //Código para guardar
         let me = this;
-        if(me.pswd===me.cpswd){
         axios
           .post("api/usuario", {
            cdni: me.cdni,
@@ -195,18 +199,24 @@ export default {
             numTelefono: me.numTelefono,
             usuario1: me.usuario1
           })
-          .then(function(response) {
-            me.close();
-            me.listar();
-            me.limpiar();
-          })
           .catch(function(error) {
             console.log(error);
           });
+          var tamaño=this.usuarios.length+1;     
+          var dir=this.direccion; 
+           axios
+          .post("api/jugador", {
+           cjugador:tamaño,
+           tdireccion:dir
+          }).then(function(response) {
+            me.close();
+            me.listar();
+            me.limpiar();
+          }).catch(function(error){console.log(error)});
             this.$router.push('/usuarios');
           }
       }
-    }
+    
   }
 };
 </script>
