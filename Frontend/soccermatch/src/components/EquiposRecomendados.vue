@@ -232,14 +232,26 @@ export default {
         //Código para guardar
         let me = this;
 
-        
+        var dFechaRegistro = new Date();
+        var dia = dFechaRegistro.getDate();
+        var mes = dFechaRegistro.getMonth();
+        var anio = dFechaRegistro.getFullYear();
+        var hora = dFechaRegistro.getHours();
+        var minutos = dFechaRegistro.getMinutes();
+        var segundos = dFechaRegistro.getSeconds();
+        var milisegundos = dFechaRegistro.getMilliseconds();
+
+        var f = dia+'-'+mes+'-'+anio+' '+hora+':'+minutos+':'+segundos;
+
         axios
           .post("api/equipo", {
             Tdescripcion: me.tdescripcion,
             Nequipo: me.nequipo,
             ndistrito: me.ndistrito,
             numParticipantes: 1,
-            DfechaJuego: me.dfechaJuego
+            DfechaJuego: me.dfechaJuego,
+            DfechaRegistro: f,
+            idJugador: Number(localStorage.getItem('usuario')),
           })
           .then(function(response) {
             me.close();

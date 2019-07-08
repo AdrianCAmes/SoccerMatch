@@ -34,7 +34,7 @@ namespace Service.Implementacion
             return equiporepository.GetAll();
         }
 
-        public bool Guardar(EquiposRecomendadosViewModel entity)
+        public bool Guardar(EquiposInsertarViewModel entity)
         {
             return equiporepository.Guardar(entity);
         }

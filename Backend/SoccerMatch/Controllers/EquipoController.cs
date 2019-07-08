@@ -45,7 +45,7 @@ namespace SoccerMatch.Controllers
             );
         }
         [HttpPost]
-        public ActionResult Post([FromBody] EquiposRecomendadosViewModel Equipo)
+        public ActionResult Post([FromBody] EquiposInsertarViewModel Equipo)
         {
             return Ok(
                 EquipoService.Guardar(Equipo)
