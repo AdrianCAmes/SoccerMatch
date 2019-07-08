@@ -119,7 +119,7 @@
           <td>{{ props.item.tdescripcion }}</td>
           <td>{{ props.item.numParticipantes }}</td>
           <td>{{ props.item.dfechaJuego }}</td>
-          <td>{{ props.item.cdistrito }}</td >   
+          <td>{{ props.item.ndistrito }}</td >   
             <td>  
                <v-flex xs12 sm2 md2 lg2 xl2>
                       <v-btn @click="mostrarDetallesEquipo(props.item)" small fab dark color="teal">
