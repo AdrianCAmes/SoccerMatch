@@ -194,8 +194,7 @@
                 <v-flex>
                   <td>Código de Equipo: {{this.alquilerEquipo}}</td>
                 </v-flex>
-                <v-layout row wrap>
-                <v-flex>
+                <v-layout column>
                     <v-menu
                       v-model="menu2"
                       :close-on-content-click="false"
@@ -217,9 +216,7 @@
                       </template>
                       <v-date-picker v-model="alquilerFechaInicio" @input="menu2 = false"></v-date-picker>
                     </v-menu>
-                  </v-flex>
 
-                  <v-flex xs11 sm5>
                       <v-menu
                         ref="menu"
                         v-model="menu3"
@@ -250,21 +247,15 @@
                           @click:minute="$refs.menu.save(alquilerHoraInicio)"
                         ></v-time-picker> 
                       </v-menu>
-                    </v-flex>
 
-                    <v-flex xs12 sm4 md4 lg4 xl4>
                         <v-text-field v-model="alquilerHoras" label="Horas de Reserva">
                         </v-text-field>
-                    </v-flex>
 
-                    <v-flex xs12 sm2 md2 lg2 xl2>
                     <v-btn @click="setFrmCanchasTrue()" small fab dark color="teal">
                         <v-icon dark>list</v-icon>
                     </v-btn>
-                </v-flex>
                     
                     
-                <v-flex xs12 sm12 md12 lg12 xl12>
                     <v-data-table :headers="cabeceraCancha" :items="canchas" hide-actions class="elevation-1">
                         <template slot="items" slot-scope="props">
                           <td class="justify-center layout px-0">
@@ -282,12 +273,9 @@
                             <h3>No hay canchas que mostrar.</h3>
                         </template>
                     </v-data-table>
-                </v-flex>
 
-                <v-flex xs12 sm12 md12 lg12 xl12>
                     <v-btn @click="setCancelarAlquiler()" color="blue darken-1" flat>Cancelar</v-btn>
                     <v-btn @click="guardarAlquiler()" color="success">Guardar</v-btn>
-                </v-flex>
             </v-layout>
         </v-container>
 

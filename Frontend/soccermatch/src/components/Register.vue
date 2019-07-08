@@ -59,7 +59,7 @@
         </v-card-text>
         <v-divider class="mt-5"></v-divider>
         <v-card-actions>
-          <v-btn flat>Cancel</v-btn>
+          <v-btn @click="retroceder()" color="primary">Cancel</v-btn>
           <v-spacer></v-spacer>
           <!--<v-slide-x-reverse-transition>
             <v-tooltip
@@ -174,10 +174,12 @@ export default {
       this.cpswd="";
       this.direccion="";
     },
+    retroceder(){
+        this.$router.push('/');
+    },
    guardar() {
       if (this.editedIndex > -1) {
         //Código para editar
-
         let me = this;
         axios 
           .put("api/usuario", {
@@ -199,6 +201,8 @@ export default {
       } else {
         //Código para guardar
         let me = this;
+        if(me.pswd!=''&&me.cdni!=''&&me.nusuario!=''&&me.numTelefono!=''&&me.usuario1!=''&&me.cpswd!=''&&me.direccion!=''){
+          if(me.pswd==me.cpswd){
         axios
           .post("api/usuario", {
            cdni: me.cdni,
@@ -223,6 +227,12 @@ export default {
           }).catch(function(error){console.log(error)});
            this.$router.push('/equipo/misequipos');
             localStorage.setItem("usuario",tamaño);
+          }
+          else
+            alert("Las contraseñas no coinciden")
+            }
+            else
+            alert("Debe de completar todos los campos")
           }
       }
     
