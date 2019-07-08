@@ -29,26 +29,28 @@
                   <v-flex xs12 sm12 md12>
                     <v-text-field v-model="tdescripcion" label="Descripcion"></v-text-field>
                   </v-flex>
-                  <v-flex xs12 sm12 md12 >
-                    <v-text-field v-model="dfechaJuego" label="Fecha de Juego"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm12 md12>
-                    <v-text-field v-model="cdistrito" label="Distrito" ></v-text-field>
-                  </v-flex>               
-              </v-container>
-            </v-card-text>
-             <v-spacer></v-spacer>
-
-               <v-card-text>
-              <v-container grid-list-md>               
-                  <v-flex xs12 sm12 md12>
-                    <v-text-field v-model="nequipo" label="Nombre"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm12 md12>
-                    <v-text-field v-model="tdescripcion" label="Descripcion"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm12 md12 >
-                    <v-text-field v-model="dfechaJuego" label="Fecha de Juego"></v-text-field>
+                  <v-flex>
+                    <v-menu
+                      v-model="menu"
+                      :close-on-content-click="false"
+                      :nudge-right="40"
+                      lazy
+                      transition="scale-transition"
+                      offset-y
+                      full-width
+                      min-width="290px"
+                    >
+                      <template v-slot:activator="{ on }">
+                        <v-text-field
+                          v-model="dfechaJuego"
+                          label="Fecha de Juego"
+                          prepend-icon="event"
+                          readonly
+                          v-on="on"
+                        ></v-text-field>
+                      </template>
+                      <v-date-picker v-model="dfechaJuego" @input="menu = false"></v-date-picker>
+                    </v-menu>
                   </v-flex>
                   <v-flex xs12 sm12 md12>
                     <v-combobox
@@ -56,10 +58,9 @@
                       :items="distritos"
                       label="Distritos"
                     ></v-combobox>
-                  </v-flex>      
+                  </v-flex>                
               </v-container>
             </v-card-text>
-
 
 
             <v-card-actions>
@@ -150,7 +151,7 @@ export default {
         { text: "Descripcion", value: "tdescripcion", sortable: false },  
         { text: "Numero de participantes", value: "numParticipantes" },  
         { text: "Fecha de juego", value: "dfechaJuego" },
-        { text: "Distrito", value: "cdistrito"},
+        { text: "Distrito", value: "ndistrito"},
         { text: "VerDetalle", value: "detalle"}
         
       ],
@@ -179,6 +180,7 @@ export default {
       numParticipantes :  '',
       dfechaJuego :  '',
       ndistrito: '',
+      menu: false,
 
       distritos: [],
       cdistrito:'',
@@ -259,7 +261,7 @@ export default {
     limpiar() {
       this.cequipo = "";
       this.tdescripcion = "";
-      this.cdistrito = "";
+      this.ndistrito = "";
       this.nequipo = "";
       this.numParticipantes = "";
       this.dfechaJuego = "";
