@@ -181,7 +181,7 @@ export default {
       ndistrito: '',
 
       distritos: [],
-      
+      cdistrito:'',
 
       //para la vista detalleEquipo
       verDetalleEquipo:0,
