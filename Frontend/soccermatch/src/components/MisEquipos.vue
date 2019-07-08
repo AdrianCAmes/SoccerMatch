@@ -26,9 +26,11 @@
               <v-container grid-list-md>               
                   <v-flex xs12 sm12 md12>
                     <v-text-field v-model="nequipo" label="Nombre"></v-text-field>
-
+                  </v-flex>
+                  <v-flex>
                     <v-text-field v-model="tdescripcion" label="Descripcion"></v-text-field>
-
+                  </v-flex>
+                  <v-flex>
                     <v-menu
                       v-model="menu"
                       :close-on-content-click="false"
