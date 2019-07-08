@@ -7,7 +7,7 @@
       wrap>
       <v-flex>
         <v-toolbar flat color="white">  
-          <h1>Login</h1>    
+          <h1>¡Bienvenido a SoccerMatch!</h1>    
           </v-toolbar>
 
           <v-flex xs12 sm12 md12>
