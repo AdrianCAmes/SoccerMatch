@@ -117,7 +117,14 @@ namespace Repository.Implementacion
 
         public Equipo Get(int id)
         {
-            throw new NotImplementedException();
+            var equipo = new Equipo();
+            try {
+                equipo =  context.Equipo.FirstOrDefault(x=>x.Cequipo==id);
+            }
+            catch (System.Exception) {
+                throw;
+            }
+            return equipo;  
         }
 
         public IEnumerable<Equipo> GetAll()
@@ -183,6 +190,7 @@ namespace Repository.Implementacion
                     Cequipo = e.Cequipo,
                     Nequipo = e.Nequipo,
                     Tdescripcion = e.Tdescripcion,
+                    NumParticipantes = e.NumParticipantes,
                     DfechaJuego = e.DfechaJuego,
                 });
             }
@@ -211,7 +219,25 @@ namespace Repository.Implementacion
 
         public bool Update(Equipo entity)
         {
-            throw new NotImplementedException();
+            try {
+                var equipoOriginal = context.Equipo.Single (
+                    x=>x.Cequipo == entity.Cequipo
+                );
+                equipoOriginal.Cequipo = entity.Cequipo;
+                equipoOriginal.Nequipo = entity.Nequipo;
+                equipoOriginal.Tdescripcion = entity.Tdescripcion;
+                equipoOriginal.DfechaJuego = entity.DfechaJuego;
+                equipoOriginal.Cdistrito = entity.Cdistrito;
+                equipoOriginal.NumParticipantes = entity.NumParticipantes;
+                
+
+                context.Equipo.Update(equipoOriginal);
+                context.SaveChanges();
+            }
+            catch (System.Exception) {
+                return false;
+            }
+            return true;
         }
     }
 }

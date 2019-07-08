@@ -51,6 +51,7 @@ export default {
   
   created(){
    localStorage.removeItem("usuario");
+   localStorage.removeItem("equipo");
    this.setLstaUsuarios();
   },
   methods: {
