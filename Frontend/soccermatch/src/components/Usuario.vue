@@ -1,5 +1,5 @@
 <template>
- 
+ <v-layout align-start>
     <v-flex>
       <v-toolbar flat color="white">
         <v-toolbar-title>Usuarios</v-toolbar-title>
@@ -69,7 +69,7 @@
       </v-data-table>
 
     </v-flex>
-
+ </v-layout>
 </template>
 <script>
 import axios from "axios";

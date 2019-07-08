@@ -36,7 +36,15 @@ namespace SoccerMatch.Controllers
                 EquipoService.EquiposRecomendados(idUsuario)
             );
         }
-        
+
+        [HttpGet("equipodetalle/{idEquipo}")]
+        public ActionResult DetalleEquipo(int idEquipo)
+        {
+            return Ok(
+                EquipoService.DetalleEquipo(idEquipo)
+            );
+        }
+
         [HttpGet("misequipos/{idUsuario}")]
         public ActionResult MisEquipos(int idUsuario)
         {        

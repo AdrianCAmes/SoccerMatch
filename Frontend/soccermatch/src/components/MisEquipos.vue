@@ -1,5 +1,5 @@
 <template>
- 
+ <v-layout align-start>
     <v-flex>
       <v-toolbar flat color="white">
         <v-toolbar-title>Mis Equipos</v-toolbar-title>
@@ -26,11 +26,9 @@
               <v-container grid-list-md>               
                   <v-flex xs12 sm12 md12>
                     <v-text-field v-model="nequipo" label="Nombre"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm12 md12>
+
                     <v-text-field v-model="tdescripcion" label="Descripcion"></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm12 md12>
+
                     <v-menu
                       v-model="menu"
                       :close-on-content-click="false"
@@ -90,7 +88,7 @@
       </v-data-table>
 
     </v-flex>
-
+ </v-layout>
 </template>
 <script>
 import axios from "axios";
