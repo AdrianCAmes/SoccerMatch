@@ -24,7 +24,7 @@ namespace Service.Implementacion
             return equiporepository.DetalleEquipo(idEquipo);
         }
 
-        public IEnumerable<Equipo> EquiposRecomendados(int idUsuario)
+        public IEnumerable<EquiposRecomendadosViewModel> EquiposRecomendados(int idUsuario)
         {
             return equiporepository.EquiposRecomendados(idUsuario);
         }
