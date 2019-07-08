@@ -52,14 +52,37 @@ namespace Repository.Implementacion
             foreach(var part in participante)
                 ids.Add(part.Cequipo);
             equipo=context.Equipo.Where(e=>!ids.Contains(e.Cequipo)).ToList();
-            return equipo.Select (o => new Equipo {
-                Cequipo=o.Cequipo,
+            var ndistritos = new List<string>();
+            foreach(var e in equipo)
+            {
+                var distrito = context.Distrito.FirstOrDefault(x=>x.Cdistrito == e.Cdistrito);
+                var nombre = distrito.Ndistrito;
+                ndistritos.Add(nombre);
+            }
+            List<EquiposRecomendadosViewModel> equipoVM = new List<EquiposRecomendadosViewModel>();
+            foreach(var e in equipo)
+            {
+                equipoVM.Add(new EquiposRecomendadosViewModel{
+                    Cequipo = e.Cequipo,
+                    Nequipo = e.Nequipo,
+                    Tdescripcion = e.Tdescripcion,
+                    DfechaJuego = e.DfechaJuego,
+                });
+            }
+            for(var i = 0; i < equipoVM.Count(); i++)
+            {
+                equipoVM.ElementAt(i).Ndistrito = ndistritos.ElementAt(i);
+            }
+
+            return equipoVM;
+            /*return equipo.Select (o => new Equipo {
+                    Cequipo=o.Cequipo,
                     Nequipo = o.Nequipo,
                     Tdescripcion = o.Tdescripcion,
                     NumParticipantes = o.NumParticipantes,
-                   DfechaJuego = o.DfechaJuego,
+                    DfechaJuego = o.DfechaJuego,
                     Cdistrito = o.Cdistrito
-            });
+            });*/
         }
 
         public Equipo Get(int id)
@@ -90,12 +113,12 @@ namespace Repository.Implementacion
             var equipo=new List<Equipo>();
             foreach(var par in participante)
                 equipo.Add(context.Equipo.Single(e=>e.Cequipo==par.Cequipo));
-                        return equipo.Select (o => new Equipo {
-                Cequipo=o.Cequipo,
+                return equipo.Select (o => new Equipo {
+                    Cequipo=o.Cequipo,
                     Nequipo = o.Nequipo,
                     Tdescripcion = o.Tdescripcion,
                     NumParticipantes = o.NumParticipantes,
-                   DfechaJuego = o.DfechaJuego,
+                    DfechaJuego = o.DfechaJuego,
                     Cdistrito = o.Cdistrito
             });
         }

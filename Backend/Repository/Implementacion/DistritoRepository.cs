@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using Repository.dbcontext;
 using System.Data.SqlClient;
 using System.Configuration;
 
@@ -11,6 +12,11 @@ namespace Repository.Implementacion
 {
     public class DistritoRepository : IDistritoRepository
     {
+        private ApplicationDbContext context;
+        public DistritoRepository(ApplicationDbContext context)
+        {
+            this.context = context;
+        }
         public bool Delete(int id)
         {
             throw new NotImplementedException();
@@ -18,7 +24,14 @@ namespace Repository.Implementacion
 
         public Distrito Get(int id)
         {
-            throw new NotImplementedException();
+            var entity = new Distrito();
+            try{
+                entity = context.Distrito.FirstOrDefault(x=>x.Cdistrito == id);
+            }
+            catch(System.Exception) {
+                throw;
+            }
+            return entity;
         }
 
         public IEnumerable<Distrito> GetAll()

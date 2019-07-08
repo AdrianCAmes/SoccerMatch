@@ -12,7 +12,6 @@ namespace SoccerMatch.Controllers
     [ApiController]
     public class EquipoController : ControllerBase
     {
-
         private IEquipoService EquipoService;
 
         public EquipoController(IEquipoService EquipoService)

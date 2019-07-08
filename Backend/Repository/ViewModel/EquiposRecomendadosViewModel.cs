@@ -6,12 +6,12 @@ namespace Repository.ViewModel
 {
     public class EquiposRecomendadosViewModel
     {
-        public int Id { get; set; }
-        public int idEquipo{get;set;}
-        public string NombreEquipo { get; set; }
-        public string NombreDistrito { get; set; }
-        public int  CantidadVacantes { get; set; }
-        public DateTime fechaJuego { get; set; }
+        public int Cequipo { get; set; }
+        public string Nequipo { get; set; }
+        public string Tdescripcion { get; set; }
+        public int NumParticipantes { get; set; }
+        public DateTime DfechaJuego { get; set; }
+        public string Ndistrito { get; set; }
 
 }
 }

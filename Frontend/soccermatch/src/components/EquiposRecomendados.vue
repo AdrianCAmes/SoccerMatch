@@ -2,7 +2,7 @@
  
     <v-flex>
       <v-toolbar flat color="white">
-        <v-toolbar-title>Equipos recomendados {{idEquipo}}</v-toolbar-title>
+        <v-toolbar-title>Equipos recomendados </v-toolbar-title>
         <v-divider class="mx-2" inset vertical></v-divider>
         <v-spacer></v-spacer>
         <v-text-field
