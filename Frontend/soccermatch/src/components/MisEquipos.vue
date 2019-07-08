@@ -2,7 +2,7 @@
  <v-layout align-start>
     <v-flex>
       <v-toolbar flat color="white">
-        <v-toolbar-title>Mis Equipos</v-toolbar-title>
+        <v-toolbar-title>Mis Equipos </v-toolbar-title>
         <v-divider class="mx-2" inset vertical></v-divider>
         <v-spacer></v-spacer>
         <v-text-field
@@ -42,13 +42,20 @@
                        <td>{{ props.item.ndistrito }}</td>
                        <td>{{ props.item.numparticipantes }}</td>
                        <td>{{ props.item.numhoras }}</td>
+                        <td>  
+               <v-flex xs12 sm2 md2 lg2 xl2>
+                      <v-btn @click="mostrarDetallesEquipo(props.item)" small fab dark color="teal">
+                        <v-icon dark>money</v-icon>
+                    </v-btn>
+                </v-flex>       
+            </td >    
                        </template>        
                    </v-data-table>   
                     </v-card-text>  
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" flat @click.native="ocultarDetallesEquipo">Atras</v-btn>
-              <!--v-btn color="blue darken-1" flat @click.native="guardar">Guardar</v-btn -->
+              <v-btn   color="blue darken-1" flat @click="ocultarDetallesEquipo">Atras</v-btn >
+              <v-btn :disabled="btn_desactivado" color="blue darken-1" flat @click.native="AlquilarFuncion">Alquilar</v-btn >
             </v-card-actions>
 
           </v-card>
@@ -122,7 +129,8 @@
           </td>
           <td>{{ props.item.nequipo }}</td>
           <td>{{ props.item.tdescripcion }}</td>
-          <td>{{ props.item.numParticipantes }}</td>
+          <td>{{ props.item.numParticipantesActual }}</td>
+          <td>{{ props.item.numParticipantes }}</td>     
           <td>{{ props.item.dfechaJuego }}</td>
           <td>{{ props.item.ndistrito }}</td >
           <td>  
@@ -153,10 +161,10 @@ export default {
         { text: "Opciones", value: "opciones", sortable: false },
         { text: "Nombre", value: "nequipo", sortable: false },     
         { text: "Descripcion", value: "tdescripcion", sortable: false },  
-        { text: "Numero de participantes", value: "numParticipantes" },  
+        { text: "Participantes Actualmente", value: "Participantes_A", sortable: false },  
+         { text: "Participantes Esperados", value: "Participantes_E", sortable: false },         
         { text: "Fecha de juego", value: "dfechaJuego" },
-        { text: "Distrito", value: "ndistrito"}
-        
+        { text: "Distrito", value: "ndistrito"}        
       ],
 
          cabeceraDetalleEquipo_PARTICIPANTES: [    
@@ -194,7 +202,8 @@ export default {
       lstaParticipantes:[],
       idEquipo:'',
       lstaAlquilerDelEquipo:[],
-
+      tempNumParticipantes:0,
+      btn_desactivado:true,
     };
   },
   computed: {
@@ -214,6 +223,9 @@ export default {
     this.setListaDistritos();
   },
   methods: {
+    AlquilarFuncion(){
+       tempNumParticipantes
+    },
     setListaMisEquipos(){
       let me =this;    
       axios.get("api/equipo/misequipos/"+localStorage.getItem("usuario"))//INSERTAR AQUIE EL IDUSUARIO  EN LUGAR DEL 2
@@ -353,6 +365,10 @@ export default {
         });
     },
       mostrarDetallesEquipo(data =[]){
+       this.tempNumParticipantes=data["numParticipantesActual"];
+       var participantesMaximo=data["numParticipantes"];
+       if (this.tempNumParticipantes>=participantesMaximo) this.btn_desactivado=false;
+       else{this.btn_desactivado=true;}
      this.verDetalleEquipo=1;
      this.idEquipo=data["cequipo"];
      this.setearParticipantes();
@@ -360,6 +376,7 @@ export default {
     },
     ocultarDetallesEquipo(){
 this.verDetalleEquipo=0;
+this.tempNumParticipantes=0;
     }
   }
 };
