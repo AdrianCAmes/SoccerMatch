@@ -44,76 +44,38 @@ namespace Repository.Implementacion
         }
 
         public IEnumerable<EquiposRecomendadosViewModel> EquiposRecomendados(int  idUsuario)
-        {
-            var lstaEquiposQuePertenece = from p in context.Participante
-                                          join e in context.Equipo
-                                          on p.Cequipo equals e.Cequipo
-                                          where p.Cjugador == idUsuario
-                                          // group p by p.Cequipo into equiposDelJugador
-                                          group p by p.Cequipo into equiposDelJugador
-                                          select new {cequipo=equiposDelJugador.Key};
-
-          
-            var lstaEquiposRecomendados = new List<EquiposRecomendadosViewModel>();
-            foreach (var equipo in context.Equipo)
-            {
-                var ParticipantesDelEquipo = from p in context.Participante
-                                               where p.Cequipo == equipo.Cequipo
-                                               select p.Cjugador;
-                int numParticipantes = ParticipantesDelEquipo.Count();
-
-                //if (numParticipantes<12 && lstaEquiposQuePertenece.Where(o=> o==4).Count()==0)
-                if (numParticipantes < equipo.NumParticipantes && lstaEquiposQuePertenece.Where(o => o.cequipo == equipo.Cequipo).Count() == 0)
-                {
-                    var objDistrito = new Distrito();
-                    objDistrito = context.Distrito.Single(o => o.Cdistrito == equipo.Cdistrito);
-                    var objEquipoRecomendado = new EquiposRecomendadosViewModel();
-                    objEquipoRecomendado.NumParticipantesActual = numParticipantes;
-                    objEquipoRecomendado.Cequipo = equipo.Cequipo;
-                    objEquipoRecomendado.Ndistrito = objDistrito.Ndistrito;
-                    objEquipoRecomendado.Nequipo = equipo.Nequipo;
-                    objEquipoRecomendado.NumParticipantes = equipo.NumParticipantes;
-                    objEquipoRecomendado.DfechaJuego = equipo.DfechaJuego;
-                    objEquipoRecomendado.Tdescripcion = equipo.Tdescripcion;
-                    lstaEquiposRecomendados.Add(objEquipoRecomendado);
-                }
-            }
-            return lstaEquiposRecomendados;                          
+        {           
                                          
+            var participante=new List<Participante>();
+            participante= context.Participante.Where(p=>p.Cjugador==idUsuario).ToList();
+            List<int> ids=new List<int>();
+            var equipo=new List<Equipo>();
+            foreach(var part in participante)
+                ids.Add(part.Cequipo);
+            equipo=context.Equipo.Where(e=>!ids.Contains(e.Cequipo)).ToList();
+            var ndistritos = new List<string>();
+            foreach(var e in equipo)
+            {
+                var distrito = context.Distrito.FirstOrDefault(x=>x.Cdistrito == e.Cdistrito);
+                var nombre = distrito.Ndistrito;
+                ndistritos.Add(nombre);
+            }
+            List<EquiposRecomendadosViewModel> equipoVM = new List<EquiposRecomendadosViewModel>();
+            foreach(var e in equipo)
+            {
+                equipoVM.Add(new EquiposRecomendadosViewModel{
+                    Cequipo = e.Cequipo,
+                    Nequipo = e.Nequipo,
+                    Tdescripcion = e.Tdescripcion,
+                    DfechaJuego = e.DfechaJuego,
+                });
+            }
+            for(var i = 0; i < equipoVM.Count(); i++)
+            {
+                equipoVM.ElementAt(i).Ndistrito = ndistritos.ElementAt(i);
+            }
 
-
-
-
-            //var participante=new List<Participante>();
-            //participante= context.Participante.Where(p=>p.Cjugador==idUsuario).ToList();
-            //List<int> ids=new List<int>();
-            //var equipo=new List<Equipo>();
-            //foreach(var part in participante)
-            //    ids.Add(part.Cequipo);
-            //equipo=context.Equipo.Where(e=>!ids.Contains(e.Cequipo)).ToList();
-            //var ndistritos = new List<string>();
-            //foreach(var e in equipo)
-            //{
-            //    var distrito = context.Distrito.FirstOrDefault(x=>x.Cdistrito == e.Cdistrito);
-            //    var nombre = distrito.Ndistrito;
-            //    ndistritos.Add(nombre);
-            //}
-            //List<EquiposRecomendadosViewModel> equipoVM = new List<EquiposRecomendadosViewModel>();
-            //foreach(var e in equipo)
-            //{
-            //    equipoVM.Add(new EquiposRecomendadosViewModel{
-            //        Cequipo = e.Cequipo,
-            //        Nequipo = e.Nequipo,
-            //        Tdescripcion = e.Tdescripcion,
-            //        DfechaJuego = e.DfechaJuego,
-            //    });
-            //}
-            //for(var i = 0; i < equipoVM.Count(); i++)
-            //{
-            //    equipoVM.ElementAt(i).Ndistrito = ndistritos.ElementAt(i);
-            //}
-
-            //return equipoVM;
+            return equipoVM;
         }
 
         public Equipo Get(int id)
