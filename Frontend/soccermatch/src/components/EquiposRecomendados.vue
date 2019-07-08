@@ -29,6 +29,9 @@
                   <v-flex xs12 sm12 md12>
                     <v-text-field v-model="tdescripcion" label="Descripcion"></v-text-field>
                   </v-flex>
+                  <v-flex xs12 sm12 md12>
+                    <v-text-field v-model="numParticipantes" label="Numero de Participantes Para Jugar"></v-text-field>
+                  </v-flex>
                   <v-flex>
                     <v-menu
                       v-model="menu"
@@ -313,7 +316,7 @@ export default {
             Tdescripcion: me.tdescripcion,
             Nequipo: me.nequipo,
             ndistrito: me.ndistrito,
-            numParticipantes: 1,
+            numParticipantes: me.numParticipantes,
             DfechaJuego: me.dfechaJuego,
             DfechaRegistro: f,
             idJugador: Number(localStorage.getItem('usuario')),
