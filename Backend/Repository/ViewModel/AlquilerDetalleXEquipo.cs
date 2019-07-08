@@ -7,7 +7,7 @@ namespace Repository.ViewModel
     public class AlquilerDetalleXEquipo
     {
         public int calquiler { get; set; }
-            public int cequipo { get; set; }
+        public int cequipo { get; set; }
         public int cdistrito { get; set; }
         public int ccancha { get; set; }
 

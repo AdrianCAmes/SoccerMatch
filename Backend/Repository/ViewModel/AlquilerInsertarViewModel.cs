@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using Repository.ViewModel;
 
 namespace Repository.ViewModel
 {
@@ -14,5 +16,7 @@ namespace Repository.ViewModel
         public decimal Mdescuento { get; set; }
         public decimal Mtotal { get; set; }
         public bool Fpagado { get; set; }
+
+        public IEnumerable<ParticipanteAlquierViewModel> participantes {get; set;}
     }
 }

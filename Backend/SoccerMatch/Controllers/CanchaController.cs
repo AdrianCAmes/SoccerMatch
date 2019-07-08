@@ -17,7 +17,7 @@ namespace SoccerMatch.Controllers
         }
 
         [HttpGet]
-        public ActionResult Get()
+        public ActionResult GetAll()
         {
             return Ok(
                 CanchaService.ListarTodos()

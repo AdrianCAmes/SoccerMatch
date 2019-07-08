@@ -35,19 +35,16 @@ namespace Repository.Implementacion
         {
            var cancha=new List<Cancha>();
            cancha=context.Cancha.ToList();
-           var ncalle=new List<string>();
-           var calles=new List<Calle>();
+           var ncalles=new List<string>();
+           var ndistritos = new List<string>();
            foreach(var c in cancha){
                var calle=context.Calle.FirstOrDefault(x=>x.Ccalle==c.Ccalle);
-               calles.Add(calle);
-               var nombre=calle.Ncalle;
-               ncalle.Add(nombre);
-           }
-           var ndistrito=new List<string>();
-           foreach(var c in calles){
-               var distrito=context.Distrito.FirstOrDefault(d=>d.Cdistrito==c.Cdistrito);
-               var nombre=distrito.Ndistrito;
-               ndistrito.Add(nombre);
+               var ncalle = calle.Ncalle;
+               ncalles.Add(ncalle);
+               var distrito = context.Distrito.FirstOrDefault(x=>x.Cdistrito == calle.Cdistrito);
+               var ndistrito = distrito.Ndistrito;
+               ndistritos.Add(ndistrito);
+
            }
             List<CanchaViewModel> canchavm=new List<CanchaViewModel>();
             foreach(var c in cancha){
@@ -55,14 +52,13 @@ namespace Repository.Implementacion
                     Ccancha=c.Ccancha,
                     Ncancha=c.Ncancha,
                     Cpropietario=c.Cpropietario,
-                    Ccalle=c.Ccalle,
                     Tdireccion=c.Tdireccion,
                     MprecioHora=c.MprecioHora
                 });
             }
             for(var i=0;i<canchavm.Count();i++){
-                canchavm.ElementAt(i).Ndistrito=ndistrito.ElementAt(i);
-                canchavm.ElementAt(i).Ncalle=ncalle.ElementAt(i);
+                canchavm.ElementAt(i).Ndistrito=ndistritos.ElementAt(i);
+                canchavm.ElementAt(i).Ncalle=ncalles.ElementAt(i);
             }
             return canchavm;
         }

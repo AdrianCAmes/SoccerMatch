@@ -60,6 +60,47 @@
 
           </v-card>
         </v-dialog>
+        <!------------------------------------------------------------------------------------------------------>
+        <v-dialog v-model="mostrarFrmCanchas" max-width="1000px">
+                <v-card>
+                    <v-card-title>
+                        <span class="headline">Seleccione una cancha</span>
+                    </v-card-title>
+                    <v-card-text>
+                        <v-container grid-list-md>
+                            <v-layout wrap>
+                                <v-flex xs12 sm12 md12 lg12 xl12>
+                                    <template>
+                                        <v-data-table :headers="cabeceraCancha" :items="canchaFrm" class="elevation-1">
+                                            <template slot="items" slot-scope="props">
+                                              <td class="justify-center layout px-0">
+                                                <v-icon small class="mr-2" @click="agregarCancha(props.item)">
+                                                    add
+                                                </v-icon>
+                                              </td>
+                                              <td>{{ props.item.ccancha }}</td>
+                                              <td>{{ props.item.ncancha }}</td>
+                                              <td>{{ props.item.mprecioHora }}</td>
+                                              <td>{{ props.item.ncalle }}</td>
+                                              <td>{{ props.item.ndistrito }}</td>
+                                            </template>
+                                            <template slot="no-data">
+                                                <h3>No hay canchas para mostrar.</h3>
+                                            </template>
+                                        </v-data-table>
+                                    </template>
+                                </v-flex>
+                            </v-layout>
+                        </v-container>
+                    </v-card-text>
+                    <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn @click="setFrmCanchasFalse()" color="blue darken" flat>
+                            Cancelar
+                        </v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-dialog>
 
         <!------------------------------------------------------------------------------------------------------>
         <v-dialog v-model="dialog" max-width="800px">
@@ -210,25 +251,41 @@
                         ></v-time-picker> 
                       </v-menu>
                     </v-flex>
+
+                    <v-flex xs12 sm2 md2 lg2 xl2>
+                    <v-btn @click="setFrmCanchasTrue()" small fab dark color="teal">
+                        <v-icon dark>list</v-icon>
+                    </v-btn>
+                </v-flex>
                     
                     
-
-
-
-
-
-
-
-
-
-
+                <v-flex xs12 sm12 md12 lg12 xl12>
+                    <v-data-table :headers="cabeceraCancha" :items="canchas" hide-actions class="elevation-1">
+                        <template slot="items" slot-scope="props">
+                          <td class="justify-center layout px-0">
+                            <v-icon small class="mr-2" @click="eliminarCancha()">
+                              delete
+                            </v-icon>
+                          </td>
+                          <td>{{ props.item.ccancha }}</td>
+                          <td>{{ props.item.ncancha }}</td>
+                          <td>{{ props.item.mprecioHora }}</td>
+                          <td>{{ props.item.ncalle }}</td>
+                          <td>{{ props.item.ndistrito }}</td>
+                        </template>
+                        <template slot="no-data">
+                            <h3>No hay canchas que mostrar.</h3>
+                        </template>
+                    </v-data-table>
+                </v-flex>
 
                 <v-flex xs12 sm12 md12 lg12 xl12>
-                    <v-btn @click="setCancelar()" color="blue darken-1" flat>Cancelar</v-btn>
+                    <v-btn @click="setCancelarAlquiler()" color="blue darken-1" flat>Cancelar</v-btn>
                     <v-btn @click="guardarAlquiler()" color="success">Guardar</v-btn>
                 </v-flex>
             </v-layout>
         </v-container>
+
 
     </v-flex>
  </v-layout>
@@ -266,11 +323,22 @@ export default {
         { text: "Horas", value: "horas", sortable: false }, 
       ],
 
+      cabeceraCancha:[
+        { text: "Opcion", value: "opcion", sortable: false },
+        { text: "ID", value: "ccancha", sortable: false },
+        { text: "Nombre", value: "ncancha", sortable: false },     
+        { text: "Precio por hora", value: "Direccion", sortable: false },
+        { text: "Calle", value: "Calle", sortable: false },  
+        { text: "Distrito", value: "Distrito", sortable: false },   
+      ],
+
 
       search: "",
       editedIndex: -1,
 
       distritos: [],
+      canchas: [],
+      canchaFrm:[],
 
       //TODO:Model
       nequipo: "",
@@ -283,6 +351,7 @@ export default {
       menu3: false,
 
       mostrarFrmAlquiler: false,
+      mostrarFrmCanchas: false,
 
      //para la vista detalleEquipo
       verDetalleEquipo:0,
@@ -321,6 +390,7 @@ export default {
   created() {
     this.setListaMisEquipos();
     this.setListaDistritos();
+    this.setListaCanchas();
   },
   methods: {
     validarFecha(){
@@ -337,8 +407,30 @@ export default {
       
      },
 
+    agregarCancha(data = []) {
+      this.canchas = [];
+      this.canchas.push({
+        ccancha: data['ccancha'],
+        ncancha: data['ncancha'],
+        mprecioHora: data['mprecioHora'],
+        ncalle: data['ncalle'],
+        ndistrito: data['ndistrito']
+      });
+      this.setFrmCanchasFalse();
+    },
+
+    eliminarCancha() {
+      this.canchas = [];
+    },
+
     AlquilarFuncion(){
        tempNumParticipantes
+    },
+    setFrmCanchasTrue(){
+      this.mostrarFrmCanchas = true;
+    },
+    setFrmCanchasFalse(){
+      this.mostrarFrmCanchas = false;
     },
     setListaMisEquipos(){
       let me =this;    
@@ -355,6 +447,16 @@ export default {
       axios.get("api/distrito/names")
       .then(function(response) {
         me.distritos = response.data;
+      }) 
+      .catch(function(error) {
+        console.log(error);
+      });
+    },
+    setListaDistritos() {
+      let me = this;
+      axios.get("api/cancha")
+      .then(function(response) {
+        me.canchaFrm = response.data;
       }) 
       .catch(function(error) {
         console.log(error);
@@ -382,7 +484,7 @@ export default {
       this.limpiar();
       this.mostrarFrmAlquiler = false;
     },
-    setCancelar() {
+    setCancelarAlquiler() {
       this.setMostrarFrmAlquilerFalse();
       localStorage.removeItem("equipo");
     },

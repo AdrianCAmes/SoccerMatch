@@ -9,6 +9,6 @@ namespace Service
 {
     public interface ICanchaService : ICrudService<Cancha>
     {
-                IEnumerable<CanchaViewModel> ListarTodos();
+        IEnumerable<CanchaViewModel> ListarTodos();
     }
 }
