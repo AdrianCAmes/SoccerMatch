@@ -11,6 +11,10 @@ namespace Service.Implementacion
 {
     public class JugadorService : IJugadorService
     {
+        private IJugadorRepository jugadorrepository;
+        public JugadorService(IJugadorRepository jugadorrepository){
+            this.jugadorrepository=jugadorrepository;
+        }
         public bool Delete(int id)
         {
             throw new NotImplementedException();
@@ -23,12 +27,12 @@ namespace Service.Implementacion
 
         public IEnumerable<Jugador> GetAll()
         {
-            throw new NotImplementedException();
+            return jugadorrepository.GetAll();
         }
 
         public bool Save(Jugador entity)
         {
-            throw new NotImplementedException();
+            return jugadorrepository.Save(entity);
         }
 
         public bool Update(Jugador entity)
