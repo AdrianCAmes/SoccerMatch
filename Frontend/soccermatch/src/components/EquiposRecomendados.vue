@@ -140,7 +140,6 @@
 </template>
 <script>
 import axios from "axios";
-import router from "vue-router"
 export default {
   data() {
     return {
@@ -193,6 +192,7 @@ export default {
       idEquipo:'',
       lstaAlquilerDelEquipo:[],
 
+
     };
   },
   computed: {
@@ -212,8 +212,9 @@ export default {
     this.setListaDistritos();
   },
   methods: {
+    GuardarAlquiler(){
 
-
+    },
     setListaEquiposRecomendados(){
   let me =this;    
   axios.get("api/equipo/recomendados/"+localStorage.getItem("usuario"))//INSERTAR AQUIE EL IDUSUARIO  EN LUGAR DEL 2
@@ -285,7 +286,7 @@ export default {
           })
           .then(function(response) {
             me.close();
-            me.setListaEquiposRecomendados();
+            me.listar();
             me.limpiar();
           })
           .catch(function(error) {
@@ -318,9 +319,8 @@ export default {
           })
           .then(function(response) {
             me.close();
-            me.setListaEquiposRecomendados();
+            me.listar();
             me.limpiar();
-            me.$router.push('/equipo/misequipos');
           })
           .catch(function(error) {
             console.log(error);
