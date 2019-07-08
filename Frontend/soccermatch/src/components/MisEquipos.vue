@@ -77,7 +77,7 @@
           <td>{{ props.item.tdescripcion }}</td>
           <td>{{ props.item.numParticipantes }}</td>
           <td>{{ props.item.dfechaJuego }}</td>
-          <td>{{ props.item.cdistrito }}</td >            
+          <td>{{ props.item.ndistrito }}</td >            
         </template>
 
         <template slot="no-data">
@@ -101,7 +101,7 @@ export default {
         { text: "Descripcion", value: "tdescripcion", sortable: false },  
         { text: "Numero de participantes", value: "numParticipantes" },  
         { text: "Fecha de juego", value: "dfechaJuego" },
-        { text: "Distrito", value: "cdistrito"}
+        { text: "Distrito", value: "ndistrito"}
         
       ],
       search: "",

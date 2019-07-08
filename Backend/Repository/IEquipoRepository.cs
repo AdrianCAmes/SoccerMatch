@@ -9,6 +9,6 @@ namespace Repository
     public interface IEquipoRepository:ICrudRepository<Equipo>
     {
         IEnumerable<EquiposRecomendadosViewModel> EquiposRecomendados(int idUsuario);
-        IEnumerable<Equipo> MisEquipos(int idUsuario);
+        IEnumerable<EquiposRecomendadosViewModel> MisEquipos(int idUsuario);
     }
 }
