@@ -193,6 +193,7 @@ export default {
       this.dfechaJuego = "";
     },
    guardar() {
+     
       if (this.editedIndex > -1) {
         //Código para editar
 
