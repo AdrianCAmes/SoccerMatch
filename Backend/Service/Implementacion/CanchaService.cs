@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 using Entity;
 using Repository;
 using Repository.Implementacion;
+using Repository.ViewModel;
 
 namespace Service.Implementacion
 {
     public class CanchaService : ICanchaService
-    {
+    {   
+        private ICanchaRepository cancharepository;
+        public CanchaService(ICanchaRepository cancharepository){
+            this.cancharepository=cancharepository;
+        }
         public bool Delete(int id)
         {
             throw new NotImplementedException();
@@ -24,6 +29,11 @@ namespace Service.Implementacion
         public IEnumerable<Cancha> GetAll()
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<CanchaViewModel> ListarTodos()
+        {
+            return cancharepository.ListarTodos();
         }
 
         public bool Save(Cancha entity)
