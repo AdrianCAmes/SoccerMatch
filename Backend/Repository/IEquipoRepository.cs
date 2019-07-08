@@ -10,6 +10,7 @@ namespace Repository
     {
         IEnumerable<EquiposRecomendadosViewModel> EquiposRecomendados(int idUsuario);
         IEnumerable<EquiposRecomendadosViewModel> MisEquipos(int idUsuario);
+        IEnumerable<DetalleEquipoViewModel> DetalleEquipo(int idEquipo);
         bool Guardar(EquiposRecomendadosViewModel entity);
     }
 }
