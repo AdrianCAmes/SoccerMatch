@@ -18,7 +18,25 @@
             label="Usuario"
             required
           ></v-text-field>
-          <v-text-field
+            <v-text-field v-model="pswd"
+            :append-icon="show2 ? 'visibility' : 'visibility_off'"
+            :type="show2 ? 'text' : 'password'"
+            name="input-10-2"
+            label="Contraseña"
+            value="wqfasds"
+            class="input-group--focused"
+            @click:append="show2 = !show2"
+          ></v-text-field>
+            <v-text-field v-model="cpswd"
+            :append-icon="show3 ? 'visibility' : 'visibility_off'"
+            :type="show3 ? 'text' : 'password'"
+            name="input-10-2"
+            label="Confirmar Contraseña"
+            value="wqfasds"
+            class="input-group--focused"
+            @click:append="show3 = !show3"
+          ></v-text-field>
+          <!--<v-text-field
             v-model="pswd"
             label="Contraseña"
             required
@@ -27,7 +45,7 @@
             v-model="cpswd"
             label="Confirmar contraseña"
             required
-          ></v-text-field>
+          ></v-text-field>-->
             <v-text-field
             v-model="cdni"
             label="DNI"
@@ -73,6 +91,9 @@ import router from "vue-router";
 export default {
   data() {
     return {
+       show2: false,
+       show3:false,
+        password: 'Password',
       usuarios: [],
       dialog: false,
       headers: [    

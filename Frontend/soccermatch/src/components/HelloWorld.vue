@@ -1,20 +1,15 @@
 <template>   
-
    <v-container>
-     
-    <v-layout
+    <v-layout justify-center
       text-xs-center
       wrap>
-      <v-flex>
+      <v-flex xs12 sm10 md8 lg6>
         <v-toolbar flat color="white">  
           <h1>¡Bienvenido a SoccerMatch!</h1>    
           </v-toolbar>
 
-          <v-flex xs12 sm6> 
               <v-text-field v-model="loginUsuario" label="Usuario"></v-text-field>
-          </v-flex>
 
-        <v-flex xs12 sm6>
           <v-text-field v-model="contraseña"
             :append-icon="show2 ? 'visibility' : 'visibility_off'"
             :type="show2 ? 'text' : 'password'"
@@ -24,7 +19,6 @@
             class="input-group--focused"
             @click:append="show2 = !show2"
           ></v-text-field>
-        </v-flex>
              <!-- <v-text-field v-model="contraseña" label="Contraseña">Contraseña </v-text-field>-->
 
               <v-btn   @click="Loggin()" slot="activator" color="primary" dark class="mb-2">Login</v-btn>    
