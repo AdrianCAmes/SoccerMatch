@@ -140,6 +140,7 @@
 </template>
 <script>
 import axios from "axios";
+import router from "vue-router"
 export default {
   data() {
     return {
@@ -286,7 +287,7 @@ export default {
           })
           .then(function(response) {
             me.close();
-            me.listar();
+            me.setListaEquiposRecomendados();
             me.limpiar();
           })
           .catch(function(error) {
@@ -319,8 +320,9 @@ export default {
           })
           .then(function(response) {
             me.close();
-            me.listar();
+            me.setListaEquiposRecomendados();
             me.limpiar();
+            me.$router.push('/equipo/misequipos');
           })
           .catch(function(error) {
             console.log(error);
