@@ -144,6 +144,13 @@ namespace Repository.Implementacion
             return result;
         }
 
+        public IEnumerable<Participante> GetAllParticipantes(int idEqpo)
+        {
+            var participantes = context.Participante.ToList().Where(x=>x.Cequipo == idEqpo);
+
+            return participantes;
+        }
+
         public bool Guardar(EquiposInsertarViewModel entity)
         {
             var id_distrito = context.Distrito.FirstOrDefault(x=>x.Ndistrito == entity.Ndistrito);

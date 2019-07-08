@@ -12,5 +12,7 @@ namespace Repository
         IEnumerable<EquiposRecomendadosViewModel> MisEquipos(int idUsuario);
         bool Guardar(EquiposInsertarViewModel entity);
         IEnumerable<DetalleEquipoViewModel> DetalleEquipo(int idEquipo);
+        IEnumerable<Participante> GetAllParticipantes(int idEqpo);
+
     }
 }

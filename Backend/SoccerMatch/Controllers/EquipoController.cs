@@ -53,6 +53,14 @@ namespace SoccerMatch.Controllers
             );
         }
 
+        [HttpGet("usuarios/{idEqpo}")]
+        public ActionResult GetAllParticipantes(int idEqpo)
+        {
+            return Ok(
+                EquipoService.GetAllParticipantes(idEqpo)
+            );
+        }
+
         [HttpGet("misequipos/{idUsuario}")]
         public ActionResult MisEquipos(int idUsuario)
         {        

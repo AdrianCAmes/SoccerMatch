@@ -39,6 +39,11 @@ namespace Service.Implementacion
             return equiporepository.GetAll();
         }
 
+        public IEnumerable<Participante> GetAllParticipantes(int idEqpo)
+        {
+            return equiporepository.GetAllParticipantes(idEqpo);
+        }
+
         public bool Guardar(EquiposInsertarViewModel entity)
         {
             return equiporepository.Guardar(entity);

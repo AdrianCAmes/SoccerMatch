@@ -396,6 +396,7 @@ export default {
           me.limpiar();
           localStorage.removeItem("equipo"),
           me.$router.push('/equipo/misequipos');
+          alert("Usted se unió exitosamente al grupo :)");
         })
         .catch(function(error) {
             console.log(error);

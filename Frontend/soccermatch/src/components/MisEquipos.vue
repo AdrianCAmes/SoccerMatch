@@ -252,6 +252,11 @@
                       </v-menu>
                     </v-flex>
 
+                    <v-flex xs12 sm4 md4 lg4 xl4>
+                        <v-text-field v-model="alquilerHoras" label="Horas de Reserva">
+                        </v-text-field>
+                    </v-flex>
+
                     <v-flex xs12 sm2 md2 lg2 xl2>
                     <v-btn @click="setFrmCanchasTrue()" small fab dark color="teal">
                         <v-icon dark>list</v-icon>
@@ -356,6 +361,7 @@ export default {
      //para la vista detalleEquipo
       verDetalleEquipo:0,
       lstaParticipantes:[],
+      participantes:[],
       idEquipo:'',
       lstaAlquilerDelEquipo:[],
 
@@ -404,9 +410,9 @@ export default {
             });
     },
     pagarAlquiler(){
-      
-     },
 
+     },
+    
     agregarCancha(data = []) {
       this.canchas = [];
       this.canchas.push({
@@ -452,7 +458,7 @@ export default {
         console.log(error);
       });
     },
-    setListaDistritos() {
+    setListaCanchas() {
       let me = this;
       axios.get("api/cancha")
       .then(function(response) {
@@ -572,6 +578,7 @@ export default {
             me.close();
             me.setListaMisEquipos();
             me.limpiar();
+            alert("!Registro exitoso!");
           })
           .catch(function(error) {
             console.log(error);
@@ -579,7 +586,47 @@ export default {
       }
       
     },
+    guardarAlquiler(){
+      let me = this;
 
+      var dFechaRegistro = new Date();
+      var dia = dFechaRegistro.getDate();
+      var mes = dFechaRegistro.getMonth();
+      var anio = dFechaRegistro.getFullYear();
+      var hora = dFechaRegistro.getHours();
+      var minutos = dFechaRegistro.getMinutes();
+      var segundos = dFechaRegistro.getSeconds();
+      
+      var f = dia+'-'+mes+'-'+anio+' '+hora+':'+minutos+':'+segundos;
+
+      var dFechaInicio = new Date();
+      dFechaInicio = me.alquilerFechaInicio+' '+me.alquilerHoraInicio;
+
+      axios
+      .post("/api/alquiler", {
+        cequipo: me.alquilerEquipo,
+        canchas: me.canchas,
+        dfechaInicio: dFechaInicio,
+        dfechaRegistro: f,
+        numhoras: me.alquilerHoras,
+        participantes: me.participantes,
+      }).then(
+        me.setMostrarFrmAlquilerFalse(),
+        alert("!Registro exitoso!"),
+        me.alquilerEquipo = '',
+        me.alquilerCancha = '',
+        me.alquilerFechaInicio = '',
+        me.alquilerHoraInicio = '',
+        me.alquilerRegistro= '',
+        me.alquilerHoras = '',
+        me.alquilerDescuento = '',
+        me.alquilerTotal = '',
+        me.alquilerPagado = '',
+      )
+
+      
+
+    },
     setearParticipantes(){
          let me = this;
       axios
@@ -588,6 +635,19 @@ export default {
         .then(function(response) {
           console.log(response);
           me.lstaParticipantes = response.data;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    getAllParticipantes(){
+         let me = this;
+      axios
+      
+        .get("/api/equipo/usuarios/"+me.idEquipo)
+        .then(function(response) {
+          console.log(response);
+          me.participantes = response.data;
         })
         .catch(function(error) {
           console.log(error);
@@ -617,12 +677,11 @@ export default {
       localStorage.setItem("equipo", this.idEquipo);
       this.setearParticipantes();
       this.setearLstaAlquileresDelEquipo();
+      this.getAllParticipantes();
     },
     ocultarDetallesEquipo(){
       this.verDetalleEquipo=0;
     },
-    guardarAlquiler(){
-    }
   }
 };
 </script>

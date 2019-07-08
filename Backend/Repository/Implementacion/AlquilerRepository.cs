@@ -73,19 +73,35 @@ namespace Repository.Implementacion
 
         public bool Guardar(AlquilerInsertarViewModel entity)
         {
-            var id_cancha = context.Cancha.FirstOrDefault(x=>x.Ncancha == entity.Ncancha);
+            Cancha cancha = new Cancha();
+            for(var i = 0; i < 1; i++)
+            {
+                cancha = context.Cancha.FirstOrDefault(x=>x.Ccancha == entity.canchas.ElementAt(i).Ccancha);
+            }
             Alquiler alquiler = new Alquiler {
                 Cequipo = entity.Cequipo,
-                Ccancha = id_cancha.Ccancha,
+                Ccancha = cancha.Ccancha,
                 DfechaInicio = entity.DfechaInicio,
                 DfechaRegistro = entity.DfechaRegistro,
                 NumHoras  = entity.NumHoras,
-                Mdescuento  = entity.Mdescuento,
-                Mtotal  = entity.Mtotal,
-                Fpagado = entity.Fpagado,
+                Mdescuento  = 0,
+                Mtotal  = entity.NumHoras*cancha.MprecioHora,
+                Fpagado = false,
             };
             try {
                 context.Alquiler.Add(alquiler);
+                context.SaveChanges();
+                foreach(var p in entity.participantes)
+                {
+                    DetalleParticipante dp = new DetalleParticipante{
+                        Calquiler = alquiler.Calquiler,
+                        Cparticipante = p.Cparticipante,
+                        Mcuota = alquiler.Mtotal/entity.participantes.Count(),
+                        FpartePagada = false,
+                        Ncupos = 1,
+                    };
+                    context.DetalleParticipante.Add(dp);
+                }
                 context.SaveChanges();
             }
             catch (System.Exception) {
