@@ -283,7 +283,7 @@ export default {
           })
           .then(function(response) {
             me.close();
-            me.listar();
+            me.setListaEquiposRecomendados();
             me.limpiar();
           })
           .catch(function(error) {
@@ -316,7 +316,7 @@ export default {
           })
           .then(function(response) {
             me.close();
-            me.listar();
+            me.setListaEquiposRecomendados();
             me.limpiar();
           })
           .catch(function(error) {
