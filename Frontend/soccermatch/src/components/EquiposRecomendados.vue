@@ -239,7 +239,6 @@ export default {
         var hora = dFechaRegistro.getHours();
         var minutos = dFechaRegistro.getMinutes();
         var segundos = dFechaRegistro.getSeconds();
-        var milisegundos = dFechaRegistro.getMilliseconds();
 
         var f = dia+'-'+mes+'-'+anio+' '+hora+':'+minutos+':'+segundos;
 
