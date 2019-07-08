@@ -28,6 +28,14 @@ namespace SoccerMatch.Controllers
             );
         }
 
+        [HttpGet("names")]
+        public ActionResult GetAllNames()
+        {
+            return Ok(
+                distritoService.GetAllNames()
+            );
+        }
+
         [HttpGet("{id}")]
         public ActionResult Get(int id)
         {

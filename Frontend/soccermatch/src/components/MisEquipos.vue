@@ -54,8 +54,12 @@
                     </v-menu>
                   </v-flex>
                   <v-flex xs12 sm12 md12>
-                    <v-text-field v-model="cdistrito" label="Distrito" ></v-text-field>
-                  </v-flex>               
+                    <v-combobox
+                      v-model="ndistrito"
+                      :items="distritos"
+                      label="Distritos"
+                    ></v-combobox>
+                  </v-flex>              
               </v-container>
             </v-card-text>
 
@@ -107,11 +111,13 @@ export default {
       search: "",
       editedIndex: -1,
 
+      distritos: [],
+
       //TODO:Model
       nequipo: "",
       tdescripcion:"",
       dfechaJuego:"",
-      cdistrito:"",
+      ndistrito:"",
       menu: false,
 
     };
@@ -130,6 +136,7 @@ export default {
 
   created() {
     this.setListaMisEquipos();
+    this.setListaDistritos();
   },
   methods: {
     setListaMisEquipos(){
@@ -141,6 +148,16 @@ export default {
             .catch(function(error) {
               console.log(error);
             });
+    },
+    setListaDistritos() {
+      let me = this;
+      axios.get("api/distrito/names")
+      .then(function(response) {
+        me.distritos = response.data;
+      }) 
+      .catch(function(error) {
+        console.log(error);
+      });
     },
     listar() {
       let me = this;
@@ -203,9 +220,9 @@ export default {
         axios
           .post("api/equipo", {
            tdescripcion: me.tdescripcion,
-            cdistrito: me.cdistrito,
+            ndistrito: me.ndistrito,
             nequipo: me.nequipo,
-            numParticipantes: me.numParticipantes,
+            numParticipantes: 1,
             dfechaJuego: me.dfechaJuego
           })
           .then(function(response) {

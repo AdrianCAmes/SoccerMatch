@@ -75,6 +75,29 @@ namespace Repository.Implementacion
             return result;
         }
 
+        public bool Guardar(EquiposRecomendadosViewModel entity)
+        {
+            var id_distrito = context.Distrito.FirstOrDefault(x=>x.Ndistrito == entity.Ndistrito);
+            Equipo equipo = new Equipo {
+                Nequipo = entity.Nequipo,
+                Tdescripcion = entity.Tdescripcion,
+                DfechaJuego = entity.DfechaJuego,
+                NumParticipantes = entity.NumParticipantes,
+                Cdistrito = id_distrito.Cdistrito,
+            };
+            try
+            {
+                context.Add(equipo);
+                context.SaveChanges();
+            }
+            catch (System.Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
         public IEnumerable<EquiposRecomendadosViewModel> MisEquipos(int idUsuario)
         {
             var participante=new List<Participante>();
