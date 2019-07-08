@@ -7,10 +7,15 @@ using Entity;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
+using Repository.dbcontext;
 namespace Repository.Implementacion
 {
     public class JugadorRepository : IJugadorRepository
     {
+         private ApplicationDbContext context;
+         public JugadorRepository(ApplicationDbContext context){
+             this.context=context;
+         }
         public bool Delete(int id)
         {
             throw new NotImplementedException();
@@ -23,12 +28,34 @@ namespace Repository.Implementacion
 
         public IEnumerable<Jugador> GetAll()
         {
-            throw new NotImplementedException();
+             var result = new List<Jugador>();
+            try
+            {
+                result = context.Jugador.ToList();
+            }
+
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+            return result;
         }
 
         public bool Save(Jugador entity)
         {
-            throw new NotImplementedException();
+            
+            try
+            {
+                context.Add(entity);
+                context.SaveChanges();
+            }
+            catch (System.Exception)
+            {
+
+                return false;
+            }
+            return true;
         }
 
         public bool Update(Jugador entity)

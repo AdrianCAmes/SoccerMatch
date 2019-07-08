@@ -1,26 +1,29 @@
 <template>   
 
-   
-<v-flex>
-   <v-toolbar flat color="white">  
-     <h1>Login</h1>    
-    </v-toolbar>
+   <v-container>
+     
+    <v-layout
+      text-xs-center
+      wrap>
+      <v-flex>
+        <v-toolbar flat color="white">  
+          <h1>Login</h1>    
+          </v-toolbar>
 
-     <v-flex xs12 sm12 md12>
-                    <v-text-field v-model="loginUsuario" label="Usuario"></v-text-field>
-                  </v-flex>
+          <v-flex xs12 sm12 md12>
+              <v-text-field v-model="loginUsuario" label="Usuario"></v-text-field>
+          </v-flex>
 
+      
+              <v-text-field v-model="contraseña" label="Contraseña">Contraseña </v-text-field>
+
+              <v-btn   @click="Loggin()" slot="activator" color="primary" dark class="mb-2">Login</v-btn>    
+            <v-btn   @click="Register()" slot="activator" color="primary" dark class="mb-2">Register</v-btn>
+      </v-flex>
+
+    </v-layout>
+   </v-container>
  
-         <v-text-field v-model="contraseña" label="Contraseña">Contraseña </v-text-field>
-
-        <v-btn   @click="Loggin()" slot="activator" color="primary" dark class="mb-2">Login</v-btn>    
-      <v-btn   @click="Register()" slot="activator" color="primary" dark class="mb-2">Register</v-btn>
-</v-flex>
-
- 
-
-
-   
      
 </template>
 <script>
@@ -41,6 +44,7 @@ export default {
   },
   
   created(){
+   localStorage.removeItem("usuario");
    this.setLstaUsuarios();
   },
   methods: {
@@ -58,9 +62,11 @@ export default {
   },
 
   LoginCorrecto(){      
+    console.log(this.contraseña);
+    console.log(this.loginUsuario);
             var correcto = 0;
             for (var i = 0; i < this.lstaUsuarios.length; i++) {
-               if (this.lstaUsuarios[i].usuario1 == this.loginUsuario ) { 
+               if (this.lstaUsuarios[i].usuario1 == this.loginUsuario && this.lstaUsuarios[i].pswd == this.contraseña) { 
                     correcto = 1;
                     this.idUsuario=this.lstaUsuarios[i].cusuario;
                }

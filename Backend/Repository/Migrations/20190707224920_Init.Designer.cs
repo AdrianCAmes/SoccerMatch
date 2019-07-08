@@ -10,8 +10,8 @@ using Repository.dbcontext;
 namespace Repository.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190707021456_init")]
-    partial class init
+    [Migration("20190707224920_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

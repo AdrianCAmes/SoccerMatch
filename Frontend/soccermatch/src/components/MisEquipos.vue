@@ -29,9 +29,6 @@
                   <v-flex xs12 sm12 md12>
                     <v-text-field v-model="tdescripcion" label="Descripcion"></v-text-field>
                   </v-flex>
-                  <v-flex xs12 sm12 md12>
-                    <v-text-field v-model="numParticipantes" label="Numero de participantes"></v-text-field>
-                  </v-flex>
                   <v-flex xs12 sm12 md12 >
                     <v-text-field v-model="dfechaJuego" label="Fecha de Juego"></v-text-field>
                   </v-flex>
@@ -54,7 +51,6 @@
         <template slot="items" slot-scope="props">
           <td class="justify-center layout px-0">
             <v-icon small class="mr-2" @click="editItem(props.item)">edit</v-icon>
-          
           </td>
           <td>{{ props.item.nequipo }}</td>
           <td>{{ props.item.tdescripcion }}</td>
@@ -91,7 +87,10 @@ export default {
       editedIndex: -1,
 
       //TODO:Model
-      
+      nequipo: "",
+      tdescripcion:"",
+      dfechaJuego:"",
+      cdistrito:"",
 
     };
   },
