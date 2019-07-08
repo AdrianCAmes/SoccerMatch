@@ -105,7 +105,7 @@
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="blue darken-1" flat @click.native="ocultarDetallesEquipo">Atras</v-btn>
-              <!--v-btn color="blue darken-1" flat @click.native="guardar">Guardar</v-btn -->
+              <v-btn color="blue darken-1" flat @click.native="unirJugador">Unirse</v-btn>
             </v-card-actions>
 
           </v-card>
@@ -145,6 +145,7 @@ export default {
   data() {
     return {
       equipos: [],
+
       dialog: false,
       headers: [    
         { text: "Opciones", value: "opciones", sortable: false },
@@ -355,11 +356,44 @@ export default {
     mostrarDetallesEquipo(data =[]){
      this.verDetalleEquipo=1;
      this.idEquipo=data["cequipo"];
+     localStorage.setItem("equipo", this.idEquipo);
      this.setearParticipantes();
      this.setearLstaAlquileresDelEquipo();
     },
     ocultarDetallesEquipo(){
-this.verDetalleEquipo=0;
+      this.verDetalleEquipo=0;
+      localStorage.removeItem("equipo");
+    },
+    unirJugador(){
+      let me = this;
+
+      var dFechaRegistro = new Date();
+      var dia = dFechaRegistro.getDate();
+      var mes = dFechaRegistro.getMonth();
+      var anio = dFechaRegistro.getFullYear();
+      var hora = dFechaRegistro.getHours();
+      var minutos = dFechaRegistro.getMinutes();
+      var segundos = dFechaRegistro.getSeconds();
+
+      var f = dia+'-'+mes+'-'+anio+' '+hora+':'+minutos+':'+segundos;
+
+      axios
+        .post("api/participante", {
+          cjugador: Number(localStorage.getItem('usuario')),
+          cequipo: Number(localStorage.getItem("equipo")),
+          fesadministrador: false,
+          dfechaunion: f,
+        })
+        .then(function(response) {
+          me.close();
+          me.setListaEquiposRecomendados();
+          me.limpiar();
+          localStorage.removeItem("equipo"),
+          me.$router.push('/equipo/misequipos');
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
     }
   }
 };

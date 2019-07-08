@@ -11,6 +11,10 @@ namespace Service.Implementacion
 {
     public class ParticipanteService : IParticipanteService
     {
+        private IParticipanteRepository participanteRepository;
+        public ParticipanteService(IParticipanteRepository participanteRepository){
+            this.participanteRepository=participanteRepository;
+        }
         public bool Delete(int id)
         {
             throw new NotImplementedException();
@@ -28,7 +32,7 @@ namespace Service.Implementacion
 
         public bool Save(Participante entity)
         {
-            throw new NotImplementedException();
+            return participanteRepository.Save(entity);
         }
 
         public bool Update(Participante entity)

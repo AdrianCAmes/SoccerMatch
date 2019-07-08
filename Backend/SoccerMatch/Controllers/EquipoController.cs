@@ -28,6 +28,15 @@ namespace SoccerMatch.Controllers
             );
         }
 
+        
+        [HttpGet("{id}")]
+        public ActionResult GetByID(int id)
+        {
+            return Ok(
+                EquipoService.Get(id)
+            );
+        }
+
         [HttpGet("recomendados/{idUsuario}")]
         public ActionResult EquiposRecomendados(int idUsuario)
         {
