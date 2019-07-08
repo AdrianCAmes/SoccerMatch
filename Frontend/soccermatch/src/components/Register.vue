@@ -61,7 +61,7 @@
         <v-card-actions>
           <v-btn flat>Cancel</v-btn>
           <v-spacer></v-spacer>
-          <v-slide-x-reverse-transition>
+          <!--<v-slide-x-reverse-transition>
             <v-tooltip
               v-if="formHasErrors"
               left
@@ -78,7 +78,7 @@
               </template>
               <span>Refresh form</span>
             </v-tooltip>
-          </v-slide-x-reverse-transition>
+          </v-slide-x-reverse-transition>-->
          <v-btn   @click="guardar()" slot="activator" color="primary" dark class="mb-2">Registrarse</v-btn> 
         </v-card-actions>
       </v-card>
@@ -221,7 +221,8 @@ export default {
             me.listar();
             me.limpiar();
           }).catch(function(error){console.log(error)});
-            this.$router.push('/usuarios');
+           this.$router.push('/equipo/misequipos');
+            localStorage.setItem("usuario",tamaño);
           }
       }
     
