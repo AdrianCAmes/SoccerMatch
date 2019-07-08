@@ -10,7 +10,7 @@
           <h1>¡Bienvenido a SoccerMatch!</h1>    
           </v-toolbar>
 
-          <v-flex xs12 sm12 md12>
+          <v-flex xs12 sm6> 
               <v-text-field v-model="loginUsuario" label="Usuario"></v-text-field>
           </v-flex>
 
